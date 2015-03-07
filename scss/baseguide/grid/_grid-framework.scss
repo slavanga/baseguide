@@ -1,0 +1,247 @@
+// Framework grid generation
+// -------------------------
+
+
+// Centered container element
+@mixin make-container($gutter: $grid-gutter) {
+	@include clearfix;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter) {
+	@include clearfix;
+	margin-left: ($gutter / -2);
+	margin-right: ($gutter / -2);
+}
+
+@mixin make-column-base($gutter: $grid-gutter) {
+	position: relative;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
+}
+
+@mixin make-column($class, $index, $columns: $grid-columns, $gutter: $grid-gutter) {
+	@if $class == nth($mq-breakpoints-list, 1) {
+		@if $index > 0 {
+			@include make-column-base($gutter);
+			float: left;
+			width: percentage(($index / $columns));
+		}
+	} @else {
+		@include mq($class) {
+			@if $index > 0 {
+				@include make-column-base($gutter);
+				float: left;
+				width: percentage(($index / $columns));
+			}
+		}
+	}
+}
+
+@mixin make-column-push($class, $index, $columns: $grid-columns) {
+	@if $class == nth($mq-breakpoints-list, 1) {
+		@if $index > 0 {
+			left: percentage(($index / $columns));
+		}
+
+		@if $index == 0 {
+			left: auto;
+		}
+	} @else {
+		@include mq($class) {
+			@if $index > 0 {
+				left: percentage(($index / $columns));
+			}
+
+			@if $index == 0 {
+				left: auto;
+			}
+		}
+	}
+}
+
+@mixin make-column-pull($class, $index, $columns: $grid-columns) {
+	@if $class == nth($mq-breakpoints-list, 1) {
+		@if $index > 0 {
+			right: percentage(($index / $columns));
+		}
+
+		@if $index == 0 {
+			right: auto;
+		}
+	} @else {
+		@include mq($class) {
+			@if $index > 0 {
+				right: percentage(($index / $columns));
+			}
+
+			@if $index == 0 {
+				right: auto;
+			}
+		}
+	}
+}
+
+@mixin make-column-offset($class, $index, $columns: $grid-columns) {
+	@if $class == nth($mq-breakpoints-list, 1) {
+		margin-left: percentage(($index / $columns));
+	} @else {
+		@include mq($class) {
+			margin-left: percentage(($index / $columns));
+		}
+	}
+}
+
+@mixin make-grid-columns() {
+	$list: ();
+	
+	@each $class in $mq-breakpoints-list {
+		@for $i from 1 through $grid-columns {
+			$input: '.col-#{$class}-#{$i}';
+			$list: append($list, unquote($input), comma);
+		}
+	}
+
+	#{$list} {
+		@include make-column-base;
+	}
+}
+
+@mixin float-grid-columns($class, $i: 1, $list: '.col-#{$class}-#{$i}') {
+	@for $i from (1 + 1) through $grid-columns {
+		$list: '#{$list}, .col-#{$class}-#{$i}';
+	}
+
+	#{$list} {
+		float: left;
+	}
+}
+
+@mixin calc-column($class, $index, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$index} {
+			width: percentage(($index / $grid-columns));
+		}
+	}
+
+	@if ($type == push) and ($index > 0) {
+		.col-#{$class}-push-#{$index} {
+			left: percentage(($index / $grid-columns));
+		}
+	}
+
+	@if ($type == push) and ($index == 0) {
+		.col-#{$class}-push-0 {
+			left: auto;
+		}
+	}
+
+	@if ($type == pull) and ($index > 0) {
+		.col-#{$class}-pull-#{$index} {
+			right: percentage(($index / $grid-columns));
+		}
+	}
+
+	@if ($type == pull) and ($index == 0) {
+		.col-#{$class}-pull-0 {
+			right: auto;
+		}
+	}
+
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$index} {
+			margin-left: percentage(($index / $grid-columns));
+		}
+	}
+}
+
+// Create grid for specific class
+@mixin calc-grid-columns($class) {
+	@include float-grid-columns($class);
+
+	@for $i from 0 through $grid-columns {
+		@include calc-column($class, $i, width);
+		@include calc-column($class, $i, pull);
+		@include calc-column($class, $i, push);
+		@include calc-column($class, $i, offset);
+	}
+}
+
+// Create breakpoints and responsive visibility classes
+@mixin make-breakpoints() {
+	$i: 1;
+
+	@each $class, $width in $mq-breakpoints {
+
+		.visible-#{$class} {
+			display: none !important;
+		}
+		
+		@if $class == nth($mq-breakpoints-list, 1) {
+			// first breakpoint
+			@include calc-grid-columns($class);
+
+			@include mq($until: nth($mq-breakpoints-list, $i + 1)) {
+				.hidden-#{$class} {
+					display: none !important;
+				}
+
+				.visible-#{$class} {
+					display: block !important;
+				}
+			}
+		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
+			// last breakpoint
+			@include mq($class) {
+				.container {
+					width: $width - $grid-gutter;
+				}
+
+				.hidden-#{$class} {
+					display: none !important;
+				}
+
+				.visible-#{$class} {
+					display: block !important;
+				}
+			}
+		} @else {
+			.visible-#{$class}-up {
+				display: none !important;
+			}
+
+			@include mq($from: $class) {
+				.visible-#{$class}-up {
+					display: block !important;
+				}
+			}
+
+			@include mq($from: $class, $until: nth($mq-breakpoints-list, $i + 1)) {
+				.visible-#{$class} {
+					display: block !important;
+				}
+
+				.hidden-#{$class} {
+					display: none !important;
+				}
+			}
+
+			@include mq($class) {
+				@include calc-grid-columns($class);
+
+				.hidden-#{$class}-up {
+					display: none !important;
+				}
+			}
+		}
+
+		$i: $i + 1;
+	}
+}

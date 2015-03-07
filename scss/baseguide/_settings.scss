@@ -1,0 +1,121 @@
+// Font Settings
+$font-size-base: 1em !default;
+$font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
+$line-height-base: 1.45 !default;
+
+$type-scale-base: $font-size-base !default;
+$type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
+
+$font-size-h1: modular-scale(4) !default;
+$font-size-h2: modular-scale(3) !default;
+$font-size-h3: modular-scale(2) !default;
+$font-size-h4: modular-scale(1) !default;
+$font-size-h5: modular-scale(0) !default;
+$font-size-h6: modular-scale(-1) !default;
+$font-size-sm: modular-scale(-1) !default;
+
+$headings-font-family: inherit !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+
+$font-antialiased: true !default;
+
+
+// Base Colors and Links
+$text-color: #333 !default;
+$link-color: #448aff !default;
+$link-hover-color: $link-color !default;
+$link-hover-decoration: underline !default;
+
+
+// Buttons
+$button-padding-vertical: 0.3em !default;
+$button-padding-horizontal: 0.9em !default;
+$button-border-radius: 0 !default;
+
+$button-bg: #448aff !default;
+$button-hover-bg: darken($button-bg, 5%) !default;
+$button-active-bg: $button-hover-bg !default;
+$button-color: #fff !default;
+$button-hover-color: #fff !default;
+$button-active-color: #fff !default;
+$button-border-color: transparent !default;
+
+$button-secondary-bg: transparent !default;
+$button-secondary-hover-bg: #448aff !default;
+$button-secondary-active-bg: $button-secondary-hover-bg !default;
+$button-secondary-color: #448aff !default;
+$button-secondary-hover-color: #fff !default;
+$button-secondary-active-color: #fff !default;
+$button-secondary-border-color: #448aff !default;
+
+
+// Forms
+$use-custom-forms: true !default;
+
+$input-height: 2.163em !default;
+$input-padding-vertical: 0.3em !default;
+$input-padding-horizontal: 0.6em !default;
+
+$input-bg: #fff !default;
+$input-color: $text-color !default;
+$input-border-color: #b6b6b6 !default;
+$input-focus-border-color: darken($input-border-color, 20%) !default;
+$input-border-radius: 0 !default;
+
+$input-disabled-bg: #eee !default;
+$input-disabled-color: #555 !default;
+$input-disabled-border-color: #ccc !default;
+
+$placeholder-color: lighten($text-color, 50%) !default;
+
+
+// Tables
+$table-padding-vertical: 0.6em !default;
+$table-padding-horizontal: 0.4em !default;
+$table-border-color: #b6b6b6 !default;
+
+
+// Input Lists
+$inputs-list:
+	'input[type="email"]',
+	'input[type="number"]',
+	'input[type="password"]',
+	'input[type="search"]',
+	'input[type="tel"]',
+	'input[type="text"]',
+	'input[type="url"]' !default;
+
+$inputs-button-list:
+	'[type="button"]',
+	'[type="reset"]',
+	'[type="submit"]' !default;
+
+// Generate variables with a list of all input types that have a text-based input, excluding textarea.
+$all-text-inputs: assign-inputs($inputs-list) !default;
+$all-text-inputs-hover: assign-inputs($inputs-list, hover) !default;
+$all-text-inputs-focus: assign-inputs($inputs-list, focus) !default;
+$all-text-inputs-active: assign-inputs($inputs-list, active) !default;
+
+// Generate variables with a list of all input types that have a button-based input.
+$all-button-inputs: assign-inputs($inputs-button-list) !default;
+$all-button-inputs-hover: assign-inputs($inputs-button-list, hover) !default;
+$all-button-inputs-focus: assign-inputs($inputs-button-list, focus) !default;
+$all-button-inputs-active: assign-inputs($inputs-button-list, active) !default;
+
+
+// Grid Settings
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
+
+// Breakpoints
+$mq-breakpoints: (
+	xs: 480px,
+	sm: 768px,
+	md: 992px,
+	lg: 1200px
+) !default;
+
+// Generate list of all breakpoint names
+$mq-breakpoints-list: to-list($mq-breakpoints, 'keys') !default;

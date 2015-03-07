@@ -1,0 +1,157 @@
+// clearfix
+.clearfix {
+	@include clearfix;
+}
+
+
+// lists
+@mixin list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+
+.list-unstyled {
+	@include list-unstyled;
+}
+
+.list-inline {
+	@include list-unstyled;
+	@include clearfix;
+	margin-left: -1em;
+
+	> li {
+		float: left;
+		margin-left: 1em;
+	}
+
+	> li > a {
+		display: block;
+	}
+}
+
+.list-equal {
+	@include list-unstyled;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+
+	> li {
+		display: table-cell;
+		text-align: center;
+	}
+
+	> li > a {
+		display: block;
+	}
+}
+
+
+// positioning
+.block-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+
+// media object
+.media {
+	margin-top: 1em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.media-left,
+.media > .pull-left {
+	padding-right: 1em;
+}
+
+.media-right,
+.media > .pull-right {
+	padding-left: 1em;
+}
+
+.media-left,
+.media-right,
+.media-body {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.media-middle {
+	vertical-align: middle;
+}
+
+.media-bottom {
+	vertical-align: bottom;
+}
+
+
+// text helpers
+.text-hide {
+	display: block;
+	overflow: hidden;
+	border: 0;
+	direction: ltr;
+	text-align: left;
+	text-indent: -999em;
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+// display and visibility helpers
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+}
+
+.invisible {
+	visibility: hidden !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+@media print {
+	.hidden-print {
+		display: none !important;
+	}
+}

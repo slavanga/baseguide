@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Baseguide</title>
+		<meta name="description" content="Baseguide is a lightweight CSS framework for robust and scalable base styles.">
+
+		<link rel="stylesheet" href="css/main.min.css">
+		<link rel="stylesheet" href="css/demo.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Baseguide</h1>
+			<p>Baseguide is a lightweight CSS framework for robust and scalable base styles.</p>
+
+			<div class="btn-group">
+				<a href="https://github.com/slavanga/baseguide/archive/gh-pages.zip" class="btn">Download</a>
+				<a href="https://github.com/slavanga/baseguide" class="btn btn-secondary">GitHub</a>
+			</div>
+
+			<section>
+				<h2>Typography</h2>
+
+				<p><a href="#">Link</a> ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+				<p><i><a href="#">Link</a> ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</i></p>
+
+				<p><b><a href="#">Link</a> ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</b></p>
+
+				<h1>Heading h1</h1>
+				<h2>Heading h2</h2>
+				<h3>Heading h3</h3>
+				<h4>Heading h4</h4>
+				<h5>Heading h5</h5>
+				<h6>Heading h6</h6>
+			</section>
+
+			<section>
+				<h2>List Types</h2>
+
+				<div class="row">
+					<div class="col col-sm-4 col-md-4">
+						<h3>Unstyled List</h3>
+						<ul class="list-unstyled">
+							<li>Item 1</li>
+							<li>Item 2</li>
+							<li>Item 3</li>
+							<li>Item 4</li>
+							<li>Item 5</li>
+							<li>Item 6</li>
+						</ul>
+					</div>
+
+					<div class="col col-sm-4 col-md-4">
+						<h3>Unordered List</h3>
+						<ul>
+							<li>Item 1</li>
+							<li>Item 2</li>
+							<li>Item 3
+								<ul>
+									<li>Subitem 1</li>
+									<li>Subitem 2</li>
+									<li>Subitem 3</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col col-sm-4 col-md-4">
+						<h3>Ordered List</h3>
+						<ol>
+							<li>Item</li>
+							<li>Item</li>
+							<li>Item
+								<ul>
+									<li>Subitem 1</li>
+									<li>Subitem 2</li>
+									<li>Subitem 3</li>
+								</ul>
+							</li>
+						</ol>
+					</div>
+				</div>
+
+				<h3>Inline List</h3>
+
+				<ul class="list-inline">
+					<li>Inline Item 1</li>
+					<li>Inline Item 2</li>
+					<li>Inline Item 3</li>
+				</ul>
+
+				<h3>Equal List</h3>
+
+				<nav>
+					<ul class="list-equal">
+						<li><a href="#">Page 1</a></li>
+						<li><a href="#">Page 2</a></li>
+						<li><a href="#">Page 3</a></li>
+						<li><a href="#">Page 4</a></li>
+					</ul>
+				</nav>
+			</section>
+
+			<section>
+				<h2>Forms</h2>
+
+				<form>
+					<fieldset>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-2">
+									<label for="username">Username:</label>
+								</div>
+								<div class="col-sm-4">
+									<input id="username" type="text" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-2">
+									<label for="password">Password:</label>
+								</div>
+								<div class="col-sm-4">
+									<input id="password" type="password" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4 col-sm-offset-2">
+									<input type="submit" value="Login">
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+
+				<form>
+					<fieldset>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<label for="firstname">First name:</label>
+									<input id="firstname" type="text" placeholder="Enter first name" />
+								</div>
+								<div class="col-sm-6">
+									<label for="lastname">Last name:</label>
+									<input id="lastname" type="text" placeholder="Enter last name" />
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email address:</label>
+							<input id="email" type="text" />
+						</div>
+
+						<div class="form-group">
+							<label for="comment">Comment:</label>
+							<textarea id="comment"></textarea>
+						</div>
+
+						<div class="form-group">
+							<div class="checkbox">
+								<input id="checkbox-1" type="checkbox" />
+								<label for="checkbox-1">Checkbox 1</label>
+							</div>
+
+							<div class="checkbox">
+								<input id="checkbox-2" type="checkbox" />
+								<label for="checkbox-2">Checkbox 2</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="radio">
+								<input id="radio-1" type="radio" name="radio" />
+								<label for="radio-1">Radio 1</label>
+							</div>
+
+							<div class="radio">
+								<input id="radio-2" type="radio" name="radio" />
+								<label for="radio-2">Radio 2</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="select-1">Select:</label>
+							<div class="select">
+								<select id="select-1">
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+
+			<section>
+				<h2>Buttons</h2>
+				
+				<div class="form-group">
+					<a class="btn" href="#" role="button">Anchor button</a>
+					<button type="submit">Button element</button>
+					<input type="button" value="Button input">
+					<input type="submit" value="Submit input">
+				</div>
+
+				<div class="form-group">
+					<a class="btn-secondary" href="#" role="button">Anchor button</a>
+					<button class="btn-secondary" type="submit">Button element</button>
+					<input class="btn-secondary" type="button" value="Button input">
+					<input class="btn-secondary" type="submit" value="Submit input">
+				</div>
+			</section>
+
+			<section>
+				<h2>Media & Embeds</h2>
+
+				<div class="row">
+					<div class="col col-md-6">
+						<div class="embed-responsive">
+							<iframe src="http://player.vimeo.com/video/82020632?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="col col-md-6">
+						<div class="media">
+							<a class="media-left" href="#">
+								<img src="http://placehold.it/200x130" alt="...">
+							</a>
+							<div class="media-body">
+								<h4 class="media-heading">Media top</h4>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+							</div>
+						</div>
+
+						<div class="media">
+							<a class="media-left" href="#">
+								<img src="http://placehold.it/200x130" alt="...">
+							</a>
+							<div class="media-body media-middle">
+								<h4 class="media-heading">Media middle</h4>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+							</div>
+						</div>
+
+						<div class="media">
+							<a class="media-left" href="#">
+								<img src="http://placehold.it/200x130" alt="...">
+							</a>
+							<div class="media-body media-bottom">
+								<h4 class="media-heading">Media bottom</h4>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Tables</h2>
+
+				<table class="table">
+					<tr>
+						<th>Table Header 1</th>
+						<th>Table Header 2</th>
+						<th>Table Header 3</th>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h2>Grid</h2>
+
+				<div class="col"><span>.col</span></div>
+
+				<div class="row">
+					<div class="col col-sm-8"><span>.col .col-sm-8</span></div>
+					<div class="col col-sm-4"><span>.col .col-sm-4</span></div>
+				</div>
+
+				<div class="row">
+					<div class="col col-sm-4"><span>.col .col-sm-4</span></div>
+					<div class="col col-sm-8"><span>.col .col-sm-8</span></div>
+				</div>
+
+				<div class="row">
+					<div class="col col-sm-6"><span>.col .col-sm-6</span></div>
+					<div class="col col-sm-6"><span>.col .col-sm-6</span></div>
+				</div>
+
+				<div class="row">
+					<div class="col col-sm-4"><span>.col .col-sm-4</span></div>
+					<div class="col col-sm-4"><span>.col .col-sm-4</span></div>
+					<div class="col col-sm-4"><span>.col .col-sm-4</span></div>
+				</div>
+
+				<div class="row">
+					<div class="col col-sm-3"><span>.col .col-sm-3</span></div>
+					<div class="col col-sm-3"><span>.col .col-sm-3</span></div>
+					<div class="col col-sm-3"><span>.col .col-sm-3</span></div>
+					<div class="col col-sm-3"><span>.col .col-sm-3</span></div>
+				</div>
+			</section>
+		</div>
+
+		<script type="text/javascript" src="js/helpers.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-8765653-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>

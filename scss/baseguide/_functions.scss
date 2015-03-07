@@ -1,0 +1,62 @@
+@function assign-inputs($inputs, $pseudo: null) {
+	$list: ();
+
+	@each $input in $inputs {
+		$input: unquote($input);
+		$input: if($pseudo, $input + ':' + $pseudo, $input);
+		$list: append($list, $input, comma);
+	}
+
+	@return $list;
+}
+
+@function pow($number, $exp) {
+	$value: $number;
+
+	@if $exp > 0 {
+		// If the exponent is positive, multiply.
+		@for $i from 2 through $exp {
+			$value: $value * $number;
+		}
+	} @else if $exp < 0 {
+		// If the exponent is negative, divide.
+		@for $i from 0 through -$exp {
+			$value: $value / $number;
+		}
+	} @else {
+		// If the exponent is zero, just return 1.
+		$value: 1;
+	}
+
+	@return $value;
+}
+
+@function modular-scale($number, $base: $type-scale-base) {
+	$size: pow($type-scale, $number) * $base;
+
+	@return $size;
+}
+
+@function to-list($value, $keep: 'both') {
+	$keep: if(index('keys' 'values', $keep), $keep, 'both');
+
+	@if type-of($value) == map {
+		$keys: ();
+		$values: ();
+		
+		@each $key, $val in $value {
+			$keys: append($keys, $key);
+			$values: append($values, $val);
+		}
+
+		@if $keep == 'keys' {
+			@return $keys;
+		} @else if $keep == 'values' {
+			@return $values;
+		} @else {
+			@return zip($keys, $values);
+		}
+	}
+
+	@return if(type-of($value) != list, ($value), $value);
+}

@@ -1,0 +1,349 @@
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	font-weight: bold;
+}
+
+.form-group {
+	margin-bottom: 0.8em;
+	
+	label {
+		padding-top: $input-padding-vertical;
+		padding-bottom: $input-padding-vertical;
+	}
+}
+
+.form-inline {
+	.form-group {
+		display: inline-block;
+		vertical-align: middle;
+		margin-bottom: 0;
+	}
+
+	#{$all-text-inputs},
+	textarea,
+	select,
+	.select,
+	.checkbox,
+	.radio {
+		display: inline-block;
+		vertical-align: middle;
+		width: auto;
+	}
+
+	.checkbox + .checkbox,
+	.radio + .radio {
+		margin-left: 1em;
+	}
+}
+
+
+// Buttons
+.btn,
+%btn,
+#{$all-button-inputs} {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0.2em;
+	padding: $button-padding-vertical $button-padding-horizontal;
+	border: 1px solid transparent;
+	border-radius: $button-border-radius;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	&:hover,
+	&:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+
+	&[disabled="disabled"] {
+		opacity: 0.65;
+		cursor: default;
+		pointer-events: none;
+	}
+}
+
+.btn,
+#{$all-button-inputs} {
+	border-color: $button-border-color;
+	background-color: $button-bg;
+	color: $button-color;
+
+	&:hover,
+	&:focus {
+		background-color: $button-hover-bg;
+		color: $button-hover-color;
+	}
+
+	&:active {
+		background-color: $button-active-bg;
+		color: $button-active-color;
+	}
+}
+
+.btn-secondary {
+	@extend %btn;
+	border-color: $button-secondary-border-color;
+	background-color: $button-secondary-bg;
+	color: $button-secondary-color;
+
+	&:hover,
+	&:focus {
+		background-color: $button-secondary-hover-bg;
+		color: $button-secondary-hover-color;
+	}
+
+	&:active {
+		background-color: $button-secondary-active-bg;
+		color: $button-secondary-active-color;
+	}
+}
+
+
+// Input elements
+#{$all-text-inputs},
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+#{$all-text-inputs},
+textarea,
+select {
+	display: block;
+	width: 100%;
+	height: $input-height;
+	border: 1px solid $input-border-color;
+	border-radius: $input-border-radius;
+	padding: $input-padding-vertical $input-padding-horizontal;
+	background-color: $input-bg;
+	color: $input-color;
+
+	&[disabled="disabled"] {
+		border-color: $input-disabled-border-color;
+		background-color: $input-disabled-bg;
+		color: $input-disabled-color;
+		cursor: not-allowed;
+	}
+}
+
+#{$all-text-inputs-focus},
+textarea:focus,
+select:focus {
+	border-color: $input-focus-border-color;
+	outline: 0;
+}
+
+select[multiple],
+select[size] {
+	height: auto;
+}
+
+textarea {
+	height: auto;
+	resize: vertical;
+}
+
+.checkbox,
+.radio {
+	line-height: 1.45;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	margin-top: 0.3em;
+	line-height: normal;
+
+	+ label {
+		padding: 0;
+		padding-left: 20px;
+		font-weight: normal;
+		cursor: pointer;
+	}
+
+	&[disabled="disabled"] + label {
+		color: $input-disabled-color;
+		cursor: not-allowed;
+	}
+}
+
+input[type="file"] {
+	display: block;
+}
+
+
+// Placeholder
+[placeholder].placeholder {
+	color: $placeholder-color;
+}
+
+[placeholder]::placeholder {
+	color: $placeholder-color;
+	opacity: 1;
+}
+
+
+// Custom form elements
+@if $use-custom-forms {
+	.checkbox input[type="checkbox"]:not(:checked),
+	.checkbox input[type="checkbox"]:checked,
+	.radio input[type="radio"]:not(:checked),
+	.radio input[type="radio"]:checked {
+		opacity: 0;
+		z-index: -1;
+
+		+ label {
+			position: relative;
+			padding-left: 1.4em;
+		}
+
+		+ label:before,
+		+ label:after {
+			content: ' ';
+		}
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		+ label:before,
+		+ label:after {
+			position: absolute;
+			top: 0.2em;
+			left: 0;
+			width: 1em;
+			height: 1em;
+		}
+
+		+ label:before {
+			border: 1px solid $input-border-color;
+			background-color: #fff;
+		}
+
+		&:hover + label:before {
+			border-color: $input-focus-border-color;
+		}
+
+		&:active + label:before {
+			background-color: lighten($input-focus-border-color, 40%);
+		}
+
+		&[disabled="disabled"] + label:before {
+			border-color: $input-disabled-border-color;
+			background-color: $input-disabled-bg;
+		}
+
+		+ label:after {
+			opacity: 0;
+			transition: opacity 0.2s ease;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		&:checked + label:after {
+			opacity: 1;
+		}
+	}
+
+	input[type="radio"] + label:before {
+		border-radius: 1em;
+	}
+
+	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
+	input[type="checkbox"]:checked + label:after {
+		/* autoprefixer: off */
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVChTYyAEGKE0CjA2Ntb4////dGZm5khmqBgcQCX3MzIy6gBpBkZk1f/+/ROASkoA6TW8vLyRTCBJoIDD379/96NLHjx48A8TSCdQ4AZQQgNdEmQl2JGmpqYSIBOAzCvIkigA6BYRe3t7FigXChgYAGONRUtL5Ld6AAAAAElFTkSuQmCC);
+		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6.4%201L5.7%201.7%202.9%204.5%202.1%203.7%201.4%203%200%204.4l0.7%200.7%201.5%201.5%200.7%200.7%200.7-0.7%203.5-3.5%200.7-0.7L6.4%201%206.4%201z%22%2F%3E%3C%2Fsvg%3E');
+	}
+
+	input[type="radio"]:checked + label:after {
+		/* autoprefixer: off */
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=);
+		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23222%22%20d%3D%22M4%201C2.3%201%201%202.3%201%204s1.3%203%203%203%203-1.3%203-3S5.7%201%204%201z%22%2F%3E%3C%2Fsvg%3E');
+	}
+
+
+	.select {
+		position: relative;
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			padding-right: 2em;
+			padding-right: $input-padding-horizontal \9;
+		}
+
+		select::-ms-expand {
+			display: none;
+		}
+
+		select:focus::-ms-value {
+			background: transparent;
+			color: $text-color;
+		}
+
+		&:after {
+			@include triangle(0.8em, $input-color, down);
+			content: ' ';
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			right: $input-padding-horizontal;
+			margin-top: -0.2em;
+			pointer-events: none;
+			display: none \9;
+		}
+	}
+
+	// show custom arrow in IE 10+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		.select:after {
+			display: block;
+		}
+
+		.select select {
+			padding-right: 2em;
+		}
+	}
+
+	// show custom arrow in Firefox 35+
+	@-moz-document url-prefix() {
+		/* autoprefixer: off */
+
+		.select:after {
+			display: none;
+		}
+
+		.select select {
+			padding-right: $input-padding-horizontal;
+		}
+
+		@supports (filter: opacity(1)) {
+			.select:after {
+				display: block;
+			}
+
+			.select select {
+				padding-right: 2em;
+			}
+		}
+	}
+
+	// hide native arrow in Opera
+	x:-o-prefocus, .select:after {
+		display: none;
+	}
+}
