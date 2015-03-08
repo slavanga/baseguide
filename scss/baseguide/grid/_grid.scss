@@ -1,11 +1,11 @@
 .container {
-	@include make-container;
+	@include container;
 }
 
 .row {
-	@include make-row;
+	@include row;
 }
 
 // Generate columns for all breakpoints
-@include make-grid-columns;
+@include make-columns;
 @include make-breakpoints;

@@ -3,7 +3,7 @@
 
 
 // Centered container element
-@mixin make-container($gutter: $grid-gutter) {
+@mixin container($gutter: $grid-gutter) {
 	@include clearfix;
 	margin-right: auto;
 	margin-left: auto;
@@ -11,14 +11,14 @@
 	padding-right: ($gutter / 2);
 }
 
-// Creates a wrapper for a series of columns
-@mixin make-row($gutter: $grid-gutter) {
+// Create a wrapper for a series of columns
+@mixin row($gutter: $grid-gutter) {
 	@include clearfix;
 	margin-left: ($gutter / -2);
 	margin-right: ($gutter / -2);
 }
 
-@mixin make-column-base($gutter: $grid-gutter) {
+@mixin column-base($gutter: $grid-gutter) {
 	position: relative;
 	// Prevent columns from collapsing when empty
 	min-height: 1px;
@@ -27,7 +27,7 @@
 	padding-right: ($gutter / 2);
 }
 
-@mixin make-column($class, $index, $columns: $grid-columns, $gutter: $grid-gutter) {
+@mixin column($class, $index, $columns: $grid-columns, $gutter: $grid-gutter) {
 	@if $class == nth($mq-breakpoints-list, 1) {
 		@if $index > 0 {
 			@include make-column-base($gutter);
@@ -37,7 +37,7 @@
 	} @else {
 		@include mq($class) {
 			@if $index > 0 {
-				@include make-column-base($gutter);
+				@include column-base($gutter);
 				float: left;
 				width: percentage(($index / $columns));
 			}
@@ -45,7 +45,7 @@
 	}
 }
 
-@mixin make-column-push($class, $index, $columns: $grid-columns) {
+@mixin column-push($class, $index, $columns: $grid-columns) {
 	@if $class == nth($mq-breakpoints-list, 1) {
 		@if $index > 0 {
 			left: percentage(($index / $columns));
@@ -67,7 +67,7 @@
 	}
 }
 
-@mixin make-column-pull($class, $index, $columns: $grid-columns) {
+@mixin column-pull($class, $index, $columns: $grid-columns) {
 	@if $class == nth($mq-breakpoints-list, 1) {
 		@if $index > 0 {
 			right: percentage(($index / $columns));
@@ -89,38 +89,13 @@
 	}
 }
 
-@mixin make-column-offset($class, $index, $columns: $grid-columns) {
+@mixin column-offset($class, $index, $columns: $grid-columns) {
 	@if $class == nth($mq-breakpoints-list, 1) {
 		margin-left: percentage(($index / $columns));
 	} @else {
 		@include mq($class) {
 			margin-left: percentage(($index / $columns));
 		}
-	}
-}
-
-@mixin make-grid-columns() {
-	$list: ();
-	
-	@each $class in $mq-breakpoints-list {
-		@for $i from 1 through $grid-columns {
-			$input: '.col-#{$class}-#{$i}';
-			$list: append($list, unquote($input), comma);
-		}
-	}
-
-	#{$list} {
-		@include make-column-base;
-	}
-}
-
-@mixin float-grid-columns($class, $i: 1, $list: '.col-#{$class}-#{$i}') {
-	@for $i from (1 + 1) through $grid-columns {
-		$list: '#{$list}, .col-#{$class}-#{$i}';
-	}
-
-	#{$list} {
-		float: left;
 	}
 }
 
@@ -162,15 +137,40 @@
 	}
 }
 
-// Create grid for specific class
-@mixin calc-grid-columns($class) {
-	@include float-grid-columns($class);
+// Create columns for specific class
+@mixin calc-all-columns($class) {
+	@include float-all-columns($class);
 
 	@for $i from 0 through $grid-columns {
 		@include calc-column($class, $i, width);
 		@include calc-column($class, $i, pull);
 		@include calc-column($class, $i, push);
 		@include calc-column($class, $i, offset);
+	}
+}
+
+@mixin float-all-columns($class, $i: 1, $list: '.col-#{$class}-#{$i}') {
+	@for $i from (1 + 1) through $grid-columns {
+		$list: '#{$list}, .col-#{$class}-#{$i}';
+	}
+
+	#{$list} {
+		float: left;
+	}
+}
+
+@mixin make-columns() {
+	$list: ();
+	
+	@each $class in $mq-breakpoints-list {
+		@for $i from 1 through $grid-columns {
+			$input: '.col-#{$class}-#{$i}';
+			$list: append($list, unquote($input), comma);
+		}
+	}
+
+	#{$list} {
+		@include column-base;
 	}
 }
 
@@ -186,7 +186,7 @@
 		
 		@if $class == nth($mq-breakpoints-list, 1) {
 			// first breakpoint
-			@include calc-grid-columns($class);
+			@include calc-all-columns($class);
 
 			@include mq($until: nth($mq-breakpoints-list, $i + 1)) {
 				.hidden-#{$class} {
@@ -234,7 +234,7 @@
 			}
 
 			@include mq($class) {
-				@include calc-grid-columns($class);
+				@include calc-all-columns($class);
 
 				.hidden-#{$class}-up {
 					display: none !important;
