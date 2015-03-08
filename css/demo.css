@@ -8,7 +8,7 @@ section {
 	border-top: 0.2em solid #eee;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 48em) {
 	section {
 		margin-top: 2.5em;
 		padding-top: 2.5em;
@@ -25,10 +25,10 @@ section {
 	background: #eee;
 }
 
-.row:first-child .col:first-child {
-	margin-top: 0;
-}
-
 .btn-group {
 	word-spacing: 0.3em;
+}
+
+.btn-group > a {
+	word-spacing: normal;
 }
