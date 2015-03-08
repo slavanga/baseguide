@@ -30,7 +30,7 @@
 @mixin column($class, $index, $columns: $grid-columns, $gutter: $grid-gutter) {
 	@if $class == nth($mq-breakpoints-list, 1) {
 		@if $index > 0 {
-			@include make-column-base($gutter);
+			@include column-base($gutter);
 			float: left;
 			width: percentage(($index / $columns));
 		}
