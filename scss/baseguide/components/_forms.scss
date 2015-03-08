@@ -51,15 +51,16 @@ label {
 
 
 // Buttons
-.btn,
-%btn,
-#{$all-button-inputs} {
+.btn {
 	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 0.2em;
 	padding: $button-padding-vertical $button-padding-horizontal;
 	border: 1px solid transparent;
 	border-radius: $button-border-radius;
+	border-color: $button-border-color;
+	background-color: $button-bg;
+	color: $button-color;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
@@ -71,23 +72,6 @@ label {
 	&:focus {
 		outline: 0;
 		text-decoration: none;
-	}
-
-	&[disabled="disabled"] {
-		opacity: 0.65;
-		cursor: default;
-		pointer-events: none;
-	}
-}
-
-.btn,
-#{$all-button-inputs} {
-	border-color: $button-border-color;
-	background-color: $button-bg;
-	color: $button-color;
-
-	&:hover,
-	&:focus {
 		background-color: $button-hover-bg;
 		color: $button-hover-color;
 	}
@@ -95,13 +79,22 @@ label {
 	&:active {
 		background-color: $button-active-bg;
 		color: $button-active-color;
+	}
+
+	&.disabled,
+	&[disabled="disabled"] {
+		opacity: 0.65;
+		cursor: default;
+		pointer-events: none;
+	}
+
 	.form-inline & {
 		margin-bottom: 0;
 	}
 }
 
 .btn-secondary {
-	@extend %btn;
+	@extend .btn;
 	border-color: $button-secondary-border-color;
 	background-color: $button-secondary-bg;
 	color: $button-secondary-color;

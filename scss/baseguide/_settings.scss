@@ -88,9 +88,9 @@ $inputs-list:
 	'input[type="url"]' !default;
 
 $inputs-button-list:
-	'[type="button"]',
-	'[type="reset"]',
-	'[type="submit"]' !default;
+	'input[type="button"]',
+	'input[type="reset"]',
+	'input[type="submit"]' !default;
 
 // Generate variables with a list of all input types that have a text-based input, excluding textarea.
 $all-text-inputs: assign-inputs($inputs-list) !default;
