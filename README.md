@@ -1,13 +1,13 @@
 # [Baseguide](http://basegui.de)
 Baseguide is a lightweight CSS framework for robust and scalable base styles.
 
-### Features
+## Features
 * Bootstrap based grid with extendable breakpoints
 * CSS-only custom form controls
 * Consistent vertical rhythm and modular scale built in
 * Scalable components with em spacing
 
-###Getting started
+##Getting started
 After downloading Baseguide you can edit the main.scss file in the scss folder.
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -19,10 +19,10 @@ $button-bg: #bada55; // 1. Customize default variables
 
 Take a look at the _settings.scss file to get an overview of all variables.
 
-###Grid
+##Grid
 The grid framework is largely based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid). Improvements include the option to define custom breakpoints.
 
-####Breakpoints
+###Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
 
 The default configuration looks like this:
@@ -38,7 +38,7 @@ $mq-breakpoints: (
 
 Baseguide generates all the necessary grid and responsive visibility classes based on these breakpoints.
 
-####Media Queries
+###Media Queries
 Media Queries are handled by [sass-mq] (https://github.com/sass-mq/sass-mq).
 
 ```scss
@@ -58,7 +58,7 @@ The snippet above compiles to the following CSS:
 
 Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/) for more details and advanced usage of media queries.
 
-#####Legacy support
+####Legacy support
 
 To support browsers without native media query support you could use [respond.js] (https://github.com/scottjehl/Respond).
 
@@ -78,7 +78,7 @@ Include the generated CSS file after the rest of your styles.
 <!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
 ```
 
-####Semantic / hybrid grid
+###Semantic / hybrid grid
 Use the grid mixins to create layouts with custom containers, rows, columns and gutters. The example below shows how to create a 15 column grid that has 5 columns starting from the md breakpoint.
 
 ```scss
@@ -107,16 +107,16 @@ Use the grid mixins to create layouts with custom containers, rows, columns and 
 </div>
 ```
 
-### Browser support
+## Browser support
 
-####Autoprefixer
+###Autoprefixer
 Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to automatically add vendor prefixes in the CSS output.
 The browser support of the framework roughly corresponds to the autoprefixer settings:
 ```
 Android 2.3, Android >= 4, last 4 Chrome versions, Firefox ESR, Explorer >= 8, iOS >= 6, Opera >= 12, Safari >= 6
 ```
 
-####Custom forms
+###Custom forms
 The custom forms component is designed with progressive enhancement in mind.
 The controls are functional in all browsers but the following browsers get the fully enhanced experience:
 
@@ -128,7 +128,7 @@ The controls are functional in all browsers but the following browsers get the f
 * Safari 5.1+
 * Opera 15+
 
-###Inspired By…
+##Inspired By…
 * [Article: Styling with STRINGS] (http://simurai.com/blog/2014/05/04/cssconf/)
 * [Bootstrap] (http://getbootstrap.com/)
 * [Bourbon] (http://bourbon.io/)
