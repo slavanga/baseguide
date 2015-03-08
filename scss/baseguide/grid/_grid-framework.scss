@@ -200,6 +200,8 @@
 		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
 			// last breakpoint
 			@include mq($class) {
+				@include calc-all-columns($class);
+
 				.container {
 					width: $width - $grid-gutter;
 				}
