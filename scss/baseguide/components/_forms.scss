@@ -6,6 +6,7 @@ fieldset {
 
 label {
 	display: inline-block;
+	vertical-align: middle;
 	max-width: 100%;
 	font-weight: bold;
 }
@@ -20,6 +21,11 @@ label {
 }
 
 .form-inline {
+	label {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
 	.form-group {
 		display: inline-block;
 		vertical-align: middle;
@@ -89,6 +95,8 @@ label {
 	&:active {
 		background-color: $button-active-bg;
 		color: $button-active-color;
+	.form-inline & {
+		margin-bottom: 0;
 	}
 }
 
