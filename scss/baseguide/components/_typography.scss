@@ -78,14 +78,14 @@ a {
 
 // font antialiasing
 @if $font-antialiased {
-	* {
+	html {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	// disable antialiasing on HiDPI screens
 	@include hidpi {
-		* {
+		html {
 			-webkit-font-smoothing: subpixel-antialiased;
 			-moz-osx-font-smoothing: auto;
 		}
