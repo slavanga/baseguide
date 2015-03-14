@@ -27,76 +27,36 @@
 	padding-right: ($gutter / 2);
 }
 
-@mixin column($class, $index, $columns: $grid-columns, $gutter: $grid-gutter) {
-	@if $class == nth($mq-breakpoints-list, 1) {
-		@if $index > 0 {
-			@include column-base($gutter);
-			float: left;
-			width: percentage(($index / $columns));
-		}
-	} @else {
-		@include mq($class) {
-			@if $index > 0 {
-				@include column-base($gutter);
-				float: left;
-				width: percentage(($index / $columns));
-			}
-		}
+@mixin column($index, $columns: $grid-columns, $gutter: $grid-gutter) {
+	@if $index > 0 {
+		@include column-base($gutter);
+		float: left;
+		width: percentage(($index / $columns));
 	}
 }
 
-@mixin column-push($class, $index, $columns: $grid-columns) {
-	@if $class == nth($mq-breakpoints-list, 1) {
-		@if $index > 0 {
-			left: percentage(($index / $columns));
-		}
+@mixin column-push($index, $columns: $grid-columns) {
+	@if $index > 0 {
+		left: percentage(($index / $columns));
+	}
 
-		@if $index == 0 {
-			left: auto;
-		}
-	} @else {
-		@include mq($class) {
-			@if $index > 0 {
-				left: percentage(($index / $columns));
-			}
-
-			@if $index == 0 {
-				left: auto;
-			}
-		}
+	@if $index == 0 {
+		left: auto;
 	}
 }
 
 @mixin column-pull($class, $index, $columns: $grid-columns) {
-	@if $class == nth($mq-breakpoints-list, 1) {
-		@if $index > 0 {
-			right: percentage(($index / $columns));
-		}
+	@if $index > 0 {
+		right: percentage(($index / $columns));
+	}
 
-		@if $index == 0 {
-			right: auto;
-		}
-	} @else {
-		@include mq($class) {
-			@if $index > 0 {
-				right: percentage(($index / $columns));
-			}
-
-			@if $index == 0 {
-				right: auto;
-			}
-		}
+	@if $index == 0 {
+		right: auto;
 	}
 }
-
+	
 @mixin column-offset($class, $index, $columns: $grid-columns) {
-	@if $class == nth($mq-breakpoints-list, 1) {
-		margin-left: percentage(($index / $columns));
-	} @else {
-		@include mq($class) {
-			margin-left: percentage(($index / $columns));
-		}
-	}
+	margin-left: percentage(($index / $columns));
 }
 
 @mixin calc-column($class, $index, $type) {

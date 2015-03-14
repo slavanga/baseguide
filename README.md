@@ -79,7 +79,7 @@ Include the generated CSS file after the rest of your styles.
 ```
 
 ###Semantic / hybrid grid
-Use the grid mixins to create layouts with custom containers, rows, columns and gutters. The example below shows how to create a 15 column grid that has 5 columns starting from the md breakpoint.
+Use the grid mixins to create layouts with custom containers, rows, columns and gutters. The example below shows how to create a 5 column layout with 15 columns in total.
 
 ```scss
 .news-container {
@@ -91,7 +91,7 @@ Use the grid mixins to create layouts with custom containers, rows, columns and 
 }
 
 .news-item {
-  @include column(md, 3, 15);
+  @include column(3, 15);
 }
 ```
 
@@ -127,6 +127,8 @@ The controls are functional in all browsers but the following browsers get the f
 * Mobile Safari 4+
 * Safari 5.1+
 * Opera 15+
+
+In order to disable custom form styles set the variable ```$use-custom-forms``` to ```false```.
 
 ##Inspired By…
 * [Article: Styling with STRINGS] (http://simurai.com/blog/2014/05/04/cssconf/)
