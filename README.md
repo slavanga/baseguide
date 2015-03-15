@@ -56,7 +56,7 @@ The snippet above compiles to the following CSS:
 }
 ```
 
-Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/) for more details and advanced usage of media queries.
+Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
 ####Legacy support
 
@@ -128,7 +128,7 @@ The controls are functional in all browsers but the following browsers get the f
 * Safari 5.1+
 * Opera 15+
 
-In order to disable custom form styles set the variable ```$use-custom-forms``` to ```false```.
+You can set the variable ```$use-custom-forms``` to ```false``` to disable custom form styles in all browsers.
 
 ##Inspired By…
 * [Article: Styling with STRINGS] (http://simurai.com/blog/2014/05/04/cssconf/)
