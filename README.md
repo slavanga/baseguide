@@ -17,7 +17,7 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-Take a look at the _settings.scss file to get an overview of all variables.
+Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/gh-pages/scss/baseguide/_functions.scss) file to get an overview of all variables.
 
 ##Grid
 The grid framework is largely based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid). Improvements include the option to define custom breakpoints.
@@ -42,7 +42,7 @@ Baseguide generates all the necessary grid and responsive visibility classes bas
 Media Queries are handled by [sass-mq] (https://github.com/sass-mq/sass-mq).
 
 ```scss
-// include the media query mixin and pass the breakpoint name
+// include the media query mixin and pass the breakpoint key
 @include mq(md) {
 	
 }
@@ -62,8 +62,7 @@ Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/#mixin-m
 
 To support browsers without native media query support you could use [respond.js] (https://github.com/scottjehl/Respond).
 
-A CSS-only solution can be achieved by setting ```$mq-responsive``` to ```false```.
-The idea is to generate an additional stylesheet where all styles are moved outside of the media queries.
+A static solution without Javascript can be achieved by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
 
 ```scss
 // oldie.scss
@@ -73,7 +72,7 @@ $mq-static-breakpoint: lg;
 @import 'main';
 ```
 
-Include the generated CSS file after the rest of your styles.
+Include the generated CSS file after the rest of your styles to serve a fixed width layout to legacy browsers.
 ```html
 <!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
 ```
