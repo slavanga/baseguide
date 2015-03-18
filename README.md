@@ -17,7 +17,7 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/gh-pages/scss/baseguide/_functions.scss) file to get an overview of all variables.
+Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/gh-pages/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ##Grid
 The grid framework is largely based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid). Improvements include the option to define custom breakpoints.
