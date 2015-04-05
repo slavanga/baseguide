@@ -98,25 +98,20 @@
 
 
 // text helpers
-.text-hide {
-	display: block;
-	overflow: hidden;
-	border: 0;
-	direction: ltr;
-	text-align: left;
-	text-indent: -999em;
-	background-color: transparent;
-	background-repeat: no-repeat;
-}
-
 .text-center {
 	text-align: center;
 }
 
-.text-truncate {
+.text-hide {
+	text-indent: 110%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.text-truncate {
 	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 
