@@ -45,7 +45,7 @@
 	}
 }
 
-@mixin column-pull($class, $index, $columns: $grid-columns) {
+@mixin column-pull($index, $columns: $grid-columns) {
 	@if $index > 0 {
 		right: percentage(($index / $columns));
 	}
@@ -55,7 +55,7 @@
 	}
 }
 	
-@mixin column-offset($class, $index, $columns: $grid-columns) {
+@mixin column-offset($index, $columns: $grid-columns) {
 	margin-left: percentage(($index / $columns));
 }
 
