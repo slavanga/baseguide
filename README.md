@@ -1,7 +1,7 @@
 # [Baseguide](http://basegui.de)
-Baseguide is a lightweight CSS framework for robust and scalable base styles.
+Baseguide is a lightweight and robust CSS framework powered by Sass.
 
-## Features
+##Features
 * Bootstrap based grid with extendable breakpoints
 * CSS-only custom form controls
 * Consistent vertical rhythm and modular scale built in
@@ -62,7 +62,7 @@ Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/#mixin-m
 
 To support browsers without native media query support you could use [respond.js] (https://github.com/scottjehl/Respond).
 
-A static solution without Javascript can be achieved by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
+A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
 
 ```scss
 // oldie.scss
@@ -78,7 +78,27 @@ Include the generated CSS file after the rest of your styles to serve a fixed wi
 ```
 
 ###Semantic / hybrid grid
-Use the grid mixins to create layouts with custom containers, rows, columns and gutters. The example below shows how to create a 5 column layout with 15 columns in total.
+The grid mixins are very powerful. Use them to create layouts with custom containers, rows and columns.
+
+
+```scss
+// $gutter: grid gutter in pixels, defaults to $grid-gutter
+@include container($gutter);
+@include row($gutter);
+
+// $index: an integer, the number of columns
+// $columns: an integer, the number of columns in total, defaults to $grid-columns
+// $gutter: grid gutter in pixels, defaults to $grid-gutter
+@include column($index, $columns, $gutter);
+
+// $index: an integer, the number of columns
+// $columns: an integer, the number of columns in total, defaults to $grid-columns
+@include column-push($index, $columns);
+@include column-pull($index, $columns);
+@include column-offset($index, $columns);
+```
+
+The example below shows how to create a 5 column layout with 15 columns in total.
 
 ```scss
 .news-container {
@@ -106,18 +126,20 @@ Use the grid mixins to create layouts with custom containers, rows, columns and 
 </div>
 ```
 
-## Browser support
+##Forms
 
-###Autoprefixer
-Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to automatically add vendor prefixes in the CSS output.
-The browser support of the framework roughly corresponds to the autoprefixer settings:
-```
-Android 2.3, Android >= 4, last 4 Chrome versions, Firefox ESR, Explorer >= 8, iOS >= 6, Opera >= 12, Safari >= 6
+###Buttons
+Use the extend directive to create custom buttons based on the primary button.
+
+```scss
+.btn-order {
+  @extend .btn;
+}
 ```
 
-###Custom forms
-The custom forms component is designed with progressive enhancement in mind.
-The controls are functional in all browsers but the following browsers get the fully enhanced experience:
+###Custom forms controls
+The custom forms component was designed with progressive enhancement in mind.
+While the controls are functional in all browsers the following ones get the fully enhanced experience:
 
 * Android 2.3+
 * Chrome
@@ -128,6 +150,15 @@ The controls are functional in all browsers but the following browsers get the f
 * Opera 15+
 
 You can set the variable ```$use-custom-forms``` to ```false``` to disable custom form styles in all browsers.
+
+##Browser support
+
+###Autoprefixer
+Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to automatically add vendor prefixes in the CSS output.
+The browser support of the framework roughly corresponds to the autoprefixer settings:
+```
+Android 2.3, Android >= 4, last 4 Chrome versions, Firefox ESR, Explorer >= 8, iOS >= 6, Opera >= 12, Safari >= 6
+```
 
 ##Inspired By…
 * [Article: Styling with STRINGS] (http://simurai.com/blog/2014/05/04/cssconf/)
