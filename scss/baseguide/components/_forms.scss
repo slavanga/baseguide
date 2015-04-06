@@ -6,7 +6,6 @@ fieldset {
 
 label {
 	display: inline-block;
-	vertical-align: middle;
 	max-width: 100%;
 	font-weight: bold;
 }
@@ -22,6 +21,7 @@ label {
 
 .form-inline {
 	label {
+		vertical-align: middle;
 		padding-top: 0;
 		padding-bottom: 0;
 	}
