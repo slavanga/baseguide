@@ -1,17 +1,32 @@
 body {
-	margin: 20px 0;
+	margin-bottom: 30px;
 }
 
 section {
-	margin-top: 1.5em;
-	padding-top: 1.5em;
-	border-top: 0.2em solid #eee;
+	margin-top: 15px;
+	padding-top: 15px;
+	border-top: 0.2em solid #efefef;
+}
+
+section:first-child {
+	margin-top: 0;
+	border-top: 0;
+}
+
+.intro {
+	padding-bottom: 15px;
+	border-bottom: 1px solid #efefef;
+	background: #f7f7f7;
 }
 
 @media (min-width: 48em) {
 	section {
-		margin-top: 2.5em;
-		padding-top: 2.5em;
+		margin-top: 30px;
+		padding-top: 30px;
+	}
+
+	.intro {
+		padding-bottom: 30px;
 	}
 }
 
@@ -22,7 +37,7 @@ section {
 .col > span {
 	display: block;
 	padding: 1em;
-	background: #eee;
+	background: #efefef;
 }
 
 .btn-group {
