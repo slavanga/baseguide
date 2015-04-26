@@ -63,7 +63,7 @@
 				<h2>List Types</h2>
 
 				<div class="row">
-					<div class="col col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-4">
 						<h3>Unstyled List</h3>
 						<ul class="list-unstyled">
 							<li>Item 1</li>
@@ -74,7 +74,7 @@
 						</ul>
 					</div>
 
-					<div class="col col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-4">
 						<h3>Unordered List</h3>
 						<ul>
 							<li>Item 1</li>
@@ -88,7 +88,7 @@
 						</ul>
 					</div>
 
-					<div class="col col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-4">
 						<h3>Ordered List</h3>
 						<ol>
 							<li>Item</li>
@@ -127,93 +127,89 @@
 				<h2>Forms</h2>
 
 				<form>
-					<fieldset>
-						<div class="row form-group">
-							<div class="col-sm-2">
-								<label for="username">Username:</label>
-							</div>
-							<div class="col-sm-4">
-								<input id="username" type="text" />
-							</div>
+					<div class="row form-group">
+						<div class="col-sm-2">
+							<label for="username">Username:</label>
 						</div>
-						<div class="row form-group">
-							<div class="col-sm-2">
-								<label for="password">Password:</label>
-							</div>
-							<div class="col-sm-4">
-								<input id="password" type="password" />
-							</div>
+						<div class="col-sm-4">
+							<input id="username" type="text" />
 						</div>
-						<div class="row form-group">
-							<div class="col-sm-4 col-sm-offset-2">
-								<input class="btn" type="submit" value="Login">
-							</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-2">
+							<label for="password">Password:</label>
 						</div>
-					</fieldset>
+						<div class="col-sm-4">
+							<input id="password" type="password" />
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-4 col-sm-offset-2">
+							<input class="btn" type="submit" value="Login">
+						</div>
+					</div>
 				</form>
 
 				<form>
-					<fieldset>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="firstname">First name:</label>
-									<input id="firstname" type="text" placeholder="Enter first name" />
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="lastname">Last name:</label>
-									<input id="lastname" type="text" placeholder="Enter last name" />
-								</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="firstname">First name:</label>
+								<input id="firstname" type="text" placeholder="Enter first name" />
 							</div>
 						</div>
-
-						<div class="form-group">
-							<label for="email">Email address:</label>
-							<input id="email" type="text" />
-						</div>
-
-						<div class="form-group">
-							<label for="comment">Comment:</label>
-							<textarea id="comment"></textarea>
-						</div>
-
-						<div class="form-group">
-							<div class="checkbox">
-								<input id="checkbox-1" type="checkbox" />
-								<label for="checkbox-1">Checkbox 1</label>
-							</div>
-
-							<div class="checkbox">
-								<input id="checkbox-2" type="checkbox" />
-								<label for="checkbox-2">Checkbox 2</label>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="lastname">Last name:</label>
+								<input id="lastname" type="text" placeholder="Enter last name" />
 							</div>
 						</div>
+					</div>
 
-						<div class="form-group">
-							<div class="radio">
-								<input id="radio-1" type="radio" name="radio" />
-								<label for="radio-1">Radio 1</label>
-							</div>
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input id="email" type="text" />
+					</div>
 
-							<div class="radio">
-								<input id="radio-2" type="radio" name="radio" />
-								<label for="radio-2">Radio 2</label>
-							</div>
+					<div class="form-group">
+						<label for="comment">Comment:</label>
+						<textarea id="comment"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="select-1">Select:</label>
+						<div class="select">
+							<select id="select-1">
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox">
+							<input id="checkbox-1" type="checkbox" />
+							<label for="checkbox-1">Checkbox 1</label>
 						</div>
 
-						<div class="form-group">
-							<label for="select-1">Select:</label>
-							<div class="select">
-								<select id="select-1">
-									<option>Option 1</option>
-									<option>Option 2</option>
-									<option>Option 3</option>
-								</select>
-							</div>
+						<div class="checkbox">
+							<input id="checkbox-2" type="checkbox" />
+							<label for="checkbox-2">Checkbox 2</label>
 						</div>
-					</fieldset>
+					</div>
+
+					<div class="form-group">
+						<div class="radio">
+							<input id="radio-1" type="radio" name="radio" />
+							<label for="radio-1">Radio 1</label>
+						</div>
+
+						<div class="radio">
+							<input id="radio-2" type="radio" name="radio" />
+							<label for="radio-2">Radio 2</label>
+						</div>
+					</div>
 				</form>
 			</section>
 
@@ -236,15 +232,15 @@
 			</section>
 
 			<section>
-				<h2>Media & Embeds</h2>
+				<h2>Embeds and Media</h2>
 
 				<div class="row">
-					<div class="col col-md-6">
-						<div class="embed-responsive">
+					<div class="col-md-6">
+						<div class="media embed-responsive">
 							<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/E1oZhEIrer4?rel=0" allowfullscreen></iframe>
 						</div>
 					</div>
-					<div class="col col-md-6">
+					<div class="col-md-6">
 						<div class="media">
 							<a class="media-left" href="#">
 								<img src="http://placehold.it/200x130" alt="...">

@@ -64,11 +64,7 @@
 
 // media object
 .media {
-	margin-top: 1em;
-
-	&:first-child {
-		margin-top: 0;
-	}
+	margin-bottom: $spacing-base;
 }
 
 .media-left,

@@ -7,6 +7,10 @@ video {
 	vertical-align: middle;
 }
 
+figure {
+	margin: 0;
+}
+
 address,
 blockquote,
 table,
@@ -17,9 +21,10 @@ pre,
 dl,
 ul,
 ol,
+hr,
 p {
 	margin-top: 0;
-	margin-bottom: 1em;
+	margin-bottom: $spacing-base;
 }
 
 nav,

@@ -1,7 +1,3 @@
-body {
-	margin-bottom: 30px;
-}
-
 section {
 	margin-top: 15px;
 	padding-top: 15px;
@@ -31,13 +27,18 @@ section:first-child {
 }
 
 .col {
-	margin-top: 20px;
+	margin-bottom: 1.45em;
 }
 
 .col > span {
 	display: block;
 	padding: 1em;
 	background: #efefef;
+}
+
+.form-group > .btn,
+.form-group > .btn-secondary {
+	margin-bottom: 0.2em;
 }
 
 .btn-group {

@@ -11,7 +11,7 @@ label {
 }
 
 .form-group {
-	margin-bottom: 0.8em;
+	margin-bottom: 0.7em;
 	
 	label {
 		padding-top: $input-padding-vertical;
@@ -54,7 +54,6 @@ label {
 .btn {
 	display: inline-block;
 	vertical-align: middle;
-	margin-bottom: 0.2em;
 	padding: $button-padding-vertical $button-padding-horizontal;
 	border: 1px solid transparent;
 	border-radius: $button-border-radius;
@@ -165,7 +164,7 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
 	position: absolute;
-	margin-top: 0.3em;
+	margin-top: 0.25em;
 	line-height: normal;
 
 	+ label {
@@ -222,7 +221,7 @@ input[type="file"] {
 		+ label:before,
 		+ label:after {
 			position: absolute;
-			top: 0.2em;
+			top: 0.1875em;
 			left: 0;
 			width: 1em;
 			height: 1em;
