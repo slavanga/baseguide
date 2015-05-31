@@ -8,7 +8,7 @@ Baseguide is a lightweight and robust CSS framework powered by Sass.
 * Scalable components with em spacing
 
 ##Getting started
-After downloading Baseguide you can edit the main.scss file in the scss folder.
+After downloading Baseguide you can import the framework in your SCSS file.
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
 
@@ -17,7 +17,7 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/gh-pages/scss/baseguide/_settings.scss) file to get an overview of all variables.
+Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ##Grid
 The grid framework is largely based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid). Improvements include the option to define custom breakpoints.
