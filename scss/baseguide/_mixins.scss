@@ -26,7 +26,7 @@
 
 	@if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
 		$width: $width / 2;
-		$height: if(length($size) > 1, $height, $height/2);
+		$height: if(length($size) > 1, $height, $height / 2);
 
 		@if $direction == up {
 			border-bottom: $height solid $foreground-color;
@@ -92,13 +92,8 @@
 }
 
 // target HiDPI screens
-@mixin hidpi($ratio: 1.3) {
-	@media
-	(-webkit-min-device-pixel-ratio: $ratio),
-	(min--moz-device-pixel-ratio: $ratio),
-	(-o-min-device-pixel-ratio: #{$ratio}/1),
-	(min-resolution: round($ratio * 96dpi)),
-	(min-resolution: $ratio * 1dppx) {
+@mixin hidpi($ratio: 1.5) {
+	@media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
 		@content;
 	}
 }

@@ -11,24 +11,21 @@
 }
 
 @function pow($number, $exp) {
-	$value: $number;
+	$return: $number;
 
 	@if $exp > 0 {
-		// If the exponent is positive, multiply.
-		@for $i from 2 through $exp {
-			$value: $value * $number;
-		}
-	} @else if $exp < 0 {
-		// If the exponent is negative, divide.
-		@for $i from 0 through -$exp {
-			$value: $value / $number;
+		// If the exponent is positive then multiply it
+		@for $i from 1 to $exp {
+			$return: $return * $number;
 		}
 	} @else {
-		// If the exponent is zero, just return 1.
-		$value: 1;
+		// If the number is 0 or negative then divide it
+		@for $i from (-1 + 1) to (abs($exp) + 1) {
+			$return: $return / $number;
+		}
 	}
 
-	@return $value;
+	@return $return;
 }
 
 @function modular-scale($number, $base: $type-scale-base) {

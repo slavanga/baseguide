@@ -81,7 +81,7 @@ label {
 	}
 
 	&.disabled,
-	&[disabled="disabled"] {
+	&[disabled] {
 		opacity: 0.65;
 		cursor: default;
 		pointer-events: none;
@@ -131,7 +131,7 @@ select {
 	background-color: $input-bg;
 	color: $input-color;
 
-	&[disabled="disabled"] {
+	&[disabled] {
 		border-color: $input-disabled-border-color;
 		background-color: $input-disabled-bg;
 		color: $input-disabled-color;
@@ -174,7 +174,7 @@ input[type="checkbox"] {
 		cursor: pointer;
 	}
 
-	&[disabled="disabled"] + label {
+	&[disabled] + label {
 		color: $input-disabled-color;
 		cursor: not-allowed;
 	}
@@ -240,7 +240,7 @@ input[type="file"] {
 			background-color: lighten($input-focus-border-color, 40%);
 		}
 
-		&[disabled="disabled"] + label:before {
+		&[disabled] + label:before {
 			border-color: $input-disabled-border-color;
 			background-color: $input-disabled-bg;
 		}
