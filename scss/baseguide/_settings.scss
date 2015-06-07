@@ -107,6 +107,7 @@ $all-button-inputs-active: assign-inputs($inputs-button-list, active) !default;
 
 
 // Grid Settings
+$grid-columns-output: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 

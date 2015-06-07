@@ -99,13 +99,15 @@
 
 // Create columns for specific class
 @mixin calc-all-columns($class) {
-	@include float-all-columns($class);
+	@if $grid-columns-output {
+		@include float-all-columns($class);
 
-	@for $i from 0 through $grid-columns {
-		@include calc-column($class, $i, width);
-		@include calc-column($class, $i, pull);
-		@include calc-column($class, $i, push);
-		@include calc-column($class, $i, offset);
+		@for $i from 0 through $grid-columns {
+			@include calc-column($class, $i, width);
+			@include calc-column($class, $i, pull);
+			@include calc-column($class, $i, push);
+			@include calc-column($class, $i, offset);
+		}
 	}
 }
 
@@ -120,17 +122,19 @@
 }
 
 @mixin make-columns() {
-	$list: ();
-	
-	@each $class in $mq-breakpoints-list {
-		@for $i from 1 through $grid-columns {
-			$input: '.col-#{$class}-#{$i}';
-			$list: append($list, unquote($input), comma);
+	@if $grid-columns-output {
+		$list: ();
+		
+		@each $class in $mq-breakpoints-list {
+			@for $i from 1 through $grid-columns {
+				$input: '.col-#{$class}-#{$i}';
+				$list: append($list, unquote($input), comma);
+			}
 		}
-	}
 
-	#{$list} {
-		@include column-base;
+		#{$list} {
+			@include column-base;
+		}
 	}
 }
 

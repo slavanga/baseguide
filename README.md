@@ -78,7 +78,7 @@ Include the generated CSS file after the rest of your styles to serve a fixed wi
 ```
 
 ###Semantic / hybrid grid
-The grid mixins are very powerful. Use them to create layouts with custom containers, rows and columns.
+The grid mixins are very powerful. Use them to create layouts with custom containers, rows and columns. If you use the mixins you might want to turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
 
 
 ```scss
