@@ -2026,16 +2026,11 @@ x:-o-prefocus, .select:after {
 
 .table {
   width: 100%;
+  max-width: 100%;
 }
 .table th, .table td {
   padding: 0.6em 0.4em;
   border-bottom: 1px solid #b6b6b6;
-}
-.table th:first-child, .table td:first-child {
-  padding-left: 0;
-}
-.table th:last-child, .table td:last-child {
-  padding-right: 0;
 }
 .table th {
   text-align: left;

@@ -1,17 +1,10 @@
 .table {
 	width: 100%;
+	max-width: 100%;
 
 	th, td {
 		padding: $table-padding-vertical $table-padding-horizontal;
 		border-bottom: 1px solid $table-border-color;
-
-		&:first-child {
-			padding-left: 0;
-		}
-
-		&:last-child {
-			padding-right: 0;
-		}
 	}
 
 	th {
