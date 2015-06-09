@@ -14,19 +14,23 @@
 	@include list-unstyled;
 }
 
-.list-inline {
+@mixin list-inline($spacing: 1em) {
 	@include list-unstyled;
 	@include clearfix;
-	margin-left: -1em;
+	margin-left: -$spacing;
 
 	> li {
 		float: left;
-		margin-left: 1em;
+		margin-left: $spacing;
 	}
 
 	> li > a {
 		display: block;
 	}
+}
+
+.list-inline {
+	@include list-inline;
 }
 
 .list-equal {
