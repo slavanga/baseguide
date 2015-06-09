@@ -33,7 +33,6 @@ label {
 	}
 
 	#{$all-text-inputs},
-	textarea,
 	select,
 	.select,
 	.checkbox,
@@ -112,15 +111,13 @@ label {
 
 
 // Input elements
-#{$all-text-inputs},
-textarea {
+#{$all-text-inputs} {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 }
 
 #{$all-text-inputs},
-textarea,
 select {
 	display: block;
 	width: 100%;
@@ -140,7 +137,6 @@ select {
 }
 
 #{$all-text-inputs-focus},
-textarea:focus,
 select:focus {
 	border-color: $input-focus-border-color;
 	outline: 0;

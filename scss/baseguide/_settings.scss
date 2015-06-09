@@ -86,24 +86,25 @@ $inputs-list:
 	'input[type="search"]',
 	'input[type="tel"]',
 	'input[type="text"]',
-	'input[type="url"]' !default;
+	'input[type="url"]',
+	'textarea' !default;
 
-$inputs-button-list:
+$buttons-list:
 	'input[type="button"]',
 	'input[type="reset"]',
 	'input[type="submit"]' !default;
 
-// Generate variables with a list of all input types that have a text-based input, excluding textarea.
+// Generate variables with a list of all input types that have a text-based input.
 $all-text-inputs: assign-inputs($inputs-list) !default;
 $all-text-inputs-hover: assign-inputs($inputs-list, hover) !default;
 $all-text-inputs-focus: assign-inputs($inputs-list, focus) !default;
 $all-text-inputs-active: assign-inputs($inputs-list, active) !default;
 
 // Generate variables with a list of all input types that have a button-based input.
-$all-button-inputs: assign-inputs($inputs-button-list) !default;
-$all-button-inputs-hover: assign-inputs($inputs-button-list, hover) !default;
-$all-button-inputs-focus: assign-inputs($inputs-button-list, focus) !default;
-$all-button-inputs-active: assign-inputs($inputs-button-list, active) !default;
+$all-button-inputs: assign-inputs($buttons-list) !default;
+$all-button-inputs-hover: assign-inputs($buttons-list, hover) !default;
+$all-button-inputs-focus: assign-inputs($buttons-list, focus) !default;
+$all-button-inputs-active: assign-inputs($buttons-list, active) !default;
 
 
 // Grid Settings

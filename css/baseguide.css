@@ -1710,8 +1710,7 @@ label {
   vertical-align: middle;
   margin-bottom: 0;
 }
-.form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"],
-.form-inline textarea,
+.form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"], .form-inline textarea,
 .form-inline select,
 .form-inline .select,
 .form-inline .checkbox,
@@ -1778,15 +1777,13 @@ label {
   color: #fff;
 }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"],
-textarea {
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"],
-textarea,
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea,
 select {
   display: block;
   width: 100%;
@@ -1797,8 +1794,7 @@ select {
   background-color: #fff;
   color: #333;
 }
-input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled],
-textarea[disabled],
+input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled],
 select[disabled] {
   border-color: #ccc;
   background-color: #eee;
@@ -1806,8 +1802,7 @@ select[disabled] {
   cursor: not-allowed;
 }
 
-input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus,
-textarea:focus,
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus,
 select:focus {
   border-color: #838383;
   outline: 0;
