@@ -143,22 +143,25 @@
 	$i: 1;
 
 	@each $class, $width in $mq-breakpoints {
-
-		.visible-#{$class} {
-			display: none !important;
+		@if length($mq-breakpoints-list) > 1 {
+			.visible-#{$class} {
+				display: none !important;
+			}
 		}
 		
 		@if $class == nth($mq-breakpoints-list, 1) {
 			// first breakpoint
 			@include calc-all-columns($class);
 
-			@include mq($until: nth($mq-breakpoints-list, $i + 1)) {
-				.hidden-#{$class} {
-					display: none !important;
-				}
+			@if length($mq-breakpoints-list) > 1 {
+				@include mq($until: nth($mq-breakpoints-list, $i + 1)) {
+					.hidden-#{$class} {
+						display: none !important;
+					}
 
-				.visible-#{$class} {
-					display: block !important;
+					.visible-#{$class} {
+						display: block !important;
+					}
 				}
 			}
 		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
