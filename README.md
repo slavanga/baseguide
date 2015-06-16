@@ -2,7 +2,7 @@
 Baseguide is a lightweight and robust CSS framework powered by Sass.
 
 ##Features
-* Bootstrap based grid with extendable breakpoints
+* Bootstrap based grid system with extendable breakpoints
 * CSS-only custom form controls
 * Consistent vertical rhythm and modular scale built in
 * Scalable components with em spacing
