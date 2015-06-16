@@ -1731,6 +1731,7 @@ label {
   border: 1px solid transparent;
   border-radius: 0;
   border-color: transparent;
+  background-image: none;
   background-color: #448aff;
   color: #fff;
   text-align: center;

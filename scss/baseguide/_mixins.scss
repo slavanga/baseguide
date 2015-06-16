@@ -63,6 +63,15 @@
 	}
 }
 
+// beautiful underline
+@mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
+	text-decoration: none;
+	background-repeat: repeat-x;
+	background-position: 0 $distance;
+	background-size: 1px $size;
+	background-image: linear-gradient(to bottom, $color 50%, $color 50%);
+}
+
 // target HiDPI screens
 @mixin hidpi($ratio: 1.5) {
 	@media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
