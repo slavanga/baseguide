@@ -1,5 +1,5 @@
 # [Baseguide](http://basegui.de)
-Baseguide is a lightweight and robust CSS framework powered by Sass.
+Baseguide is a lightweight and robust CSS framework powered by Sass. It brings together all essential base components in a small yet powerful package.
 
 ##Features
 * Bootstrap based grid system with extendable breakpoints
@@ -39,7 +39,7 @@ $mq-breakpoints: (
 Baseguide generates all the necessary grid and responsive visibility classes based on these breakpoints.
 
 ###Media Queries
-Media Queries are handled by [sass-mq] (https://github.com/sass-mq/sass-mq).
+Media Queries are handled by [Sass MQ] (https://github.com/sass-mq/sass-mq).
 
 ```scss
 // include the media query mixin and pass the breakpoint key
@@ -56,7 +56,7 @@ The snippet above compiles to the following CSS:
 }
 ```
 
-Check out the [sass-mq documentation] (http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
+Check out the [Sass MQ documentation] (http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
 ####Legacy support
 
@@ -137,7 +137,7 @@ Use the extend directive to create custom buttons based on the primary button.
 }
 ```
 
-###Custom forms controls
+###Custom form controls
 The custom forms component was designed with progressive enhancement in mind.
 While the controls are functional in all browsers the following ones get the fully enhanced experience:
 

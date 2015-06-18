@@ -24,6 +24,10 @@ section:first-child {
 	.intro {
 		padding-bottom: 30px;
 	}
+
+	.intro p {
+		font-size: 1.125em;
+	}
 }
 
 .col {
