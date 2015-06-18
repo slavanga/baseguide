@@ -1794,6 +1794,9 @@ select {
   padding: 0.3em 0.6em;
   background-color: #fff;
   color: #333;
+  -webkit-transition: border-color 0.15s ease-in-out;
+       -o-transition: border-color 0.15s ease-in-out;
+          transition: border-color 0.15s ease-in-out;
 }
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled],
 select[disabled] {
@@ -1927,9 +1930,9 @@ input[type="radio"][disabled] + label:before {
 input[type="checkbox"] + label:after,
 input[type="radio"] + label:after {
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease;
-       -o-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.15s ease-in-out;
+       -o-transition: opacity 0.15s ease-in-out;
+          transition: opacity 0.15s ease-in-out;
   background-repeat: no-repeat;
   background-position: center center;
 }

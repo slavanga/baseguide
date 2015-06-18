@@ -128,6 +128,7 @@ select {
 	padding: $input-padding-vertical $input-padding-horizontal;
 	background-color: $input-bg;
 	color: $input-color;
+	transition: border-color 0.15s ease-in-out;
 
 	&[disabled] {
 		border-color: $input-disabled-border-color;
@@ -244,7 +245,7 @@ input[type="file"] {
 
 		+ label:after {
 			opacity: 0;
-			transition: opacity 0.2s ease;
+			transition: opacity 0.15s ease-in-out;
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
