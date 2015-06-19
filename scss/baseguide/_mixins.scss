@@ -1,5 +1,5 @@
 // clearfix
-@mixin clearfix() {
+@mixin clearfix {
 	*zoom: 1;
 
 	&:before,
@@ -12,6 +12,84 @@
 		clear: both;
 	}
 }
+
+
+// lists
+@mixin list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+
+@mixin list-inline($spacing: 1em) {
+	@include list-unstyled;
+	@include clearfix;
+	margin-left: -$spacing;
+
+	> li {
+		float: left;
+		margin-left: $spacing;
+	}
+
+	> li > a {
+		display: block;
+	}
+}
+
+@mixin list-equal {
+	@include list-unstyled;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+
+	> li {
+		display: table-cell;
+		text-align: center;
+	}
+
+	> li > a {
+		display: block;
+	}
+}
+
+
+// text helpers
+@mixin text-hide {
+	text-indent: 110%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin text-truncate {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+// visibility helpers
+@mixin sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+@mixin sr-only-focusable {
+	&:active,
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
+}
+
 
 // triangle mixin from bourbon
 @mixin triangle($size, $color, $direction) {
@@ -63,6 +141,7 @@
 	}
 }
 
+
 // beautiful underline
 @mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
 	text-decoration: none;
@@ -71,6 +150,7 @@
 	background-size: 1px $size;
 	background-image: linear-gradient(to bottom, $color 50%, $color 50%);
 }
+
 
 // target HiDPI screens
 @mixin hidpi($ratio: 1.5) {

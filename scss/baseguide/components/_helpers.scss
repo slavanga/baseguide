@@ -5,28 +5,8 @@
 
 
 // lists
-@mixin list-unstyled {
-	padding-left: 0;
-	list-style: none;
-}
-
 .list-unstyled {
 	@include list-unstyled;
-}
-
-@mixin list-inline($spacing: 1em) {
-	@include list-unstyled;
-	@include clearfix;
-	margin-left: -$spacing;
-
-	> li {
-		float: left;
-		margin-left: $spacing;
-	}
-
-	> li > a {
-		display: block;
-	}
 }
 
 .list-inline {
@@ -34,19 +14,7 @@
 }
 
 .list-equal {
-	@include list-unstyled;
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-
-	> li {
-		display: table-cell;
-		text-align: center;
-	}
-
-	> li > a {
-		display: block;
-	}
+	@include list-equal;
 }
 
 
@@ -103,38 +71,21 @@
 }
 
 .text-hide {
-	text-indent: 110%;
-	white-space: nowrap;
-	overflow: hidden;
+	@include text-hide;
 }
 
 .text-truncate {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+	@include text-truncate;
 }
 
 
 // display and visibility helpers
 .sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+	@include sr-only;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-	position: static;
-	width: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	clip: auto;
+.sr-only-focusable {
+	@include sr-only-focusable;
 }
 
 .invisible {
