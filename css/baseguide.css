@@ -2029,9 +2029,14 @@ x:-o-prefocus, .select:after {
 .table th, .table td {
   padding: 0.6em 0.4em;
   border-bottom: 1px solid #b6b6b6;
+  vertical-align: top;
 }
 .table th {
   text-align: left;
+}
+.table thead th {
+  border-bottom-width: 2px;
+  vertical-align: bottom;
 }
 
 audio,

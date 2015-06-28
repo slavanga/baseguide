@@ -5,9 +5,15 @@
 	th, td {
 		padding: $table-padding-vertical $table-padding-horizontal;
 		border-bottom: 1px solid $table-border-color;
+		vertical-align: top;
 	}
 
 	th {
 		text-align: left;
+	}
+
+	thead th {
+		border-bottom-width: 2px;
+		vertical-align: bottom;
 	}
 }
