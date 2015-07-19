@@ -170,7 +170,7 @@
 				@include calc-all-columns($class);
 
 				.container {
-					width: $width - $grid-gutter;
+					max-width: $width - $grid-gutter;
 				}
 
 				.hidden-#{$class} {

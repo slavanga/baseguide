@@ -1337,7 +1337,7 @@ th {
   }
 
   .container {
-    width: 1170px;
+    max-width: 1170px;
   }
 
   .hidden-lg {
