@@ -57,6 +57,8 @@
 	text-indent: 110%;
 	white-space: nowrap;
 	overflow: hidden;
+	color: transparent;
+	text-shadow: none;
 }
 
 @mixin text-truncate {
