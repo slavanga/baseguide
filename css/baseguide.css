@@ -1351,7 +1351,9 @@ th {
 @media print {
   *,
   *:before,
-  *:after {
+  *:after,
+  *:first-letter,
+  *:first-line {
     background: transparent !important;
     color: #000 !important;
     -webkit-box-shadow: none !important;
