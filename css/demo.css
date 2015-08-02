@@ -31,7 +31,7 @@ section:first-child {
 }
 
 .col {
-	margin-bottom: 1.45em;
+	margin-bottom: 30px;
 }
 
 .col > span {
@@ -46,11 +46,7 @@ section:first-child {
 }
 
 .btn-group {
-	word-spacing: 0.3em;
-}
-
-.btn-group > a {
-	word-spacing: normal;
+	margin-bottom: 0;
 }
 
 .media p {
