@@ -71,13 +71,6 @@ $input-disabled-border-color: #ccc !default;
 
 $placeholder-color: lighten($text-color, 50%) !default;
 
-
-// Tables
-$table-padding-vertical: 0.6em !default;
-$table-padding-horizontal: 0.4em !default;
-$table-border-color: #b6b6b6 !default;
-
-
 // Input Lists
 $inputs-list:
 	'input[type="email"]',
@@ -87,7 +80,8 @@ $inputs-list:
 	'input[type="tel"]',
 	'input[type="text"]',
 	'input[type="url"]',
-	'textarea' !default;
+	'textarea',
+	'select' !default;
 
 $buttons-list:
 	'input[type="button"]',
@@ -105,6 +99,12 @@ $all-button-inputs: assign-inputs($buttons-list) !default;
 $all-button-inputs-hover: assign-inputs($buttons-list, hover) !default;
 $all-button-inputs-focus: assign-inputs($buttons-list, focus) !default;
 $all-button-inputs-active: assign-inputs($buttons-list, active) !default;
+
+
+// Tables
+$table-padding-vertical: 0.6em !default;
+$table-padding-horizontal: 0.4em !default;
+$table-border-color: #b6b6b6 !default;
 
 
 // Grid Settings

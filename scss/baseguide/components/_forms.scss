@@ -26,19 +26,14 @@ label {
 		padding-bottom: 0;
 	}
 
-	.form-group {
-		display: inline-block;
-		vertical-align: middle;
-		margin-bottom: 0;
-	}
-
 	#{$all-text-inputs},
-	select,
+	.form-group,
 	.select,
 	.checkbox,
 	.radio {
 		display: inline-block;
 		vertical-align: middle;
+		margin-bottom: 0;
 		width: auto;
 	}
 
@@ -49,7 +44,7 @@ label {
 }
 
 
-// Buttons
+// buttons
 .btn {
 	display: inline-block;
 	vertical-align: middle;
@@ -111,15 +106,8 @@ label {
 }
 
 
-// Input elements
+// input controls
 #{$all-text-inputs} {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-#{$all-text-inputs},
-select {
 	display: block;
 	width: 100%;
 	height: $input-height;
@@ -129,6 +117,9 @@ select {
 	background-color: $input-bg;
 	color: $input-color;
 	transition: border-color 0.15s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 
 	&[disabled] {
 		border-color: $input-disabled-border-color;
@@ -138,15 +129,20 @@ select {
 	}
 }
 
-#{$all-text-inputs-focus},
-select:focus {
+#{$all-text-inputs-focus} {
 	border-color: $input-focus-border-color;
 	outline: 0;
 }
 
-select[multiple],
-select[size] {
-	height: auto;
+select {
+	-webkit-appearance: menulist;
+	-moz-appearance: menulist;
+	appearance: menulist;
+
+	&[multiple],
+	&[size] {
+		height: auto;
+	}
 }
 
 textarea {
@@ -183,7 +179,7 @@ input[type="file"] {
 }
 
 
-// Placeholder
+// placeholder
 [placeholder].placeholder {
 	color: $placeholder-color;
 }
@@ -194,7 +190,7 @@ input[type="file"] {
 }
 
 
-// Custom form elements
+// custom form controls
 @if $use-custom-forms {
 	.checkbox input[type="checkbox"]:not(:checked),
 	.checkbox input[type="checkbox"]:checked,
@@ -320,7 +316,6 @@ input[type="file"] {
 	// show custom arrow in Firefox 35+
 	@-moz-document url-prefix() {
 		/* autoprefixer: off */
-
 		.select:after {
 			display: none;
 		}

@@ -1708,18 +1708,14 @@ label {
   padding-top: 0;
   padding-bottom: 0;
 }
-.form-inline .form-group {
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 0;
-}
-.form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"], .form-inline textarea,
-.form-inline select,
+.form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"], .form-inline textarea, .form-inline select,
+.form-inline .form-group,
 .form-inline .select,
 .form-inline .checkbox,
 .form-inline .radio {
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 0;
   width: auto;
 }
 .form-inline .checkbox + .checkbox,
@@ -1781,14 +1777,7 @@ label {
   color: #fff;
 }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea,
-select {
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea, select {
   display: block;
   width: 100%;
   height: 2.163em;
@@ -1800,23 +1789,28 @@ select {
   -webkit-transition: border-color 0.15s ease-in-out;
        -o-transition: border-color 0.15s ease-in-out;
           transition: border-color 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled],
-select[disabled] {
+input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled], select[disabled] {
   border-color: #ccc;
   background-color: #eee;
   color: #555;
   cursor: not-allowed;
 }
 
-input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus,
-select:focus {
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
   border-color: #838383;
   outline: 0;
 }
 
-select[multiple],
-select[size] {
+select {
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+select[multiple], select[size] {
   height: auto;
 }
 
