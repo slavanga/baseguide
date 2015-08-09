@@ -40,8 +40,23 @@ section:first-child {
 	background: #efefef;
 }
 
-.form-group > .btn,
-.form-group > .btn-secondary {
+.btn-outline {
+	border-color: #448aff;
+	background-color: transparent;
+	color: #448aff;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+	background-color: #448aff;
+}
+
+.btn-outline:active {
+	background-color: $button-secondary-active-bg;
+	color: $button-secondary-active-color;
+}
+
+.form-group > .btn {
 	margin-bottom: 0.2em;
 }
 

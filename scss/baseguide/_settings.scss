@@ -1,4 +1,4 @@
-// Font Settings
+// Font settings
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $line-height-base: 1.45 !default;
@@ -23,7 +23,7 @@ $headings-color: inherit !default;
 $font-antialiased: true !default;
 
 
-// Base Colors and Links
+// Base colors and links
 $text-color: #333 !default;
 $link-color: #448aff !default;
 $link-hover-color: $link-color !default;
@@ -43,13 +43,7 @@ $button-hover-color: #fff !default;
 $button-active-color: #fff !default;
 $button-border-color: transparent !default;
 
-$button-secondary-bg: transparent !default;
-$button-secondary-hover-bg: #448aff !default;
-$button-secondary-active-bg: $button-secondary-hover-bg !default;
-$button-secondary-color: #448aff !default;
-$button-secondary-hover-color: #fff !default;
-$button-secondary-active-color: #fff !default;
-$button-secondary-border-color: #448aff !default;
+$buttons-list: '.btn' !default;
 
 
 // Forms
@@ -71,7 +65,6 @@ $input-disabled-border-color: #ccc !default;
 
 $placeholder-color: lighten($text-color, 50%) !default;
 
-// Input Lists
 $inputs-list:
 	'input[type="email"]',
 	'input[type="number"]',
@@ -83,23 +76,6 @@ $inputs-list:
 	'textarea',
 	'select' !default;
 
-$buttons-list:
-	'input[type="button"]',
-	'input[type="reset"]',
-	'input[type="submit"]' !default;
-
-// Generate variables with a list of all input types that have a text-based input.
-$all-text-inputs: assign-inputs($inputs-list) !default;
-$all-text-inputs-hover: assign-inputs($inputs-list, hover) !default;
-$all-text-inputs-focus: assign-inputs($inputs-list, focus) !default;
-$all-text-inputs-active: assign-inputs($inputs-list, active) !default;
-
-// Generate variables with a list of all input types that have a button-based input.
-$all-button-inputs: assign-inputs($buttons-list) !default;
-$all-button-inputs-hover: assign-inputs($buttons-list, hover) !default;
-$all-button-inputs-focus: assign-inputs($buttons-list, focus) !default;
-$all-button-inputs-active: assign-inputs($buttons-list, active) !default;
-
 
 // Tables
 $table-padding-vertical: 0.6em !default;
@@ -107,7 +83,7 @@ $table-padding-horizontal: 0.4em !default;
 $table-border-color: #b6b6b6 !default;
 
 
-// Grid Settings
+// Grid settings
 $grid-columns-output: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;

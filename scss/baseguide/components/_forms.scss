@@ -1,3 +1,16 @@
+// Generate variables with a list of all text-based inputs
+$all-text-inputs: assign-inputs($inputs-list) !default;
+$all-text-inputs-hover: assign-inputs($inputs-list, hover) !default;
+$all-text-inputs-focus: assign-inputs($inputs-list, focus) !default;
+$all-text-inputs-active: assign-inputs($inputs-list, active) !default;
+
+// Generate variables with a list of all buttons
+$all-button-inputs: assign-inputs($buttons-list) !default;
+$all-button-inputs-hover: assign-inputs($buttons-list, hover) !default;
+$all-button-inputs-focus: assign-inputs($buttons-list, focus) !default;
+$all-button-inputs-active: assign-inputs($buttons-list, active) !default;
+
+
 fieldset {
 	margin: 0;
 	padding: 0;
@@ -45,7 +58,7 @@ label {
 
 
 // buttons
-.btn {
+#{$all-button-inputs} {
 	display: inline-block;
 	vertical-align: middle;
 	padding: $button-padding-vertical $button-padding-horizontal;
@@ -62,47 +75,25 @@ label {
 	touch-action: manipulation;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 
-	&:hover,
-	&:focus {
-		outline: 0;
-		text-decoration: none;
-		background-color: $button-hover-bg;
-		color: $button-hover-color;
-	}
-
-	&:active {
-		background-color: $button-active-bg;
-		color: $button-active-color;
-	}
-
 	&.disabled,
 	&[disabled] {
 		opacity: 0.65;
 		cursor: default;
 		pointer-events: none;
 	}
-
-	.form-inline & {
-		margin-bottom: 0;
-	}
 }
 
-.btn-secondary {
-	@extend .btn;
-	border-color: $button-secondary-border-color;
-	background-color: $button-secondary-bg;
-	color: $button-secondary-color;
+#{$all-button-inputs-hover},
+#{$all-button-inputs-focus} {
+	outline: 0;
+	text-decoration: none;
+	background-color: $button-hover-bg;
+	color: $button-hover-color;
+}
 
-	&:hover,
-	&:focus {
-		background-color: $button-secondary-hover-bg;
-		color: $button-secondary-hover-color;
-	}
-
-	&:active {
-		background-color: $button-secondary-active-bg;
-		color: $button-secondary-active-color;
-	}
+#{$all-button-inputs-active} {
+	background-color: $button-active-bg;
+	color: $button-active-color;
 }
 
 
@@ -255,17 +246,17 @@ input[type="file"] {
 		border-radius: 1em;
 	}
 
+	input[type="radio"]:checked + label:after {
+		/* autoprefixer: off */
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=);
+		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M4%201C2.3%201%201%202.3%201%204s1.3%203%203%203%203-1.3%203-3S5.7%201%204%201z%22%2F%3E%3C%2Fsvg%3E');
+	}
+
 	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
 	input[type="checkbox"]:checked + label:after {
 		/* autoprefixer: off */
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVChTYyAEGKE0CjA2Ntb4////dGZm5khmqBgcQCX3MzIy6gBpBkZk1f/+/ROASkoA6TW8vLyRTCBJoIDD379/96NLHjx48A8TSCdQ4AZQQgNdEmQl2JGmpqYSIBOAzCvIkigA6BYRe3t7FigXChgYAGONRUtL5Ld6AAAAAElFTkSuQmCC);
 		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6.4%201L5.7%201.7%202.9%204.5%202.1%203.7%201.4%203%200%204.4l0.7%200.7%201.5%201.5%200.7%200.7%200.7-0.7%203.5-3.5%200.7-0.7L6.4%201%206.4%201z%22%2F%3E%3C%2Fsvg%3E');
-	}
-
-	input[type="radio"]:checked + label:after {
-		/* autoprefixer: off */
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=);
-		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23222%22%20d%3D%22M4%201C2.3%201%201%202.3%201%204s1.3%203%203%203%203-1.3%203-3S5.7%201%204%201z%22%2F%3E%3C%2Fsvg%3E');
 	}
 
 
