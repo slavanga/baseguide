@@ -63,7 +63,7 @@ $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
 
-$placeholder-color: lighten($text-color, 50%) !default;
+$placeholder-color: lighten($input-color, 50%) !default;
 
 $inputs-list:
 	'input[type="email"]',

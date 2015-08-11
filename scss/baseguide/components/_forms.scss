@@ -277,7 +277,7 @@ input[type="file"] {
 
 		select:focus::-ms-value {
 			background: transparent;
-			color: $text-color;
+			color: $input-color;
 		}
 
 		&:after {
