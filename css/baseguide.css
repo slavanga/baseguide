@@ -1675,7 +1675,7 @@ input {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   html,
   button,
   input {
@@ -1774,7 +1774,6 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   background-color: #fff;
   color: #333;
   -webkit-transition: border-color 0.15s ease-in-out;
-       -o-transition: border-color 0.15s ease-in-out;
           transition: border-color 0.15s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1921,7 +1920,6 @@ input[type="checkbox"] + label:after,
 input[type="radio"] + label:after {
   opacity: 0;
   -webkit-transition: opacity 0.15s ease-in-out;
-       -o-transition: opacity 0.15s ease-in-out;
           transition: opacity 0.15s ease-in-out;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2009,10 +2007,6 @@ input[type="checkbox"]:checked + label:after {
     }
   }
 }
-x:-o-prefocus, .select:after {
-  display: none;
-}
-
 .table {
   width: 100%;
   max-width: 100%;

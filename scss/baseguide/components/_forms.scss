@@ -331,9 +331,4 @@ input[type="search"] {
 			}
 		}
 	}
-
-	// hide native arrow in Opera
-	x:-o-prefocus, .select:after {
-		display: none;
-	}
 }
