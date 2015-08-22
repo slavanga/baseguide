@@ -1684,6 +1684,7 @@ input {
   }
 }
 fieldset {
+  min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
@@ -1831,6 +1832,12 @@ input[type="checkbox"][disabled] + label {
 
 input[type="file"] {
   display: block;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-appearance: none;
 }
 
 [placeholder].placeholder {

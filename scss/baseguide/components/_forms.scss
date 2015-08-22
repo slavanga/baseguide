@@ -12,6 +12,7 @@ $all-button-inputs-active: assign-inputs($buttons-list, active) !default;
 
 
 fieldset {
+	min-width: 0;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -167,6 +168,11 @@ input[type="checkbox"] {
 
 input[type="file"] {
 	display: block;
+}
+
+input[type="search"] {
+	box-sizing: inherit;
+	-webkit-appearance: none;
 }
 
 
