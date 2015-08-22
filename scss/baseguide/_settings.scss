@@ -96,5 +96,5 @@ $mq-breakpoints: (
 	lg: 1200px
 ) !default;
 
-// Generate list of all breakpoint names
-$mq-breakpoints-list: to-list($mq-breakpoints, 'keys') !default;
+$mq-breakpoints-list: to-list($mq-breakpoints, 'keys');
+$mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list));
