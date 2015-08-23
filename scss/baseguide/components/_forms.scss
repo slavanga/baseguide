@@ -252,17 +252,17 @@ input[type="search"] {
 		border-radius: 1em;
 	}
 
+	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
 	input[type="radio"]:checked + label:after {
 		/* autoprefixer: off */
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=);
-		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M4%201C2.3%201%201%202.3%201%204s1.3%203%203%203%203-1.3%203-3S5.7%201%204%201z%22%2F%3E%3C%2Fsvg%3E');
+		background-image: url($icon-radio-fallback);
+		background-image: url($icon-radio), linear-gradient(transparent, transparent);
 	}
 
-	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
 	input[type="checkbox"]:checked + label:after {
 		/* autoprefixer: off */
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVChTYyAEGKE0CjA2Ntb4////dGZm5khmqBgcQCX3MzIy6gBpBkZk1f/+/ROASkoA6TW8vLyRTCBJoIDD379/96NLHjx48A8TSCdQ4AZQQgNdEmQl2JGmpqYSIBOAzCvIkigA6BYRe3t7FigXChgYAGONRUtL5Ld6AAAAAElFTkSuQmCC);
-		background-image: linear-gradient(transparent, transparent), url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6.4%201L5.7%201.7%202.9%204.5%202.1%203.7%201.4%203%200%204.4l0.7%200.7%201.5%201.5%200.7%200.7%200.7-0.7%203.5-3.5%200.7-0.7L6.4%201%206.4%201z%22%2F%3E%3C%2Fsvg%3E');
+		background-image: url($icon-checkbox-fallback);
+		background-image: url($icon-checkbox), linear-gradient(transparent, transparent),;
 	}
 
 
