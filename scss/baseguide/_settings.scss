@@ -1,8 +1,8 @@
 // Font settings
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
-$line-height-base: 1.45 !default;
-$spacing-base: 1.45em !default;
+$line-height-base: 1.5 !default;
+$spacing-base: 1.5em !default;
 
 $type-scale-base: $font-size-base !default;
 $type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
@@ -31,8 +31,8 @@ $link-hover-decoration: underline !default;
 
 
 // Buttons
-$button-padding-vertical: 0.3em !default;
-$button-padding-horizontal: 0.9em !default;
+$button-padding-vertical: 0.375em !default;
+$button-padding-horizontal: 1em !default;
 $button-border-radius: 0 !default;
 
 $button-bg: #448aff !default;
@@ -49,9 +49,9 @@ $buttons-list: '.btn' !default;
 // Forms
 $use-custom-forms: true !default;
 
-$input-height: 2.163em !default;
-$input-padding-vertical: 0.3em !default;
-$input-padding-horizontal: 0.6em !default;
+$input-height: 2.375em !default;
+$input-padding-vertical: 0.375em !default;
+$input-padding-horizontal: 0.75em !default;
 
 $input-bg: #fff !default;
 $input-color: $text-color !default;

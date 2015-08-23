@@ -1517,7 +1517,7 @@ img {
 }
 
 .media {
-  margin-bottom: 1.45em;
+  margin-bottom: 1.5em;
 }
 
 .media-left,
@@ -1599,7 +1599,7 @@ img {
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1em;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #333;
 }
 
@@ -1697,11 +1697,11 @@ label {
 }
 
 .form-group {
-  margin-bottom: 0.7em;
+  margin-bottom: 0.625em;
 }
 .form-group label {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
 }
 
 .form-inline label {
@@ -1727,7 +1727,7 @@ label {
 .btn {
   display: inline-block;
   vertical-align: middle;
-  padding: 0.3em 0.9em;
+  padding: 0.375em 1em;
   border: 1px solid transparent;
   border-radius: 0;
   border-color: transparent;
@@ -1767,10 +1767,10 @@ label {
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea, select {
   display: block;
   width: 100%;
-  height: 2.163em;
+  height: 2.375em;
   border: 1px solid #b6b6b6;
   border-radius: 0;
-  padding: 0.3em 0.6em;
+  padding: 0.375em 0.75em;
   background-color: #fff;
   color: #333;
   -webkit-transition: border-color 0.15s ease-in-out;
@@ -1953,7 +1953,7 @@ input[type="checkbox"]:checked + label:after {
   -moz-appearance: none;
   appearance: none;
   padding-right: 2em;
-  padding-right: 0.6em \9;
+  padding-right: 0.75em \9;
 }
 .select select::-ms-expand {
   display: none;
@@ -1972,7 +1972,7 @@ input[type="checkbox"]:checked + label:after {
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: 0.6em;
+  right: 0.75em;
   margin-top: -0.2em;
   pointer-events: none;
   display: none \9;
@@ -1994,7 +1994,7 @@ input[type="checkbox"]:checked + label:after {
   }
 
   .select select {
-    padding-right: 0.6em;
+    padding-right: 0.75em;
   }
 
   @supports (filter: opacity(1)) {
@@ -2051,7 +2051,7 @@ ol,
 hr,
 p {
   margin-top: 0;
-  margin-bottom: 1.45em;
+  margin-bottom: 1.5em;
 }
 
 nav > ul,
