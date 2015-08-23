@@ -2,7 +2,7 @@
 Baseguide is a lightweight and robust CSS framework powered by Sass. It brings together all essential base components in a small yet powerful package.
 
 ##Features
-* Bootstrap based grid system with extendable breakpoints
+* Dynamic grid system with extendable breakpoints
 * CSS-only custom form controls
 * Consistent vertical rhythm and modular scale built in
 * Scalable components with em spacing
@@ -98,31 +98,27 @@ The grid mixins are very powerful. Use them to create layouts with custom contai
 @include column-offset($index, $columns);
 ```
 
-The example below shows how to create a 5 column layout with 15 columns in total.
+The example below shows how to create a five column layout (starting from the md breakpoint).
 
 ```scss
-.news-container {
-  @include container();
-}
+.col-news-item {
+  @include column-base();
 
-.news-list {
-  @include row();
-}
-
-.news-item {
-  @include column(3, 15);
+  @include mq(md) {
+    @include column(1, 5);
+  }
 }
 ```
 
 ```html
-<div class="news-container">
-  <section class="news-list">
-    <article class="news-item"></article>
-    <article class="news-item"></article>
-    <article class="news-item"></article>
-    <article class="news-item"></article>
-    <article class="news-item"></article>
-  </section>
+<div class="container">
+  <div class="row">
+    <article class="col col-news-item"></article>
+    <article class="col col-news-item"></article>
+    <article class="col col-news-item"></article>
+    <article class="col col-news-item"></article>
+    <article class="col col-news-item"></article>
+  </div>
 </div>
 ```
 

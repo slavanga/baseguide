@@ -57,3 +57,17 @@
 
 	@return if(type-of($value) != list, ($value), $value);
 }
+
+@function strip-unit($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+@function to-rem($value, $base: 16px) {
+	$value: strip-unit($value) / strip-unit($base) * 1rem;
+
+	@if ($value == 0rem) {
+		$value: 0;
+	}
+	
+	@return $value;
+}

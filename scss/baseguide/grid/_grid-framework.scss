@@ -1,46 +1,50 @@
-// Framework grid generation
-// -------------------------
+// ----------------
+// Grid Framework
+// ----------------
 
-
-// Centered container element
 @mixin container($gutter: $grid-gutter) {
 	@include clearfix;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: ($gutter / 2);
 	padding-right: ($gutter / 2);
+	padding-left: to-rem($gutter / 2);
+	padding-right: to-rem($gutter / 2);
 }
 
-// Create a wrapper for a series of columns
 @mixin row($gutter: $grid-gutter) {
 	@include clearfix;
 	margin-left: ($gutter / -2);
 	margin-right: ($gutter / -2);
+	margin-left: to-rem($gutter / -2);
+	margin-right: to-rem($gutter / -2);
 }
 
 @mixin column-base($gutter: $grid-gutter) {
 	position: relative;
-	// Prevent columns from collapsing when empty
 	min-height: 1px;
-	// Inner gutter via padding
 	padding-left: ($gutter / 2);
 	padding-right: ($gutter / 2);
+	padding-left: to-rem($gutter / 2);
+	padding-right: to-rem($gutter / 2);
 }
 
 @mixin column($index, $columns: $grid-columns, $gutter: $grid-gutter) {
-	@if $index > 0 {
-		@include column-base($gutter);
-		float: left;
-		width: percentage(($index / $columns));
+	float: left;
+	width: percentage(($index / $columns));
+
+	@if $gutter != $grid-gutter {
+		padding-left: ($gutter / 2);
+		padding-right: ($gutter / 2);
+		padding-left: to-rem($gutter / 2);
+		padding-right: to-rem($gutter / 2);
 	}
 }
 
 @mixin column-push($index, $columns: $grid-columns) {
 	@if $index > 0 {
 		left: percentage(($index / $columns));
-	}
-
-	@if $index == 0 {
+	} @else {
 		left: auto;
 	}
 }
@@ -48,9 +52,7 @@
 @mixin column-pull($index, $columns: $grid-columns) {
 	@if $index > 0 {
 		right: percentage(($index / $columns));
-	}
-
-	@if $index == 0 {
+	} @else {
 		right: auto;
 	}
 }
@@ -97,7 +99,7 @@
 	}
 }
 
-// Create columns for specific class
+// Create columns for a specific class
 @mixin calc-all-columns($class) {
 	@if $grid-columns-output {
 		@include float-all-columns($class);
@@ -171,6 +173,7 @@
 
 				.container {
 					max-width: $width - $grid-gutter;
+					max-width: to-rem($width - $grid-gutter);
 				}
 
 				.hidden-#{$class} {
