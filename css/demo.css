@@ -51,11 +51,6 @@ section:first-child {
 	background-color: #448aff;
 }
 
-.btn-outline:active {
-	background-color: $button-secondary-active-bg;
-	color: $button-secondary-active-color;
-}
-
 .form-group > .btn {
 	margin-bottom: 0.2em;
 }
