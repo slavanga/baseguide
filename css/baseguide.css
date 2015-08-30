@@ -405,6 +405,8 @@ th {
   padding-right: 15px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
+  max-width: 1170px;
+  max-width: 73.125rem;
 }
 .container:before, .container:after {
   content: ' ';
@@ -1340,11 +1342,6 @@ th {
 
   .col-lg-offset-12 {
     margin-left: 100%;
-  }
-
-  .container {
-    max-width: 1170px;
-    max-width: 73.125rem;
   }
 
   .hidden-lg {

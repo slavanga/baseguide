@@ -90,12 +90,6 @@ $table-padding-horizontal: 0.4em !default;
 $table-border-color: #b6b6b6 !default;
 
 
-// Grid settings
-$grid-columns-output: true !default;
-$grid-columns: 12 !default;
-$grid-gutter: 30px !default;
-
-
 // Breakpoints
 $mq-breakpoints: (
 	xs: 480px,
@@ -106,3 +100,10 @@ $mq-breakpoints: (
 
 $mq-breakpoints-list: to-list($mq-breakpoints, 'keys') !default;
 $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
+
+
+// Grid settings
+$grid-columns-output: true !default;
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
+$grid-container: map-get($mq-breakpoints, nth($mq-breakpoints-list, length($mq-breakpoints-list))) !default;

@@ -10,6 +10,8 @@
 	padding-right: ($gutter / 2);
 	padding-left: to-rem($gutter / 2);
 	padding-right: to-rem($gutter / 2);
+	max-width: $grid-container - $gutter;
+	max-width: to-rem($grid-container - $gutter);
 }
 
 @mixin row($gutter: $grid-gutter) {
@@ -170,11 +172,6 @@
 			// last breakpoint
 			@include mq($class) {
 				@include calc-all-columns($class);
-
-				.container {
-					max-width: $width - $grid-gutter;
-					max-width: to-rem($width - $grid-gutter);
-				}
 
 				.hidden-#{$class} {
 					display: none !important;
