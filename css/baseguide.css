@@ -1700,21 +1700,23 @@ fieldset {
 label {
   display: inline-block;
   max-width: 100%;
+  padding-bottom: 0.375em;
   font-weight: bold;
 }
 
-.form-group {
-  margin-bottom: 0.625em;
-}
-.form-group label {
+.label-inline {
+  margin-top: 1px;
   padding-top: 0.375em;
-  padding-bottom: 0.375em;
+}
+
+.form-group {
+  margin-bottom: 1em;
 }
 
 .form-inline label {
   vertical-align: middle;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-top: 1px;
+  padding-top: 0.375em;
 }
 .form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"], .form-inline textarea, .form-inline select,
 .form-inline .form-group,
