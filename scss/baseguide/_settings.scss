@@ -103,6 +103,7 @@ $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !
 
 
 // Grid settings
+$grid-flexbox: false !default;
 $grid-columns-output: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;

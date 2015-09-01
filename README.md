@@ -2,7 +2,8 @@
 Baseguide is a lightweight and robust CSS framework powered by Sass. It brings together all essential base components in a small yet powerful package.
 
 ##Features
-* Dynamic grid system with extendable breakpoints
+* Flexible and extendable breakpoints
+* Dynamic flexbox grid system with float fallback
 * CSS-only custom form controls
 * Consistent vertical rhythm and modular scale built in
 * Scalable components with em spacing
@@ -20,7 +21,7 @@ $button-bg: #bada55; // 1. Customize default variables
 Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ##Grid
-The grid framework is largely based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid). Improvements include the option to define custom breakpoints.
+The grid framework is based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid).
 
 ###Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
