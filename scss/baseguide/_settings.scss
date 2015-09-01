@@ -43,7 +43,7 @@ $button-hover-color: #fff !default;
 $button-active-color: #fff !default;
 $button-border-color: transparent !default;
 
-$buttons-list: '.btn' !default;
+$button-selector: '.btn' !default;
 
 
 // Forms
@@ -65,7 +65,7 @@ $input-disabled-border-color: #ccc !default;
 
 $placeholder-color: lighten($input-color, 50%) !default;
 
-$inputs-list:
+$input-selector:
 	'input[type="email"]',
 	'input[type="number"]',
 	'input[type="password"]',

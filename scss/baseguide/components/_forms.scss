@@ -1,14 +1,14 @@
-// Generate variables with a list of all text-based inputs
-$all-text-inputs: assign-inputs($inputs-list) !default;
-$all-text-inputs-hover: assign-inputs($inputs-list, hover) !default;
-$all-text-inputs-focus: assign-inputs($inputs-list, focus) !default;
-$all-text-inputs-active: assign-inputs($inputs-list, active) !default;
+// Generate lists of all inputs
+$input-list: assign-inputs($input-selector) !default;
+$input-list-hover: assign-inputs($input-selector, hover) !default;
+$input-list-focus: assign-inputs($input-selector, focus) !default;
+$input-list-active: assign-inputs($input-selector, active) !default;
 
-// Generate variables with a list of all buttons
-$all-button-inputs: assign-inputs($buttons-list) !default;
-$all-button-inputs-hover: assign-inputs($buttons-list, hover) !default;
-$all-button-inputs-focus: assign-inputs($buttons-list, focus) !default;
-$all-button-inputs-active: assign-inputs($buttons-list, active) !default;
+// Generate lists of all buttons
+$button-list: assign-inputs($button-selector) !default;
+$button-list-hover: assign-inputs($button-selector, hover) !default;
+$button-list-focus: assign-inputs($button-selector, focus) !default;
+$button-list-active: assign-inputs($button-selector, active) !default;
 
 
 fieldset {
@@ -41,7 +41,7 @@ label {
 		padding-top: $input-padding-vertical;
 	}
 
-	#{$all-text-inputs},
+	#{$input-list},
 	.form-group,
 	.select,
 	.checkbox,
@@ -60,7 +60,7 @@ label {
 
 
 // buttons
-#{$all-button-inputs} {
+#{$button-list} {
 	display: inline-block;
 	vertical-align: middle;
 	padding: $button-padding-vertical $button-padding-horizontal;
@@ -85,22 +85,22 @@ label {
 	}
 }
 
-#{$all-button-inputs-hover},
-#{$all-button-inputs-focus} {
+#{$button-list-hover},
+#{$button-list-focus} {
 	outline: 0;
 	text-decoration: none;
 	background-color: $button-hover-bg;
 	color: $button-hover-color;
 }
 
-#{$all-button-inputs-active} {
+#{$button-list-active} {
 	background-color: $button-active-bg;
 	color: $button-active-color;
 }
 
 
 // input controls
-#{$all-text-inputs} {
+#{$input-list} {
 	display: block;
 	width: 100%;
 	height: $input-height;
@@ -122,7 +122,7 @@ label {
 	}
 }
 
-#{$all-text-inputs-focus} {
+#{$input-list-focus} {
 	border-color: $input-focus-border-color;
 	outline: 0;
 }
