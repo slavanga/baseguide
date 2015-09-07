@@ -15,7 +15,6 @@
 }
 
 @mixin row($gutter: $grid-gutter) {
-	/* autoprefixer: off */
 	@include clearfix;
 	margin-left: ($gutter / -2);
 	margin-right: ($gutter / -2);
@@ -23,6 +22,7 @@
 	margin-right: to-rem($gutter / -2);
 
 	@if $grid-flexbox {
+		/* autoprefixer: off */
 		display: -webkit-flex;
 		display: -ms-flexbox;
 		display: flex;
@@ -42,7 +42,6 @@
 }
 
 @mixin column-base($gutter: $grid-gutter) {
-	/* autoprefixer: off */
 	position: relative;
 	min-height: 1px;
 	padding-left: ($gutter / 2);
@@ -51,6 +50,7 @@
 	padding-right: to-rem($gutter / 2);
 
 	@if $grid-flexbox {
+		/* autoprefixer: off */
 		width: 100%;
 		min-width: 1px;
 		-webkit-flex: 0 0 auto;
@@ -60,7 +60,6 @@
 }
 
 @mixin column($size: expand, $columns: $grid-columns, $gutter: $grid-gutter) {
-	/* autoprefixer: off */
 	float: left;
 
 	@if (type-of($size) == 'number') {
@@ -70,6 +69,7 @@
 			max-width: percentage($size / $columns);
 		}
 	} @else {
+		/* autoprefixer: off */
 		width: auto;
 
 		@if $grid-flexbox and $size == shrink {
