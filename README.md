@@ -135,7 +135,7 @@ Use the extend directive to create custom buttons based on the primary button.
 ```
 
 ###Standard form controls
-All form controls listed in the ```$inputs-list``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
+All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
 
 Remember to reset the height of textareas if you choose a custom selector:
 
