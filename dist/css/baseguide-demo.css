@@ -1833,7 +1833,6 @@ input[type="checkbox"]:checked + label:after {
 
 .select select {
   /* autoprefixer: off */
-  padding-right: 0.75em;
   -webkit-background-origin: content-box;
   background-origin: content-box;
   background-repeat: no-repeat;
