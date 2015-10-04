@@ -1,31 +1,33 @@
-section {
+@import 'baseguide';
+
+.section {
 	margin-top: 15px;
 	padding-top: 15px;
 	border-top: 0.2em solid #efefef;
 }
 
-section:first-child {
+.section:first-child {
 	margin-top: 0;
 	border-top: 0;
 }
 
-.intro {
+.section-intro {
 	padding-bottom: 15px;
 	border-bottom: 1px solid #efefef;
 	background: #f7f7f7;
 }
 
 @media (min-width: 48em) {
-	section {
+	.section {
 		margin-top: 30px;
 		padding-top: 30px;
 	}
 
-	.intro {
+	.section-intro {
 		padding-bottom: 30px;
 	}
 
-	.intro p {
+	.section-intro p {
 		font-size: 1.125em;
 	}
 }
