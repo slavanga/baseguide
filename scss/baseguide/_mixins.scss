@@ -147,10 +147,9 @@
 // beautiful underline
 @mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
 	text-decoration: none;
-	background-repeat: repeat-x;
+	background: linear-gradient($color, $color) no-repeat;
 	background-position: 0 $distance;
-	background-size: 1px $size;
-	background-image: linear-gradient(to bottom, $color 50%, $color 50%);
+	background-size: 100% $size;
 }
 
 
