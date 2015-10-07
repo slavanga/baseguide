@@ -1928,33 +1928,61 @@ ul, ol {
   padding-left: 2.5em;
 }
 
-.section {
+.intro-title {
+  font-family: Merriweather, Georgia, serif;
+  font-weight: 900;
+  font-size: 2.36859em;
+}
+
+@media (min-width: 48em) {
+  .intro-title {
+    font-size: 3.15733em;
+  }
+}
+
+.intro-section {
+  background: #85c637;
+}
+
+.intro-section .container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 48em) {
+  .intro-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: -webkit-gradient(linear, right top, left top, from(#3ea6de), to(#85c637));
+    background-image: -webkit-linear-gradient(right, #3ea6de 0%, #85c637 100%);
+    background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
+  }
+  .intro-section .container {
+    max-width: 45em;
+    padding: 40px;
+  }
+  .intro-section p {
+    font-size: 1.125em;
+  }
+}
+
+.container .section {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 0.2em solid #efefef;
 }
 
-.section:first-child {
+.container .section:first-child {
   margin-top: 0;
   border-top: 0;
 }
 
-.section-intro {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #efefef;
-  background: #f7f7f7;
-}
-
 @media (min-width: 48em) {
-  .section {
-    margin-top: 30px;
-    padding-top: 30px;
-  }
-  .section-intro {
-    padding-bottom: 30px;
-  }
-  .section-intro p {
-    font-size: 1.125em;
+  .container .section {
+    margin-top: 40px;
+    padding-top: 40px;
   }
 }
 
@@ -1974,8 +2002,7 @@ ul, ol {
   color: #448aff;
 }
 
-.btn-outline:hover,
-.btn-outline:focus {
+.btn-outline:hover, .btn-outline:focus {
   background-color: #448aff;
 }
 

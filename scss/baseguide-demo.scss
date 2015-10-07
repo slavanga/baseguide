@@ -1,56 +1,75 @@
 @import 'baseguide';
 
-.section {
+.intro-title {
+	font-family: Merriweather, Georgia, serif;
+	font-weight: 900;
+	font-size: 2.36859em;
+
+	@include mq(sm) {
+		font-size: 3.15733em;
+	}
+}
+
+.intro-section {
+	background: #85c637;
+
+	.container {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		background: #fff;
+		background: rgba(255, 255, 255, 0.3);
+	}
+
+	@include mq(sm) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
+
+		.container {
+			max-width: 45em;
+			padding: 40px;
+		}
+
+		p {
+			font-size: 1.125em;
+		}
+	}
+}
+
+.container .section {
 	margin-top: 15px;
 	padding-top: 15px;
 	border-top: 0.2em solid #efefef;
-}
 
-.section:first-child {
-	margin-top: 0;
-	border-top: 0;
-}
-
-.section-intro {
-	padding-bottom: 15px;
-	border-bottom: 1px solid #efefef;
-	background: #f7f7f7;
-}
-
-@media (min-width: 48em) {
-	.section {
-		margin-top: 30px;
-		padding-top: 30px;
+	&:first-child {
+		margin-top: 0;
+		border-top: 0;
 	}
 
-	.section-intro {
-		padding-bottom: 30px;
-	}
-
-	.section-intro p {
-		font-size: 1.125em;
+	@include mq(sm) {
+		margin-top: 40px;
+		padding-top: 40px;
 	}
 }
 
 .col {
 	margin-bottom: 30px;
-}
 
-.col > span {
-	display: block;
-	padding: 1em;
-	background: #efefef;
+	> span {
+		display: block;
+		padding: 1em;
+		background: #efefef;
+	}
 }
 
 .btn-outline {
 	border-color: #448aff;
 	background-color: transparent;
 	color: #448aff;
-}
 
-.btn-outline:hover,
-.btn-outline:focus {
-	background-color: #448aff;
+	&:hover, &:focus {
+		background-color: #448aff;
+	}
 }
 
 .form-group > .btn {
