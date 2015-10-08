@@ -11,7 +11,9 @@
 }
 
 .intro-section {
+	padding: 10px;
 	background: #85c637;
+	background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
 
 	.container {
 		padding-top: 15px;
@@ -23,7 +25,6 @@
 	@include mq(sm) {
 		padding-top: 40px;
 		padding-bottom: 40px;
-		background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
 
 		.container {
 			max-width: 45em;

@@ -1941,7 +1941,11 @@ ul, ol {
 }
 
 .intro-section {
+  padding: 10px;
   background: #85c637;
+  background-image: -webkit-gradient(linear, right top, left top, from(#3ea6de), to(#85c637));
+  background-image: -webkit-linear-gradient(right, #3ea6de 0%, #85c637 100%);
+  background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
 }
 
 .intro-section .container {
@@ -1955,9 +1959,6 @@ ul, ol {
   .intro-section {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-image: -webkit-gradient(linear, right top, left top, from(#3ea6de), to(#85c637));
-    background-image: -webkit-linear-gradient(right, #3ea6de 0%, #85c637 100%);
-    background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
   }
   .intro-section .container {
     max-width: 45em;
