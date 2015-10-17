@@ -12,7 +12,7 @@ var config = {
 
 
 // Default task: Build production files
-gulp.task('default', ['html', 'styles', 'script', 'images']);
+gulp.task('default', ['html', 'styles', 'scripts', 'images']);
 
 // HTML
 gulp.task('html', function() {
@@ -46,17 +46,17 @@ gulp.task('styles', function() {
 });
 
 // Compile javascript
-gulp.task('script', function() {
+gulp.task('scripts', function() {
 	return gulp.src(config.src + 'js/*.js')
 		.pipe($.if(config.sourcemaps, $.sourcemaps.init()))
-		.pipe($.include().on('error', function (error) {
+		.pipe($.include().on('error', function(error) {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe(gulp.dest(config.dest + 'js'))
 		.pipe(browserSync.stream())
-		.pipe($.uglify().on('error', function (error) {
+		.pipe($.uglify().on('error', function(error) {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
