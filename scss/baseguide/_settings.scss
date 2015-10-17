@@ -40,7 +40,7 @@ $button-hover-bg: darken($button-bg, 5%) !default;
 $button-active-bg: $button-hover-bg !default;
 $button-color: #fff !default;
 $button-hover-color: #fff !default;
-$button-active-color: #fff !default;
+$button-active-color: $button-hover-color !default;
 $button-border-color: transparent !default;
 
 $button-selector: '.btn' !default;
