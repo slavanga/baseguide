@@ -53,13 +53,11 @@ gulp.task('scripts', function() {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
-		.pipe(gulp.dest(config.dest + 'js'))
-		.pipe(browserSync.stream())
 		.pipe($.uglify().on('error', function(error) {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
+		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
 		.pipe(gulp.dest(config.dest + 'js'))
 		.pipe(browserSync.stream());
