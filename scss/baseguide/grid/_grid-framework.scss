@@ -64,7 +64,7 @@
 
 	@if (type-of($size) == 'number') {
 		width: percentage($size / $columns);
-		
+
 		@if $grid-flexbox {
 			max-width: percentage($size / $columns);
 		}
@@ -108,7 +108,7 @@
 		right: auto;
 	}
 }
-	
+
 @mixin column-offset($index, $columns: $grid-columns) {
 	margin-left: percentage($index / $columns);
 }
@@ -117,7 +117,7 @@
 	@if ($type == width) and ($index > 0) {
 		.col-#{$class}-#{$index} {
 			width: percentage($index / $grid-columns);
-			
+
 			@if $grid-flexbox {
 				max-width: percentage($index / $grid-columns);
 			}
@@ -182,7 +182,7 @@
 @mixin make-columns() {
 	@if $grid-columns-output {
 		$list: ();
-		
+
 		@each $class in $mq-breakpoints-list {
 			@for $i from 1 through $grid-columns {
 				$input: '.col-#{$class}-#{$i}';
@@ -206,7 +206,7 @@
 				display: none !important;
 			}
 		}
-		
+
 		@if $class == nth($mq-breakpoints-list, 1) {
 			// first breakpoint
 			@include calc-all-columns($class);

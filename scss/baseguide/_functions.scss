@@ -40,7 +40,7 @@
 	@if type-of($value) == map {
 		$keys: ();
 		$values: ();
-		
+
 		@each $key, $val in $value {
 			$keys: append($keys, $key);
 			$values: append($values, $val);
@@ -68,6 +68,6 @@
 	@if ($value == 0rem) {
 		$value: 0;
 	}
-	
+
 	@return $value;
 }
