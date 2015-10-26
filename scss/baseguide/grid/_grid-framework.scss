@@ -69,19 +69,22 @@
 			max-width: percentage($size / $columns);
 		}
 	} @else {
-		/* autoprefixer: off */
 		width: auto;
 
-		@if $grid-flexbox and $size == shrink {
-			-webkit-flex: 0 0 auto;
-			-ms-flex: 0 0 auto;
-			flex: 0 0 auto;
-		}
+		@if $grid-flexbox {
+			/* autoprefixer: off */
 
-		@if $grid-flexbox and $size == expand {
-			-webkit-flex: 1 1 auto;
-			-ms-flex: 1 1 auto;
-			flex: 1 1 auto;
+			@if $size == shrink {
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+			}
+
+			@if $size == expand {
+				-webkit-flex: 1 1 auto;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+			}
 		}
 	}
 
