@@ -93,24 +93,24 @@
 	}
 }
 
-@mixin column-push($index, $columns: $grid-columns) {
-	@if $index > 0 {
-		left: percentage($index / $columns);
+@mixin column-push($size, $columns: $grid-columns) {
+	@if $size > 0 {
+		left: percentage($size / $columns);
 	} @else {
 		left: auto;
 	}
 }
 
-@mixin column-pull($index, $columns: $grid-columns) {
-	@if $index > 0 {
-		right: percentage($index / $columns);
+@mixin column-pull($size, $columns: $grid-columns) {
+	@if $size > 0 {
+		right: percentage($size / $columns);
 	} @else {
 		right: auto;
 	}
 }
 
-@mixin column-offset($index, $columns: $grid-columns) {
-	margin-left: percentage($index / $columns);
+@mixin column-offset($size, $columns: $grid-columns) {
+	margin-left: percentage($size / $columns);
 }
 
 @mixin calc-column($class, $index, $type) {
