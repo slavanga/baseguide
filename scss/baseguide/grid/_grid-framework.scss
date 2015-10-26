@@ -2,7 +2,7 @@
 // Grid Framework
 // ----------------
 
-@mixin container($gutter: $grid-gutter) {
+@mixin container($gutter: $grid-gutter, $width: $grid-container) {
 	@include clearfix;
 	margin-right: auto;
 	margin-left: auto;
@@ -10,8 +10,8 @@
 	padding-right: ($gutter / 2);
 	padding-left: to-rem($gutter / 2);
 	padding-right: to-rem($gutter / 2);
-	max-width: $grid-container - $gutter;
-	max-width: to-rem($grid-container - $gutter);
+	max-width: $width - $gutter;
+	max-width: to-rem($width - $gutter);
 }
 
 @mixin row($gutter: $grid-gutter) {
