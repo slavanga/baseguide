@@ -100,7 +100,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 
 Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
 
-The example below shows how to create a mobile first five column layout.
+The example below shows how to create a mobile first layout with five columns.
 
 ```scss
 .col {
