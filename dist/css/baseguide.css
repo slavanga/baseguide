@@ -265,7 +265,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -408,8 +409,7 @@ th {
   max-width: 73.125rem;
 }
 
-.container:before,
-.container:after {
+.container:before, .container:after {
   content: ' ';
   display: table;
 }
@@ -426,8 +426,7 @@ th {
   margin-right: -0.9375rem;
 }
 
-.row:before,
-.row:after {
+.row:before, .row:after {
   content: ' ';
   display: table;
 }
@@ -1263,9 +1262,7 @@ html {
           box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
@@ -1305,8 +1302,7 @@ img {
   *zoom: 1;
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: ' ';
   display: table;
 }
@@ -1327,8 +1323,7 @@ img {
   margin-left: -1em;
 }
 
-.list-inline:before,
-.list-inline:after {
+.list-inline:before, .list-inline:after {
   content: ' ';
   display: table;
 }
@@ -1435,8 +1430,7 @@ img {
   border: 0;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -1528,8 +1522,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: #448aff;
   text-decoration: underline;
 }
@@ -1617,8 +1610,7 @@ label {
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn.disabled,
-.btn[disabled] {
+.btn.disabled, .btn[disabled] {
   opacity: 0.65;
   cursor: default;
   pointer-events: none;
@@ -1671,8 +1663,7 @@ select {
   appearance: menulist;
 }
 
-select[multiple],
-select[size] {
+select[multiple], select[size] {
   height: auto;
 }
 
