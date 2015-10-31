@@ -268,15 +268,11 @@ input[type="search"] {
 
 
 	.select {
+		position: relative;
+
 		select {
-			/* autoprefixer: off */
-			-webkit-background-origin: content-box;
-			background-origin: content-box;
-			background-repeat: no-repeat;
-			background-position: right center;
-			background-image: url($icon-select-fallback);
-			background-image: url($icon-select), linear-gradient(transparent, transparent);
-			background-image: none \9;
+			padding-right: 2em;
+			padding-right: $input-padding-horizontal \9;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
@@ -290,18 +286,55 @@ input[type="search"] {
 			background: transparent;
 			color: $input-color;
 		}
+
+		&:after {
+			/* autoprefixer: off */
+			content: ' ';
+			pointer-events: none;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: $input-padding-horizontal;
+			width: 12px;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-image: url($icon-select-fallback);
+			background-image: url($icon-select), linear-gradient(transparent, transparent);
+			background-image: none \9;
+			display: none \9;
+		}
+	}
+
+	// show custom arrow in IE 10+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		.select:after {
+			display: block;
+		}
+
+		.select select {
+			padding-right: 2em;
+		}
 	}
 
 	// show custom arrow in Firefox 35+
 	@-moz-document url-prefix() {
 		/* autoprefixer: off */
+		.select:after {
+			display: none;
+		}
+
 		.select select {
-			background-size: 0;
+			padding-right: $input-padding-horizontal;
 		}
 
 		@supports (filter: opacity(1)) {
+			.select:after {
+				display: block;
+			}
+
 			.select select {
-				background-size: auto auto;
+				padding-right: 2em;
 			}
 		}
 	}
