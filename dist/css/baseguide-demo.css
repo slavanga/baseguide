@@ -1639,7 +1639,7 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   background-color: #fff;
   color: #333;
   -webkit-transition: border-color 0.15s ease-in-out;
-          transition: border-color 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1796,7 +1796,7 @@ input[type="checkbox"] + label:after,
 input[type="radio"] + label:after {
   opacity: 0;
   -webkit-transition: opacity 0.15s ease-in-out;
-          transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
   background-repeat: no-repeat;
   background-position: center center;
 }
