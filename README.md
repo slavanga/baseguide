@@ -168,15 +168,17 @@ You can set the variable ```$use-custom-forms``` to ```false``` to disable custo
 Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to automatically add vendor prefixes to the CSS output. The browser support of the framework roughly corresponds to the autoprefixer settings:
 
 ```
-'Android 2.3',
-'Android >= 4',
-'last 4 Chrome versions',
-'Firefox ESR',
-'Edge >= 12',
-'IE >= 8',
-'iOS >= 8',
-'Safari >= 8',
-'Opera >= 15'
+browsers: [
+  'Android 2.3',
+  'Android >= 4',
+  'last 4 Chrome versions',
+  'Firefox ESR',
+  'Edge >= 12',
+  'IE >= 8',
+  'iOS >= 8',
+  'Safari >= 8',
+  'Opera >= 15'
+]
 ```
 
 ##Inspired By…
