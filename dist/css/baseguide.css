@@ -1551,6 +1551,47 @@ input {
   }
 }
 
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.375em 1em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border-color: transparent;
+  background-image: none;
+  background-color: #448aff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn.disabled, .btn[disabled] {
+  opacity: 0.65;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:focus {
+  outline: 0;
+  text-decoration: none;
+  background-color: #2b7aff;
+  color: #fff;
+}
+
+.btn:active {
+  background-color: #2b7aff;
+  color: #fff;
+}
+
 fieldset {
   min-width: 0;
   margin: 0;
@@ -1594,47 +1635,6 @@ label {
 .form-inline .checkbox + .checkbox,
 .form-inline .radio + .radio {
   margin-left: 1em;
-}
-
-.btn {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.375em 1em;
-  border: 1px solid transparent;
-  border-radius: 0;
-  border-color: transparent;
-  background-image: none;
-  background-color: #448aff;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn.disabled, .btn[disabled] {
-  opacity: 0.65;
-  cursor: default;
-  pointer-events: none;
-}
-
-.btn:hover,
-.btn:focus {
-  outline: 0;
-  text-decoration: none;
-  background-color: #2a7aff;
-  color: #fff;
-}
-
-.btn:active {
-  background-color: #2a7aff;
-  color: #fff;
 }
 
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea, select {

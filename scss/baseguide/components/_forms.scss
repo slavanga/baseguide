@@ -4,12 +4,6 @@ $input-list-hover: assign-inputs($input-selector, hover) !default;
 $input-list-focus: assign-inputs($input-selector, focus) !default;
 $input-list-active: assign-inputs($input-selector, active) !default;
 
-// Generate lists of all buttons
-$button-list: assign-inputs($button-selector) !default;
-$button-list-hover: assign-inputs($button-selector, hover) !default;
-$button-list-focus: assign-inputs($button-selector, focus) !default;
-$button-list-active: assign-inputs($button-selector, active) !default;
-
 
 fieldset {
 	min-width: 0;
@@ -56,46 +50,6 @@ label {
 	.radio + .radio {
 		margin-left: 1em;
 	}
-}
-
-
-// buttons
-#{$button-list} {
-	display: inline-block;
-	vertical-align: middle;
-	padding: $button-padding-vertical $button-padding-horizontal;
-	border: 1px solid transparent;
-	border-radius: $button-border-radius;
-	border-color: $button-border-color;
-	background-image: none;
-	background-color: $button-bg;
-	color: $button-color;
-	text-align: center;
-	text-decoration: none;
-	cursor: pointer;
-	user-select: none;
-	touch-action: manipulation;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-
-	&.disabled,
-	&[disabled] {
-		opacity: 0.65;
-		cursor: default;
-		pointer-events: none;
-	}
-}
-
-#{$button-list-hover},
-#{$button-list-focus} {
-	outline: 0;
-	text-decoration: none;
-	background-color: $button-hover-bg;
-	color: $button-hover-color;
-}
-
-#{$button-list-active} {
-	background-color: $button-active-bg;
-	color: $button-active-color;
 }
 
 
