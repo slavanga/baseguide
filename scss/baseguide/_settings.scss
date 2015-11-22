@@ -98,7 +98,7 @@ $mq-breakpoints: (
 	lg: 1200px
 ) !default;
 
-$mq-breakpoints-list: to-list($mq-breakpoints, 'keys') !default;
+$mq-breakpoints-list: map-keys($mq-breakpoints) !default;
 $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
 
 
@@ -107,4 +107,4 @@ $grid-flexbox: false !default;
 $grid-columns-output: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
-$grid-container: map-get($mq-breakpoints, nth($mq-breakpoints-list, length($mq-breakpoints-list))) !default;
+$grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
