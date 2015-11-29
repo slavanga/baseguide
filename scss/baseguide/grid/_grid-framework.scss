@@ -204,6 +204,8 @@
 	$i: 1;
 
 	@each $class, $width in $mq-breakpoints {
+		$i: $i + 1;
+
 		@if length($mq-breakpoints-list) > 1 {
 			.visible-#{$class} {
 				display: none !important;
@@ -215,7 +217,7 @@
 			@include calc-all-columns($class);
 
 			@if length($mq-breakpoints-list) > 1 {
-				@include mq($until: nth($mq-breakpoints-list, $i + 1)) {
+				@include mq($until: nth($mq-breakpoints-list, $i)) {
 					.hidden-#{$class} {
 						display: none !important;
 					}
@@ -249,7 +251,7 @@
 				}
 			}
 
-			@include mq($from: $class, $until: nth($mq-breakpoints-list, $i + 1)) {
+			@include mq($from: $class, $until: nth($mq-breakpoints-list, $i)) {
 				.visible-#{$class} {
 					display: block !important;
 				}
@@ -267,7 +269,5 @@
 				}
 			}
 		}
-
-		$i: $i + 1;
 	}
 }
