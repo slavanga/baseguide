@@ -9,7 +9,14 @@ Baseguide is a lightweight and robust CSS framework powered by Sass. It brings t
 * Responsive and scalable components
 
 ##Getting started
-After downloading Baseguide you can import the framework in your SCSS file.
+[Download the latest release] (https://github.com/slavanga/baseguide/archive/master.zip) or clone the repo:
+
+```sh
+git clone https://github.com/slavanga/baseguide
+```
+
+Default variables can be changed before importing Baseguide. Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
 
@@ -18,7 +25,11 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using browsersync.
+
+```sh
+npm install && gulp serve
+```
 
 
 ##Grid
