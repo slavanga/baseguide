@@ -7,13 +7,10 @@ $spacing-base: 1.5em !default;
 $type-scale-base: $font-size-base !default;
 $type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
 
-$font-size-h1: modular-scale(4) !default;
-$font-size-h2: modular-scale(3) !default;
-$font-size-h3: modular-scale(2) !default;
-$font-size-h4: modular-scale(1) !default;
-$font-size-h5: modular-scale(0) !default;
-$font-size-h6: modular-scale(-1) !default;
-$font-size-sm: modular-scale(-1) !default;
+$headings: (
+	'h1, .h1', 'h2, .h2', 'h3, .h3',
+	'h4, .h4', 'h5, .h5', 'h6, .h6'
+) !default;
 
 $headings-font-family: inherit !default;
 $headings-font-weight: 700 !default;
