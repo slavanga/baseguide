@@ -65,7 +65,7 @@ $input-disabled-border-color: #ccc !default;
 
 $placeholder-color: lighten($input-color, 50%) !default;
 
-$input-selector:
+$input-selector: (
 	'input[type="email"]',
 	'input[type="number"]',
 	'input[type="password"]',
@@ -74,7 +74,8 @@ $input-selector:
 	'input[type="text"]',
 	'input[type="url"]',
 	'textarea',
-	'select' !default;
+	'select'
+) !default;
 
 $icon-radio: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E" !default;
 $icon-radio-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=' !default;
