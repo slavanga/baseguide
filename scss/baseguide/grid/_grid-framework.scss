@@ -62,7 +62,6 @@
 	@if $grid-flexbox {
 		/* autoprefixer: off */
 		width: 100%;
-		min-width: 1px;
 		-webkit-flex: 0 0 auto;
 		-ms-flex: 0 0 auto;
 		flex: 0 0 auto;
@@ -74,10 +73,6 @@
 
 	@if (type-of($size) == 'number') {
 		width: percentage($size / $columns);
-
-		@if $grid-flexbox {
-			max-width: percentage($size / $columns);
-		}
 	} @else {
 		width: auto;
 
@@ -133,10 +128,6 @@
 	@if ($type == width) and ($index > 0) {
 		.col-#{$class}-#{$index} {
 			width: percentage($index / $grid-columns);
-
-			@if $grid-flexbox {
-				max-width: percentage($index / $grid-columns);
-			}
 		}
 	}
 
