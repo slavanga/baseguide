@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 
 var config = {
@@ -42,9 +43,11 @@ gulp.task('styles', function() {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe($.autoprefixer({
-			browsers: config.browsers
-		}))
+		.pipe($.postcss([
+			autoprefixer({
+				browsers: config.browsers
+			})
+		]))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())
