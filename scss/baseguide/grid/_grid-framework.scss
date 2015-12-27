@@ -172,9 +172,11 @@
 	}
 }
 
-@mixin float-all-columns($class, $i: 1, $list: '.col-#{$class}-#{$i}') {
-	@for $i from (1 + 1) through $grid-columns {
-		$list: '#{$list}, .col-#{$class}-#{$i}';
+@mixin float-all-columns($class) {
+	$list: ();
+
+	@for $i from 1 through $grid-columns {
+		$list: append($list, '.col-#{$class}-#{$i}', comma);
 	}
 
 	#{$list} {
