@@ -3,30 +3,23 @@
 // ----------------
 
 @mixin container($gutter: $grid-gutter, $width: $grid-container) {
-	@include clearfix;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: ($gutter / 2);
-	padding-right: ($gutter / 2);
-
-	@if strip-unit($gutter) != 0 {
-		padding-left: to-rem($gutter / 2);
-		padding-right: to-rem($gutter / 2);
+	@if (type-of($gutter) == map) {
+		$max-width: $width - nth(map-values($gutter), length($gutter));
+	} @else {
+		$max-width: $width - $gutter;
 	}
 
-	max-width: $width - $gutter;
-	max-width: to-rem($width - $gutter);
+	@include clearfix;
+	@include make-gutters($gutter);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-width;
+	max-width: to-rem($max-width);
 }
 
 @mixin row($gutter: $grid-gutter) {
 	@include clearfix;
-	margin-left: ($gutter / -2);
-	margin-right: ($gutter / -2);
-
-	@if strip-unit($gutter) != 0 {
-		margin-left: to-rem($gutter / -2);
-		margin-right: to-rem($gutter / -2);
-	}
+	@include make-gutters($gutter, outer);
 
 	@if $grid-flexbox {
 		/* autoprefixer: off */
@@ -49,25 +42,19 @@
 }
 
 @mixin column-base($gutter: $grid-gutter) {
+	@include make-gutters($gutter);
 	position: relative;
 	min-height: 1px;
-	padding-left: ($gutter / 2);
-	padding-right: ($gutter / 2);
-
-	@if strip-unit($gutter) != 0 {
-		padding-left: to-rem($gutter / 2);
-		padding-right: to-rem($gutter / 2);
-	}
 
 	@if $grid-flexbox {
 		width: 100%;
 	}
 }
 
-@mixin column($size: expand, $columns: $grid-columns, $gutter: $grid-gutter) {
+@mixin column($size: expand, $columns: $grid-columns) {
 	float: left;
 
-	@if (type-of($size) == 'number') {
+	@if (type-of($size) == number) {
 		width: percentage($size / $columns);
 	} @else {
 		width: auto;
@@ -86,16 +73,6 @@
 				-ms-flex: 1 1 auto;
 				flex: 1 1 auto;
 			}
-		}
-	}
-
-	@if $gutter != $grid-gutter {
-		padding-left: ($gutter / 2);
-		padding-right: ($gutter / 2);
-		
-		@if strip-unit($gutter) != 0 {
-			padding-left: to-rem($gutter / 2);
-			padding-right: to-rem($gutter / 2);
 		}
 	}
 }
@@ -184,7 +161,7 @@
 	}
 }
 
-@mixin make-columns() {
+@mixin make-columns {
 	@if $grid-columns-output {
 		$list: ();
 
@@ -201,8 +178,48 @@
 	}
 }
 
+@mixin gutter($gutter, $type) {
+	$gutter: $gutter / 2;
+
+	@if $type == inner {
+		padding-left: $gutter;
+		padding-right: $gutter;
+
+		@if strip-unit($gutter) != 0 {
+			padding-left: to-rem($gutter);
+			padding-right: to-rem($gutter);
+		}
+	} @else {
+		$gutter: $gutter * -1;
+
+		margin-left: $gutter;
+		margin-right: $gutter;
+
+		@if strip-unit($gutter) != 0 {
+			margin-left: to-rem($gutter);
+			margin-right: to-rem($gutter);
+		}
+	}
+}
+
+@mixin make-gutters($gutter: $grid-gutter, $type: inner) {
+	@if (type-of($gutter) == map) {
+		@each $breakpoint, $width in $gutter {
+			@if $breakpoint == nth($mq-breakpoints-list, 1) {
+				@include gutter($width, $type);
+			} @else {
+				@include mq($breakpoint) {
+					@include gutter($width, $type);
+				}
+			}
+		}
+	} @else {
+		@include gutter($gutter, $type);
+	}
+}
+
 // Create breakpoints and responsive visibility classes
-@mixin make-breakpoints() {
+@mixin make-breakpoints {
 	$i: 1;
 
 	@each $class, $width in $mq-breakpoints {

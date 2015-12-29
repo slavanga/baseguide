@@ -89,6 +89,21 @@ Include the generated CSS file after the rest of your styles to serve a fixed wi
 <!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
 ```
 
+###Gutters
+The gutters are controlled by the ```$grid-gutter``` variable. It can either be a global value across all breakpoints or a map with gutter values per breakpoint.
+
+```scss
+// set gutter for all breakpoints
+$grid-gutter: 60px;
+
+// start with 20px gutter and increase to 40px from the md breakpoint
+// note: breakpoints can be skipped to keep the last defined value
+$grid-gutter: (
+  xs: 20px,
+  md: 40px
+);
+```
+
 ###Semantic / hybrid grid
 The grid mixins can be used to create custom containers, rows and columns.
 
@@ -102,7 +117,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 @include row($gutter);
 
 @include column-base($gutter);
-@include column($size, $columns, $gutter);
+@include column($size, $columns);
 
 @include column-push($size, $columns);
 @include column-pull($size, $columns);
