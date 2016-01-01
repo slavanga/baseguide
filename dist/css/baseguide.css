@@ -652,10 +652,6 @@ th {
   left: 100%;
 }
 
-.col-xs-offset-12 {
-  margin-left: 100%;
-}
-
 @media (max-width: 47.99em) {
   .hidden-xs {
     display: none !important;
@@ -842,9 +838,6 @@ th {
   .col-sm-push-12 {
     left: 100%;
   }
-  .col-sm-offset-12 {
-    margin-left: 100%;
-  }
   .hidden-sm-up {
     display: none !important;
   }
@@ -1027,9 +1020,6 @@ th {
   .col-md-push-12 {
     left: 100%;
   }
-  .col-md-offset-12 {
-    margin-left: 100%;
-  }
   .hidden-md-up {
     display: none !important;
   }
@@ -1192,9 +1182,6 @@ th {
   }
   .col-lg-push-12 {
     left: 100%;
-  }
-  .col-lg-offset-12 {
-    margin-left: 100%;
   }
   .hidden-lg {
     display: none !important;

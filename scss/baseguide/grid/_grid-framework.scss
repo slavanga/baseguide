@@ -144,7 +144,10 @@
 			@include calc-column($class, $i, width);
 			@include calc-column($class, $i, pull);
 			@include calc-column($class, $i, push);
-			@include calc-column($class, $i, offset);
+
+			@if ($i < $grid-columns) {
+				@include calc-column($class, $i, offset);
+			}
 		}
 	}
 }
