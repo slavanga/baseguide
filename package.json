@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.2.2",
+    "autoprefixer": "^6.2.3",
     "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
     "gulp-cache": "^0.4.1",
