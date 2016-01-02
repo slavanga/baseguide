@@ -1,3 +1,10 @@
+$mq-breakpoints: (
+	xs: 480px,
+	sm: 640px,
+	md: 820px,
+	lg: 960px
+);
+
 @import 'baseguide';
 
 .intro-title {
@@ -9,7 +16,7 @@
 		font-family: Merriweather, Georgia, serif;
 	}
 
-	@include mq(sm) {
+	@include mq(md) {
 		font-size: 3.15733em;
 	}
 }
@@ -26,12 +33,11 @@
 		background: rgba(255, 255, 255, 0.3);
 	}
 
-	@include mq(sm) {
-		padding-top: 40px;
-		padding-bottom: 40px;
+	@include mq(md) {
+		padding: 40px 35px;
 
 		.container {
-			max-width: 45em;
+			max-width: mq-get-breakpoint-width(lg) - ($grid-gutter * 2);
 			padding: 40px;
 		}
 
