@@ -26,11 +26,11 @@ git clone https://github.com/slavanga/baseguide
 
 **Download**
 
-[Download the latest release] (https://github.com/slavanga/baseguide/archive/master.zip)
+[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
 
 ### Setup
 
-Default variables can be changed before importing Baseguide. Take a look at the [_settings.scss] (https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+Default variables can be changed before importing Baseguide. Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -48,7 +48,7 @@ npm install && gulp serve
 
 
 ## Grid
-The grid framework is based on the [Bootstrap grid system] (http://getbootstrap.com/css/#grid).
+The grid framework is based on the [Bootstrap grid system](http://getbootstrap.com/css/#grid).
 
 ### Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
@@ -67,7 +67,7 @@ $mq-breakpoints: (
 Baseguide generates all the necessary grid and responsive visibility classes based on these breakpoints.
 
 ### Media Queries
-Media Queries are handled by [Sass MQ] (https://github.com/sass-mq/sass-mq).
+Media Queries are handled by [Sass MQ](https://github.com/sass-mq/sass-mq).
 
 ```scss
 // include the media query mixin and pass the breakpoint key
@@ -84,10 +84,10 @@ The snippet above compiles to the following CSS:
 }
 ```
 
-Check out the [Sass MQ documentation] (http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
+Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
 #### Legacy support
-To support browsers without native media query support you could use [respond.js] (https://github.com/scottjehl/Respond).
+To support browsers without native media query support you could use [respond.js](https://github.com/scottjehl/Respond).
 
 A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
 
@@ -168,7 +168,7 @@ The example below shows how to create a mobile first layout with five columns.
 ```
 
 ### Flexbox
-The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. This is no kill switch for older browsers as the floats are kept in place for a basic fallback. Browsers that support flexbox and flex-wrap ([Support table] (http://caniuse.com/#search=flexbox)) will get these benefits:
+The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. This is no kill switch for older browsers as the floats are kept in place for a basic fallback. Browsers that support flexbox and flex-wrap ([Support table](http://caniuse.com/#search=flexbox)) will get these benefits:
 
 * CSS-only equal height columns
 * Easy vertical and horizontal alignment of columns
@@ -206,7 +206,7 @@ You can set the variable ```$use-custom-forms``` to ```false``` to disable custo
 ## Browser support
 
 ### Autoprefixer
-Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to automatically add vendor prefixes to the CSS output. The browser support of the framework roughly corresponds to the autoprefixer settings:
+Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to automatically add vendor prefixes to the CSS output. The browser support of the framework roughly corresponds to the autoprefixer settings:
 
 ```
 browsers: [
@@ -223,8 +223,8 @@ browsers: [
 ```
 
 ## Inspired By…
-* [Article: Styling with STRINGS] (http://simurai.com/blog/2014/05/04/cssconf/)
-* [Bootstrap] (http://getbootstrap.com/)
-* [Bourbon] (http://bourbon.io/)
-* [Foundation] (http://foundation.zurb.com/)
-* [HTML5 Boilerplate] (https://html5boilerplate.com/)
+* [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Bourbon](http://bourbon.io/)
+* [Foundation](http://foundation.zurb.com/)
+* [HTML5 Boilerplate](https://html5boilerplate.com/)
