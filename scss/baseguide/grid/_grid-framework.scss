@@ -267,13 +267,13 @@
 				display: none !important;
 			}
 
-			@include mq($from: $class) {
+			@include mq($class) {
 				.visible-#{$class}-up {
 					display: block !important;
 				}
 			}
 
-			@include mq($from: $class, $until: nth($mq-breakpoints-list, $i)) {
+			@include mq($class, nth($mq-breakpoints-list, $i)) {
 				.visible-#{$class} {
 					display: block !important;
 				}
