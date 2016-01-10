@@ -249,7 +249,6 @@ input[type="search"] {
 			background-position: center center;
 			background-image: url($icon-select-fallback);
 			background-image: url($icon-select), linear-gradient(transparent, transparent);
-			background-image: none \9;
 			display: none \9;
 		}
 	}

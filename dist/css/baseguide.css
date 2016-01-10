@@ -1843,7 +1843,6 @@ input[type="checkbox"]:checked + label:after {
   background-position: center center;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVChTYzQyMqpnZGRsYCAC/P//v4H5+fPnByUlJRmAmhyg4lgBSPG5c+camUEcQppgikFssAYQwKUJWTEIwDWAAEiTlJSUAJBpAeIDFRcCFXeC2HiBsbFxPzAwCqBcJMDAAAD1cjECKulnugAAAABJRU5ErkJggg==");
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath fill='%23333' d='M0 0l6 6 6-6h-12z'/%3E%3C/svg%3E"), linear-gradient(transparent, transparent);
-  background-image: none \9;
   display: none \9;
 }
 
