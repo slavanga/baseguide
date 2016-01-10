@@ -1858,18 +1858,12 @@ input[type="checkbox"]:checked + label:after {
 
 @-moz-document url-prefix() {
   /* autoprefixer: off */
-  .select:after {
-    display: none;
-  }
-  .select select {
-    padding-right: 0.75em;
-  }
-  @supports (filter: opacity(1)) {
+  @supports not (filter: opacity(1)) {
     .select:after {
-      display: block;
+      display: none;
     }
     .select select {
-      padding-right: 2em;
+      padding-right: 0.75em;
     }
   }
 }

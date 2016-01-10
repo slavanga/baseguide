@@ -271,24 +271,16 @@ input[type="search"] {
 		}
 	}
 
-	// show custom arrow in Firefox 35+
+	// hide custom arrow in Firefox < 35
 	@-moz-document url-prefix() {
 		/* autoprefixer: off */
-		.select:after {
-			display: none;
-		}
-
-		.select select {
-			padding-right: $input-padding-horizontal;
-		}
-
-		@supports (filter: opacity(1)) {
+		@supports not(filter: opacity(1)) {
 			.select:after {
-				display: block;
+				display: none;
 			}
 
 			.select select {
-				padding-right: 2em;
+				padding-right: $input-padding-horizontal;
 			}
 		}
 	}
