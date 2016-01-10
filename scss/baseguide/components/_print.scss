@@ -1,4 +1,4 @@
-// Print styles taken from the HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
+// Print styles adapted from HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
 
 @media print {
 	*,
@@ -17,17 +17,8 @@
 		text-decoration: underline;
 	}
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
-
 	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
-
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after {
-		content: "";
+		content: ' (' attr(title) ')';
 	}
 
 	pre,
