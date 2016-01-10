@@ -64,8 +64,6 @@ label {
 	background-color: $input-bg;
 	color: $input-color;
 	transition: border-color 0.15s ease-in-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 
 	&[disabled] {
@@ -82,8 +80,6 @@ label {
 }
 
 select {
-	-webkit-appearance: menulist;
-	-moz-appearance: menulist;
 	appearance: menulist;
 
 	&[multiple],
@@ -227,8 +223,6 @@ input[type="search"] {
 		select {
 			padding-right: 2em;
 			padding-right: $input-padding-horizontal \9;
-			-webkit-appearance: none;
-			-moz-appearance: none;
 			appearance: none;
 		}
 

@@ -1627,8 +1627,8 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   -webkit-transition: border-color 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled], select[disabled] {
@@ -1645,8 +1645,8 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
 
 select {
   -webkit-appearance: menulist;
-  -moz-appearance: menulist;
-  appearance: menulist;
+     -moz-appearance: menulist;
+          appearance: menulist;
 }
 
 select[multiple], select[size] {
@@ -1816,8 +1816,8 @@ input[type="checkbox"]:checked + label:after {
   padding-right: 2em;
   padding-right: 0.75em \9;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .select select::-ms-expand {
