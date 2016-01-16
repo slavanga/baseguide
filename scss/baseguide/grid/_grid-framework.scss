@@ -3,10 +3,12 @@
 // ----------------
 
 @mixin container($gutter: $grid-gutter, $width: $grid-container) {
-	$max-width: $width - $gutter;
+	$max-width: 100%;
 
 	@if (type-of($gutter) == map) {
 		$max-width: $width - nth(map-values($gutter), length($gutter));
+	} @else {
+		$max-width: $width - $gutter;
 	}
 
 	@include clearfix;
