@@ -37,6 +37,10 @@
 // media object
 .media {
 	margin-bottom: $spacing-base;
+
+	img {
+		max-width: none;
+	}
 }
 
 .media-left,

@@ -1356,6 +1356,10 @@ img {
   margin-bottom: 1.5em;
 }
 
+.media img {
+  max-width: none;
+}
+
 .media-left,
 .media > .pull-left {
   padding-right: 1em;
