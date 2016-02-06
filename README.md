@@ -144,11 +144,8 @@ Tip: You can turn off the default columns output by setting ```$grid-columns-out
 The example below shows how to create a mobile first layout with five columns.
 
 ```scss
-.col {
-  @include column-base;
-}
-
 .col-news-item {
+  @include column-base;
   @include mq(md) {
     @include column(1, 5);
   }
@@ -158,11 +155,11 @@ The example below shows how to create a mobile first layout with five columns.
 ```html
 <div class="container">
   <div class="row">
-    <article class="col col-news-item">News item</article>
-    <article class="col col-news-item">News item</article>
-    <article class="col col-news-item">News item</article>
-    <article class="col col-news-item">News item</article>
-    <article class="col col-news-item">News item</article>
+    <article class="col-news-item">News item</article>
+    <article class="col-news-item">News item</article>
+    <article class="col-news-item">News item</article>
+    <article class="col-news-item">News item</article>
+    <article class="col-news-item">News item</article>
   </div>
 </div>
 ```

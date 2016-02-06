@@ -46,20 +46,17 @@
 @mixin column-base($gutter: $grid-gutter) {
 	@include make-gutters($gutter);
 	position: relative;
+	float: left;
+	width: 100%;
 	min-height: 1px;
-
-	@if $grid-flexbox {
-		width: 100%;
-	}
 }
 
 @mixin column($size: expand, $columns: $grid-columns) {
-	float: left;
-
 	@if (type-of($size) == number) {
 		width: percentage($size / $columns);
 	} @else {
 		width: auto;
+		max-width: 100%;
 
 		@if $grid-flexbox {
 			/* autoprefixer: off */
@@ -139,46 +136,13 @@
 
 // Create columns for a specific class
 @mixin calc-all-columns($class) {
-	@if $grid-columns-output {
-		@include float-all-columns($class);
+	@for $i from 0 through $grid-columns {
+		@include calc-column($class, $i, width);
+		@include calc-column($class, $i, pull);
+		@include calc-column($class, $i, push);
 
-		@for $i from 0 through $grid-columns {
-			@include calc-column($class, $i, width);
-			@include calc-column($class, $i, pull);
-			@include calc-column($class, $i, push);
-
-			@if ($i < $grid-columns) {
-				@include calc-column($class, $i, offset);
-			}
-		}
-	}
-}
-
-@mixin float-all-columns($class) {
-	$list: ();
-
-	@for $i from 1 through $grid-columns {
-		$list: append($list, '.col-#{$class}-#{$i}', comma);
-	}
-
-	#{$list} {
-		float: left;
-	}
-}
-
-@mixin make-columns {
-	@if $grid-columns-output {
-		$list: ();
-
-		@each $class in $mq-breakpoints-list {
-			@for $i from 1 through $grid-columns {
-				$input: '.col-#{$class}-#{$i}';
-				$list: append($list, unquote($input), comma);
-			}
-		}
-
-		#{$list} {
-			@include column-base;
+		@if ($i < $grid-columns) {
+			@include calc-column($class, $i, offset);
 		}
 	}
 }
