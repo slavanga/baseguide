@@ -233,19 +233,13 @@
 				display: none !important;
 			}
 
-			@include mq($class) {
-				.visible-#{$class}-up {
-					display: block !important;
-				}
-			}
-
 			@include mq($class, nth($mq-breakpoints-list, $i)) {
-				.visible-#{$class} {
-					display: block !important;
-				}
-
 				.hidden-#{$class} {
 					display: none !important;
+				}
+
+				.visible-#{$class} {
+					display: block !important;
 				}
 			}
 
@@ -254,6 +248,10 @@
 
 				.hidden-#{$class}-up {
 					display: none !important;
+				}
+
+				.visible-#{$class}-up {
+					display: block !important;
 				}
 			}
 		}
