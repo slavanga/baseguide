@@ -11,16 +11,16 @@
 }
 
 @function pow($number, $exp) {
-	$return: $number;
+	$return: 1;
 
 	@if $exp > 0 {
 		// If the exponent is positive then multiply it
-		@for $i from 1 to $exp {
+		@for $i from 1 through $exp {
 			$return: $return * $number;
 		}
-	} @else {
+	} @else if $exp < 0 {
 		// If the number is 0 or negative then divide it
-		@for $i from (-1 + 1) to (abs($exp) + 1) {
+		@for $i from 1 through -$exp {
 			$return: $return / $number;
 		}
 	}
