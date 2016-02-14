@@ -76,6 +76,18 @@
 	}
 }
 
+@mixin column-block($columns: $grid-columns) {
+	width: percentage(1 / $columns);
+
+	&:nth-of-type(1n) {
+		clear: none;
+	}
+
+	&:nth-child(#{$columns}n+1) {
+		clear: both;
+	}
+}
+
 @mixin column-push($size, $columns: $grid-columns) {
 	@if $size > 0 {
 		left: percentage($size / $columns);
