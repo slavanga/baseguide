@@ -16,9 +16,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
+    "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-cache": "^0.4.2",
     "gulp-iconify": "git://github.com/slavanga/gulp-iconify.git",
     "gulp-if": "^2.0.0",
@@ -30,7 +30,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.1",
+    "gulp-uglify": "^1.5.2",
     "gulp-util": "^3.0.7"
   }
 }
