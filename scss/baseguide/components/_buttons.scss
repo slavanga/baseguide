@@ -24,7 +24,7 @@ $button-list-active: assign-inputs($button-selector, active) !default;
 
 	&.disabled,
 	&[disabled] {
-		opacity: 0.65;
+		opacity: $button-disabled-opacity;
 		cursor: default;
 		pointer-events: none;
 	}
