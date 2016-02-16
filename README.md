@@ -171,6 +171,7 @@ Tip: You can turn off the default columns output by setting ```$grid-columns-out
 
 ```scss
 .col-gallery {
+  @include column-base;
   @include column-block(3);
 
   @include mq(md) {
