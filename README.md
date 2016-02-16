@@ -1,7 +1,7 @@
 # [Baseguide](http://basegui.de)
 Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
 
-[![GitHub version](https://badge.fury.io/gh/slavanga%2Fbaseguide.svg)](https://badge.fury.io/gh/slavanga%2Fbaseguide)
+[![npm version](https://badge.fury.io/js/baseguide.svg)](https://badge.fury.io/js/baseguide)
 
 ## Features
 * Flexible and extendable breakpoint system
