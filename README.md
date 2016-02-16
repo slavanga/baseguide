@@ -123,7 +123,7 @@ $grid-gutter: (
 The grid mixins can be used to create custom containers, rows and columns.
 
 ```scss
-// $gutter: gutter width in pixels, defaults to $grid-gutter
+// $gutter: gutter width in pixels or map with gutters, defaults to $grid-gutter
 // $size: an integer, the number of columns
 // $columns: an integer, the total number of columns, defaults to $grid-columns
 // $width: container width in pixels, defaults to $grid-container
@@ -137,17 +137,23 @@ The grid mixins can be used to create custom containers, rows and columns.
 @include column-push($size, $columns);
 @include column-pull($size, $columns);
 @include column-offset($size, $columns);
+
+@include column-block($columns);
 ```
 
 Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
 
-The example below shows how to create a mobile first layout with five columns.
+
+#### Simple two column layout
 
 ```scss
-.col-news-item {
-  @include column-base;
-  @include mq(md) {
-    @include column(1, 5);
+@include mq(sm) {
+  .col-content {
+    @include column(8);
+  }
+
+  .col-sidebar {
+    @include column(4);
   }
 }
 ```
@@ -155,11 +161,33 @@ The example below shows how to create a mobile first layout with five columns.
 ```html
 <div class="container">
   <div class="row">
-    <article class="col-news-item">News item</article>
-    <article class="col-news-item">News item</article>
-    <article class="col-news-item">News item</article>
-    <article class="col-news-item">News item</article>
-    <article class="col-news-item">News item</article>
+    <article class="col col-content">Main Content</article>
+    <aside class="col col-sidebar">Sidebar</aside>
+  </div>
+</div>
+```
+
+#### Gallery layout using block grid
+
+```scss
+.col-gallery {
+  @include column-block(3);
+
+  @include mq(md) {
+    @include column-block(6);
+  }
+}
+```
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-gallery">Gallery item</div>
+    <div class="col-gallery">Gallery item</div>
+    <div class="col-gallery">Gallery item</div>
+    <div class="col-gallery">Gallery item</div>
+    <div class="col-gallery">Gallery item</div>
+    <div class="col-gallery">Gallery item</div>
   </div>
 </div>
 ```
