@@ -140,10 +140,8 @@ input[type="search"] {
 
 // custom form controls
 @if $use-custom-forms {
-	.checkbox input[type="checkbox"]:not(:checked),
-	.checkbox input[type="checkbox"]:checked,
-	.radio input[type="radio"]:not(:checked),
-	.radio input[type="radio"]:checked {
+	:not(:checked) input[type="checkbox"],
+	:not(:checked) input[type="radio"] {
 		opacity: 0;
 		z-index: -1;
 
@@ -152,26 +150,23 @@ input[type="search"] {
 			padding-left: 1.4em;
 		}
 
-		+ label:before,
-		+ label:after {
+		+ label:before {
 			content: ' ';
 		}
 	}
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		+ label:before,
-		+ label:after {
+		+ label:before {
 			position: absolute;
 			top: 0.1875em;
 			left: 0;
 			width: 1em;
 			height: 1em;
-		}
-
-		+ label:before {
 			border: 1px solid $input-border-color;
 			background-color: #fff;
+			background-repeat: no-repeat;
+			background-position: center center;
 		}
 
 		&:hover + label:before {
@@ -186,17 +181,6 @@ input[type="search"] {
 			border-color: $input-disabled-border-color;
 			background-color: $input-disabled-bg;
 		}
-
-		+ label:after {
-			opacity: 0;
-			transition: opacity 0.15s ease-in-out;
-			background-repeat: no-repeat;
-			background-position: center center;
-		}
-
-		&:checked + label:after {
-			opacity: 1;
-		}
 	}
 
 	input[type="radio"] + label:before {
@@ -204,13 +188,13 @@ input[type="search"] {
 	}
 
 	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
-	input[type="radio"]:checked + label:after {
+	input[type="radio"]:checked + label:before {
 		/* autoprefixer: off */
 		background-image: url($icon-radio-fallback);
 		background-image: url($icon-radio), linear-gradient(transparent, transparent);
 	}
 
-	input[type="checkbox"]:checked + label:after {
+	input[type="checkbox"]:checked + label:before {
 		/* autoprefixer: off */
 		background-image: url($icon-checkbox-fallback);
 		background-image: url($icon-checkbox), linear-gradient(transparent, transparent);
