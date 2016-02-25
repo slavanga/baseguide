@@ -1735,13 +1735,13 @@ input[type="radio"] + label:before {
   background-position: center center;
 }
 
-input[type="checkbox"]:hover + label:before,
-input[type="radio"]:hover + label:before {
+input[type="checkbox"] + label:hover:before,
+input[type="radio"] + label:hover:before {
   border-color: #838383;
 }
 
-input[type="checkbox"]:active + label:before,
-input[type="radio"]:active + label:before {
+input[type="checkbox"] + label:active:before,
+input[type="radio"] + label:active:before {
   background-color: #e9e9e9;
 }
 

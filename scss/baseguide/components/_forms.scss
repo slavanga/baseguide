@@ -169,11 +169,11 @@ input[type="search"] {
 			background-position: center center;
 		}
 
-		&:hover + label:before {
+		+ label:hover:before {
 			border-color: $input-focus-border-color;
 		}
 
-		&:active + label:before {
+		+ label:active:before {
 			background-color: lighten($input-focus-border-color, 40%);
 		}
 
