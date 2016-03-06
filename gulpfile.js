@@ -51,9 +51,7 @@ gulp.task('styles', function() {
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())
-		.pipe($.minifyCss({
-			compatibility: 'ie8'
-		}))
+		.pipe($.cleanCss({compatibility: 'ie8'}))
 		.pipe($.rename({suffix: '.min'}))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream());
