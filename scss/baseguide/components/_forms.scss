@@ -80,6 +80,7 @@ label {
 }
 
 select {
+	overflow-x: hidden;
 	appearance: menulist;
 
 	&[multiple],

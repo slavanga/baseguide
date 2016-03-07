@@ -1633,6 +1633,7 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
 }
 
 select {
+  overflow-x: hidden;
   -webkit-appearance: menulist;
      -moz-appearance: menulist;
           appearance: menulist;
