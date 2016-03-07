@@ -4,8 +4,8 @@
 	*,
 	*:before,
 	*:after,
-	*:first-letter,
-	*:first-line {
+	p:first-letter,
+	p:first-line {
 		background: transparent !important;
 		color: #000 !important;
 		box-shadow: none !important;
