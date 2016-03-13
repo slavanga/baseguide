@@ -15,11 +15,11 @@ textarea {
 }
 
 #{$headings} {
+	margin-top: $headings-spacing * 2;
+	margin-bottom: $headings-spacing;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
 	line-height: $headings-line-height;
-	margin-top: 0.8em;
-	margin-bottom: 0.4em;
 	color: $headings-color;
 
 	&:first-child {
