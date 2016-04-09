@@ -6,7 +6,6 @@ var browserSync = require('browser-sync').create();
 var config = {
 	'src': './',
 	'dest': 'dist/',
-	'icons': 'img/icons/',
 	'proxy': false,
 	'sourcemaps': false,
 	'browsers': [
@@ -81,16 +80,6 @@ gulp.task('images', function() {
 		.pipe($.cache($.imagemin()))
 		.pipe(gulp.dest(config.dest + 'img'))
 		.pipe(browserSync.stream());
-});
-
-// Icons
-gulp.task('icons', function() {
-	$.iconify({
-		src: config.src + config.icons + '**/*.svg',
-		pngOutput: config.dest + config.icons,
-		scssOutput: config.src + 'scss',
-		cssOutput: false
-	});
 });
 
 // Watch files for changes and reload

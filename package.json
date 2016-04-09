@@ -21,7 +21,6 @@
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.4",
     "gulp-clean-css": "^2.0.5",
-    "gulp-iconify": "git://github.com/slavanga/gulp-iconify.git",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-include": "^2.1.0",
