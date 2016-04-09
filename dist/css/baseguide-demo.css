@@ -1303,7 +1303,7 @@ img {
 }
 
 .list-inline > li > a {
-  display: block;
+  display: inline-block;
 }
 
 .list-equal {
