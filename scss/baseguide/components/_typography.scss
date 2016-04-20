@@ -9,8 +9,6 @@ input,
 button,
 select,
 textarea {
-	font-family: inherit;
-	font-size: inherit;
 	line-height: inherit;
 }
 
@@ -31,6 +29,10 @@ textarea {
 
 small, .small {
 	font-size: 80%;
+}
+
+pre {
+	overflow: auto;
 }
 
 hr {

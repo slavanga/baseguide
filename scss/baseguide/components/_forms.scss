@@ -122,18 +122,13 @@ input[type="file"] {
 	display: block;
 }
 
-input[type="search"] {
-	box-sizing: inherit;
-	-webkit-appearance: none;
-}
-
 
 // placeholder
 [placeholder].placeholder {
 	color: $placeholder-color;
 }
 
-[placeholder]::placeholder {
+::placeholder {
 	color: $placeholder-color;
 	opacity: 1;
 }
