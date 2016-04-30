@@ -228,6 +228,15 @@ While the controls are functional in all browsers the following ones get the ful
 
 You can set the variable ```$use-custom-forms``` to ```false``` to disable custom form styles in all browsers.
 
+### Caveats
+In iOS versions prior to 5.1.1 the code below is required to make custom radio buttons and checkboxes work.
+
+```js
+if (document.addEventListener) {
+  document.addEventListener('click', function() {}, false);
+}
+```
+
 
 ## Browser support
 
