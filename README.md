@@ -26,7 +26,7 @@ git clone https://github.com/slavanga/baseguide
 
 **Download**
 
-[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
+[Download the latest release](https://github.com/slavanga/baseguide/releases/latest)
 
 ### Setup
 
