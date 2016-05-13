@@ -1574,7 +1574,6 @@ input {
 
 fieldset {
   min-width: 0;
-  margin: 0;
   padding: 0;
   border: 0;
 }
@@ -1866,7 +1865,8 @@ video {
   vertical-align: middle;
 }
 
-figure {
+figure,
+fieldset {
   margin: 0;
 }
 
