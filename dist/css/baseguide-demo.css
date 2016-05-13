@@ -1245,6 +1245,11 @@ img {
   height: auto;
 }
 
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 .clearfix {
   *zoom: 1;
 }
