@@ -1245,10 +1245,6 @@ img {
   height: auto;
 }
 
-.gm-style img {
-  max-width: none;
-}
-
 .clearfix {
   *zoom: 1;
 }
