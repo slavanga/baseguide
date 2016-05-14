@@ -23,7 +23,7 @@ $font-antialiased: true !default;
 
 // Base colors and links
 $text-color: #333 !default;
-$link-color: #448aff !default;
+$link-color: #0283f1 !default;
 $link-hover-color: $link-color !default;
 $link-hover-decoration: underline !default;
 
@@ -33,8 +33,8 @@ $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
 $button-border-radius: 0 !default;
 
-$button-bg: #448aff !default;
-$button-hover-bg: darken($button-bg, 5%) !default;
+$button-bg: #0275d8 !default;
+$button-hover-bg: darken($button-bg, 10%) !default;
 $button-active-bg: $button-hover-bg !default;
 $button-color: #fff !default;
 $button-hover-color: #fff !default;

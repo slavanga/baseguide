@@ -74,12 +74,13 @@ $mq-breakpoints: (
 }
 
 .btn-outline {
-	border-color: #448aff;
+	border-color: $button-bg;
 	background-color: transparent;
-	color: #448aff;
+	color: $button-bg;
 
 	&:hover, &:focus {
-		background-color: #448aff;
+		border-color: $button-hover-bg;
+		background-color: $button-hover-bg;
 	}
 }
 

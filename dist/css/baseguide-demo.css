@@ -1507,12 +1507,12 @@ hr {
 }
 
 a {
-  color: #448aff;
+  color: #0283f1;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: #448aff;
+  color: #0283f1;
   text-decoration: underline;
 }
 
@@ -1539,7 +1539,7 @@ input {
   border: 1px solid transparent;
   border-radius: 0;
   border-color: transparent;
-  background-color: #448aff;
+  background-color: #0275d8;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -1563,12 +1563,12 @@ input {
 .btn:focus {
   outline: 0;
   text-decoration: none;
-  background-color: #2b7aff;
+  background-color: #025aa5;
   color: #fff;
 }
 
 .btn:active {
-  background-color: #2b7aff;
+  background-color: #025aa5;
   color: #fff;
 }
 
@@ -1970,13 +1970,14 @@ ul, ol {
 }
 
 .btn-outline {
-  border-color: #448aff;
+  border-color: #0275d8;
   background-color: transparent;
-  color: #448aff;
+  color: #0275d8;
 }
 
 .btn-outline:hover, .btn-outline:focus {
-  background-color: #448aff;
+  border-color: #025aa5;
+  background-color: #025aa5;
 }
 
 .form-group > .btn {
