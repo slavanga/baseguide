@@ -258,8 +258,8 @@ browsers: [
 ```
 
 ## Inspired By…
-* [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Bourbon](http://bourbon.io/)
-* [Foundation](http://foundation.zurb.com/)
-* [HTML5 Boilerplate](https://html5boilerplate.com/)
+* [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf)
+* [Bootstrap](https://getbootstrap.com)
+* [Bourbon](http://bourbon.io)
+* [Foundation](http://foundation.zurb.com)
+* [HTML5 Boilerplate](https://html5boilerplate.com)
