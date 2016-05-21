@@ -71,7 +71,7 @@ gulp.task('scripts', function() {
 
 // Optimize images
 gulp.task('images', function() {
-	return gulp.src(config.src + 'img/**/*')
+	return gulp.src(config.src + 'img/**/*.{gif,jpg,png,svg}')
 		.pipe($.cache($.imagemin()))
 		.pipe(gulp.dest(config.dest + 'img'))
 		.pipe(browserSync.stream());
@@ -99,5 +99,5 @@ gulp.task('serve', ['default'], function() {
 	gulp.watch([config.src + '*.html'], ['html']);
 	gulp.watch([config.src + 'scss/**/*.scss'], ['styles']);
 	gulp.watch([config.src + 'js/*.js'], ['scripts']);
-	gulp.watch([config.src + 'img/**/*'], ['images']);
+	gulp.watch([config.src + 'img/**/*.{gif,jpg,png,svg}'], ['images']);
 });
