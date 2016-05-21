@@ -9,15 +9,10 @@ var config = {
 	'proxy': false,
 	'sourcemaps': false,
 	'browsers': [
-		'Android 2.3',
-		'Android >= 4',
-		'last 4 Chrome versions',
-		'Firefox ESR',
-		'Edge >= 12',
-		'IE >= 8',
-		'iOS >= 8',
-		'Safari >= 8',
-		'Opera >= 15'
+		'last 2 versions',
+		'android >= 2.3',
+		'safari >= 6',
+		'ie >= 9'
 	]
 };
 
