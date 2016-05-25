@@ -1695,22 +1695,22 @@ input[type="file"] {
   color: #b3b3b3;
 }
 
-::-webkit-input-placeholder {
+[placeholder]::-webkit-input-placeholder {
   color: #b3b3b3;
   opacity: 1;
 }
 
-::-moz-placeholder {
+[placeholder]::-moz-placeholder {
   color: #b3b3b3;
   opacity: 1;
 }
 
-:-ms-input-placeholder {
+[placeholder]:-ms-input-placeholder {
   color: #b3b3b3;
   opacity: 1;
 }
 
-::placeholder {
+[placeholder]::placeholder {
   color: #b3b3b3;
   opacity: 1;
 }

@@ -126,7 +126,7 @@ input[type="file"] {
 	color: $placeholder-color;
 }
 
-::placeholder {
+[placeholder]::placeholder {
 	color: $placeholder-color;
 	opacity: 1;
 }
