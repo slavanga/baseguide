@@ -57,6 +57,7 @@ $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
 $input-focus-border-color: darken($input-border-color, 20%) !default;
 $input-border-radius: 0 !default;
+$input-transition: border-color 0.15s ease-out !default;
 
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;

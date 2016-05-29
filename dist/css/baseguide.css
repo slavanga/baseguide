@@ -1625,8 +1625,8 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   padding: 0.375em 0.75em;
   background-color: #fff;
   color: #333;
-  -webkit-transition: border-color 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out;
+  -webkit-transition: border-color 0.15s ease-out;
+  transition: border-color 0.15s ease-out;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;

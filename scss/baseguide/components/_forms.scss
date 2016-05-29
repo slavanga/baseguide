@@ -61,7 +61,7 @@ label {
 	padding: $input-padding-vertical $input-padding-horizontal;
 	background-color: $input-bg;
 	color: $input-color;
-	transition: border-color 0.15s ease-in-out;
+	transition: $input-transition;
 	appearance: none;
 
 	&[disabled] {
