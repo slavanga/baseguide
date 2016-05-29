@@ -157,7 +157,7 @@ input[type="file"] {
 			width: 1em;
 			height: 1em;
 			border: 1px solid $input-border-color;
-			background-color: #fff;
+			background-color: $input-bg;
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
@@ -167,7 +167,7 @@ input[type="file"] {
 		}
 
 		+ label:active:before {
-			background-color: lighten($input-focus-border-color, 40%);
+			background-color: darken($input-bg, 10%);
 		}
 
 		&[disabled] + label:before {
