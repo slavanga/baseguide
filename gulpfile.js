@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
-
 var config = {
 	'src': './',
 	'dest': 'dist/',
@@ -16,9 +15,6 @@ var config = {
 	]
 };
 
-
-// Default task: Build production files
-gulp.task('default', ['html', 'styles', 'scripts', 'images']);
 
 // HTML
 gulp.task('html', function() {
@@ -77,8 +73,11 @@ gulp.task('images', function() {
 		.pipe(browserSync.stream());
 });
 
-// Watch files for changes and reload
-gulp.task('serve', ['default'], function() {
+// Build production files
+gulp.task('build', ['html', 'styles', 'scripts', 'images']);
+
+// Serve compiled files
+gulp.task('serve', ['build'], function() {
 	var browserSyncConfig = {
 		notify: false,
 		snippetOptions: {
@@ -95,9 +94,15 @@ gulp.task('serve', ['default'], function() {
 	}
 
 	browserSync.init(browserSyncConfig);
+});
 
+// Watch files for changes
+gulp.task('watch', function() {
 	gulp.watch([config.src + '*.html'], ['html']);
 	gulp.watch([config.src + 'scss/**/*.scss'], ['styles']);
 	gulp.watch([config.src + 'js/*.js'], ['scripts']);
 	gulp.watch([config.src + 'img/**/*.{gif,jpg,png,svg}'], ['images']);
 });
+
+// Run all tasks
+gulp.task('default', ['serve', 'watch']);
