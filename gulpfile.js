@@ -7,7 +7,6 @@ var browserSync = require('browser-sync').create();
 var config = {
 	'src': './',
 	'dest': 'dist/',
-	'proxy': false,
 	'sourcemaps': false,
 	'browsers': [
 		'last 2 versions',
@@ -90,22 +89,15 @@ gulp.task('build', ['html', 'styles', 'scripts', 'images']);
 
 // Serve compiled files
 gulp.task('serve', ['build'], function() {
-	var browserSyncConfig = {
+	browserSync.init({
+		server: true,
 		notify: false,
 		snippetOptions: {
 			rule: {
-				match: /<\/head>/i,
+				match: /<\/body>/i
 			}
 		}
-	};
-
-	if(config.proxy) {
-		browserSyncConfig.proxy = config.proxy;
-	} else {
-		browserSyncConfig.server = '.';
-	}
-
-	browserSync.init(browserSyncConfig);
+	});
 });
 
 // Watch files for changes
