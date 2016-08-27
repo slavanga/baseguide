@@ -39,10 +39,10 @@ gulp.task('styles', function() {
 				browsers: config.browsers
 			})
 		]))
-		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())
 		.pipe($.cleanCss({compatibility: 'ie8'}))
+		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream());
@@ -61,11 +61,13 @@ gulp.task('stylelint', function() {
 // Compile javascript
 gulp.task('scripts', function() {
 	return gulp.src(config.src + 'js/*.js')
-		.pipe($.if(config.sourcemaps, $.sourcemaps.init()))
 		.pipe($.include().on('error', function(error) {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
 		}))
+		.pipe(gulp.dest(config.dest + 'js'))
+		.pipe(browserSync.stream())
+		.pipe($.if(config.sourcemaps, $.sourcemaps.init()))
 		.pipe($.uglify().on('error', function(error) {
 			$.util.log($.util.colors.red(error.message));
 			this.emit('end');
