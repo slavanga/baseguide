@@ -4,7 +4,8 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 
-	th, td {
+	th,
+	td {
 		padding: $table-padding-vertical $table-padding-horizontal;
 		border-bottom: 1px solid $table-border-color;
 		vertical-align: top;

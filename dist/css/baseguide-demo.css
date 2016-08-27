@@ -1537,7 +1537,8 @@ h6, .h6 {
   font-size: 0.75018755em;
 }
 
-small, .small {
+small,
+.small {
   font-size: 80%;
 }
 
@@ -1883,7 +1884,8 @@ input[type="checkbox"]:checked + label:before {
   border-spacing: 0;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   padding: 0.4em 0.6em;
   border-bottom: 1px solid #b6b6b6;
   vertical-align: top;
@@ -1936,7 +1938,8 @@ li > ol {
   margin-bottom: 0;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 2.5em;
 }
 

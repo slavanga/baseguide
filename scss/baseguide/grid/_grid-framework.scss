@@ -7,7 +7,8 @@
 
 	@if (type-of($gutter) == map) {
 		$max-width: $width - nth(map-values($gutter), length($gutter));
-	} @else {
+	}
+	@else {
 		$max-width: $width - $gutter;
 	}
 
@@ -54,7 +55,8 @@
 @mixin column($size: expand, $columns: $grid-columns) {
 	@if (type-of($size) == number) {
 		width: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		width: auto;
 		max-width: 100%;
 
@@ -91,7 +93,8 @@
 @mixin column-push($size, $columns: $grid-columns) {
 	@if $size > 0 {
 		left: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		left: auto;
 	}
 }
@@ -99,7 +102,8 @@
 @mixin column-pull($size, $columns: $grid-columns) {
 	@if $size > 0 {
 		right: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		right: auto;
 	}
 }
@@ -170,9 +174,9 @@
 			padding-left: to-rem($gutter);
 			padding-right: to-rem($gutter);
 		}
-	} @else {
+	}
+	@else {
 		$gutter: $gutter * -1;
-
 		margin-left: $gutter;
 		margin-right: $gutter;
 
@@ -188,13 +192,15 @@
 		@each $breakpoint, $width in $gutter {
 			@if $breakpoint == nth($mq-breakpoints-list, 1) {
 				@include gutter($width, $type);
-			} @else {
+			}
+			@else {
 				@include mq($breakpoint) {
 					@include gutter($width, $type);
 				}
 			}
 		}
-	} @else {
+	}
+	@else {
 		@include gutter($gutter, $type);
 	}
 }
@@ -227,7 +233,8 @@
 					}
 				}
 			}
-		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
+		}
+		@else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
 			// last breakpoint
 			@include mq($class) {
 				@include calc-all-columns($class);
@@ -240,7 +247,8 @@
 					display: block !important;
 				}
 			}
-		} @else {
+		}
+		@else {
 			.visible-#{$class}-up {
 				display: none !important;
 			}

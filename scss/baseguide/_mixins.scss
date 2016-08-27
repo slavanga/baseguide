@@ -105,7 +105,6 @@
 	$height: nth($size, length($size));
 	$foreground-color: nth($color, 1);
 	$background-color: if(length($color) == 2, nth($color, 2), transparent);
-
 	height: 0;
 	width: 0;
 
@@ -117,33 +116,40 @@
 			border-bottom: $height solid $foreground-color;
 			border-left: $width solid $background-color;
 			border-right: $width solid $background-color;
-		} @else if $direction == right {
+		}
+		@else if $direction == right {
 			border-bottom: $width solid $background-color;
 			border-left: $height solid $foreground-color;
 			border-top: $width solid $background-color;
-		} @else if $direction == down {
+		}
+		@else if $direction == down {
 			border-left: $width solid $background-color;
 			border-right: $width solid $background-color;
 			border-top: $height solid $foreground-color;
-		} @else if $direction == left {
+		}
+		@else if $direction == left {
 			border-bottom: $width solid $background-color;
 			border-right: $height solid $foreground-color;
 			border-top: $width solid $background-color;
 		}
-	} @else if ($direction == up-right) or ($direction == up-left) {
+	}
+	@else if ($direction == up-right) or ($direction == up-left) {
 		border-top: $height solid $foreground-color;
 
 		@if $direction == up-right {
 			border-left: $width solid $background-color;
-		} @else if $direction == up-left {
+		}
+		@else if $direction == up-left {
 			border-right: $width solid $background-color;
 		}
-	} @else if ($direction == down-right) or ($direction == down-left) {
+	}
+	@else if ($direction == down-right) or ($direction == down-left) {
 		border-bottom: $height solid $foreground-color;
 
 		@if $direction == down-right {
 			border-left: $width solid $background-color;
-		} @else if $direction == down-left {
+		}
+		@else if $direction == down-left {
 			border-right: $width solid $background-color;
 		}
 	}

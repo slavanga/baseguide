@@ -18,7 +18,8 @@
 		@for $i from 1 through $exp {
 			$return: $return * $number;
 		}
-	} @else if $exp < 0 {
+	}
+	@else if $exp < 0 {
 		// If the number is 0 or negative then divide it
 		@for $i from 1 through -$exp {
 			$return: $return / $number;
@@ -39,12 +40,8 @@
 }
 
 @function to-rem($value, $base: 16px) {
-	@if (unit($value) != 'rem') {
+	@if (unit($value) != rem) and (strip-unit($value) != 0) {
 		$value: strip-unit($value) / strip-unit($base) * 1rem;
-	}
-
-	@if ($value == 0rem) {
-		$value: 0;
 	}
 
 	@return $value;

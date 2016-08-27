@@ -78,7 +78,8 @@ $mq-breakpoints: (
 	background-color: transparent;
 	color: $button-bg;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		border-color: $button-hover-bg;
 		background-color: $button-hover-bg;
 	}
