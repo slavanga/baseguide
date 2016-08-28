@@ -32,15 +32,6 @@
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-
-		&:before,
-		&:after {
-			/* autoprefixer: off */
-			-webkit-flex-basis: 0;
-			flex-basis: 0;
-			-webkit-order: 1;
-			order: 1;
-		}
 	}
 }
 

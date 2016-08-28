@@ -1,14 +1,8 @@
 // clearfix
 @mixin clearfix {
-	*zoom: 1;
-
-	&:before,
 	&:after {
-		content: ' ';
-		display: table;
-	}
-
-	&:after {
+		content: '';
+		display: block;
 		clear: both;
 	}
 }
