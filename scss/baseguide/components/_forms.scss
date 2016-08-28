@@ -1,10 +1,3 @@
-// Generate lists of all inputs
-$input-list: assign-inputs($input-selector) !default;
-$input-list-hover: assign-inputs($input-selector, hover) !default;
-$input-list-focus: assign-inputs($input-selector, focus) !default;
-$input-list-active: assign-inputs($input-selector, active) !default;
-
-
 fieldset {
 	min-width: 0;
 	padding: 0;
@@ -33,7 +26,7 @@ label {
 		padding-top: $input-padding-vertical;
 	}
 
-	#{$input-list},
+	#{$input-selector},
 	.form-group,
 	.select,
 	.checkbox,
@@ -52,7 +45,7 @@ label {
 
 
 // input controls
-#{$input-list} {
+#{$input-selector} {
 	display: block;
 	width: 100%;
 	height: $input-height;
@@ -64,17 +57,17 @@ label {
 	transition: $input-transition;
 	appearance: none;
 
+	&:focus {
+		border-color: $input-focus-border-color;
+		outline: 0;
+	}
+
 	&[disabled] {
 		border-color: $input-disabled-border-color;
 		background-color: $input-disabled-bg;
 		color: $input-disabled-color;
 		cursor: not-allowed;
 	}
-}
-
-#{$input-list-focus} {
-	border-color: $input-focus-border-color;
-	outline: 0;
 }
 
 select {

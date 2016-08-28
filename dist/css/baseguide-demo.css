@@ -1597,14 +1597,7 @@ input {
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn.disabled, .btn[disabled] {
-  opacity: 0.65;
-  cursor: default;
-  pointer-events: none;
-}
-
-.btn:hover,
-.btn:focus {
+.btn:hover, .btn:focus {
   outline: 0;
   text-decoration: none;
   background-color: #025aa5;
@@ -1614,6 +1607,12 @@ input {
 .btn:active {
   background-color: #025aa5;
   color: #fff;
+}
+
+.btn.disabled, .btn[disabled] {
+  opacity: 0.65;
+  cursor: default;
+  pointer-events: none;
 }
 
 fieldset {
@@ -1675,16 +1674,16 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
           appearance: none;
 }
 
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+  border-color: #838383;
+  outline: 0;
+}
+
 input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled], select[disabled] {
   border-color: #ccc;
   background-color: #eee;
   color: #555;
   cursor: not-allowed;
-}
-
-input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
-  border-color: #838383;
-  outline: 0;
 }
 
 select {
