@@ -463,12 +463,6 @@ template {
   max-width: 73.125rem;
 }
 
-.container:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .row {
   margin-left: -15px;
   margin-right: -15px;
