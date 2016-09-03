@@ -13,6 +13,7 @@
 	}
 
 	@include make-gutters($gutter);
+
 	margin-left: auto;
 	margin-right: auto;
 	max-width: $max-width;
@@ -36,6 +37,7 @@
 
 @mixin column-base($gutter: $grid-gutter) {
 	@include make-gutters($gutter);
+
 	position: relative;
 	float: left;
 	width: 100%;
@@ -161,6 +163,7 @@
 	}
 	@else {
 		$gutter: $gutter * -1;
+
 		margin-left: $gutter;
 		margin-right: $gutter;
 
