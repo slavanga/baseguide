@@ -43,7 +43,7 @@ $button-bg: #bada55; // 1. Customize default variables
 The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using browsersync.
 
 ```sh
-npm install && gulp serve
+npm install && gulp
 ```
 
 
