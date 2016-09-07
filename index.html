@@ -16,49 +16,85 @@
 		<![endif]-->
 	</head>
 	<body>
-		<section class="section intro-section">
+		<div class="section section--intro">
 			<div class="container">
-				<h1 class="intro-title">Baseguide</h1>
-			
-				<p>Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.</p>
+				<h1 class="intro__title">Baseguide</h1>
+				<div class="intro__text">
+					<p>A lightweight and robust CSS framework for prototyping and production code.</p>
 
-				<ul class="btn-group list-inline">
-					<li><a href="https://github.com/slavanga/baseguide/releases/latest" class="btn">Download</a></li>
-					<li><a href="https://github.com/slavanga/baseguide" class="btn btn-outline">View on GitHub</a></li>
-				</ul>
+					<div class="btn-group">
+						<a href="https://github.com/slavanga/baseguide/archive/master.zip" class="btn">Download</a>
+						<a href="https://github.com/slavanga/baseguide" class="btn btn--outline">View on GitHub</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="section section--features" id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col col--feature">
+						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<path fill="#88AB75" d="m22.027,9.06995c-0.479,-0.27991 -1.09,-0.10999 -1.366,0.36011l-6.395,11.07996l-3.578,-3.30005c-0.37801,-0.3999 -1.011,-0.41992 -1.414,-0.03992c-0.403,0.37 -0.424,1.01001 -0.04601,1.40991l4.57201,4.22009c0.377,0.3999 1.00999,0.41992 1.41299,0.03992c0.122,-0.10999 7.18,-12.40991 7.18,-12.40991c0.276,-0.47009 0.112,-1.09009 -0.366,-1.36011l0,0zm-6.027,20.93005c-7.732,0 -14,-6.27002 -14,-14c0,-7.72998 6.268,-14 14,-14c7.732,0 14,6.27002 14,14c0,7.72998 -6.268,14 -14,14l0,0zm0,-30c-8.836,0 -16,7.16003 -16,16c0,8.83997 7.164,16 16,16c8.836,0 16,-7.16003 16,-16c0,-8.83997 -7.164,-16 -16,-16l0,0z"/>
+						</svg>
+
+						<h2 class="feature__title">Compatible</h2>
+						<p>Tested in a wide range of browsers.</p>
+					</div>
+					<div class="col col--feature">
+						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<path fill="#F18F01" d="m30,28c0,1.104 -0.896,2 -2,2l-24,0c-1.104,0 -2,-0.896 -2,-2l0,-24c0,-1.104 0.896,-2 2,-2l24,0c1.104,0 2,0.896 2,2l0,24l0,0zm-2,-28l-24,0c-2.209,0 -4,1.79099 -4,4l0,24c0,2.20901 1.791,4 4,4l24,0c2.209,0 4,-1.79099 4,-4l0,-24c0,-2.20901 -1.791,-4 -4,-4l0,0zm-8,19.39999c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39999 2.39999,-2.39999c1.326,0 2.39999,1.07498 2.39999,2.39999c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm6,-3.39999l-2.142,0c-0.44501,-1.72299 -1.996,-3 -3.858,-3c-1.862,0 -3.412,1.27701 -3.858,3l-10.142,0c-0.552,0 -1,0.448 -1,1c0,0.55301 0.448,1 1,1l10.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l2.142,0c0.552,0 1,-0.44699 1,-1c0,-0.552 -0.448,-1 -1,-1l0,0zm-15,-4.60001c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39899 2.39999,-2.39899c1.326,0 2.39999,1.07397 2.39999,2.39899c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm15,-3.39999l-11.142,0c-0.44501,-1.72299 -1.996,-3 -3.858,-3c-1.862,0 -3.41299,1.27701 -3.858,3l-1.142,0c-0.552,0 -1,0.448 -1,1c0,0.55301 0.448,1 1,1l1.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l11.142,0c0.552,0 1,-0.44699 1,-1c0,-0.552 -0.448,-1 -1,-1l0,0zm-15,19.39999c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39899 2.39999,-2.39899c1.326,0 2.39999,1.07397 2.39999,2.39899c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm15,-3.39999l-11.142,0c-0.44501,-1.72198 -1.996,-3 -3.858,-3c-1.862,0 -3.41299,1.27802 -3.858,3l-1.142,0c-0.552,0 -1,0.44699 -1,1c0,0.55301 0.448,1 1,1l1.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l11.142,0c0.552,0 1,-0.44699 1,-1c0,-0.55301 -0.448,-1 -1,-1l0,0z"/>
+						</svg>
+
+						<h2 class="feature__title">Customizable</h2>
+						<p>Use Sass to make it your own.</p>
+					</div>
+					<div class="col col--feature">
+						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<path fill="#EF476F" d="m24.972,6l-4.972,0c-0.552,0 -1,0.448 -1,1c0,0.55298 0.448,1 1,1l2.62801,0l-4.798,4.79901l1.414,1.414l4.778,-4.77802l-0.022,2.565c0,0.55298 0.448,1 1,1c0.552,0 1,-0.44702 1,-1l0,-5c0,-0.29602 -0.123,-0.53497 -0.31599,-0.69897c-0.18201,-0.18604 -0.433,-0.30103 -0.71201,-0.30103l0,0zm5.028,22c0,1.09998 -0.896,2 -2,2l-24,0c-1.104,0 -2,-0.90002 -2,-2l0,-24c0,-1.104 0.896,-2 2,-2l24,0c1.104,0 2,0.896 2,2l0,24l0,0zm-2,-28l-24,0c-2.209,0 -4,1.79102 -4,4l0,24c0,2.21002 1.791,4 4,4l24,0c2.209,0 4,-1.78998 4,-4l0,-24c0,-2.20898 -1.791,-4 -4,-4l0,0zm-15.244,17.78998l-4.778,4.78003l0.022,-2.57001c0,-0.54999 -0.448,-1 -1,-1c-0.552,0 -1,0.45001 -1,1l0,5c0,0.29999 0.123,0.53998 0.31599,0.70001c0.181,0.17999 0.433,0.29999 0.71201,0.29999l4.972,0c0.552,0 1,-0.45001 1,-1c0,-0.54999 -0.448,-1 -1,-1l-2.62801,0l4.798,-4.79999l-1.414,-1.41003l0,0zm12.244,1.21002c-0.552,0 -1,0.45001 -1,1l0.022,2.57001l-4.778,-4.78003l-1.414,1.41003l4.798,4.79999l-2.62801,0c-0.552,0 -1,0.45001 -1,1c0,0.54999 0.448,1 1,1l4.972,0c0.27901,0 0.53101,-0.12 0.71201,-0.29999c0.19299,-0.16003 0.31599,-0.40002 0.31599,-0.70001l0,-5c0,-0.54999 -0.448,-1 -1,-1l0,0zm-13,-11c0.552,0 1,-0.44702 1,-1c0,-0.552 -0.448,-1 -1,-1l-4.972,0c-0.27901,0 -0.53,0.11499 -0.71201,0.30103c-0.19299,0.164 -0.31599,0.40295 -0.31599,0.69897l0,5c0,0.55298 0.448,1 1,1c0.552,0 1,-0.44702 1,-1l-0.022,-2.565l4.778,4.77802l1.414,-1.414l-4.798,-4.79901l2.62801,0l0,0z"/>
+						</svg>
+
+						<h2 class="feature__title">Scalable</h2>
+						<p>Everything is relative.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<div class="container">
-			<section class="section" id="typography">
-				<h2>Typography</h2>
+		<section class="section" id="typography">
+			<div class="container">
+				<h2 class="section__title">Typography</h2>
 
 				<div class="row">
 					<div class="col col-sm-6">
 						<p><b><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</b></p>
 
-						<p><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+						<p><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
 					</div>
 					<div class="col col-sm-6">
-						<p><i><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</i></p>
+						<p><i><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</i></p>
 
-						<p class="small"><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+						<p class="small"><a href="#">Link</a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
 					</div>
 				</div>
 
-				<h1>Heading h1</h1>
-				<h2>Heading h2</h2>
-				<h3>Heading h3</h3>
-				<h4>Heading h4</h4>
-				<h5>Heading h5</h5>
-				<h6>Heading h6</h6>
-			</section>
+				<div>
+					<h1>Heading h1</h1>
+					<h2>Heading h2</h2>
+					<h3>Heading h3</h3>
+					<h4>Heading h4</h4>
+					<h5>Heading h5</h5>
+					<h6>Heading h6</h6>
+				</div>
+			</div>
+		</section>
 
-			<section class="section" id="lists">
-				<h2>List Types</h2>
+		<section class="section" id="lists">
+			<div class="container">
+				<h2 class="section__title">List Types</h2>
 
 				<div class="row">
-					<div class="col col-sm-4 col-md-4">
+					<div class="col col-sm-4">
 						<h3>Unstyled List</h3>
 						<ul class="list-unstyled">
 							<li>Item 1</li>
@@ -69,7 +105,7 @@
 						</ul>
 					</div>
 
-					<div class="col col-sm-4 col-md-4">
+					<div class="col col-sm-4">
 						<h3>Unordered List</h3>
 						<ul>
 							<li>Item 1</li>
@@ -83,7 +119,7 @@
 						</ul>
 					</div>
 
-					<div class="col col-sm-4 col-md-4">
+					<div class="col col-sm-4">
 						<h3>Ordered List</h3>
 						<ol>
 							<li>Item</li>
@@ -116,10 +152,12 @@
 						<li><a href="#">Page 4</a></li>
 					</ul>
 				</nav>
-			</section>
+			</div>
+		</section>
 
-			<section class="section" id="forms">
-				<h2>Forms</h2>
+		<section class="section" id="forms">
+			<div class="container">
+				<h2 class="section__title">Forms</h2>
 
 				<form>
 					<div class="row form-group">
@@ -206,10 +244,12 @@
 						</div>
 					</div>
 				</form>
-			</section>
+			</div>
+		</section>
 
-			<section class="section" id="buttons">
-				<h2>Buttons</h2>
+		<section class="section" id="buttons">
+			<div class="container">
+				<h2 class="section__title">Buttons</h2>
 				
 				<div class="form-group">
 					<a class="btn" href="#" role="button">Anchor button</a>
@@ -217,10 +257,12 @@
 					<input class="btn" type="button" value="Button input">
 					<input class="btn" type="submit" value="Submit input">
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section class="section" id="embeds">
-				<h2>Embeds and Media</h2>
+		<section class="section" id="embeds">
+			<div class="container">
+				<h2 class="section__title">Embeds and Media</h2>
 
 				<div class="row">
 					<div class="col col-md-6">
@@ -260,10 +302,12 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section class="section" id="tables">
-				<h2>Tables</h2>
+		<section class="section" id="tables">
+			<div class="container">
+				<h2 class="section__title">Tables</h2>
 
 				<table class="table">
 					<thead>
@@ -295,40 +339,42 @@
 						</tr>
 					</tbody>
 				</table>
-			</section>
+			</div>
+		</section>
 
-			<section class="section" id="grid">
-				<h2>Grid</h2>
+		<section class="section" id="grid">
+			<div class="container">
+				<h2 class="section__title">Grid</h2>
 
 				<div class="row">
-					<div class="col col-sm-8"><span>.col-sm-8</span></div>
-					<div class="col col-sm-4"><span>.col-sm-4</span></div>
+					<div class="col col-sm-8"><div class="col__item">.col-sm-8</div></div>
+					<div class="col col-sm-4"><div class="col__item">.col-sm-4</div></div>
 				</div>
 
 				<div class="row">
-					<div class="col col-sm-4"><span>.col-sm-4</span></div>
-					<div class="col col-sm-8"><span>.col-sm-8</span></div>
+					<div class="col col-sm-4"><div class="col__item">.col-sm-4</div></div>
+					<div class="col col-sm-8"><div class="col__item">.col-sm-8</div></div>
 				</div>
 
 				<div class="row">
-					<div class="col col-sm-6"><span>.col-sm-6</span></div>
-					<div class="col col-sm-6"><span>.col-sm-6</span></div>
+					<div class="col col-sm-6"><div class="col__item">.col-sm-6</div></div>
+					<div class="col col-sm-6"><div class="col__item">.col-sm-6</div></div>
 				</div>
 
 				<div class="row">
-					<div class="col col-sm-4"><span>.col-sm-4</span></div>
-					<div class="col col-sm-4"><span>.col-sm-4</span></div>
-					<div class="col col-sm-4"><span>.col-sm-4</span></div>
+					<div class="col col-sm-4"><div class="col__item">.col-sm-4</div></div>
+					<div class="col col-sm-4"><div class="col__item">.col-sm-4</div></div>
+					<div class="col col-sm-4"><div class="col__item">.col-sm-4</div></div>
 				</div>
 
 				<div class="row">
-					<div class="col col-sm-3"><span>.col-sm-3</span></div>
-					<div class="col col-sm-3"><span>.col-sm-3</span></div>
-					<div class="col col-sm-3"><span>.col-sm-3</span></div>
-					<div class="col col-sm-3"><span>.col-sm-3</span></div>
+					<div class="col col-sm-3"><div class="col__item">.col-sm-3</div></div>
+					<div class="col col-sm-3"><div class="col__item">.col-sm-3</div></div>
+					<div class="col col-sm-3"><div class="col__item">.col-sm-3</div></div>
+					<div class="col col-sm-3"><div class="col__item">.col-sm-3</div></div>
 				</div>
-			</section>
-		</div>
+			</div>
+		</section>
 
 		<script>
 			WebFontConfig = {
@@ -343,16 +389,6 @@
 				var s = document.getElementsByTagName('script')[0];
 				s.parentNode.insertBefore(wf, s);
 			})();
-		</script>
-
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-8765653-5', 'auto');
-			ga('send', 'pageview');
 		</script>
 	</body>
 </html>
