@@ -34,13 +34,15 @@
 }
 
 
-// media object
-.media {
+// spacing
+.spacing-bottom {
 	margin-bottom: $spacing-base;
+}
 
-	img {
-		max-width: none;
-	}
+
+// media object
+.media img {
+	max-width: none;
 }
 
 .media-left,
