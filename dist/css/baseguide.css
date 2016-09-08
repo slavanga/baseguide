@@ -1356,13 +1356,11 @@ img {
   max-width: none;
 }
 
-.media-left,
-.media > .pull-left {
+.media-left {
   padding-right: 1em;
 }
 
-.media-right,
-.media > .pull-right {
+.media-right {
   padding-left: 1em;
 }
 
