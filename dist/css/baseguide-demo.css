@@ -1381,6 +1381,20 @@ img {
   vertical-align: bottom;
 }
 
+.media-fullscreen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: none;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .text-left {
   text-align: left;
 }
