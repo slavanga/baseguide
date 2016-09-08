@@ -114,6 +114,10 @@ $mq-breakpoints: (
 	margin-right: 0.15em;
 }
 
+.media p {
+	margin-bottom: 0;
+}
+
 .col__item {
 	margin-bottom: $grid-gutter;
 	padding: 1em;

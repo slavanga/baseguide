@@ -2047,6 +2047,10 @@ ol {
   margin-right: 0.15em;
 }
 
+.media p {
+  margin-bottom: 0;
+}
+
 .col__item {
   margin-bottom: 30px;
   padding: 1em;
