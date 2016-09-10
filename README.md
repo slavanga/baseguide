@@ -119,6 +119,18 @@ $grid-gutter: (
 );
 ```
 
+Accessing gutter values is easy using the ```get-gutter``` function. The smallest gutter gets returned by default.
+
+```scss
+.col {
+  margin-bottom: get-gutter();
+
+  @include mq(md) {
+    margin-bottom: get-gutter(md);
+  }
+}
+```
+
 ### Semantic / hybrid grid
 The grid mixins can be used to create custom containers, rows and columns.
 

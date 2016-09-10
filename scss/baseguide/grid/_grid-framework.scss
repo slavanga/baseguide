@@ -1,7 +1,3 @@
-// ----------------
-// Grid Framework
-// ----------------
-
 @mixin container($gutter: $grid-gutter, $width: $grid-container) {
 	$max-width: 100%;
 
@@ -147,6 +143,24 @@
 			@include calc-column($class, $i, offset);
 		}
 	}
+}
+
+@function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
+	@if (type-of($gutter) == map) {
+		@if $breakpoint {
+			@if map-has-key($gutter, $breakpoint) {
+				$gutter: map-get($gutter, $breakpoint);
+			}
+			@else {
+				@error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
+			}
+		}
+		@else {
+			$gutter: nth(map-values($gutter), 1);
+		}
+	}
+
+	@return $gutter;
 }
 
 @mixin gutter($gutter, $type) {
