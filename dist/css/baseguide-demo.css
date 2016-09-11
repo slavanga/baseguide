@@ -2002,12 +2002,16 @@ ol {
   text-align: center;
 }
 
-.col--feature p {
-  margin-bottom: 0;
-}
-
 .col--feature + .col--feature {
   margin-top: 1.5em;
+}
+
+.col--feature svg {
+  overflow: visible;
+}
+
+.col--feature p {
+  margin-bottom: 0;
 }
 
 @media (min-width: 40em) {
