@@ -1747,24 +1747,22 @@ input[type="file"] {
   opacity: 1;
 }
 
-:not(:checked) input[type="checkbox"],
-:not(:checked) input[type="radio"] {
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
   opacity: 0;
 }
 
-:not(:checked) input[type="checkbox"] + label,
-:not(:checked) input[type="radio"] + label {
+.checkbox input[type="checkbox"] + label,
+.checkbox input[type="checkbox"] + label::after,
+.radio input[type="radio"] + label,
+.radio input[type="radio"] + label::after {
   position: relative;
   padding-left: 1.4em;
 }
 
-:not(:checked) input[type="checkbox"] + label:before,
-:not(:checked) input[type="radio"] + label:before {
+.checkbox input[type="checkbox"] + label::before,
+.radio input[type="radio"] + label::before {
   content: ' ';
-}
-
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
   position: absolute;
   top: 0.1875em;
   left: 0;
@@ -1776,33 +1774,35 @@ input[type="radio"] + label:before {
   background-position: center center;
 }
 
-input[type="checkbox"] + label:hover:before,
-input[type="radio"] + label:hover:before {
+.checkbox input[type="checkbox"] + label:hover::before,
+.checkbox input[type="checkbox"]:focus + label::before,
+.radio input[type="radio"] + label:hover::before,
+.radio input[type="radio"]:focus + label::before {
   border-color: #838383;
 }
 
-input[type="checkbox"] + label:active:before,
-input[type="radio"] + label:active:before {
+.checkbox input[type="checkbox"] + label:active::before,
+.radio input[type="radio"] + label:active::before {
   background-color: #e6e6e6;
 }
 
-input[type="checkbox"][disabled] + label:before,
-input[type="radio"][disabled] + label:before {
+.checkbox input[type="checkbox"][disabled] + label::before,
+.radio input[type="radio"][disabled] + label::before {
   border-color: #ccc;
   background-color: #eee;
 }
 
-input[type="radio"] + label:before {
+.radio input[type="radio"] + label::before {
   border-radius: 1em;
 }
 
-input[type="radio"]:checked + label:before {
+.radio input[type="radio"]:checked + label::before {
   /* autoprefixer: off */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=");
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E"), linear-gradient(transparent, transparent);
 }
 
-input[type="checkbox"]:checked + label:before {
+.checkbox input[type="checkbox"]:checked + label::before {
   /* autoprefixer: off */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVChTYyAEGKE0CjA2Ntb4////dGZm5khmqBgcQCX3MzIy6gBpBkZk1f/+/ROASkoA6TW8vLyRTCBJoIDD379/96NLHjx48A8TSCdQ4AZQQgNdEmQl2JGmpqYSIBOAzCvIkigA6BYRe3t7FigXChgYAGONRUtL5Ld6AAAAAElFTkSuQmCC");
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E"), linear-gradient(transparent, transparent);
@@ -1829,7 +1829,7 @@ input[type="checkbox"]:checked + label:before {
   color: #333;
 }
 
-.select:after {
+.select::after {
   /* autoprefixer: off */
   content: ' ';
   pointer-events: none;
@@ -1847,7 +1847,7 @@ input[type="checkbox"]:checked + label:before {
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .select:after {
+  .select::after {
     display: block;
   }
   .select select {
@@ -1858,7 +1858,7 @@ input[type="checkbox"]:checked + label:before {
 @-moz-document url-prefix() {
   /* autoprefixer: off */
   @supports not (filter: opacity(1)) {
-    .select:after {
+    .select::after {
       display: none;
     }
     .select select {

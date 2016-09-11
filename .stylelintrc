@@ -19,6 +19,6 @@
       ignore: ["at-rules-without-declaration-blocks"]
     }],
     "media-feature-no-missing-punctuation": null,
-    "selector-pseudo-element-colon-notation": "single"
+    "selector-pseudo-element-colon-notation": null
   }
 }
