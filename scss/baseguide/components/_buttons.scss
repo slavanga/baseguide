@@ -1,11 +1,4 @@
-// Generate lists of all buttons
-$button-list: assign-inputs($button-selector) !default;
-$button-list-hover: assign-inputs($button-selector, hover) !default;
-$button-list-focus: assign-inputs($button-selector, focus) !default;
-$button-list-active: assign-inputs($button-selector, active) !default;
-
-
-#{$button-list} {
+#{$button-selector} {
 	display: inline-block;
 	vertical-align: middle;
 	padding: $button-padding-vertical $button-padding-horizontal;
@@ -18,7 +11,20 @@ $button-list-active: assign-inputs($button-selector, active) !default;
 	cursor: pointer;
 	user-select: none;
 	touch-action: manipulation;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&:hover,
+	&:focus {
+		outline: 0;
+		text-decoration: none;
+		background-color: $button-hover-bg;
+		color: $button-hover-color;
+	}
+
+	&:active {
+		background-color: $button-active-bg;
+		color: $button-active-color;
+	}
 
 	&.disabled,
 	&[disabled] {
@@ -26,17 +32,4 @@ $button-list-active: assign-inputs($button-selector, active) !default;
 		cursor: default;
 		pointer-events: none;
 	}
-}
-
-#{$button-list-hover},
-#{$button-list-focus} {
-	outline: 0;
-	text-decoration: none;
-	background-color: $button-hover-bg;
-	color: $button-hover-color;
-}
-
-#{$button-list-active} {
-	background-color: $button-active-bg;
-	color: $button-active-color;
 }

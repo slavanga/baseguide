@@ -1,10 +1,3 @@
-// Generate lists of all inputs
-$input-list: assign-inputs($input-selector) !default;
-$input-list-hover: assign-inputs($input-selector, hover) !default;
-$input-list-focus: assign-inputs($input-selector, focus) !default;
-$input-list-active: assign-inputs($input-selector, active) !default;
-
-
 fieldset {
 	min-width: 0;
 	padding: 0;
@@ -33,7 +26,7 @@ label {
 		padding-top: $input-padding-vertical;
 	}
 
-	#{$input-list},
+	#{$input-selector},
 	.form-group,
 	.select,
 	.checkbox,
@@ -52,7 +45,7 @@ label {
 
 
 // input controls
-#{$input-list} {
+#{$input-selector} {
 	display: block;
 	width: 100%;
 	height: $input-height;
@@ -64,17 +57,17 @@ label {
 	transition: $input-transition;
 	appearance: none;
 
+	&:focus {
+		border-color: $input-focus-border-color;
+		outline: 0;
+	}
+
 	&[disabled] {
 		border-color: $input-disabled-border-color;
 		background-color: $input-disabled-bg;
 		color: $input-disabled-color;
 		cursor: not-allowed;
 	}
-}
-
-#{$input-list-focus} {
-	border-color: $input-focus-border-color;
-	outline: 0;
 }
 
 select {
@@ -134,23 +127,18 @@ input[type="file"] {
 
 // custom form controls
 @if $use-custom-forms {
-	:not(:checked) input[type="checkbox"],
-	:not(:checked) input[type="radio"] {
+	.checkbox input[type="checkbox"],
+	.radio input[type="radio"] {
 		opacity: 0;
 
-		+ label {
+		+ label,
+		+ label::after {
 			position: relative;
 			padding-left: 1.4em;
 		}
 
-		+ label:before {
+		+ label::before {
 			content: ' ';
-		}
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		+ label:before {
 			position: absolute;
 			top: 0.1875em;
 			left: 0;
@@ -162,32 +150,33 @@ input[type="file"] {
 			background-position: center center;
 		}
 
-		+ label:hover:before {
+		+ label:hover::before,
+		&:focus + label::before {
 			border-color: $input-focus-border-color;
 		}
 
-		+ label:active:before {
+		+ label:active::before {
 			background-color: darken($input-bg, 10%);
 		}
 
-		&[disabled] + label:before {
+		&[disabled] + label::before {
 			border-color: $input-disabled-border-color;
 			background-color: $input-disabled-bg;
 		}
 	}
 
-	input[type="radio"] + label:before {
+	.radio input[type="radio"] + label::before {
 		border-radius: 1em;
 	}
 
 	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
-	input[type="radio"]:checked + label:before {
+	.radio input[type="radio"]:checked + label::before {
 		/* autoprefixer: off */
 		background-image: url($icon-radio-fallback);
 		background-image: url($icon-radio), linear-gradient(transparent, transparent);
 	}
 
-	input[type="checkbox"]:checked + label:before {
+	.checkbox input[type="checkbox"]:checked + label::before {
 		/* autoprefixer: off */
 		background-image: url($icon-checkbox-fallback);
 		background-image: url($icon-checkbox), linear-gradient(transparent, transparent);
@@ -212,7 +201,7 @@ input[type="file"] {
 			color: $input-color;
 		}
 
-		&:after {
+		&::after {
 			/* autoprefixer: off */
 			content: ' ';
 			pointer-events: none;
@@ -232,7 +221,7 @@ input[type="file"] {
 
 	// show custom arrow in IE 10+
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		.select:after {
+		.select::after {
 			display: block;
 		}
 
@@ -245,7 +234,7 @@ input[type="file"] {
 	@-moz-document url-prefix() {
 		/* autoprefixer: off */
 		@supports not(filter: opacity(1)) {
-			.select:after {
+			.select::after {
 				display: none;
 			}
 

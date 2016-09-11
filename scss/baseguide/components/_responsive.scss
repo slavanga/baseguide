@@ -8,12 +8,15 @@ html {
 	box-sizing: inherit;
 }
 
-audio,
 canvas,
 img,
 video {
 	max-width: 100%;
 	height: auto;
+}
+
+audio {
+	max-width: 100%;
 }
 
 img {

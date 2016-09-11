@@ -1,22 +1,18 @@
-// ----------------
-// Grid Framework
-// ----------------
-
 @mixin container($gutter: $grid-gutter, $width: $grid-container) {
-	$max-width: 100%;
-
 	@if (type-of($gutter) == map) {
-		$max-width: $width - nth(map-values($gutter), length($gutter));
-	} @else {
-		$max-width: $width - $gutter;
+		$width: $width - nth(map-values($gutter), length($gutter));
+	}
+	@else {
+		$width: $width - $gutter;
 	}
 
-	@include clearfix;
 	@include make-gutters($gutter);
+
 	margin-left: auto;
 	margin-right: auto;
-	max-width: $max-width;
-	max-width: to-rem($max-width);
+	width: 100%;
+	max-width: $width;
+	max-width: to-rem($width);
 }
 
 @mixin row($gutter: $grid-gutter) {
@@ -31,20 +27,12 @@
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-
-		&:before,
-		&:after {
-			/* autoprefixer: off */
-			-webkit-flex-basis: 0;
-			flex-basis: 0;
-			-webkit-order: 1;
-			order: 1;
-		}
 	}
 }
 
 @mixin column-base($gutter: $grid-gutter) {
 	@include make-gutters($gutter);
+
 	position: relative;
 	float: left;
 	width: 100%;
@@ -54,22 +42,17 @@
 @mixin column($size: expand, $columns: $grid-columns) {
 	@if (type-of($size) == number) {
 		width: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		width: auto;
 		max-width: 100%;
 
 		@if $grid-flexbox {
-			/* autoprefixer: off */
-
 			@if $size == shrink {
-				-webkit-flex: 0 0 auto;
-				-ms-flex: 0 0 auto;
 				flex: 0 0 auto;
 			}
 
 			@if $size == expand {
-				-webkit-flex: 1 1 auto;
-				-ms-flex: 1 1 auto;
 				flex: 1 1 auto;
 			}
 		}
@@ -91,7 +74,8 @@
 @mixin column-push($size, $columns: $grid-columns) {
 	@if $size > 0 {
 		left: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		left: auto;
 	}
 }
@@ -99,7 +83,8 @@
 @mixin column-pull($size, $columns: $grid-columns) {
 	@if $size > 0 {
 		right: percentage($size / $columns);
-	} @else {
+	}
+	@else {
 		right: auto;
 	}
 }
@@ -159,6 +144,24 @@
 	}
 }
 
+@function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
+	@if (type-of($gutter) == map) {
+		@if $breakpoint {
+			@if map-has-key($gutter, $breakpoint) {
+				$gutter: map-get($gutter, $breakpoint);
+			}
+			@else {
+				@error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
+			}
+		}
+		@else {
+			$gutter: nth(map-values($gutter), 1);
+		}
+	}
+
+	@return $gutter;
+}
+
 @mixin gutter($gutter, $type) {
 	$gutter: $gutter / 2;
 
@@ -170,7 +173,8 @@
 			padding-left: to-rem($gutter);
 			padding-right: to-rem($gutter);
 		}
-	} @else {
+	}
+	@else {
 		$gutter: $gutter * -1;
 
 		margin-left: $gutter;
@@ -188,13 +192,15 @@
 		@each $breakpoint, $width in $gutter {
 			@if $breakpoint == nth($mq-breakpoints-list, 1) {
 				@include gutter($width, $type);
-			} @else {
+			}
+			@else {
 				@include mq($breakpoint) {
 					@include gutter($width, $type);
 				}
 			}
 		}
-	} @else {
+	}
+	@else {
 		@include gutter($gutter, $type);
 	}
 }
@@ -227,7 +233,8 @@
 					}
 				}
 			}
-		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
+		}
+		@else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
 			// last breakpoint
 			@include mq($class) {
 				@include calc-all-columns($class);
@@ -240,7 +247,8 @@
 					display: block !important;
 				}
 			}
-		} @else {
+		}
+		@else {
 			.visible-#{$class}-up {
 				display: none !important;
 			}

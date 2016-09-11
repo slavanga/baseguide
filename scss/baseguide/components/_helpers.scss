@@ -34,22 +34,22 @@
 }
 
 
-// media object
-.media {
+// spacing
+.spacing-bottom {
 	margin-bottom: $spacing-base;
-
-	img {
-		max-width: none;
-	}
 }
 
-.media-left,
-.media > .pull-left {
+
+// media
+.media img {
+	max-width: none;
+}
+
+.media-left {
 	padding-right: 1em;
 }
 
-.media-right,
-.media > .pull-right {
+.media-right {
 	padding-left: 1em;
 }
 
@@ -66,6 +66,18 @@
 
 .media-bottom {
 	vertical-align: bottom;
+}
+
+.media-fullscreen {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: none;
+	transform: translate(-50%, -50%);
 }
 
 

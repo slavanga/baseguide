@@ -1,0 +1,24 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "**/vendor/*.scss",
+  "rules": {
+    "at-rule-empty-line-before": ["always", {
+      except: [
+        "blockless-after-same-name-blockless",
+        "first-nested",
+      ],
+      ignore: ["after-comment"],
+      ignoreAtRules: ["else"]
+    }],
+    "declaration-block-no-duplicate-properties": [true, {
+      ignore: ["consecutive-duplicates-with-different-values"]
+    }],
+    "indentation": "tab",
+    "max-empty-lines": 2,
+    "max-nesting-depth": [3, {
+      ignore: ["at-rules-without-declaration-blocks"]
+    }],
+    "media-feature-no-missing-punctuation": null,
+    "selector-pseudo-element-colon-notation": null
+  }
+}

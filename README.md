@@ -43,7 +43,7 @@ $button-bg: #bada55; // 1. Customize default variables
 The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using browsersync.
 
 ```sh
-npm install && gulp serve
+npm install && gulp
 ```
 
 
@@ -117,6 +117,18 @@ $grid-gutter: (
   xs: 20px,
   md: 40px
 );
+```
+
+Accessing gutter values is easy using the ```get-gutter``` function. The smallest gutter gets returned by default.
+
+```scss
+.col {
+  margin-bottom: get-gutter();
+
+  @include mq(md) {
+    margin-bottom: get-gutter(md);
+  }
+}
 ```
 
 ### Semantic / hybrid grid

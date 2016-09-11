@@ -7,78 +7,103 @@ $mq-breakpoints: (
 
 @import 'baseguide';
 
-.intro-title {
+.section {
+	position: relative;
+	padding-top: 20px;
+
+	@include mq(md) {
+		padding-top: 40px;
+	}
+}
+
+.section__title {
+	padding-top: 0.5em;
+	border-top: 1px solid #ddd;
+}
+
+.section--intro {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	border-bottom: 1px solid darken(#e3f2ff, 5%);
+	background-color: #e3f2ff;
+
+	@include mq(md) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+.intro__title {
 	font-family: Georgia, serif;
 	font-weight: 900;
-	font-size: 2.36859em;
+	font-size: 2.5em;
+	color: #243a54;
 
 	.wf-active & {
 		font-family: Merriweather, Georgia, serif;
 	}
 
-	@include mq(md) {
-		font-size: 3.15733em;
+	@include mq(sm) {
+		font-size: 3.8em;
 	}
 }
 
-.intro-section {
-	padding: 10px;
-	background: #85c637;
-	background-image: linear-gradient(to left, #3ea6de 0%, #85c637 100%);
+.intro__text {
+	margin-top: 0.8em;
 
-	.container {
-		padding-top: 15px;
-		padding-bottom: 15px;
-		background: #fff;
-		background: rgba(255, 255, 255, 0.3);
-	}
-
-	@include mq(md) {
-		padding: 40px 35px;
-
-		.container {
-			max-width: mq-get-breakpoint-width(lg) - ($grid-gutter * 2);
-			padding: 40px;
-		}
-
-		p {
-			font-size: 1.125em;
-		}
-	}
-}
-
-.container .section {
-	margin-top: 15px;
-	padding-top: 15px;
-	border-top: 0.2em solid #efefef;
-
-	&:first-child {
-		margin-top: 0;
-		border-top: 0;
+	.btn-group {
+		margin-top: 2.5em;
 	}
 
 	@include mq(sm) {
-		margin-top: 40px;
-		padding-top: 40px;
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.2em;
 	}
 }
 
-#grid .col {
-	margin-bottom: 30px;
+.col--feature {
+	text-align: center;
 
-	> span {
-		display: block;
-		padding: 1em;
-		background: #efefef;
+	& + & {
+		margin-top: 1.5em;
+	}
+
+	svg {
+		overflow: visible;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	@include mq(sm) {
+		@include column(4);
+
+		& + & {
+			margin-top: 0;
+		}
 	}
 }
 
-.btn-outline {
+.feature__title {
+	margin-top: 1.2em;
+	margin-bottom: 0.2em;
+	font-size: 1em;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.btn--outline {
 	border-color: $button-bg;
 	background-color: transparent;
 	color: $button-bg;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		border-color: $button-hover-bg;
 		background-color: $button-hover-bg;
 	}
@@ -88,10 +113,17 @@ $mq-breakpoints: (
 	margin-bottom: 0.2em;
 }
 
-.btn-group {
-	margin-bottom: 0;
+.btn-group > .btn {
+	margin-left: 0.15em;
+	margin-right: 0.15em;
 }
 
 .media p {
 	margin-bottom: 0;
+}
+
+.col__item {
+	margin-bottom: $grid-gutter;
+	padding: 1em;
+	background: #efefef;
 }
