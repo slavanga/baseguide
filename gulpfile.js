@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var autoprefixer = require('autoprefixer');
-var scss = require('postcss-scss');
-var stylelint = require('stylelint');
 var browserSync = require('browser-sync').create();
 var config = {
 	'src': './',
@@ -53,9 +51,9 @@ gulp.task('styles', function() {
 gulp.task('stylelint', function() {
 	return gulp.src(config.src + 'scss/**/*.scss')
 		.pipe($.postcss([
-			stylelint()
+			require('stylelint')
 		], {
-			syntax: scss
+			syntax: require('postcss-scss')
 		}));
 });
 
