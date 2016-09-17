@@ -7,6 +7,7 @@ var browserSync = require('browser-sync').create();
 var config = {
 	'src': './',
 	'dest': 'dist/',
+	'minify': true,
 	'sourcemaps': false,
 	'browsers': [
 		'last 2 versions',
@@ -44,7 +45,7 @@ gulp.task('styles', function() {
 		.pipe($.cleanCss({compatibility: 'ie8'}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
-		.pipe(gulp.dest(config.dest + 'css'))
+		.pipe($.if(config.minify, gulp.dest(config.dest + 'css')))
 		.pipe(browserSync.stream());
 });
 
@@ -74,7 +75,7 @@ gulp.task('scripts', function() {
 		}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
-		.pipe(gulp.dest(config.dest + 'js'))
+		.pipe($.if(config.minify, gulp.dest(config.dest + 'js')))
 		.pipe(browserSync.stream());
 });
 
