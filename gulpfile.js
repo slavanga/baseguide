@@ -107,7 +107,7 @@ gulp.task('serve', ['build'], function() {
 gulp.task('watch', function() {
 	gulp.watch('*.html', ['html']);
 	gulp.watch(config.src + 'scss/**/*.scss', ['styles']);
-	gulp.watch(config.src + 'js/*.js', ['scripts']);
+	gulp.watch(config.src + 'js/**/*.js', ['scripts']);
 	gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', ['images']);
 });
 
