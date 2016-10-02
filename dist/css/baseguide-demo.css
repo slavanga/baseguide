@@ -511,6 +511,7 @@ pre {
   outline: none !important;
 }
 
+blockquote,
 figure,
 fieldset {
   margin: 0;
