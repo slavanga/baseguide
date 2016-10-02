@@ -10,14 +10,14 @@
 @import 'baseguide/vendor/normalize';
 
 // Components
-@import 'baseguide/components/print';
-@import 'baseguide/components/responsive';
-@import 'baseguide/components/helpers';
-@import 'baseguide/components/typography';
-@import 'baseguide/components/buttons';
-@import 'baseguide/components/forms';
-@import 'baseguide/components/tables';
+@import 'baseguide/components/base';
 @import 'baseguide/components/spacing';
+@import 'baseguide/components/typography';
+@import 'baseguide/components/forms';
+@import 'baseguide/components/buttons';
+@import 'baseguide/components/tables';
+@import 'baseguide/components/helpers';
+@import 'baseguide/components/print';
 
 // Grid
 @import 'baseguide/grid/gutter';
