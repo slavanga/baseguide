@@ -12,5 +12,5 @@
 
 // Generate columns for all breakpoints
 @if $grid-columns-output {
-	@include make-breakpoints;
+	@include make-columns;
 }

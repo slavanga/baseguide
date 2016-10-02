@@ -9,10 +9,6 @@
 @import 'baseguide/vendor/mq';
 @import 'baseguide/vendor/normalize';
 
-// Grid
-@import 'baseguide/grid/grid-framework';
-@import 'baseguide/grid/grid';
-
 // Components
 @import 'baseguide/components/print';
 @import 'baseguide/components/responsive';
@@ -22,3 +18,10 @@
 @import 'baseguide/components/forms';
 @import 'baseguide/components/tables';
 @import 'baseguide/components/spacing';
+
+// Grid
+@import 'baseguide/grid/gutter';
+@import 'baseguide/grid/container';
+@import 'baseguide/grid/row';
+@import 'baseguide/grid/column';
+@import 'baseguide/grid/classes';
