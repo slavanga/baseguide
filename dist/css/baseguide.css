@@ -646,13 +646,12 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   border: 1px solid #b6b6b6;
   border-radius: 0;
   padding: 0.375em 0.75em;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   background-color: #fff;
   color: #333;
   -webkit-transition: border-color 0.15s ease-out;
   transition: border-color 0.15s ease-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
@@ -669,9 +668,6 @@ input[type="email"][disabled], input[type="number"][disabled], input[type="passw
 
 select {
   overflow-x: hidden;
-  -webkit-appearance: menulist;
-     -moz-appearance: menulist;
-          appearance: menulist;
 }
 
 select[multiple], select[size] {

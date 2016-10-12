@@ -13,8 +13,6 @@ label {
 	margin-bottom: 1em;
 }
 
-
-// input controls
 #{$input-selector} {
 	display: block;
 	width: 100%;
@@ -22,10 +20,10 @@ label {
 	border: 1px solid $input-border-color;
 	border-radius: $input-border-radius;
 	padding: $input-padding-vertical $input-padding-horizontal;
+	background-clip: padding-box; // remove shadow in iOS
 	background-color: $input-bg;
 	color: $input-color;
 	transition: $input-transition;
-	appearance: none;
 
 	&:focus {
 		border-color: $input-focus-border-color;
@@ -42,7 +40,6 @@ label {
 
 select {
 	overflow-x: hidden;
-	appearance: menulist;
 
 	&[multiple],
 	&[size] {
