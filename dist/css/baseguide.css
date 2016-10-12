@@ -639,28 +639,6 @@ label {
   margin-bottom: 1em;
 }
 
-.form-inline label {
-  vertical-align: middle;
-  margin-top: 1px;
-  padding-top: 0.375em;
-}
-
-.form-inline input[type="email"], .form-inline input[type="number"], .form-inline input[type="password"], .form-inline input[type="search"], .form-inline input[type="tel"], .form-inline input[type="text"], .form-inline input[type="url"], .form-inline textarea, .form-inline select,
-.form-inline .form-group,
-.form-inline .select,
-.form-inline .checkbox,
-.form-inline .radio {
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 0;
-  width: auto;
-}
-
-.form-inline .checkbox + .checkbox,
-.form-inline .radio + .radio {
-  margin-left: 1em;
-}
-
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea, select {
   display: block;
   width: 100%;

@@ -13,30 +13,6 @@ label {
 	margin-bottom: 1em;
 }
 
-.form-inline {
-	label {
-		vertical-align: middle;
-		margin-top: 1px;
-		padding-top: $input-padding-vertical;
-	}
-
-	#{$input-selector},
-	.form-group,
-	.select,
-	.checkbox,
-	.radio {
-		display: inline-block;
-		vertical-align: middle;
-		margin-bottom: 0;
-		width: auto;
-	}
-
-	.checkbox + .checkbox,
-	.radio + .radio {
-		margin-left: 1em;
-	}
-}
-
 
 // input controls
 #{$input-selector} {
