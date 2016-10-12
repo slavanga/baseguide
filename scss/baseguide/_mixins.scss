@@ -14,35 +14,35 @@
 	list-style: none;
 }
 
-@mixin list-inline($spacing: 1em) {
+@mixin list-inline($spacing: 1em, $child-selector: li) {
 	@include list-unstyled;
 	@include clearfix;
 
 	margin-left: -$spacing;
 
-	> li {
+	> #{$child-selector} {
 		float: left;
 		margin-left: $spacing;
 	}
 
-	> li > a {
+	> #{$child-selector} > a {
 		display: inline-block;
 	}
 }
 
-@mixin list-equal {
+@mixin list-equal($child-selector: li) {
 	@include list-unstyled;
 
 	display: table;
 	table-layout: fixed;
 	width: 100%;
 
-	> li {
+	> #{$child-selector} {
 		display: table-cell;
 		text-align: center;
 	}
 
-	> li > a {
+	> #{$child-selector} > a {
 		display: block;
 	}
 }
