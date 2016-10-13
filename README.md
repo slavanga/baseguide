@@ -30,13 +30,13 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 npm install baseguide
 ```
 
-**Clone the repo**
+**Clone the Repo**
 
 ```sh
 git clone https://github.com/slavanga/baseguide
 ```
 
-**Manual download**
+**Manual Download**
 
 [Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
 
@@ -104,7 +104,7 @@ The snippet above compiles to the following CSS:
 
 Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
-#### Legacy support
+#### Legacy Support
 To support browsers without native media query support you could use [respond.js](https://github.com/scottjehl/Respond).
 
 A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
@@ -149,7 +149,7 @@ Accessing gutter values is easy using the ```get-gutter``` function. The smalles
 }
 ```
 
-### Semantic / hybrid grid
+### Mixins
 The grid mixins can be used to create custom containers, rows and columns.
 
 ```scss
@@ -174,7 +174,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
 
 
-#### Simple two column layout
+#### Two Column Layout
 
 ```scss
 @include mq(sm) {
@@ -197,7 +197,7 @@ Tip: You can turn off the default columns output by setting ```$grid-columns-out
 </div>
 ```
 
-#### Gallery layout using block grid
+#### Gallery Layout Using Block Grid
 
 ```scss
 .col-gallery {
@@ -233,7 +233,7 @@ The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. 
 
 ## Forms
 
-### Standard form controls
+### Standard Form Controls
 All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
 
 Remember to reset the height of textareas if you choose a custom selector:
@@ -244,7 +244,7 @@ textarea.form-control {
 }
 ```
 
-### Custom form controls
+### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
 While the controls are functional in all browsers the following ones get the fully enhanced experience:
 
@@ -268,7 +268,7 @@ if (document.addEventListener) {
 ```
 
 
-## Browser support
+## Browser Support
 * Latest stable: Chrome, Firefox, Opera
 * IE 8+
 * Safari 6+
