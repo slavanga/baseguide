@@ -1,36 +1,52 @@
 # [Baseguide](http://basegui.de)
-Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
 
 [![npm version](https://badge.fury.io/js/baseguide.svg)](https://badge.fury.io/js/baseguide)
 
-## Features
-* Flexible and extendable breakpoint system
-* Dynamic flexbox grid system with float fallback
-* CSS-only custom form controls
-* Consistent vertical rhythm and modular scale
+Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
+
+**Features**
 * Responsive and scalable components
+* CSS-only custom form controls
+* Robust grid system with flexbox support
+* Extendable breakpoint system
+* Consistent vertical rhythm and modular scale
 
-## Getting started
 
-**Install with npm**
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Grid](#grid)
+* [Forms](#forms)
+* [Browser support](#browser-support)
+* [Inspired By](#inspired-by)
+* [License](#license)
+
+
+## Installation
+
+**Install from npm**
 
 ```sh
 npm install baseguide
 ```
 
-**Clone with git**
+**Clone the repo**
 
 ```sh
 git clone https://github.com/slavanga/baseguide
 ```
 
-**Download**
+**Manual download**
 
-[Download the latest release](https://github.com/slavanga/baseguide/releases/latest)
+[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
 
-### Setup
 
-Default variables can be changed before importing Baseguide. Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+## Usage
+
+### Sass
+
+Default variables can be changed before importing Baseguide.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -40,7 +56,9 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using browsersync.
+### Gulp
+
+The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync] (https://www.browsersync.io/).
 
 ```sh
 npm install && gulp
@@ -48,7 +66,7 @@ npm install && gulp
 
 
 ## Grid
-The grid framework is based on the [Bootstrap grid system](https://getbootstrap.com/css/#grid).
+The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
 
 ### Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
@@ -257,6 +275,8 @@ if (document.addEventListener) {
 * Mobile Safari 6+
 * Android Browser 2.3+
 
+Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
+
 
 ## Inspired By…
 * [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf)
@@ -264,3 +284,7 @@ if (document.addEventListener) {
 * [Bourbon](http://bourbon.io)
 * [Foundation](http://foundation.zurb.com)
 * [HTML5 Boilerplate](https://html5boilerplate.com)
+
+
+## License
+The code is released under the [MIT license] (https://github.com/slavanga/baseguide/blob/master/LICENSE).
