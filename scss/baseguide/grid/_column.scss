@@ -61,126 +61,53 @@
 	margin-left: percentage($size / $columns);
 }
 
-@mixin calc-column($class, $index, $type) {
+@mixin calc-column($breakpoint, $index, $type) {
 	@if ($type == width) and ($index > 0) {
-		.col-#{$class}-#{$index} {
+		.col-#{$breakpoint}-#{$index} {
 			width: percentage($index / $grid-columns);
 		}
 	}
 
 	@if ($type == push) and ($index > 0) {
-		.col-#{$class}-push-#{$index} {
+		.col-#{$breakpoint}-push-#{$index} {
 			left: percentage($index / $grid-columns);
 		}
 	}
 
 	@if ($type == push) and ($index == 0) {
-		.col-#{$class}-push-0 {
+		.col-#{$breakpoint}-push-0 {
 			left: auto;
 		}
 	}
 
 	@if ($type == pull) and ($index > 0) {
-		.col-#{$class}-pull-#{$index} {
+		.col-#{$breakpoint}-pull-#{$index} {
 			right: percentage($index / $grid-columns);
 		}
 	}
 
 	@if ($type == pull) and ($index == 0) {
-		.col-#{$class}-pull-0 {
+		.col-#{$breakpoint}-pull-0 {
 			right: auto;
 		}
 	}
 
 	@if ($type == offset) {
-		.col-#{$class}-offset-#{$index} {
+		.col-#{$breakpoint}-offset-#{$index} {
 			margin-left: percentage($index / $grid-columns);
 		}
 	}
 }
 
-// Create columns for a specific class
-@mixin calc-all-columns($class) {
+// Create columns for a specific breakpoint
+@mixin calc-all-columns($breakpoint) {
 	@for $i from 0 through $grid-columns {
-		@include calc-column($class, $i, width);
-		@include calc-column($class, $i, pull);
-		@include calc-column($class, $i, push);
+		@include calc-column($breakpoint, $i, width);
+		@include calc-column($breakpoint, $i, pull);
+		@include calc-column($breakpoint, $i, push);
 
 		@if ($i < $grid-columns) {
-			@include calc-column($class, $i, offset);
-		}
-	}
-}
-
-// Create breakpoints and responsive visibility classes
-@mixin make-columns {
-	$i: 1;
-
-	@each $class, $width in $mq-breakpoints {
-		$i: $i + 1;
-
-		@if length($mq-breakpoints-list) > 1 {
-			.visible-#{$class} {
-				display: none !important;
-			}
-		}
-
-		@if $class == nth($mq-breakpoints-list, 1) {
-			// first breakpoint
-			@include calc-all-columns($class);
-
-			@if length($mq-breakpoints-list) > 1 {
-				@include mq($until: nth($mq-breakpoints-list, $i)) {
-					.hidden-#{$class} {
-						display: none !important;
-					}
-
-					.visible-#{$class} {
-						display: block !important;
-					}
-				}
-			}
-		}
-		@else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
-			// last breakpoint
-			@include mq($class) {
-				@include calc-all-columns($class);
-
-				.hidden-#{$class} {
-					display: none !important;
-				}
-
-				.visible-#{$class} {
-					display: block !important;
-				}
-			}
-		}
-		@else {
-			.visible-#{$class}-up {
-				display: none !important;
-			}
-
-			@include mq($class, nth($mq-breakpoints-list, $i)) {
-				.hidden-#{$class} {
-					display: none !important;
-				}
-
-				.visible-#{$class} {
-					display: block !important;
-				}
-			}
-
-			@include mq($class) {
-				@include calc-all-columns($class);
-
-				.hidden-#{$class}-up {
-					display: none !important;
-				}
-
-				.visible-#{$class}-up {
-					display: block !important;
-				}
-			}
+			@include calc-column($breakpoint, $i, offset);
 		}
 	}
 }

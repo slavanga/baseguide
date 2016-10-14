@@ -150,3 +150,37 @@
 		display: none !important;
 	}
 }
+
+@include loop-breakpoints($mq: false) {
+	.visible-#{$breakpoint} {
+		display: none !important;
+	}
+
+	@if not ($is-first-breakpoint or $is-last-breakpoint) {
+		.visible-#{$breakpoint}-up {
+			display: none !important;
+		}
+	}
+}
+
+@include loop-breakpoints {
+	.hidden-#{$breakpoint} {
+		display: none !important;
+	}
+
+	.visible-#{$breakpoint} {
+		display: block !important;
+	}
+}
+
+@include loop-breakpoints($inclusive: true) {
+	@if not ($is-first-breakpoint or $is-last-breakpoint) {
+		.hidden-#{$breakpoint}-up {
+			display: none !important;
+		}
+
+		.visible-#{$breakpoint}-up {
+			display: block !important;
+		}
+	}
+}

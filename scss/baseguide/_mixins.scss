@@ -181,3 +181,56 @@
 		$max-scale: $max-scale - 1;
 	}
 }
+
+
+// loop all breakpoints and output content
+@mixin loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+	@for $i from 1 through length($breakpoint-keys) {
+		$breakpoint: nth($breakpoint-keys, $i) !global;
+		$is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
+		$is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+
+		@if $mq {
+			@if $inclusive {
+				// first breakpoint
+				@if $is-first-breakpoint {
+					@content;
+				}
+				// remaining breakpoints
+				@else {
+					@include mq($breakpoint) {
+						@content;
+					}
+				}
+			}
+			@else {
+				// first breakpoint
+				@if $is-first-breakpoint {
+					@if length($breakpoint-keys) > 1 {
+						@include mq($until: nth($breakpoint-keys, $i + 1)) {
+							@content;
+						}
+					}
+					@else {
+						@content;
+					}
+				}
+				// last breakpoint
+				@else if $is-last-breakpoint {
+					@include mq($breakpoint) {
+						@content;
+					}
+				}
+				// remaining breakpoints
+				@else {
+					@include mq($breakpoint, nth($breakpoint-keys, $i + 1)) {
+						@content;
+					}
+				}
+			}
+		}
+		@else {
+			@content;
+		}
+	}
+}

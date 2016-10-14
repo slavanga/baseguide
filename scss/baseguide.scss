@@ -1,13 +1,15 @@
 /*! Baseguide v1.6.0 | MIT License | http://basegui.de */
 
-// Functions, Mixins and Settings
-@import 'baseguide/functions';
-@import 'baseguide/mixins';
+// Settings
 @import 'baseguide/settings';
 
 // Vendor
 @import 'baseguide/vendor/mq';
 @import 'baseguide/vendor/normalize';
+
+// Functions and Mixins
+@import 'baseguide/functions';
+@import 'baseguide/mixins';
 
 // Components
 @import 'baseguide/components/base';
