@@ -15,9 +15,10 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Breakpoints](#breakpoints)
 * [Grid](#grid)
 * [Forms](#forms)
-* [Browser support](#browser-support)
+* [Browser Support](#browser-support)
 * [Inspired By](#inspired-by)
 * [License](#license)
 
@@ -58,17 +59,13 @@ $button-bg: #bada55; // 1. Customize default variables
 
 ### Gulp
 
-The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync] (https://www.browsersync.io/).
+The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync](https://www.browsersync.io/).
 
 ```sh
 npm install && gulp
 ```
 
-
-## Grid
-The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
-
-### Breakpoints
+## Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
 
 The default configuration looks like this:
@@ -90,7 +87,7 @@ Media Queries are handled by [Sass MQ](https://github.com/sass-mq/sass-mq).
 ```scss
 // include the media query mixin and pass the breakpoint key
 @include mq(md) {
-	
+  
 }
 ```
 
@@ -121,6 +118,37 @@ Include the generated CSS file after the rest of your styles to serve a fixed wi
 ```html
 <!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
 ```
+
+### Breakpoint Loop
+The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three global variables and outputs the ```@content``` for each breakpoint.
+```scss
+@include loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+  @debug $breakpoint;
+  @debug $is-first-breakpoint;
+  @debug $is-last-breakpoint;
+}
+```
+
+It’s a powerful tool that for example allows the generation of additional responsive helper classes.
+```scss
+@include loop-breakpoints {
+  .text-#{$breakpoint}-left {
+    text-align: left;
+  }
+
+  .text-#{$breakpoint}-center {
+    text-align: center;
+  }
+
+  .text-#{$breakpoint}-right {
+    text-align: right;
+  }
+}
+```
+
+
+## Grid
+The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
 
 ### Gutters
 The gutters are controlled by the ```$grid-gutter``` variable. It can either be a global value across all breakpoints or a map with gutter values per breakpoint.
@@ -172,7 +200,6 @@ The grid mixins can be used to create custom containers, rows and columns.
 ```
 
 Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
-
 
 #### Two Column Layout
 
@@ -275,7 +302,7 @@ if (document.addEventListener) {
 * Mobile Safari 6+
 * Android Browser 2.3+
 
-Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
+Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
 
 
 ## Inspired By…
@@ -287,4 +314,4 @@ Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to handl
 
 
 ## License
-The code is released under the [MIT license] (https://github.com/slavanga/baseguide/blob/master/LICENSE).
+The code is released under the [MIT license](https://github.com/slavanga/baseguide/blob/master/LICENSE).
