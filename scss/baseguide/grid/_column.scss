@@ -9,7 +9,9 @@
 
 @mixin column($size: expand, $columns: $grid-columns) {
 	@if (type-of($size) == number) {
-		width: percentage($size / $columns);
+		@if $size > 0 {
+			width: percentage($size / $columns);
+		}
 	}
 	@else {
 		width: auto;
@@ -58,56 +60,28 @@
 }
 
 @mixin column-offset($size, $columns: $grid-columns) {
-	margin-left: percentage($size / $columns);
-}
-
-@mixin calc-column($breakpoint, $index, $type) {
-	@if ($type == width) and ($index > 0) {
-		.col-#{$breakpoint}-#{$index} {
-			width: percentage($index / $grid-columns);
-		}
-	}
-
-	@if ($type == push) and ($index > 0) {
-		.col-#{$breakpoint}-push-#{$index} {
-			left: percentage($index / $grid-columns);
-		}
-	}
-
-	@if ($type == push) and ($index == 0) {
-		.col-#{$breakpoint}-push-0 {
-			left: auto;
-		}
-	}
-
-	@if ($type == pull) and ($index > 0) {
-		.col-#{$breakpoint}-pull-#{$index} {
-			right: percentage($index / $grid-columns);
-		}
-	}
-
-	@if ($type == pull) and ($index == 0) {
-		.col-#{$breakpoint}-pull-0 {
-			right: auto;
-		}
-	}
-
-	@if ($type == offset) {
-		.col-#{$breakpoint}-offset-#{$index} {
-			margin-left: percentage($index / $grid-columns);
-		}
+	@if $size < $columns {
+		margin-left: percentage($size / $columns);
 	}
 }
 
-// Create columns for a specific breakpoint
-@mixin calc-all-columns($breakpoint) {
+// Generate columns for a specific breakpoint
+@mixin loop-columns($breakpoint) {
 	@for $i from 0 through $grid-columns {
-		@include calc-column($breakpoint, $i, width);
-		@include calc-column($breakpoint, $i, pull);
-		@include calc-column($breakpoint, $i, push);
+		.col-#{$breakpoint}-#{$i} {
+			@include column($i, $grid-columns);
+		}
 
-		@if ($i < $grid-columns) {
-			@include calc-column($breakpoint, $i, offset);
+		.col-#{$breakpoint}-pull-#{$i} {
+			@include column-pull($i, $grid-columns);
+		}
+
+		.col-#{$breakpoint}-push-#{$i} {
+			@include column-push($i, $grid-columns);
+		}
+
+		.col-#{$breakpoint}-offset-#{$i} {
+			@include column-offset($i, $grid-columns);
 		}
 	}
 }
