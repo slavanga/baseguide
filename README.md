@@ -1,36 +1,52 @@
 # [Baseguide](http://basegui.de)
-Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
 
 [![npm version](https://badge.fury.io/js/baseguide.svg)](https://badge.fury.io/js/baseguide)
 
-## Features
-* Flexible and extendable breakpoint system
-* Dynamic flexbox grid system with float fallback
-* CSS-only custom form controls
-* Consistent vertical rhythm and modular scale
+Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
+
+**Features**
 * Responsive and scalable components
+* CSS-only custom form controls
+* Robust grid system with flexbox support
+* Extendable breakpoint system
+* Consistent vertical rhythm and modular scale
 
-## Getting started
 
-**Install with npm**
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Grid](#grid)
+* [Forms](#forms)
+* [Browser support](#browser-support)
+* [Inspired By](#inspired-by)
+* [License](#license)
+
+
+## Installation
+
+**Install from npm**
 
 ```sh
 npm install baseguide
 ```
 
-**Clone with git**
+**Clone the Repo**
 
 ```sh
 git clone https://github.com/slavanga/baseguide
 ```
 
-**Download**
+**Manual Download**
 
-[Download the latest release](https://github.com/slavanga/baseguide/releases/latest)
+[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
 
-### Setup
 
-Default variables can be changed before importing Baseguide. Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+## Usage
+
+### Sass
+
+Default variables can be changed before importing Baseguide.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -40,7 +56,9 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using browsersync.
+### Gulp
+
+The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync] (https://www.browsersync.io/).
 
 ```sh
 npm install && gulp
@@ -48,7 +66,7 @@ npm install && gulp
 
 
 ## Grid
-The grid framework is based on the [Bootstrap grid system](https://getbootstrap.com/css/#grid).
+The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
 
 ### Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
@@ -86,7 +104,7 @@ The snippet above compiles to the following CSS:
 
 Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
-#### Legacy support
+#### Legacy Support
 To support browsers without native media query support you could use [respond.js](https://github.com/scottjehl/Respond).
 
 A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
@@ -131,7 +149,7 @@ Accessing gutter values is easy using the ```get-gutter``` function. The smalles
 }
 ```
 
-### Semantic / hybrid grid
+### Mixins
 The grid mixins can be used to create custom containers, rows and columns.
 
 ```scss
@@ -156,7 +174,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
 
 
-#### Simple two column layout
+#### Two Column Layout
 
 ```scss
 @include mq(sm) {
@@ -179,7 +197,7 @@ Tip: You can turn off the default columns output by setting ```$grid-columns-out
 </div>
 ```
 
-#### Gallery layout using block grid
+#### Gallery Layout Using Block Grid
 
 ```scss
 .col-gallery {
@@ -215,7 +233,7 @@ The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. 
 
 ## Forms
 
-### Standard form controls
+### Standard Form Controls
 All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
 
 Remember to reset the height of textareas if you choose a custom selector:
@@ -226,7 +244,7 @@ textarea.form-control {
 }
 ```
 
-### Custom form controls
+### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
 While the controls are functional in all browsers the following ones get the fully enhanced experience:
 
@@ -250,12 +268,14 @@ if (document.addEventListener) {
 ```
 
 
-## Browser support
+## Browser Support
 * Latest stable: Chrome, Firefox, Opera
 * IE 8+
 * Safari 6+
 * Mobile Safari 6+
 * Android Browser 2.3+
+
+Baseguide uses [Autoprefixer] (https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
 
 
 ## Inspired By…
@@ -264,3 +284,7 @@ if (document.addEventListener) {
 * [Bourbon](http://bourbon.io)
 * [Foundation](http://foundation.zurb.com)
 * [HTML5 Boilerplate](https://html5boilerplate.com)
+
+
+## License
+The code is released under the [MIT license] (https://github.com/slavanga/baseguide/blob/master/LICENSE).

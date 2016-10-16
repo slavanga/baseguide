@@ -1,12 +1,11 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var autoprefixer = require('autoprefixer');
-var scss = require('postcss-scss');
-var stylelint = require('stylelint');
 var browserSync = require('browser-sync').create();
 var config = {
 	'src': './',
 	'dest': 'dist/',
+	'minify': true,
 	'sourcemaps': false,
 	'browsers': [
 		'last 2 versions',
@@ -44,7 +43,7 @@ gulp.task('styles', function() {
 		.pipe($.cleanCss({compatibility: 'ie8'}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
-		.pipe(gulp.dest(config.dest + 'css'))
+		.pipe($.if(config.minify, gulp.dest(config.dest + 'css')))
 		.pipe(browserSync.stream());
 });
 
@@ -52,9 +51,9 @@ gulp.task('styles', function() {
 gulp.task('stylelint', function() {
 	return gulp.src(config.src + 'scss/**/*.scss')
 		.pipe($.postcss([
-			stylelint()
+			require('stylelint')
 		], {
-			syntax: scss
+			syntax: require('postcss-scss')
 		}));
 });
 
@@ -74,7 +73,7 @@ gulp.task('scripts', function() {
 		}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
-		.pipe(gulp.dest(config.dest + 'js'))
+		.pipe($.if(config.minify, gulp.dest(config.dest + 'js')))
 		.pipe(browserSync.stream());
 });
 
@@ -106,7 +105,7 @@ gulp.task('serve', ['build'], function() {
 gulp.task('watch', function() {
 	gulp.watch('*.html', ['html']);
 	gulp.watch(config.src + 'scss/**/*.scss', ['styles']);
-	gulp.watch(config.src + 'js/*.js', ['scripts']);
+	gulp.watch(config.src + 'js/**/*.js', ['scripts']);
 	gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', ['images']);
 });
 

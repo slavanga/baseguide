@@ -1,24 +1,29 @@
-/*! Baseguide v1.6.0 | MIT License | http://basegui.de */
+/*! Baseguide v1.7.0 | MIT License | http://basegui.de */
 
-// Functions, Mixins and Settings
-@import 'baseguide/functions';
-@import 'baseguide/mixins';
+// Settings
 @import 'baseguide/settings';
 
 // Vendor
 @import 'baseguide/vendor/mq';
 @import 'baseguide/vendor/normalize';
 
-// Grid
-@import 'baseguide/grid/grid-framework';
-@import 'baseguide/grid/grid';
+// Functions and Mixins
+@import 'baseguide/functions';
+@import 'baseguide/mixins';
 
 // Components
-@import 'baseguide/components/print';
-@import 'baseguide/components/responsive';
-@import 'baseguide/components/helpers';
-@import 'baseguide/components/typography';
-@import 'baseguide/components/buttons';
-@import 'baseguide/components/forms';
-@import 'baseguide/components/tables';
+@import 'baseguide/components/base';
 @import 'baseguide/components/spacing';
+@import 'baseguide/components/typography';
+@import 'baseguide/components/forms';
+@import 'baseguide/components/buttons';
+@import 'baseguide/components/tables';
+@import 'baseguide/components/helpers';
+@import 'baseguide/components/print';
+
+// Grid
+@import 'baseguide/grid/gutter';
+@import 'baseguide/grid/container';
+@import 'baseguide/grid/row';
+@import 'baseguide/grid/column';
+@import 'baseguide/grid/classes';

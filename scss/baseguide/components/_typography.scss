@@ -5,13 +5,6 @@ body {
 	color: $text-color;
 }
 
-input,
-button,
-select,
-textarea {
-	line-height: inherit;
-}
-
 #{$headings} {
 	margin-top: $headings-spacing * 2;
 	margin-bottom: $headings-spacing;
@@ -32,13 +25,14 @@ small,
 	font-size: 80%;
 }
 
-pre {
-	overflow: auto;
-}
-
 hr {
 	border: 0;
 	border-top: 1px solid lighten($text-color, 50%);
+}
+
+ul,
+ol {
+	padding-left: 2.5em;
 }
 
 a {

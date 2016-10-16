@@ -1,0 +1,56 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+canvas,
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+audio {
+	max-width: 100%;
+}
+
+img {
+	width: auto;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	line-height: inherit;
+}
+
+fieldset {
+	min-width: 0;
+	padding: 0;
+	border: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+[tabindex="-1"]:focus {
+	outline: none !important;
+}

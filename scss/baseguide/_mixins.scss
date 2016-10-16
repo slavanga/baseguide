@@ -14,35 +14,35 @@
 	list-style: none;
 }
 
-@mixin list-inline($spacing: 1em) {
+@mixin list-inline($spacing: 1em, $child-selector: li) {
 	@include list-unstyled;
 	@include clearfix;
 
 	margin-left: -$spacing;
 
-	> li {
+	> #{$child-selector} {
 		float: left;
 		margin-left: $spacing;
 	}
 
-	> li > a {
+	> #{$child-selector} > a {
 		display: inline-block;
 	}
 }
 
-@mixin list-equal {
+@mixin list-equal($child-selector: li) {
 	@include list-unstyled;
 
 	display: table;
 	table-layout: fixed;
 	width: 100%;
 
-	> li {
+	> #{$child-selector} {
 		display: table-cell;
 		text-align: center;
 	}
 
-	> li > a {
+	> #{$child-selector} > a {
 		display: block;
 	}
 }
@@ -156,9 +156,10 @@
 // beautiful underline
 @mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
 	text-decoration: none;
-	background: linear-gradient($color, $color) no-repeat;
+	background-image: linear-gradient($color, $color);
 	background-position: 0 $distance;
-	background-size: 100% $size;
+	background-size: 1px $size;
+	background-repeat: repeat-x;
 }
 
 
@@ -178,5 +179,58 @@
 		}
 
 		$max-scale: $max-scale - 1;
+	}
+}
+
+
+// loop all breakpoints and output content
+@mixin loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+	@for $i from 1 through length($breakpoint-keys) {
+		$breakpoint: nth($breakpoint-keys, $i) !global;
+		$is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
+		$is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+
+		@if $mq {
+			@if $inclusive {
+				// first breakpoint
+				@if $is-first-breakpoint {
+					@content;
+				}
+				// remaining breakpoints
+				@else {
+					@include mq($breakpoint) {
+						@content;
+					}
+				}
+			}
+			@else {
+				// first breakpoint
+				@if $is-first-breakpoint {
+					@if length($breakpoint-keys) > 1 {
+						@include mq($until: nth($breakpoint-keys, $i + 1)) {
+							@content;
+						}
+					}
+					@else {
+						@content;
+					}
+				}
+				// last breakpoint
+				@else if $is-last-breakpoint {
+					@include mq($breakpoint) {
+						@content;
+					}
+				}
+				// remaining breakpoints
+				@else {
+					@include mq($breakpoint, nth($breakpoint-keys, $i + 1)) {
+						@content;
+					}
+				}
+			}
+		}
+		@else {
+			@content;
+		}
 	}
 }

@@ -1,9 +1,3 @@
-fieldset {
-	min-width: 0;
-	padding: 0;
-	border: 0;
-}
-
 label {
 	display: inline-block;
 	max-width: 100%;
@@ -19,32 +13,6 @@ label {
 	margin-bottom: 1em;
 }
 
-.form-inline {
-	label {
-		vertical-align: middle;
-		margin-top: 1px;
-		padding-top: $input-padding-vertical;
-	}
-
-	#{$input-selector},
-	.form-group,
-	.select,
-	.checkbox,
-	.radio {
-		display: inline-block;
-		vertical-align: middle;
-		margin-bottom: 0;
-		width: auto;
-	}
-
-	.checkbox + .checkbox,
-	.radio + .radio {
-		margin-left: 1em;
-	}
-}
-
-
-// input controls
 #{$input-selector} {
 	display: block;
 	width: 100%;
@@ -52,10 +20,10 @@ label {
 	border: 1px solid $input-border-color;
 	border-radius: $input-border-radius;
 	padding: $input-padding-vertical $input-padding-horizontal;
+	background-clip: padding-box; // remove shadow in iOS
 	background-color: $input-bg;
 	color: $input-color;
 	transition: $input-transition;
-	appearance: none;
 
 	&:focus {
 		border-color: $input-focus-border-color;
@@ -72,7 +40,6 @@ label {
 
 select {
 	overflow-x: hidden;
-	appearance: menulist;
 
 	&[multiple],
 	&[size] {
