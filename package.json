@@ -16,8 +16,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
-    "browser-sync": "^2.17.3",
+    "autoprefixer": "^6.5.1",
+    "browser-sync": "^2.17.5",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",
     "gulp-clean-css": "^2.0.13",
@@ -28,11 +28,11 @@
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.0.0",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "postcss-scss": "^0.3.1",
-    "stylelint": "^7.2.0",
-    "stylelint-config-standard": "^13.0.0"
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0"
   }
 }
