@@ -1,4 +1,4 @@
-/*! Baseguide v1.7.0 | MIT License | http://basegui.de */
+/*! Baseguide v1.7.1 | MIT License | http://basegui.de */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1080,6 +1080,7 @@ input[type="file"] {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+  white-space: nowrap;
 }
 
 .sr-only-focusable:active, .sr-only-focusable:focus {
@@ -1089,6 +1090,7 @@ input[type="file"] {
   margin: 0;
   overflow: visible;
   clip: auto;
+  white-space: inherit;
 }
 
 .invisible {
