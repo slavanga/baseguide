@@ -16,12 +16,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
-    "browser-sync": "^2.17.5",
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-if": "^2.0.1",
+    "gulp-clean-css": "^2.2.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-include": "^2.3.1",
     "gulp-load-plugins": "^1.4.0",
@@ -32,7 +32,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "postcss-scss": "^0.4.0",
-    "stylelint": "^7.5.0",
-    "stylelint-config-standard": "^14.0.0"
+    "stylelint": "^7.6.0",
+    "stylelint-config-standard": "^15.0.0"
   }
 }
