@@ -901,7 +901,7 @@ input[type="file"] {
 .table th,
 .table td {
   padding: 0.4em 0.6em;
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #dedede;
   vertical-align: top;
 }
 
@@ -912,6 +912,10 @@ input[type="file"] {
 .table thead th {
   border-bottom-width: 2px;
   vertical-align: bottom;
+}
+
+.table tbody tr:nth-child(2n+1) {
+  background: #efefef;
 }
 
 .clearfix:after {
