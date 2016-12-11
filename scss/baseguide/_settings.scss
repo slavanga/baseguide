@@ -1,4 +1,4 @@
-// Font settings
+// Typography and Spacing
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $line-height-base: 1.5 !default;
@@ -20,8 +20,6 @@ $headings-color: inherit !default;
 
 $font-antialiased: true !default;
 
-
-// Base colors and links
 $text-color: #333 !default;
 $link-color: #0283f1 !default;
 $link-hover-color: $link-color !default;
@@ -102,7 +100,7 @@ $mq-breakpoints-list: map-keys($mq-breakpoints) !default;
 $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
 
 
-// Grid settings
+// Grid
 $grid-flexbox: false !default;
 $grid-columns-output: true !default;
 $grid-columns: 12 !default;
