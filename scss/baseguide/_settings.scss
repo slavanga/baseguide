@@ -32,8 +32,6 @@ $link-hover-decoration: underline !default;
 $button-selector: '.btn' !default;
 $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
-$button-border-radius: 0 !default;
-
 $button-bg: #0275d8 !default;
 $button-hover-bg: darken($button-bg, 10%) !default;
 $button-active-bg: $button-hover-bg !default;
@@ -41,6 +39,8 @@ $button-color: #fff !default;
 $button-hover-color: #fff !default;
 $button-active-color: $button-hover-color !default;
 $button-border-color: transparent !default;
+$button-border-radius: 0 !default;
+$button-transition: background-color 0.15s ease-out !default;
 $button-disabled-opacity: 0.65 !default;
 
 
@@ -62,14 +62,12 @@ $input-selector: (
 $input-height: 2.375em !default;
 $input-padding-vertical: 0.375em !default;
 $input-padding-horizontal: 0.75em !default;
-
 $input-bg: #fff !default;
 $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
 $input-focus-border-color: darken($input-border-color, 20%) !default;
 $input-border-radius: 0 !default;
 $input-transition: border-color 0.15s ease-out !default;
-
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
