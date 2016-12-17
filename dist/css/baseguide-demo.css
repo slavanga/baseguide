@@ -861,8 +861,8 @@ input[type="file"] {
   border-radius: 0;
   background-color: #0275d8;
   color: #fff;
-  -webkit-transition: background-color 0.15s ease-out;
-  transition: background-color 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
