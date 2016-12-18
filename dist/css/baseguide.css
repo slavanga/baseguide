@@ -590,7 +590,7 @@ small,
 
 hr {
   border: 0;
-  border-top: 1px solid #b3b3b3;
+  border-top: 1px solid #b3b2b2;
 }
 
 ul,
@@ -710,26 +710,26 @@ input[type="file"] {
 }
 
 [placeholder].placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
 }
 
 [placeholder]::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]::-moz-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]::placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
@@ -769,7 +769,7 @@ input[type="file"] {
 
 .checkbox input[type="checkbox"] + label:active::before,
 .radio input[type="radio"] + label:active::before {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
 }
 
 .checkbox input[type="checkbox"][disabled] + label::before,
