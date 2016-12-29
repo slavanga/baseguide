@@ -105,7 +105,7 @@ input[type="file"] {
 		}
 
 		+ label::before {
-			content: ' ';
+			content: '';
 			position: absolute;
 			top: 0.1875em;
 			left: 0;
@@ -170,7 +170,7 @@ input[type="file"] {
 
 		&::after {
 			/* autoprefixer: off */
-			content: ' ';
+			content: '';
 			pointer-events: none;
 			position: absolute;
 			z-index: 1;

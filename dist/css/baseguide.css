@@ -748,7 +748,7 @@ input[type="file"] {
 
 .checkbox input[type="checkbox"] + label::before,
 .radio input[type="radio"] + label::before {
-  content: ' ';
+  content: '';
   position: absolute;
   top: 0.1875em;
   left: 0;
@@ -817,7 +817,7 @@ input[type="file"] {
 
 .select::after {
   /* autoprefixer: off */
-  content: ' ';
+  content: '';
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -1060,7 +1060,7 @@ input[type="file"] {
 }
 
 .embed-responsive:before {
-  content: ' ';
+  content: '';
   display: block;
   padding-bottom: 56.25%;
 }
