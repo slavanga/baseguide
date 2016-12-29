@@ -196,18 +196,4 @@ input[type="file"] {
 			padding-right: 2em;
 		}
 	}
-
-	// hide custom arrow in Firefox < 35
-	@-moz-document url-prefix() {
-		/* autoprefixer: off */
-		@supports not(filter: opacity(1)) {
-			.select::after {
-				display: none;
-			}
-
-			.select select {
-				padding-right: $input-padding-horizontal;
-			}
-		}
-	}
 }
