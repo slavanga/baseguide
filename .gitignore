@@ -1,5 +1,7 @@
+# Files to Ignore
 prepros.cfg
 
-# Folders to ignore
+# Folders to Ignore
 bower_components
 node_modules
+.sass-cache

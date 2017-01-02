@@ -1,4 +1,4 @@
-/*! Baseguide v1.7.1 | MIT License | http://basegui.de */
+/*! Baseguide v1.8.0 | MIT License | http://basegui.de */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -491,8 +491,12 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
+  font: inherit;
   line-height: inherit;
+}
+
+optgroup {
+  font-weight: bold;
 }
 
 fieldset {
@@ -590,7 +594,7 @@ small,
 
 hr {
   border: 0;
-  border-top: 1px solid #b3b3b3;
+  border-top: 1px solid #b3b2b2;
 }
 
 ul,
@@ -710,26 +714,26 @@ input[type="file"] {
 }
 
 [placeholder].placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
 }
 
 [placeholder]::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]::-moz-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
 [placeholder]::placeholder {
-  color: #b3b3b3;
+  color: #b3b2b2;
   opacity: 1;
 }
 
@@ -748,7 +752,7 @@ input[type="file"] {
 
 .checkbox input[type="checkbox"] + label::before,
 .radio input[type="radio"] + label::before {
-  content: ' ';
+  content: '';
   position: absolute;
   top: 0.1875em;
   left: 0;
@@ -769,7 +773,7 @@ input[type="file"] {
 
 .checkbox input[type="checkbox"] + label:active::before,
 .radio input[type="radio"] + label:active::before {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
 }
 
 .checkbox input[type="checkbox"][disabled] + label::before,
@@ -817,7 +821,7 @@ input[type="file"] {
 
 .select::after {
   /* autoprefixer: off */
-  content: ' ';
+  content: '';
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -841,18 +845,6 @@ input[type="file"] {
   }
 }
 
-@-moz-document url-prefix() {
-  /* autoprefixer: off */
-  @supports not (filter: opacity(1)) {
-    .select::after {
-      display: none;
-    }
-    .select select {
-      padding-right: 0.75em;
-    }
-  }
-}
-
 .btn {
   display: inline-block;
   vertical-align: middle;
@@ -861,6 +853,8 @@ input[type="file"] {
   border-radius: 0;
   background-color: #0275d8;
   color: #fff;
+  -webkit-transition: background-color 0.15s ease-out, color 0.15s ease-out;
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -901,7 +895,7 @@ input[type="file"] {
 .table th,
 .table td {
   padding: 0.4em 0.6em;
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #dedede;
   vertical-align: top;
 }
 
@@ -912,6 +906,10 @@ input[type="file"] {
 .table thead th {
   border-bottom-width: 2px;
   vertical-align: bottom;
+}
+
+.table tbody tr:nth-child(2n+1) {
+  background: #efefef;
 }
 
 .clearfix:after {
@@ -1054,7 +1052,7 @@ input[type="file"] {
 }
 
 .embed-responsive:before {
-  content: ' ';
+  content: '';
   display: block;
   padding-bottom: 56.25%;
 }

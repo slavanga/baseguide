@@ -98,6 +98,14 @@ gulp.task('serve', ['build'], function() {
 				match: /<\/body>/i
 			}
 		}
+		/*
+		proxy: 'example.com',
+		files: config.dest,
+		serveStatic: [{
+			route: '', // remote path
+			dir: config.dest // local path
+		}],
+		*/
 	});
 });
 

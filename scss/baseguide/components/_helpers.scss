@@ -109,7 +109,7 @@
 	overflow: hidden;
 
 	&:before {
-		content: ' ';
+		content: '';
 		display: block;
 		padding-bottom: percentage(9 / 16);
 	}

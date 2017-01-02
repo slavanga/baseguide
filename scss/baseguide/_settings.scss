@@ -1,4 +1,4 @@
-// Font settings
+// Typography and Spacing
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $line-height-base: 1.5 !default;
@@ -20,8 +20,6 @@ $headings-color: inherit !default;
 
 $font-antialiased: true !default;
 
-
-// Base colors and links
 $text-color: #333 !default;
 $link-color: #0283f1 !default;
 $link-hover-color: $link-color !default;
@@ -32,8 +30,6 @@ $link-hover-decoration: underline !default;
 $button-selector: '.btn' !default;
 $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
-$button-border-radius: 0 !default;
-
 $button-bg: #0275d8 !default;
 $button-hover-bg: darken($button-bg, 10%) !default;
 $button-active-bg: $button-hover-bg !default;
@@ -41,6 +37,8 @@ $button-color: #fff !default;
 $button-hover-color: #fff !default;
 $button-active-color: $button-hover-color !default;
 $button-border-color: transparent !default;
+$button-border-radius: 0 !default;
+$button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
 $button-disabled-opacity: 0.65 !default;
 
 
@@ -62,14 +60,12 @@ $input-selector: (
 $input-height: 2.375em !default;
 $input-padding-vertical: 0.375em !default;
 $input-padding-horizontal: 0.75em !default;
-
 $input-bg: #fff !default;
 $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
 $input-focus-border-color: darken($input-border-color, 20%) !default;
 $input-border-radius: 0 !default;
 $input-transition: border-color 0.15s ease-out !default;
-
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
@@ -88,7 +84,8 @@ $icon-select-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCA
 $table-selector: '.table' !default;
 $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
-$table-border-color: #b6b6b6 !default;
+$table-border-color: #dedede !default;
+$table-stripe-bg: #efefef !default;
 
 
 // Breakpoints
@@ -103,7 +100,7 @@ $mq-breakpoints-list: map-keys($mq-breakpoints) !default;
 $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
 
 
-// Grid settings
+// Grid
 $grid-flexbox: false !default;
 $grid-columns-output: true !default;
 $grid-columns: 12 !default;

@@ -105,7 +105,7 @@ input[type="file"] {
 		}
 
 		+ label::before {
-			content: ' ';
+			content: '';
 			position: absolute;
 			top: 0.1875em;
 			left: 0;
@@ -170,7 +170,7 @@ input[type="file"] {
 
 		&::after {
 			/* autoprefixer: off */
-			content: ' ';
+			content: '';
 			pointer-events: none;
 			position: absolute;
 			z-index: 1;
@@ -194,20 +194,6 @@ input[type="file"] {
 
 		.select select {
 			padding-right: 2em;
-		}
-	}
-
-	// hide custom arrow in Firefox < 35
-	@-moz-document url-prefix() {
-		/* autoprefixer: off */
-		@supports not(filter: opacity(1)) {
-			.select::after {
-				display: none;
-			}
-
-			.select select {
-				padding-right: $input-padding-horizontal;
-			}
 		}
 	}
 }

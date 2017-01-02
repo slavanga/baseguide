@@ -37,8 +37,12 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit;
+	font: inherit;
 	line-height: inherit;
+}
+
+optgroup {
+	font-weight: bold;
 }
 
 fieldset {
