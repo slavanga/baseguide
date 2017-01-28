@@ -10,8 +10,9 @@ var config = {
 	'browsers': [
 		'last 2 versions',
 		'android >= 2.3',
-		'safari >= 6',
-		'ie >= 9'
+		'firefox esr',
+		'ie >= 9',
+		'safari >= 6'
 	]
 };
 
