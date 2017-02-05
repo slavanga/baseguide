@@ -16,7 +16,7 @@
     "indentation": "tab",
     "max-empty-lines": 2,
     "max-nesting-depth": [3, {
-      ignore: ["at-rules-without-declaration-blocks"]
+      ignore: ["blockless-at-rules"]
     }],
     "selector-pseudo-element-colon-notation": null
   }
