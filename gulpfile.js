@@ -6,13 +6,7 @@ var config = {
 	'src': './',
 	'dest': 'dist/',
 	'minify': true,
-	'sourcemaps': false,
-	'browsers': [
-		'last 2 versions',
-		'android >= 2.3',
-		'safari >= 6',
-		'ie >= 9'
-	]
+	'sourcemaps': false
 };
 
 
@@ -34,9 +28,7 @@ gulp.task('styles', function() {
 			this.emit('end');
 		}))
 		.pipe($.postcss([
-			autoprefixer({
-				browsers: config.browsers
-			})
+			autoprefixer()
 		]))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())

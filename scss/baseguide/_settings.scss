@@ -1,6 +1,7 @@
 // Typography and Spacing
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
+$font-antialiased: true !default;
 $line-height-base: 1.5 !default;
 $spacing-base: 1.5em !default;
 
@@ -17,8 +18,6 @@ $headings-font-family: inherit !default;
 $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
-
-$font-antialiased: true !default;
 
 $text-color: #333 !default;
 $link-color: #0283f1 !default;
