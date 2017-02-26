@@ -34,12 +34,16 @@ npm install baseguide
 **Clone the Repo**
 
 ```sh
-git clone https://github.com/slavanga/baseguide
+git clone -b master https://github.com/slavanga/baseguide
 ```
 
-**Manual Download**
+**Load from CDN**
 
-[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
+[https://cdnjs.com/libraries/baseguide](https://cdnjs.com/libraries/baseguide)
+
+**Download**
+
+[https://github.com/slavanga/baseguide/archive/master.zip](https://github.com/slavanga/baseguide/archive/master.zip)
 
 
 ## Usage
