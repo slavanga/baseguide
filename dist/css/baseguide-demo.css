@@ -1261,9 +1261,9 @@ input[type="file"] {
   padding-right: 15px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
+  width: 100%;
   position: relative;
   float: left;
-  width: 100%;
   min-height: 1px;
 }
 
