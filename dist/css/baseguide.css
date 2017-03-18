@@ -1078,11 +1078,10 @@ input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
-  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   white-space: nowrap;
 }
 
@@ -1090,9 +1089,10 @@ input[type="file"] {
   position: static;
   width: auto;
   height: auto;
-  margin: 0;
   overflow: visible;
   clip: auto;
+  -webkit-clip-path: none;
+          clip-path: none;
   white-space: inherit;
 }
 
