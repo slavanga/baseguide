@@ -1,29 +1,39 @@
-@mixin column-base($gutter: $grid-gutter) {
+@mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
 	@include make-gutters($gutter);
+	@include column($size, $columns);
 
 	position: relative;
 	float: left;
-	width: 100%;
 	min-height: 1px;
 }
 
 @mixin column($size: expand, $columns: $grid-columns) {
-	@if (type-of($size) == number) {
-		@if $size > 0 {
-			width: percentage($size / $columns);
-		}
-	}
-	@else {
-		width: auto;
-		max-width: 100%;
-
-		@if $grid-flexbox {
-			@if $size == shrink {
-				flex: 0 0 auto;
+	@if $size {
+		@if (type-of($size) == number) {
+			@if (unit($size) == '%') {
+				width: $size;
 			}
+			@else {
+				@if $size < 1 {
+					width: percentage($size);
+				}
+				@else {
+					width: percentage($size / $columns);
+				}
+			}
+		}
+		@else {
+			width: auto;
+			max-width: 100%;
 
-			@if $size == expand {
-				flex: 1 1 auto;
+			@if $grid-flexbox {
+				@if $size == shrink {
+					flex: 0 0 auto;
+				}
+
+				@if $size == expand {
+					flex: 1 1 auto;
+				}
 			}
 		}
 	}
@@ -68,8 +78,10 @@
 // Generate columns for a specific breakpoint
 @mixin loop-columns($breakpoint) {
 	@for $i from 0 through $grid-columns {
-		.col-#{$breakpoint}-#{$i} {
-			@include column($i, $grid-columns);
+		@if $i > 0 {
+			.col-#{$breakpoint}-#{$i} {
+				@include column($i, $grid-columns);
+			}
 		}
 
 		.col-#{$breakpoint}-pull-#{$i} {

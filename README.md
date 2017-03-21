@@ -34,12 +34,16 @@ npm install baseguide
 **Clone the Repo**
 
 ```sh
-git clone https://github.com/slavanga/baseguide
+git clone -b master https://github.com/slavanga/baseguide
 ```
 
-**Manual Download**
+**Load from CDN**
 
-[Download the latest release](https://github.com/slavanga/baseguide/archive/master.zip)
+[https://cdnjs.com/libraries/baseguide](https://cdnjs.com/libraries/baseguide)
+
+**Download**
+
+[https://github.com/slavanga/baseguide/archive/master.zip](https://github.com/slavanga/baseguide/archive/master.zip)
 
 
 ## Usage
@@ -182,14 +186,14 @@ The grid mixins can be used to create custom containers, rows and columns.
 
 ```scss
 // $gutter: gutter width in pixels or map with gutters, defaults to $grid-gutter
-// $size: an integer, the number of columns
+// $size: column width as percentage value, decimal number or column count
 // $columns: an integer, the total number of columns, defaults to $grid-columns
 // $width: container width in pixels, defaults to $grid-container
 
 @include container($gutter, $width);
 @include row($gutter);
 
-@include column-base($gutter);
+@include column-base($gutter, $size, $columns);
 @include column($size, $columns);
 
 @include column-push($size, $columns);

@@ -1,4 +1,4 @@
-/*! Baseguide v1.8.1 | MIT License | http://basegui.de */
+/*! Baseguide v1.9.0 | MIT License | http://basegui.de */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -550,6 +550,7 @@ li > ol {
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1em;
+  font-weight: 400;
   line-height: 1.5;
   color: #333;
 }
@@ -726,11 +727,6 @@ input[type="file"] {
   opacity: 1;
 }
 
-[placeholder]::-moz-placeholder {
-  color: #b3b2b2;
-  opacity: 1;
-}
-
 [placeholder]:-ms-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
@@ -832,7 +828,7 @@ input[type="file"] {
   top: 0;
   right: 0.75em;
   width: 12px;
-  height: 100%;
+  height: 2.375em;
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVChTYzQyMqpnZGRsYCAC/P//v4H5+fPnByUlJRmAmhyg4lgBSPG5c+camUEcQppgikFssAYQwKUJWTEIwDWAAEiTlJSUAJBpAeIDFRcCFXeC2HiBsbFxPzAwCqBcJMDAAAD1cjECKulnugAAAABJRU5ErkJggg==");
@@ -1077,11 +1073,10 @@ input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
-  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   white-space: nowrap;
 }
 
@@ -1089,9 +1084,10 @@ input[type="file"] {
   position: static;
   width: auto;
   height: auto;
-  margin: 0;
   overflow: visible;
   clip: auto;
+  -webkit-clip-path: none;
+          clip-path: none;
   white-space: inherit;
 }
 
@@ -1193,7 +1189,6 @@ input[type="file"] {
   *:after,
   p:first-letter,
   p:first-line {
-    background: transparent !important;
     color: #000 !important;
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
@@ -1260,9 +1255,9 @@ input[type="file"] {
   padding-right: 15px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
+  width: 100%;
   position: relative;
   float: left;
-  width: 100%;
   min-height: 1px;
 }
 

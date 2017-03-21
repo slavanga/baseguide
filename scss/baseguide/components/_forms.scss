@@ -177,7 +177,7 @@ input[type="file"] {
 			top: 0;
 			right: $input-padding-horizontal;
 			width: 12px;
-			height: 100%;
+			height: $input-height;
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-image: url($icon-select-fallback);
