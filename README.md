@@ -13,7 +13,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 
 
 ## Table of Contents
-* [Installation](#installation)
+* [Install](#install)
 * [Usage](#usage)
 * [Breakpoints](#breakpoints)
 * [Grid](#grid)
@@ -23,27 +23,26 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [License](#license)
 
 
-## Installation
+## Install
 
-**Install from npm**
+### Download
 
-```sh
-npm install baseguide
+* [baseguide.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.css) (uncompressed)
+* [baseguide.min.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.min.css) (compressed)
+
+### CDN
+
+Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/1.9.0/css/baseguide.min.css">
 ```
 
-**Clone the Repo**
+### Package Managers
 
-```sh
-git clone -b master https://github.com/slavanga/baseguide
-```
+[npm](https://www.npmjs.com/package/baseguide): `npm install baseguide`
 
-**Load from CDN**
-
-[https://cdnjs.com/libraries/baseguide](https://cdnjs.com/libraries/baseguide)
-
-**Download**
-
-[https://github.com/slavanga/baseguide/archive/master.zip](https://github.com/slavanga/baseguide/archive/master.zip)
+[yarn](https://yarnpkg.com/en/package/baseguide): `yarn add baseguide`
 
 
 ## Usage
@@ -91,7 +90,7 @@ Media Queries are handled by [Sass MQ](https://github.com/sass-mq/sass-mq).
 ```scss
 // include the media query mixin and pass the breakpoint key
 @include mq(md) {
-  
+
 }
 ```
 
