@@ -910,7 +910,7 @@ input[type="file"] {
 }
 
 .table tbody tr:nth-child(2n+1) {
-  background: #efefef;
+  background-color: #efefef;
 }
 
 .clearfix:after {
