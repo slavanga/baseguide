@@ -958,7 +958,7 @@ input[type="file"] {
 }
 
 .list-equal > li > a {
-  display: block;
+  display: inline-block;
 }
 
 .block-center {
