@@ -2046,5 +2046,12 @@ input[type="file"] {
 .col__item {
   margin-bottom: 30px;
   padding: 1em;
+  font-size: 0.8em;
   background: #efefef;
+}
+
+@media (min-width: 40em) {
+  .col__item {
+    font-size: 1em;
+  }
 }

@@ -125,5 +125,10 @@ $mq-breakpoints: (
 .col__item {
 	margin-bottom: $grid-gutter;
 	padding: 1em;
+	font-size: 0.8em;
 	background: #efefef;
+
+	@include mq(sm) {
+		font-size: 1em;
+	}
 }
