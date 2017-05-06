@@ -3,15 +3,15 @@
   "ignoreFiles": "**/vendor/*.scss",
   "rules": {
     "at-rule-empty-line-before": ["always", {
-      except: [
+      "except": [
         "blockless-after-same-name-blockless",
         "first-nested"
       ],
-      ignore: ["after-comment"],
-      ignoreAtRules: ["else"]
+      "ignore": ["after-comment"],
+      "ignoreAtRules": ["else"]
     }],
     "declaration-block-no-duplicate-properties": [true, {
-      ignore: ["consecutive-duplicates-with-different-values"]
+      "ignore": ["consecutive-duplicates-with-different-values"]
     }],
     "indentation": "tab",
     "max-empty-lines": 2,
