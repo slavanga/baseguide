@@ -1,10 +1,14 @@
-// Typography and Spacing
+// Global
+$spacing-base: 1.5em !default;
+$global-bg: #fff !default;
+
+
+// Typography
+$font-antialiased: true !default;
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $font-weight-base: 400 !default;
-$font-antialiased: true !default;
 $line-height-base: 1.5 !default;
-$spacing-base: 1.5em !default;
 
 $type-scale-base: $font-size-base !default;
 $type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
