@@ -14,7 +14,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 
 ## Table of Contents
 * [Install](#install)
-* [Usage](#usage)
+* [Development](#development)
 * [Breakpoints](#breakpoints)
 * [Grid](#grid)
 * [Forms](#forms)
@@ -45,12 +45,25 @@ Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
 [yarn](https://yarnpkg.com/en/package/baseguide): `yarn add baseguide`
 
 
-## Usage
+## Development
+
+### Dependencies
+Use npm or yarn to install the dev dependencies.
+
+`npm install` or `yarn install`
+
+### Gulp
+The included gulpfile takes care of compiling, optimizing and minifying your assets.
+
+| Command           | Description                                                                                              |
+| :---------------- | :------------------------------------------------------------------------------------------------------- |
+| `gulp`            | Build files, watch for changes and start a local server using [Browsersync](https://www.browsersync.io/) |
+| `gulp build`      | Build files once                                                                                         |
+| `gulp watch`      | Watch files and build when a change occurs                                                               |
 
 ### Sass
-
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -60,13 +73,6 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-### Gulp
-
-The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync](https://www.browsersync.io/).
-
-```sh
-npm install && gulp
-```
 
 ## Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
