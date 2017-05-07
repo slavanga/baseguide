@@ -137,14 +137,20 @@ input[type="file"] {
 
 	// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
 	.radio input[type="radio"]:checked + label::before {
+		@if $icon-radio-fallback {
+			background-image: url($icon-radio-fallback);
+		}
+
 		/* autoprefixer: off */
-		background-image: url($icon-radio-fallback);
 		background-image: url($icon-radio), linear-gradient(transparent, transparent);
 	}
 
 	.checkbox input[type="checkbox"]:checked + label::before {
+		@if $icon-checkbox-fallback {
+			background-image: url($icon-checkbox-fallback);
+		}
+
 		/* autoprefixer: off */
-		background-image: url($icon-checkbox-fallback);
 		background-image: url($icon-checkbox), linear-gradient(transparent, transparent);
 	}
 
@@ -168,8 +174,8 @@ input[type="file"] {
 		}
 
 		&::after {
-			/* autoprefixer: off */
 			content: '';
+			display: none \9;
 			pointer-events: none;
 			position: absolute;
 			z-index: 1;
@@ -179,9 +185,13 @@ input[type="file"] {
 			height: $input-height;
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-image: url($icon-select-fallback);
+
+			@if $icon-select-fallback {
+				background-image: url($icon-select-fallback);
+			}
+
+			/* autoprefixer: off */
 			background-image: url($icon-select), linear-gradient(transparent, transparent);
-			display: none \9;
 		}
 	}
 
