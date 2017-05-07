@@ -1,7 +1,7 @@
 label {
 	display: inline-block;
 	max-width: 100%;
-	padding-bottom: $input-padding-vertical;
+	margin-bottom: 0.3em;
 }
 
 .label-inline {
@@ -64,7 +64,7 @@ input[type="checkbox"] {
 	line-height: normal;
 
 	+ label {
-		padding: 0;
+		margin-bottom: 0;
 		padding-left: 20px;
 		font-weight: inherit;
 		cursor: pointer;
