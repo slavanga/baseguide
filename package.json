@@ -40,6 +40,6 @@
     "android >= 2.3",
     "firefox esr",
     "ie >= 9",
-    "safari >= 6"
+    "safari >= 8"
   ]
 }

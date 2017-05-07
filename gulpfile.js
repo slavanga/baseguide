@@ -32,7 +32,7 @@ gulp.task('styles', function() {
 		]))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())
-		.pipe($.cleanCss({compatibility: 'ie8'}))
+		.pipe($.cleanCss({compatibility: 'ie9'}))
 		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe($.rename({suffix: '.min'}))
 		.pipe($.if(config.minify, gulp.dest(config.dest + 'css')))

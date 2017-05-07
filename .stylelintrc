@@ -14,7 +14,6 @@
       "ignore": ["consecutive-duplicates-with-different-values"]
     }],
     "indentation": "tab",
-    "max-empty-lines": 2,
-    "selector-pseudo-element-colon-notation": null
+    "max-empty-lines": 2
   }
 }

@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -17,10 +17,6 @@ video {
 
 audio {
 	max-width: 100%;
-}
-
-img {
-	width: auto;
 }
 
 audio,

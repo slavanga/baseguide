@@ -48,9 +48,7 @@ Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
 ## Development
 
 ### Dependencies
-Use npm or yarn to install the dev dependencies.
-
-`npm install` or `yarn install`
+Use `npm install` or `yarn install` to install the dev dependencies.
 
 ### Gulp
 The included gulpfile takes care of compiling, optimizing and minifying your assets.
@@ -109,24 +107,6 @@ The snippet above compiles to the following CSS:
 ```
 
 Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
-
-#### Legacy Support
-To support browsers without native media query support you could use [respond.js](https://github.com/scottjehl/Respond).
-
-A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
-
-```scss
-// oldie.scss
-$mq-responsive: false;
-$mq-static-breakpoint: lg;
-
-@import 'main';
-```
-
-Include the generated CSS file after the rest of your styles to serve a fixed width layout to legacy browsers.
-```html
-<!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
-```
 
 ### Breakpoint Loop
 The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three global variables and outputs the ```@content``` for each breakpoint.
@@ -282,33 +262,16 @@ textarea.form-control {
 
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
-While the controls are functional in all browsers the following ones get the fully enhanced experience:
+IE 9 doesn’t support the custom select styles. All other [supported browsers](#browser-support) get the fully enhanced experience.
 
-* Android 2.3+
-* Chrome
-* Firefox 35+
-* IE 10+
-* Mobile Safari 4+
-* Safari 5.1+
-* Opera 15+
-
-You can set the variable ```$use-custom-forms``` to ```false``` to disable custom form styles in all browsers.
-
-### Caveats
-In iOS versions prior to 5.1.1 the code below is required to make custom radio buttons and checkboxes work.
-
-```js
-if (document.addEventListener) {
-  document.addEventListener('click', function() {}, false);
-}
-```
+You can set the variable ```$use-custom-forms``` to ```false``` to disable the custom form styles.
 
 
 ## Browser Support
 * Latest stable: Chrome, Firefox, Opera
-* IE 8+
-* Safari 6+
-* Mobile Safari 6+
+* IE 9+
+* Safari 8+
+* Mobile Safari 8+
 * Android Browser 2.3+
 
 Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.

@@ -2,10 +2,10 @@
 
 @media print {
 	*,
-	*:before,
-	*:after,
-	p:first-letter,
-	p:first-line {
+	*::before,
+	*::after,
+	p::first-letter,
+	p::first-line {
 		color: #000 !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
@@ -16,7 +16,7 @@
 		text-decoration: underline;
 	}
 
-	abbr[title]:after {
+	abbr[title]::after {
 		content: ' (' attr(title) ')';
 	}
 

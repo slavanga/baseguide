@@ -10,10 +10,20 @@
 
 		<link rel="stylesheet" href="dist/css/baseguide-demo.min.css">
 
-		<!--[if lt IE 9]>
-			<script src="dist/js/vendor/html5shiv.min.js"></script>
-			<script src="dist/js/vendor/respond.min.js"></script>
-		<![endif]-->
+		<script>
+			WebFontConfig = {
+				google: { families: [ 'Merriweather:900:latin' ] }
+			};
+
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+		</script>
 	</head>
 	<body>
 		<div class="section section--intro">
@@ -401,20 +411,5 @@
 				Licensed under the <a href="https://github.com/slavanga/baseguide/blob/master/LICENSE">MIT License</a>.
 			</p>
 		</footer>
-
-		<script>
-			WebFontConfig = {
-				google: { families: [ 'Merriweather:900:latin' ] }
-			};
-
-			(function() {
-				var wf = document.createElement('script');
-				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-				wf.type = 'text/javascript';
-				wf.async = 'true';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(wf, s);
-			})();
-		</script>
 	</body>
 </html>

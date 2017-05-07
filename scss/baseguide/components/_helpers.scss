@@ -108,7 +108,7 @@
 	position: relative;
 	overflow: hidden;
 
-	&:before {
+	&::before {
 		content: '';
 		display: block;
 		padding-bottom: percentage(9 / 16);
