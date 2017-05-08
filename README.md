@@ -79,10 +79,11 @@ The default configuration looks like this:
 
 ```scss
 $mq-breakpoints: (
-  xs: 480px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px
+  xs: 0,
+  sm: 400px,
+  md: 680px,
+  lg: 960px,
+  xl: 1200px
 );
 ```
 
@@ -101,7 +102,7 @@ Media Queries are handled by [Sass MQ](https://github.com/sass-mq/sass-mq).
 The snippet above compiles to the following CSS:
 
 ```css
-@media (min-width: 62em) {
+@media (min-width: 42.5em) {
 
 }
 ```
@@ -120,7 +121,7 @@ The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three
 
 It’s a powerful tool that for example allows the generation of additional responsive helper classes.
 ```scss
-@include loop-breakpoints {
+@include loop-breakpoints($inclusive: true) {
   .text-#{$breakpoint}-left {
     text-align: left;
   }
