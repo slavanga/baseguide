@@ -1,5 +1,5 @@
 @function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
-	@if (type-of($gutter) == map) {
+	@if (type-of($gutter) == 'map') {
 		@if $breakpoint {
 			@if map-has-key($gutter, $breakpoint) {
 				$gutter: map-get($gutter, $breakpoint);
@@ -19,7 +19,7 @@
 @mixin gutter($gutter, $type) {
 	$gutter: $gutter / 2;
 
-	@if $type == inner {
+	@if $type == 'inner' {
 		padding-left: to-rem($gutter);
 		padding-right: to-rem($gutter);
 	}
@@ -31,8 +31,8 @@
 	}
 }
 
-@mixin make-gutters($gutter: $grid-gutter, $type: inner) {
-	@if (type-of($gutter) == map) {
+@mixin make-gutters($gutter: $grid-gutter, $type: 'inner') {
+	@if (type-of($gutter) == 'map') {
 		@each $breakpoint, $width in $gutter {
 			@if $breakpoint == nth($mq-breakpoints-list, 1) {
 				@include gutter($width, $type);

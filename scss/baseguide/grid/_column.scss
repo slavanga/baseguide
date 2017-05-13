@@ -7,9 +7,9 @@
 	min-height: 1px;
 }
 
-@mixin column($size: expand, $columns: $grid-columns) {
+@mixin column($size: 'expand', $columns: $grid-columns) {
 	@if $size {
-		@if (type-of($size) == number) {
+		@if (type-of($size) == 'number') {
 			@if (unit($size) == '%') {
 				width: $size;
 			}
@@ -27,11 +27,11 @@
 			max-width: 100%;
 
 			@if $grid-flexbox {
-				@if $size == shrink {
+				@if $size == 'shrink' {
 					flex: 0 0 auto;
 				}
 
-				@if $size == expand {
+				@if $size == 'expand' {
 					flex: 1 1 auto;
 				}
 			}

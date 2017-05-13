@@ -28,7 +28,7 @@
 }
 
 @function to-rem($value, $base: 16px) {
-	@if (unit($value) != rem) and (strip-unit($value) != 0) {
+	@if (unit($value) != 'rem') and (strip-unit($value) != 0) {
 		$value: strip-unit($value) / strip-unit($base) * 1rem;
 	}
 

@@ -14,7 +14,7 @@
 	list-style: none;
 }
 
-@mixin list-inline($spacing: 1em, $child-selector: li) {
+@mixin list-inline($spacing: 1em, $child-selector: 'li') {
 	@include list-unstyled;
 	@include clearfix;
 
@@ -30,7 +30,7 @@
 	}
 }
 
-@mixin list-equal($child-selector: li) {
+@mixin list-equal($child-selector: 'li') {
 	@include list-unstyled;
 
 	display: table;

@@ -1,6 +1,6 @@
 @mixin row($gutter: $grid-gutter) {
 	@include clearfix;
-	@include make-gutters($gutter, outer);
+	@include make-gutters($gutter, 'outer');
 
 	@if $grid-flexbox {
 		/* autoprefixer: off */
