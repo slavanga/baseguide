@@ -184,7 +184,9 @@
 
 
 // loop all breakpoints and output content
-@mixin loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
+	$breakpoint-keys: map-keys($breakpoints);
+
 	@for $i from 1 through length($breakpoint-keys) {
 		$breakpoint: nth($breakpoint-keys, $i) !global;
 		$is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
@@ -198,7 +200,7 @@
 				}
 				// remaining breakpoints
 				@else {
-					@include mq($breakpoint) {
+					@include mq($breakpoint, $breakpoints: $breakpoints) {
 						@content;
 					}
 				}
@@ -207,7 +209,7 @@
 				// first breakpoint
 				@if $is-first-breakpoint {
 					@if length($breakpoint-keys) > 1 {
-						@include mq($until: nth($breakpoint-keys, $i + 1)) {
+						@include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
 							@content;
 						}
 					}
@@ -217,13 +219,13 @@
 				}
 				// last breakpoint
 				@else if $is-last-breakpoint {
-					@include mq($breakpoint) {
+					@include mq($breakpoint, $breakpoints: $breakpoints) {
 						@content;
 					}
 				}
 				// remaining breakpoints
 				@else {
-					@include mq($breakpoint, nth($breakpoint-keys, $i + 1)) {
+					@include mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
 						@content;
 					}
 				}

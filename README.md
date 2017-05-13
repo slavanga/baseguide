@@ -111,7 +111,7 @@ Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq
 ### Breakpoint Loop
 The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three global variables and outputs the ```@content``` for each breakpoint.
 ```scss
-@include loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+@include loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
   @debug $breakpoint;
   @debug $is-first-breakpoint;
   @debug $is-last-breakpoint;

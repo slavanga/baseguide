@@ -163,7 +163,7 @@
 	}
 }
 
-@include loop-breakpoints {
+@include loop-breakpoints($inclusive: false) {
 	.hidden-#{$breakpoint} {
 		display: none !important;
 	}
@@ -173,7 +173,7 @@
 	}
 }
 
-@include loop-breakpoints($inclusive: true) {
+@include loop-breakpoints {
 	@if not ($is-first-breakpoint or $is-last-breakpoint) {
 		.hidden-#{$breakpoint}-up {
 			display: none !important;
