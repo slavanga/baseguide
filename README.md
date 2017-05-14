@@ -121,7 +121,7 @@ The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three
 
 It’s a powerful tool that for example allows the generation of additional responsive helper classes.
 ```scss
-@include loop-breakpoints($inclusive: true) {
+@include loop-breakpoints {
   .text-#{$breakpoint}-left {
     text-align: left;
   }
