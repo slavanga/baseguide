@@ -69,6 +69,14 @@ gulp.task('scripts', function() {
 		.pipe(browserSync.stream());
 });
 
+// Lint javascript
+gulp.task('eslint', function() {
+	return gulp.src(config.src + 'js/**/*.js')
+		.pipe($.eslint())
+		.pipe($.eslint.format())
+		.pipe($.eslint.failAfterError());
+});
+
 // Optimize images
 gulp.task('images', function() {
 	return gulp.src(config.src + 'img/**/*.{gif,jpg,png,svg}')
