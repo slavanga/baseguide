@@ -11,8 +11,6 @@
 }
 
 // Generate columns for all breakpoints
-@if $grid-columns-output {
-	@include loop-breakpoints {
-		@include loop-columns($breakpoint);
-	}
+@include loop-breakpoints {
+	@include loop-columns($breakpoint);
 }

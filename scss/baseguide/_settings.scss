@@ -48,8 +48,6 @@ $button-disabled-opacity: 0.65 !default;
 
 
 // Forms
-$use-custom-forms: true !default;
-
 $input-selector: (
 	'input[type="email"]',
 	'input[type="number"]',
@@ -108,7 +106,6 @@ $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !
 
 // Grid
 $grid-flexbox: false !default;
-$grid-columns-output: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 $grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
