@@ -1028,6 +1028,14 @@ input[type="file"] {
   overflow: hidden;
 }
 
+.text-hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
 .embed-responsive {
   position: relative;
   overflow: hidden;

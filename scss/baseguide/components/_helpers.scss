@@ -102,6 +102,10 @@
 	@include text-truncate;
 }
 
+.text-hyphenate {
+	@include text-hyphenate;
+}
+
 
 // responsive embed
 .embed-responsive {
