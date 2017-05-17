@@ -18,7 +18,7 @@ gulp.task('html', function() {
 
 // Compile and autoprefix stylesheets
 gulp.task('styles', function() {
-	return gulp.src(config.src + 'scss/**/*.scss')
+	return gulp.src(config.src + 'scss/*.scss')
 		.pipe($.if(config.sourcemaps, $.sourcemaps.init()))
 		.pipe($.sass({
 			precision: 8,
