@@ -798,7 +798,7 @@ input[type="file"] {
 
 .select select:focus::-ms-value {
   background: transparent;
-  color: #333;
+  color: currentColor;
 }
 
 .select::after {

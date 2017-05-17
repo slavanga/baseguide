@@ -75,7 +75,7 @@
 
 	select:focus::-ms-value {
 		background: transparent;
-		color: $input-color;
+		color: currentColor;
 	}
 
 	&::after {
