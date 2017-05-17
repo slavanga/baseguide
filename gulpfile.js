@@ -30,6 +30,7 @@ gulp.task('styles', function() {
 		.pipe($.postcss([
 			autoprefixer()
 		]))
+		.pipe($.if(config.sourcemaps, $.sourcemaps.write()))
 		.pipe(gulp.dest(config.dest + 'css'))
 		.pipe(browserSync.stream())
 		.pipe($.cleanCss({compatibility: 'ie9'}))
