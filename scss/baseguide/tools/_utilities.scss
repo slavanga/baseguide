@@ -8,7 +8,7 @@
 }
 
 
-// lists
+// list
 @mixin list-unstyled {
 	padding-left: 0;
 	list-style: none;
@@ -48,7 +48,7 @@
 }
 
 
-// text helpers
+// text
 @mixin text-hide {
 	text-indent: 110%;
 	white-space: nowrap;
@@ -70,7 +70,7 @@
 }
 
 
-// visibility helpers
+// visibility
 @mixin sr-only {
 	position: absolute;
 	width: 1px;
@@ -95,7 +95,48 @@
 }
 
 
-// triangle mixin from bourbon
+// unstyled button
+@mixin button-unstyled {
+	appearance: none;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	color: inherit;
+}
+
+
+// beautiful underline
+@mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
+	text-decoration: none;
+	background-image: linear-gradient($color, $color);
+	background-position: 0 $distance;
+	background-size: 1px $size;
+	background-repeat: repeat-x;
+}
+
+
+// target HiDPI screens
+@mixin hidpi($ratio: 1.5) {
+	@media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
+		@content;
+	}
+}
+
+
+// scale headings using modular scale
+@mixin scale-headings($max-scale: 4, $base: $type-scale-base) {
+	@each $heading in $headings {
+		#{$heading} {
+			font-size: modular-scale($max-scale, $base);
+		}
+
+		$max-scale: $max-scale - 1;
+	}
+}
+
+
+// triangle mixin adapted from bourbon
 @mixin triangle($direction, $width, $height, $color: currentColor) {
 	border-style: solid;
 	height: 0;
@@ -132,36 +173,6 @@
 	@else if $direction == 'up-left' {
 		border-color: $color transparent transparent;
 		border-width: $width $width 0 0;
-	}
-}
-
-
-// beautiful underline
-@mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
-	text-decoration: none;
-	background-image: linear-gradient($color, $color);
-	background-position: 0 $distance;
-	background-size: 1px $size;
-	background-repeat: repeat-x;
-}
-
-
-// target HiDPI screens
-@mixin hidpi($ratio: 1.5) {
-	@media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
-		@content;
-	}
-}
-
-
-// scale headings using modular scale
-@mixin scale-headings($max-scale: 4, $base: $type-scale-base) {
-	@each $heading in $headings {
-		#{$heading} {
-			font-size: modular-scale($max-scale, $base);
-		}
-
-		$max-scale: $max-scale - 1;
 	}
 }
 

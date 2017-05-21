@@ -1,0 +1,23 @@
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-hide {
+	@include text-hide;
+}
+
+.text-truncate {
+	@include text-truncate;
+}
+
+.text-hyphenate {
+	@include text-hyphenate;
+}

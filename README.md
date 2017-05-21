@@ -61,7 +61,7 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 
 ### Sass
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to see all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/settings/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -189,8 +189,6 @@ The grid mixins can be used to create custom containers, rows and columns.
 @include column-block($columns);
 ```
 
-Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
-
 #### Two Column Layout
 
 ```scss
@@ -264,8 +262,6 @@ textarea.form-control {
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
 IE 9 doesn’t support the custom select styles. All other [supported browsers](#browser-support) get the fully enhanced experience.
-
-You can set the variable ```$use-custom-forms``` to ```false``` to disable the custom form styles.
 
 
 ## Browser Support

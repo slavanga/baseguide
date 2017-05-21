@@ -1,18 +1,18 @@
 // Global
-$spacing-base: 1.5em !default;
-$global-bg: #fff !default;
-
-
-// Typography
 $font-antialiased: true !default;
 $font-size-base: 1em !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $font-weight-base: 400 !default;
 $line-height-base: 1.5 !default;
+$global-bg: #fff !default;
+$text-color: #333 !default;
 
-$type-scale-base: $font-size-base !default;
-$type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
 
+// Spacing
+$spacing-base: 1.5em !default;
+
+
+// Headings
 $headings: (
 	'h1, .h1', 'h2, .h2', 'h3, .h3',
 	'h4, .h4', 'h5, .h5', 'h6, .h6'
@@ -24,30 +24,38 @@ $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
 
-$text-color: #333 !default;
+$type-scale-base: $font-size-base !default;
+$type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
+
+
+// Link
 $link-color: #0283f1 !default;
 $link-hover-color: $link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
 
 
-// Buttons
-$button-selector: '.btn' !default;
-$button-padding-vertical: 0.375em !default;
-$button-padding-horizontal: 1em !default;
-$button-bg: #0275d8 !default;
-$button-hover-bg: darken($button-bg, 10%) !default;
-$button-active-bg: $button-hover-bg !default;
-$button-color: #fff !default;
-$button-hover-color: #fff !default;
-$button-active-color: $button-hover-color !default;
-$button-border-color: transparent !default;
-$button-border-radius: 0 !default;
-$button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
-$button-disabled-opacity: 0.65 !default;
+// Breakpoints
+$mq-breakpoints: (
+	xs: 0,
+	sm: 400px,
+	md: 680px,
+	lg: 960px,
+	xl: 1200px
+) !default;
+
+$mq-breakpoints-list: map-keys($mq-breakpoints) !default;
+$mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
 
 
-// Forms
+// Grid
+$grid-flexbox: false !default;
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
+$grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
+
+
+// Form
 $input-selector: (
 	'input[type="email"]',
 	'input[type="number"]',
@@ -83,29 +91,26 @@ $icon-select: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2
 $icon-select-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVChTYzQyMqpnZGRsYCAC/P//v4H5+fPnByUlJRmAmhyg4lgBSPG5c+camUEcQppgikFssAYQwKUJWTEIwDWAAEiTlJSUAJBpAeIDFRcCFXeC2HiBsbFxPzAwCqBcJMDAAAD1cjECKulnugAAAABJRU5ErkJggg==' !default;
 
 
-// Tables
+// Button
+$button-selector: '.btn' !default;
+$button-padding-vertical: 0.375em !default;
+$button-padding-horizontal: 1em !default;
+$button-bg: #0275d8 !default;
+$button-hover-bg: darken($button-bg, 10%) !default;
+$button-active-bg: $button-hover-bg !default;
+$button-color: #fff !default;
+$button-hover-color: #fff !default;
+$button-active-color: $button-hover-color !default;
+$button-border-color: transparent !default;
+$button-border-radius: 0 !default;
+$button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
+$button-disabled-opacity: 0.65 !default;
+
+
+// Table
 $table-selector: '.table' !default;
 $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
 $table-border-color: #dedede !default;
 $table-stripe-bg: #efefef !default;
 
-
-// Breakpoints
-$mq-breakpoints: (
-	xs: 0,
-	sm: 400px,
-	md: 680px,
-	lg: 960px,
-	xl: 1200px
-) !default;
-
-$mq-breakpoints-list: map-keys($mq-breakpoints) !default;
-$mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
-
-
-// Grid
-$grid-flexbox: false !default;
-$grid-columns: 12 !default;
-$grid-gutter: 30px !default;
-$grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
