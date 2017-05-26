@@ -13,7 +13,7 @@
 		}
 	}
 
-	@return $gutter;
+	@return to-rem($gutter);
 }
 
 @mixin gutter($gutter, $type) {
