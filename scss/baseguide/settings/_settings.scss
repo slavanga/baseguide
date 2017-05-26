@@ -53,6 +53,7 @@ $grid-flexbox: false !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 $grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
+$grid-container-gutter: $grid-gutter !default;
 
 
 // Form

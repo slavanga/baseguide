@@ -1,4 +1,4 @@
-@mixin container($gutter: $grid-gutter, $width: $grid-container) {
+@mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
 	@if (type-of($gutter) == 'map') {
 		$width: $width - nth(map-values($gutter), length($gutter));
 	}
