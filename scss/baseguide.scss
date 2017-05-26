@@ -6,7 +6,7 @@
 // Tools
 @import 'baseguide/tools/mq';
 @import 'baseguide/tools/functions';
-@import 'baseguide/tools/utilities';
+@import 'baseguide/tools/mixins';
 @import 'baseguide/tools/grid/gutter';
 @import 'baseguide/tools/grid/container';
 @import 'baseguide/tools/grid/row';
@@ -22,6 +22,7 @@
 @import 'baseguide/base/print';
 
 // Objects
+@import 'baseguide/objects/list';
 @import 'baseguide/objects/media';
 @import 'baseguide/objects/embed';
 @import 'baseguide/objects/grid';
@@ -34,7 +35,6 @@
 
 // Utilities
 @import 'baseguide/utilities/clearfix';
-@import 'baseguide/utilities/list';
 @import 'baseguide/utilities/text';
 @import 'baseguide/utilities/position';
 @import 'baseguide/utilities/visibility';
