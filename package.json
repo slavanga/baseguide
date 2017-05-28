@@ -20,7 +20,7 @@
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.6",
-    "gulp-clean-css": "^3.3.1",
+    "gulp-clean-css": "^3.4.0",
     "gulp-eslint": "^3.0.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.2.0",
