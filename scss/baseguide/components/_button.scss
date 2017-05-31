@@ -1,12 +1,25 @@
-#{$button-selector} {
+@mixin button(
+	$padding-vertical: $button-padding-vertical,
+	$padding-horizontal: $button-padding-horizontal,
+	$bg: $button-bg,
+	$color: $button-color,
+	$hover-bg: $button-hover-bg,
+	$hover-color: $button-hover-color,
+	$active-bg: $button-active-bg,
+	$active-color: $button-active-color,
+	$border-color: $button-border-color,
+	$border-radius: $button-border-radius,
+	$disabled-opacity: $button-disabled-opacity,
+	$transition: $button-transition
+) {
 	display: inline-block;
 	vertical-align: middle;
-	padding: $button-padding-vertical $button-padding-horizontal;
-	border: 1px solid $button-border-color;
-	border-radius: $button-border-radius;
-	background-color: $button-bg;
-	color: $button-color;
-	transition: $button-transition;
+	padding: $padding-vertical $padding-horizontal;
+	border: 1px solid $border-color;
+	border-radius: $border-radius;
+	background-color: $bg;
+	color: $color;
+	transition: $transition;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
@@ -18,19 +31,23 @@
 	&:focus {
 		outline: 0;
 		text-decoration: none;
-		background-color: $button-hover-bg;
-		color: $button-hover-color;
+		background-color: $hover-bg;
+		color: $hover-color;
 	}
 
 	&:active {
-		background-color: $button-active-bg;
-		color: $button-active-color;
+		background-color: $active-bg;
+		color: $active-color;
 	}
 
 	&.disabled,
 	&[disabled] {
-		opacity: $button-disabled-opacity;
+		opacity: $disabled-opacity;
 		cursor: default;
 		pointer-events: none;
 	}
+}
+
+#{$button-selector} {
+	@include button;
 }
