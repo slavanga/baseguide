@@ -1,3 +1,12 @@
+@mixin button-unstyled {
+	appearance: none;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	color: inherit;
+}
+
 @mixin button(
 	$padding-vertical: $button-padding-vertical,
 	$padding-horizontal: $button-padding-horizontal,

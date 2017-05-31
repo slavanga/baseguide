@@ -95,17 +95,6 @@
 }
 
 
-// unstyled button
-@mixin button-unstyled {
-	appearance: none;
-	cursor: pointer;
-	border: 0;
-	padding: 0;
-	background-color: transparent;
-	color: inherit;
-}
-
-
 // beautiful underline
 @mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
 	text-decoration: none;
