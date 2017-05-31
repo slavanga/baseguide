@@ -1,8 +1,9 @@
 $mq-breakpoints: (
-	xs: 480px,
-	sm: 640px,
-	md: 820px,
-	lg: 960px
+	xs: 0,
+	sm: 480px,
+	md: 640px,
+	lg: 820px,
+	xl: 960px
 );
 
 @import 'baseguide';
@@ -11,7 +12,7 @@ $mq-breakpoints: (
 	position: relative;
 	padding-top: 20px;
 
-	@include mq(md) {
+	@include mq(lg) {
 		padding-top: 40px;
 	}
 }
@@ -28,7 +29,7 @@ $mq-breakpoints: (
 	border-bottom: 1px solid darken(#e3f2ff, 5%);
 	background-color: #e3f2ff;
 
-	@include mq(md) {
+	@include mq(lg) {
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
@@ -44,7 +45,7 @@ $mq-breakpoints: (
 		font-family: Merriweather, Georgia, serif;
 	}
 
-	@include mq(sm) {
+	@include mq(md) {
 		font-size: 3.8em;
 	}
 }
@@ -56,7 +57,7 @@ $mq-breakpoints: (
 		margin-top: 2.5em;
 	}
 
-	@include mq(sm) {
+	@include mq(md) {
 		max-width: 80%;
 		margin-left: auto;
 		margin-right: auto;
@@ -79,7 +80,7 @@ $mq-breakpoints: (
 		margin-bottom: 0;
 	}
 
-	@include mq(sm) {
+	@include mq(md) {
 		@include column(4);
 
 		& + & {
@@ -128,7 +129,7 @@ $mq-breakpoints: (
 	font-size: 0.8em;
 	background: #efefef;
 
-	@include mq(sm) {
+	@include mq(md) {
 		font-size: 1em;
 	}
 }
