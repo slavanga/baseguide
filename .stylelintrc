@@ -2,7 +2,8 @@
   "extends": "stylelint-config-standard",
   "ignoreFiles": [
     "**/_mq.scss",
-    "**/_normalize.scss"],
+    "**/_normalize.scss"
+  ],
   "rules": {
     "at-rule-empty-line-before": ["always", {
       "except": [
