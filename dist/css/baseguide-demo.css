@@ -506,7 +506,7 @@ hr {
 
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   background-color: #fff;
@@ -577,27 +577,27 @@ h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child
 }
 
 h1, .h1 {
-  font-size: 3.15733452em;
+  font-size: 3.15733452rem;
 }
 
 h2, .h2 {
-  font-size: 2.36859304em;
+  font-size: 2.36859304rem;
 }
 
 h3, .h3 {
-  font-size: 1.776889em;
+  font-size: 1.776889rem;
 }
 
 h4, .h4 {
-  font-size: 1.333em;
+  font-size: 1.333rem;
 }
 
 h5, .h5 {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 h6, .h6 {
-  font-size: 0.75018755em;
+  font-size: 0.75018755rem;
 }
 
 a {
