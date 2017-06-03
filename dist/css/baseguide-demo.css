@@ -1820,10 +1820,6 @@ input[type="file"] {
   display: inline-block;
   vertical-align: middle;
   padding: 0.375em 1em;
-  border: 1px solid transparent;
-  border-radius: 0;
-  background-color: #0275d8;
-  color: #fff;
   -webkit-transition: background-color 0.15s ease-out, color 0.15s ease-out;
   transition: background-color 0.15s ease-out, color 0.15s ease-out;
   text-align: center;
@@ -1836,6 +1832,10 @@ input[type="file"] {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-color: #0275d8;
+  color: #fff;
 }
 
 .btn:hover, .btn:focus {
