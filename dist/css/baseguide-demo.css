@@ -1693,11 +1693,6 @@ input[type="file"] {
   opacity: 1;
 }
 
-[placeholder]::-moz-placeholder {
-  color: #b3b2b2;
-  opacity: 1;
-}
-
 [placeholder]:-ms-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
@@ -1883,6 +1878,20 @@ input[type="file"] {
   background-color: #efefef;
 }
 
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
 .clearfix::after {
   content: '';
   display: block;
@@ -1925,42 +1934,6 @@ input[type="file"] {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-}
-
-.block-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pull-left {
-  float: left !important;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.sr-only-focusable:active, .sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  clip: auto;
-  -webkit-clip-path: none;
-          clip-path: none;
-  white-space: inherit;
 }
 
 .invisible {
@@ -2079,6 +2052,28 @@ input[type="file"] {
   .visible-lg-up {
     display: block !important;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  -webkit-clip-path: none;
+          clip-path: none;
+  white-space: inherit;
 }
 
 .section {
