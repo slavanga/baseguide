@@ -1,0 +1,978 @@
+<!doctype html>
+<html class="sg">
+
+<head>
+  <meta charset="utf-8">
+  <title>Baseguide – CSS Framework</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Baseguide is a lightweight and robust CSS framework for prototyping and production code.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/1.9.0/css/baseguide.min.css">
+  <link rel="stylesheet" href="assets/styledown.css">
+  <link rel="stylesheet" href="assets/docs.css">
+
+  <script>
+    WebFontConfig = {
+      google: {
+        families: ['Merriweather:900:latin']
+      }
+    };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+</head>
+
+<body class="sg">
+  <div class="section section--intro">
+    <div class="container">
+      <div class="intro">
+        <h1 class="intro__title">Baseguide</h1>
+        <div class="intro__text">
+          <p>A lightweight and robust CSS framework for prototyping and production code.</p>
+        </div>
+
+        <div class="btn-group">
+          <a href="https://github.com/slavanga/baseguide/archive/master.zip" class="btn">Download</a>
+          <a href="https://github.com/slavanga/baseguide" class="btn btn--outline">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="row">
+        <div class="col col-md-4 text-center">
+          <svg width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#88AB75" d="m22.027,9.06995c-0.479,-0.27991 -1.09,-0.10999 -1.366,0.36011l-6.395,11.07996l-3.578,-3.30005c-0.37801,-0.3999 -1.011,-0.41992 -1.414,-0.03992c-0.403,0.37 -0.424,1.01001 -0.04601,1.40991l4.57201,4.22009c0.377,0.3999 1.00999,0.41992 1.41299,0.03992c0.122,-0.10999 7.18,-12.40991 7.18,-12.40991c0.276,-0.47009 0.112,-1.09009 -0.366,-1.36011l0,0zm-6.027,20.93005c-7.732,0 -14,-6.27002 -14,-14c0,-7.72998 6.268,-14 14,-14c7.732,0 14,6.27002 14,14c0,7.72998 -6.268,14 -14,14l0,0zm0,-30c-8.836,0 -16,7.16003 -16,16c0,8.83997 7.164,16 16,16c8.836,0 16,-7.16003 16,-16c0,-8.83997 -7.164,-16 -16,-16l0,0z">
+          </svg>
+
+          <h2 class="title-uppercase">Compatible</h2>
+          <p>Tested in a wide range of browsers.</p>
+        </div>
+        <div class="col col-md-4 text-center">
+          <svg width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F18F01" d="m30,28c0,1.104 -0.896,2 -2,2l-24,0c-1.104,0 -2,-0.896 -2,-2l0,-24c0,-1.104 0.896,-2 2,-2l24,0c1.104,0 2,0.896 2,2l0,24l0,0zm-2,-28l-24,0c-2.209,0 -4,1.79099 -4,4l0,24c0,2.20901 1.791,4 4,4l24,0c2.209,0 4,-1.79099 4,-4l0,-24c0,-2.20901 -1.791,-4 -4,-4l0,0zm-8,19.39999c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39999 2.39999,-2.39999c1.326,0 2.39999,1.07498 2.39999,2.39999c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm6,-3.39999l-2.142,0c-0.44501,-1.72299 -1.996,-3 -3.858,-3c-1.862,0 -3.412,1.27701 -3.858,3l-10.142,0c-0.552,0 -1,0.448 -1,1c0,0.55301 0.448,1 1,1l10.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l2.142,0c0.552,0 1,-0.44699 1,-1c0,-0.552 -0.448,-1 -1,-1l0,0zm-15,-4.60001c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39899 2.39999,-2.39899c1.326,0 2.39999,1.07397 2.39999,2.39899c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm15,-3.39999l-11.142,0c-0.44501,-1.72299 -1.996,-3 -3.858,-3c-1.862,0 -3.41299,1.27701 -3.858,3l-1.142,0c-0.552,0 -1,0.448 -1,1c0,0.55301 0.448,1 1,1l1.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l11.142,0c0.552,0 1,-0.44699 1,-1c0,-0.552 -0.448,-1 -1,-1l0,0zm-15,19.39999c-1.326,0 -2.39999,-1.07498 -2.39999,-2.39999c0,-1.32501 1.07399,-2.39899 2.39999,-2.39899c1.326,0 2.39999,1.07397 2.39999,2.39899c0,1.32501 -1.07399,2.39999 -2.39999,2.39999l0,0zm15,-3.39999l-11.142,0c-0.44501,-1.72198 -1.996,-3 -3.858,-3c-1.862,0 -3.41299,1.27802 -3.858,3l-1.142,0c-0.552,0 -1,0.44699 -1,1c0,0.55301 0.448,1 1,1l1.142,0c0.44501,1.72299 1.996,3 3.858,3c1.862,0 3.41299,-1.27701 3.858,-3l11.142,0c0.552,0 1,-0.44699 1,-1c0,-0.55301 -0.448,-1 -1,-1l0,0z">
+          </svg>
+
+          <h2 class="title-uppercase">Customizable</h2>
+          <p>Use Sass to make it your own.</p>
+        </div>
+        <div class="col col-md-4 text-center">
+          <svg width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EF476F" d="m24.972,6l-4.972,0c-0.552,0 -1,0.448 -1,1c0,0.55298 0.448,1 1,1l2.62801,0l-4.798,4.79901l1.414,1.414l4.778,-4.77802l-0.022,2.565c0,0.55298 0.448,1 1,1c0.552,0 1,-0.44702 1,-1l0,-5c0,-0.29602 -0.123,-0.53497 -0.31599,-0.69897c-0.18201,-0.18604 -0.433,-0.30103 -0.71201,-0.30103l0,0zm5.028,22c0,1.09998 -0.896,2 -2,2l-24,0c-1.104,0 -2,-0.90002 -2,-2l0,-24c0,-1.104 0.896,-2 2,-2l24,0c1.104,0 2,0.896 2,2l0,24l0,0zm-2,-28l-24,0c-2.209,0 -4,1.79102 -4,4l0,24c0,2.21002 1.791,4 4,4l24,0c2.209,0 4,-1.78998 4,-4l0,-24c0,-2.20898 -1.791,-4 -4,-4l0,0zm-15.244,17.78998l-4.778,4.78003l0.022,-2.57001c0,-0.54999 -0.448,-1 -1,-1c-0.552,0 -1,0.45001 -1,1l0,5c0,0.29999 0.123,0.53998 0.31599,0.70001c0.181,0.17999 0.433,0.29999 0.71201,0.29999l4.972,0c0.552,0 1,-0.45001 1,-1c0,-0.54999 -0.448,-1 -1,-1l-2.62801,0l4.798,-4.79999l-1.414,-1.41003l0,0zm12.244,1.21002c-0.552,0 -1,0.45001 -1,1l0.022,2.57001l-4.778,-4.78003l-1.414,1.41003l4.798,4.79999l-2.62801,0c-0.552,0 -1,0.45001 -1,1c0,0.54999 0.448,1 1,1l4.972,0c0.27901,0 0.53101,-0.12 0.71201,-0.29999c0.19299,-0.16003 0.31599,-0.40002 0.31599,-0.70001l0,-5c0,-0.54999 -0.448,-1 -1,-1l0,0zm-13,-11c0.552,0 1,-0.44702 1,-1c0,-0.552 -0.448,-1 -1,-1l-4.972,0c-0.27901,0 -0.53,0.11499 -0.71201,0.30103c-0.19299,0.164 -0.31599,0.40295 -0.31599,0.69897l0,5c0,0.55298 0.448,1 1,1c0.552,0 1,-0.44702 1,-1l-0.022,-2.565l4.778,4.77802l1.414,-1.414l-4.798,-4.79901l2.62801,0l0,0z">
+          </svg>
+
+          <h2 class="title-uppercase">Scalable</h2>
+          <p>Everything is relative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="main-content">
+    <div class="container sg-container">
+      <section class="sg-section sg-section-base">
+        <h2 id="base" class="sg">Base</h2>
+        <section class="sg-block sg-section-normalize">
+          <div class="sg-text">
+            <h3 id="normalize" class="sg">Normalize</h3>
+            <p class="sg">Baseguide uses
+              <a href="https://necolas.github.io/normalize.css/" class="sg">normalize.css</a>
+              for optimal cross-browser rendering.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas"></div><pre class="sg-code"></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-content">
+          <div class="sg-text">
+            <h3 id="content" class="sg">Content</h3>
+            <p class="sg">Base spacing is applied to all HTML flow content elements.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+
+              <p>
+                <i>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</i>
+              </p>
+
+              <p>
+                <b>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</b>
+              </p>
+
+              <ul>
+                <li>Choice A</li>
+                <li>Choice B
+                  <ul>
+                    <li>Sub 1</li>
+                    <li>Sub 2</li>
+                  </ul>
+                </li>
+              </ul>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+  aliquyam erat, sed diam voluptua.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+    aliquyam erat, sed diam voluptua.<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+    aliquyam erat, sed diam voluptua.<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Choice A<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Choice B
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Sub 1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Sub 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-headings">
+          <div class="sg-text">
+            <h3 id="headings" class="sg">Headings</h3>
+            <p class="sg">The headings sizes are generated using modular scale.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <h1>Heading h1</h1>
+              <h2>Heading h2</h2>
+              <h3>Heading h3</h3>
+              <h4>Heading h4</h4>
+              <h5>Heading h5</h5>
+              <h6>Heading h6</h6>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Heading h1<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Heading h2<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Heading h3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Heading h4<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>Heading h5<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>Heading h6<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-print">
+          <div class="sg-text">
+            <h3 id="print" class="sg">Print</h3>
+            <p class="sg">Basic print styles from the HTML5 Boilerplate are included.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas"></div><pre class="sg-code"></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-objects">
+        <h2 id="objects" class="sg">Objects</h2>
+        <section class="sg-block sg-section-list">
+          <div class="sg-text">
+            <h3 id="list" class="sg">List</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <ul class="list-unstyled">
+                <li>Unstyled Item 1</li>
+                <li>Unstyled Item 2</li>
+                <li>Unstyled Item 3</li>
+              </ul>
+
+              <ul class="list-inline">
+                <li>Inline Item 1</li>
+                <li>Inline Item 2</li>
+                <li>Inline Item 3</li>
+              </ul>
+
+              <ul class="list-equal">
+                <li>Equal Item 1</li>
+                <li>Equal Item 2</li>
+                <li>Equal Item 3</li>
+              </ul>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;list-unstyled&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Unstyled Item 1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Unstyled Item 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Unstyled Item 3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;list-inline&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline Item 1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline Item 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline Item 3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;list-equal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Equal Item 1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Equal Item 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Equal Item 3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-media">
+          <div class="sg-text">
+            <h3 id="media" class="sg">Media</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="spacing-bottom">
+                <div class="media">
+                  <a class="media-left" href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media top</h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spacing-bottom">
+                <div class="media">
+                  <a class="media-left" href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+                  </a>
+                  <div class="media-body media-middle">
+                    <h4 class="media-heading">Media middle</h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spacing-bottom">
+                <div class="media">
+                  <a class="media-left" href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+                  </a>
+                  <div class="media-body media-bottom">
+                    <h4 class="media-heading">Media bottom</h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;spacing-bottom&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-left&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==&quot;</span>
+      <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;...&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-body&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-heading&quot;</span>&gt;</span>Media top<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;spacing-bottom&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-left&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==&quot;</span>
+      <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;...&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-body media-middle&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-heading&quot;</span>&gt;</span>Media middle<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;spacing-bottom&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-left&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==&quot;</span>
+      <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;...&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-body media-bottom&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;media-heading&quot;</span>&gt;</span>Media bottom<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-embed">
+          <div class="sg-text">
+            <h3 id="embed" class="sg">Embed</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="embed-responsive">
+                <iframe src="https://player.vimeo.com/video/23237102?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;embed-responsive&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">iframe</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://player.vimeo.com/video/23237102?color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;500&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;281&quot;</span>
+  <span class="hljs-attribute">frameborder</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">webkitallowfullscreen</span> <span class="hljs-attribute">mozallowfullscreen</span> <span class="hljs-attribute">allowfullscreen</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">iframe</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-grid">
+          <div class="sg-text">
+            <h3 id="grid" class="sg">Grid</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="row">
+                <div class="col col-xs-8">
+                  <div class="col__item">.col-xs-8</div>
+                </div>
+                <div class="col col-xs-4">
+                  <div class="col__item">.col-xs-4</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-xs-4">
+                  <div class="col__item">.col-xs-4</div>
+                </div>
+                <div class="col col-xs-8">
+                  <div class="col__item">.col-xs-8</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-xs-6">
+                  <div class="col__item">.col-xs-6</div>
+                </div>
+                <div class="col col-xs-6">
+                  <div class="col__item">.col-xs-6</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-xs-4">
+                  <div class="col__item">.col-xs-4</div>
+                </div>
+                <div class="col col-xs-4">
+                  <div class="col__item">.col-xs-4</div>
+                </div>
+                <div class="col col-xs-4">
+                  <div class="col__item">.col-xs-4</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-sm-3">
+                  <div class="col__item">.col-sm-3</div>
+                </div>
+                <div class="col col-sm-3">
+                  <div class="col__item">.col-sm-3</div>
+                </div>
+                <div class="col col-sm-3">
+                  <div class="col__item">.col-sm-3</div>
+                </div>
+                <div class="col col-sm-3">
+                  <div class="col__item">.col-sm-3</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-8<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-8<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-6&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-6&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-sm-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-sm-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-sm-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-sm-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-sm-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-sm-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-sm-3&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-sm-3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-grid-offset">
+          <div class="sg-text">
+            <h3 id="grid-offset" class="sg">Grid Offset</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="row">
+                <div class="col col-xs-5">
+                  <div class="col__item">.col-xs-5</div>
+                </div>
+                <div class="col col-xs-5 col-xs-offset-2">
+                  <div class="col__item">.col-xs-5.col-xs-offset-2</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-5 col-xs-offset-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-5.col-xs-offset-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-grid-push-pull">
+          <div class="sg-text">
+            <h3 id="grid-push-pull" class="sg">Grid Push / Pull</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="row">
+                <div class="col col-xs-6 col-xs-push-6">
+                  <div class="col__item">.col-xs-6.col-xs-push-6</div>
+                </div>
+                <div class="col col-xs-6 col-xs-pull-6">
+                  <div class="col__item">.col-xs-6.col-xs-pull-6</div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-6 col-xs-push-6&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-6.col-xs-push-6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-xs-6 col-xs-pull-6&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col__item&quot;</span>&gt;</span>.col-xs-6.col-xs-pull-6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-components">
+        <h2 id="components" class="sg">Components</h2>
+        <section class="sg-block sg-section-form">
+          <div class="sg-text">
+            <h3 id="form" class="sg">Form</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <form>
+                <div class="row form-group">
+                  <div class="col col-md-2">
+                    <label class="label-inline" for="username">Username</label>
+                  </div>
+                  <div class="col col-md-4">
+                    <input id="username" type="text">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col col-md-2">
+                    <label class="label-inline" for="password">Password</label>
+                  </div>
+                  <div class="col col-md-4">
+                    <input id="password" type="password">
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col col-md-4 col-md-offset-2">
+                    <input class="btn" type="submit" value="Login">
+                  </div>
+                </div>
+              </form>
+
+              <form>
+                <div class="row">
+                  <div class="col col-md-6">
+                    <div class="form-group">
+                      <label for="firstname">First name</label>
+                      <input id="firstname" type="text" placeholder="Enter first name">
+                    </div>
+                  </div>
+                  <div class="col col-md-6">
+                    <div class="form-group">
+                      <label for="lastname">Last name</label>
+                      <input id="lastname" type="text" placeholder="Enter last name">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input id="email" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="comment">Comment</label>
+                  <textarea id="comment"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="select-1">Select</label>
+                  <select id="select-1">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <input id="checkbox-1" type="checkbox">
+                    <label for="checkbox-1">Checkbox 1</label>
+                  </div>
+
+                  <div>
+                    <input id="checkbox-2" type="checkbox">
+                    <label for="checkbox-2">Checkbox 2</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <input id="radio-1" type="radio" name="radio">
+                    <label for="radio-1">Radio 1</label>
+                  </div>
+
+                  <div>
+                    <input id="radio-2" type="radio" name="radio">
+                    <label for="radio-2">Radio 2</label>
+                  </div>
+                </div>
+              </form>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-2&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-inline&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;username&quot;</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-4&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;username&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-2&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-inline&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;password&quot;</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-4&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-4 col-md-offset-2&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;Login&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-6&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;firstname&quot;</span>&gt;</span>First name<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;firstname&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Enter first name&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col col-md-6&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;lastname&quot;</span>&gt;</span>Last name<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;lastname&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Enter last name&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;email&quot;</span>&gt;</span>Email address<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;comment&quot;</span>&gt;</span>Comment<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;comment&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;select-1&quot;</span>&gt;</span>Select<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;select-1&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-1&quot;</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-2&quot;</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio-1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-1&quot;</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio-2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-2&quot;</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-form-custom">
+          <div class="sg-text">
+            <h3 id="form-custom" class="sg">Form Custom</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="form-group">
+                <div class="select">
+                  <select>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="checkbox">
+                  <input id="checkbox-custom-1" type="checkbox">
+                  <label for="checkbox-custom-1">Checkbox 1</label>
+                </div>
+
+                <div class="checkbox">
+                  <input id="checkbox-custom-2" type="checkbox">
+                  <label for="checkbox-custom-2">Checkbox 2</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="radio">
+                  <input id="radio-custom-1" type="radio" name="radio">
+                  <label for="radio-custom-1">Radio 1</label>
+                </div>
+
+                <div class="radio">
+                  <input id="radio-custom-2" type="radio" name="radio">
+                  <label for="radio-custom-2">Radio 2</label>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;select&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-custom-1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-custom-1&quot;</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-custom-2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-custom-2&quot;</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio-custom-1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-custom-1&quot;</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio-custom-2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-custom-2&quot;</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-button">
+          <div class="sg-text">
+            <h3 id="button" class="sg">Button</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="form-group">
+                <a class="btn" href="#" role="button">Anchor button</a>
+                <button class="btn" type="submit">Button element</button>
+                <input class="btn" type="button" value="Button input">
+                <input class="btn" type="submit" value="Submit input">
+              </div>
+
+              <div class="form-group">
+                <a class="btn disabled" href="#" role="button">Anchor button</a>
+                <button class="btn" type="submit" disabled>Button element</button>
+                <input class="btn" type="button" value="Button input" disabled>
+                <input class="btn" type="submit" value="Submit input" disabled>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Anchor button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span>&gt;</span>Button element<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;Button input&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;Submit input&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn disabled&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Anchor button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span>Button element<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;Button input&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;Submit input&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-table">
+          <div class="sg-text">
+            <h3 id="table" class="sg">Table</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>#<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Header 1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Header 2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Header 3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 2<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Division 3<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-utilities">
+        <h2 id="utilities" class="sg">Utilities</h2>
+        <section class="sg-block sg-section-position">
+          <div class="sg-text">
+            <h3 id="position" class="sg">Position</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <img class="block-center" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block-center&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==&quot;</span>
+<span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;...&quot;</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-clearfix">
+          <div class="sg-text">
+            <h3 id="clearfix" class="sg">Clearfix</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="clearfix">
+                <div class="pull-left">
+                  Float Left
+                </div>
+                <div class="pull-right">
+                  Float Right
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;clearfix&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pull-left&quot;</span>&gt;</span>
+    Float Left
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pull-right&quot;</span>&gt;</span>
+    Float Right
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-text">
+          <div class="sg-text">
+            <h3 id="text" class="sg">Text</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <p class="text-left">Text left</p>
+              <p class="text-center">Text left</p>
+              <p class="text-right">Text left</p>
+
+              <p class="text-hide">Text hide</p>
+
+              <p class="text-truncate" style="max-width: 5.5em">Text truncate</p>
+              <p class="text-hyphenate" style="max-width: 5.5em">Text hyphenate</p>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-left&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-center&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-right&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-hide&quot;</span>&gt;</span>Text hide<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-truncate&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;max-width: 5.5em&quot;</span>&gt;</span>Text truncate<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-hyphenate&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;max-width: 5.5em&quot;</span>&gt;</span>Text hyphenate<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-visibility">
+          <div class="sg-text">
+            <h3 id="visibility" class="sg">Visibility</h3>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="visible-xs">Visible only on the xs breakpoint</div>
+              <div class="visible-sm">Visible only on the sm breakpoint</div>
+              <div class="visible-md">Visible only on the md breakpoint</div>
+              <div class="visible-lg">Visible only on the lg breakpoint</div>
+              <div class="visible-xl">Visible only on the xl breakpoint</div>
+              <br>
+              <div class="visible-xs-up">Visible from the xs breakpoint</div>
+              <div class="visible-sm-up">Visible from the sm breakpoint</div>
+              <div class="visible-md-up">Visible from the md breakpoint</div>
+              <div class="visible-lg-up">Visible from the lg breakpoint</div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-xs&quot;</span>&gt;</span>Visible only on the xs breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-sm&quot;</span>&gt;</span>Visible only on the sm breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-md&quot;</span>&gt;</span>Visible only on the md breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-lg&quot;</span>&gt;</span>Visible only on the lg breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-xl&quot;</span>&gt;</span>Visible only on the xl breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-xs-up&quot;</span>&gt;</span>Visible from the xs breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-sm-up&quot;</span>&gt;</span>Visible from the sm breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-md-up&quot;</span>&gt;</span>Visible from the md breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;visible-lg-up&quot;</span>&gt;</span>Visible from the lg breakpoint<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-screenreader">
+          <div class="sg-text">
+            <h3 id="screenreader" class="sg">Screenreader</h3>
+            <p class="sg">The
+              <code class="sg">.sr-only</code>
+              class visually hides content. With the additional
+              <code class="sg">.sr-only-focusable</code>
+              class content becomes visible once focused (for sighted keyboard users).</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sr-only sr-only-focusable&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#main-content&quot;</span>&gt;</span>Skip to main content<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="small text-center">
+        <a href="https://github.com/slavanga/baseguide/blob/master/README.md">Documentation</a>
+        &#x2022;
+        <a href="https://github.com/slavanga/baseguide/issues">Issues</a>
+        <br>Licensed under the
+        <a href="https://github.com/slavanga/baseguide/blob/master/LICENSE">MIT License</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/styledown.js"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-8765653-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+
+</html>
