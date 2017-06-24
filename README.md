@@ -194,11 +194,11 @@ The grid mixins can be used to create custom containers, rows and columns.
 ```scss
 @include mq(sm) {
   .col-content {
-    @include column(8);
+    @include column(80%);
   }
 
   .col-sidebar {
-    @include column(4);
+    @include column(40%);
   }
 }
 ```
