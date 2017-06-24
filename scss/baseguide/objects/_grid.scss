@@ -1,16 +1,16 @@
 .container {
-	@include container;
+  @include container;
 }
 
 .row {
-	@include row;
+  @include row;
 }
 
 .col {
-	@include column-base;
+  @include column-base;
 }
 
 // Generate columns for all breakpoints
 @include loop-breakpoints {
-	@include loop-columns($breakpoint);
+  @include loop-columns($breakpoint);
 }

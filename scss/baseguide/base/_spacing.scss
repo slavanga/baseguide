@@ -1,7 +1,7 @@
 blockquote,
 figure,
 fieldset {
-	margin: 0;
+  margin: 0;
 }
 
 address,
@@ -17,18 +17,18 @@ ul,
 ol,
 hr,
 p {
-	margin-top: 0;
-	margin-bottom: $spacing-base;
+  margin-top: 0;
+  margin-bottom: $spacing-base;
 }
 
 nav,
 li {
-	> ul,
-	> ol {
-		margin-bottom: 0;
-	}
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
 }
 
 .spacing-bottom {
-	margin-bottom: $spacing-base;
+  margin-bottom: $spacing-base;
 }

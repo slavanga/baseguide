@@ -1,22 +1,22 @@
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 canvas,
 img,
 video {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 audio {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 audio,
@@ -25,7 +25,7 @@ iframe,
 img,
 svg,
 video {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 button,
@@ -33,33 +33,33 @@ input,
 optgroup,
 select,
 textarea {
-	font: inherit;
-	line-height: inherit;
+  font: inherit;
+  line-height: inherit;
 }
 
 optgroup {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 fieldset {
-	min-width: 0;
-	padding: 0;
-	border: 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
 }
 
 address {
-	font-style: inherit;
+  font-style: inherit;
 }
 
 pre {
-	overflow: auto;
+  overflow: auto;
 }
 
 hr {
-	border: 0;
-	border-top: 1px solid;
+  border: 0;
+  border-top: 1px solid;
 }
 
 [tabindex="-1"]:focus {
-	outline: none !important;
+  outline: none !important;
 }

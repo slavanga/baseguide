@@ -16,7 +16,6 @@
     "declaration-block-no-duplicate-properties": [true, {
       "ignore": ["consecutive-duplicates-with-different-values"]
     }],
-    "indentation": "tab",
     "max-empty-lines": 2
   }
 }

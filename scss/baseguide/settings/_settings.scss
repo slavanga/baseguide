@@ -14,8 +14,8 @@ $spacing-base: 1.5em !default;
 
 // Headings
 $headings: (
-	'h1, .h1', 'h2, .h2', 'h3, .h3',
-	'h4, .h4', 'h5, .h5', 'h6, .h6'
+  'h1, .h1', 'h2, .h2', 'h3, .h3',
+  'h4, .h4', 'h5, .h5', 'h6, .h6'
 ) !default;
 
 $headings-spacing: 0.4em !default;
@@ -37,11 +37,11 @@ $link-hover-decoration: underline !default;
 
 // Breakpoints
 $mq-breakpoints: (
-	xs: 0,
-	sm: 400px,
-	md: 680px,
-	lg: 960px,
-	xl: 1200px
+  xs: 0,
+  sm: 400px,
+  md: 680px,
+  lg: 960px,
+  xl: 1200px
 ) !default;
 
 $mq-breakpoints-list: map-keys($mq-breakpoints) !default;
@@ -58,15 +58,15 @@ $grid-container-gutter: $grid-gutter !default;
 
 // Form
 $input-selector: (
-	'input[type="email"]',
-	'input[type="number"]',
-	'input[type="password"]',
-	'input[type="search"]',
-	'input[type="tel"]',
-	'input[type="text"]',
-	'input[type="url"]',
-	'textarea',
-	'select'
+  'input[type="email"]',
+  'input[type="number"]',
+  'input[type="password"]',
+  'input[type="search"]',
+  'input[type="tel"]',
+  'input[type="text"]',
+  'input[type="url"]',
+  'textarea',
+  'select'
 ) !default;
 
 $input-height: 2.375em !default;
