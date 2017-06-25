@@ -79,9 +79,11 @@ Basic print styles from the HTML5 Boilerplate are included.
     @example
     <div class="spacing-bottom">
       <div class="media">
-        <a class="media-left" href="#">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
-        </a>
+        <div class="media-left">
+          <a href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+          </a>
+        </div>
         <div class="media-body">
           <h4 class="media-heading">Media top</h4>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
@@ -91,9 +93,11 @@ Basic print styles from the HTML5 Boilerplate are included.
 
     <div class="spacing-bottom">
       <div class="media">
-        <a class="media-left" href="#">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
-        </a>
+        <div class="media-left">
+          <a href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+          </a>
+        </div>
         <div class="media-body media-middle">
           <h4 class="media-heading">Media middle</h4>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
@@ -103,9 +107,11 @@ Basic print styles from the HTML5 Boilerplate are included.
 
     <div class="spacing-bottom">
       <div class="media">
-        <a class="media-left" href="#">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
-        </a>
+        <div class="media-left">
+          <a href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
+          </a>
+        </div>
         <div class="media-body media-bottom">
           <h4 class="media-heading">Media bottom</h4>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
