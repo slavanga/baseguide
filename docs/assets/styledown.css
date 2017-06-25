@@ -5,10 +5,6 @@
  * style guide. Recommendation: use and remove any pieces as you see fit.
  */
 
-/**
- * Basic normalize
- */
-
 h1,
 h2,
 h3,
@@ -21,17 +17,12 @@ h6 {
 h2.sg {
   font-size: 2.2em;
   font-weight: 100;
-  margin-top: 0;
 }
 
 h3.sg {
   font-size: 1.1em;
   font-weight: bold;
 }
-
-/**
- * Colors
- */
 
 p.sg,
 ul.sg {
@@ -54,21 +45,6 @@ code.sg {
   margin-top: 30px;
 }
 
-/**
- * An <h3> block.
- *
- * It looks like:
- *
- *     .sg-block
- *       .sg-text       - text items
- *         h3
- *         p
- *         ...
- *       .sg-example
- *         .sg-canvas   - canvas where its displayed
- *         .sg-code     - code snippet
- */
-
 .sg-block {
   border-top: solid 1px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
@@ -81,10 +57,6 @@ code.sg {
   clear: both;
 }
 
-/**
- * Text element
- */
-
 @media (min-width: 48em) {
   .sg-section + .sg-section {
     margin-top: 60px;
@@ -92,23 +64,19 @@ code.sg {
 
   .sg-text {
     float: left;
-    width: 26%;
+    width: 28%;
   }
 
   .sg-text + .sg-example,
   .sg-text + .sg-code {
     float: right;
-    width: 70%;
+    width: 68%;
   }
 }
 
 .sg-text > :last-child {
   margin-bottom: 0;
 }
-
-/**
- * An example's canvas.
- */
 
 .sg-canvas {
   margin-bottom: 20px;
@@ -120,10 +88,6 @@ code.sg {
   border-radius: 3px;
   overflow-x: auto;
 }
-
-/**
- * The <pre> code that shows the sample.
- */
 
 .sg-code {
   border: solid 1px transparent;
@@ -137,6 +101,62 @@ code.sg {
   background: #002b36;
   color: #839496;
 }
+
+.sg-code.sg-hidden {
+  display: none;
+}
+
+.sg-expando {
+  display: inline-block;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  padding: 5px 10px;
+  margin-bottom: -20px;
+}
+
+.sg-expando-contract {
+  top: 0;
+  margin-bottom: 0;
+}
+
+.sg-expando::before {
+  content: '•••';
+  display: inline-block;
+  height: 16px;
+  width: 36px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 10px;
+  background: #eee;
+  border-radius: 3px;
+  color: #888;
+}
+
+.sg-expando:hover::before,
+.sg-expando:focus::before {
+  color: #222;
+  background: #ddd;
+}
+
+.sg-expando:active::before {
+  color: #fff;
+  background: #111;
+}
+
+.sg-expando-contract::before {
+  content: '\2715';
+}
+
+.sg-section-normalize .sg-example,
+.sg-section-print .sg-example {
+  display: none;
+}
+
 
 /*
  * Syntax highlighting
@@ -221,68 +241,4 @@ code.sg {
 
 .hljs-strong {
   font-weight: bold;
-}
-
-/*
- * Code expansion
- *
- *     .sg-example
- *       .sg-canvas
- *       pre.sg-code
- *       button.sg-expando
- */
-
-.sg-code.sg-hidden {
-  display: none;
-}
-
-.sg-expando {
-  display: inline-block;
-  margin: 0;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  position: relative;
-  top: -10px;
-  left: -10px;
-  padding: 5px 10px;
-  margin-bottom: -20px;
-}
-
-.sg-expando-contract {
-  top: 0;
-  margin-bottom: 0;
-}
-
-.sg-expando::before {
-  content: '•••';
-  display: inline-block;
-  height: 16px;
-  width: 36px;
-  line-height: 16px;
-  text-align: center;
-  font-size: 10px;
-  background: #eee;
-  border-radius: 3px;
-  color: #888;
-}
-
-.sg-expando:hover::before,
-.sg-expando:focus::before {
-  color: #222;
-  background: #ddd;
-}
-
-.sg-expando:active::before {
-  color: #fff;
-  background: #111;
-}
-
-.sg-expando-contract::before {
-  content: '\2715';
-}
-
-.sg-section-normalize .sg-example,
-.sg-section-print .sg-example {
-  display: none;
 }

@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Baseguide is a lightweight and robust CSS framework for prototyping and production code.">
-    <link rel="stylesheet" href="../dist/css/baseguide.min.css">
-    <link rel="stylesheet" href="assets/styledown.css" />
-    <link rel="stylesheet" href="assets/docs.css" />
+    <link rel="stylesheet" href="dist/css/baseguide.min.css">
+    <link rel="stylesheet" href="docs/assets/styledown.css" />
+    <link rel="stylesheet" href="docs/assets/docs.css" />
 
     <script>
       WebFontConfig = {
@@ -88,7 +88,7 @@
       </div>
     </footer>
 
-    <script src="assets/styledown.js"></script>
+    <script src="docs/assets/styledown.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
