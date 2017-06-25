@@ -128,6 +128,9 @@ Basic print styles from the HTML5 Boilerplate are included.
 
 ### Grid
 
+All columns need the ```.col```
+class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
+
     @example
     <div class="row">
       <div class="col col-xs-8"><div class="col__item">.col-xs-8</div></div>

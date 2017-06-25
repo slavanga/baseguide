@@ -15,11 +15,12 @@ h6 {
 }
 
 h2.sg {
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-weight: 100;
 }
 
 h3.sg {
+  margin-bottom: 0.8em;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -42,7 +43,7 @@ code.sg {
 }
 
 .sg-section + .sg-section {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .sg-block {
@@ -58,8 +59,16 @@ code.sg {
 }
 
 @media (min-width: 48em) {
+  h2.sg {
+    font-size: 2.2em;
+  }
+
   .sg-section + .sg-section {
     margin-top: 60px;
+  }
+
+  .sg-text > p:last-child {
+    margin-bottom: 0;
   }
 
   .sg-text {
@@ -72,10 +81,6 @@ code.sg {
     float: right;
     width: 68%;
   }
-}
-
-.sg-text > :last-child {
-  margin-bottom: 0;
 }
 
 .sg-canvas {
