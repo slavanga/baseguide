@@ -773,6 +773,13 @@ a:hover, a:focus {
 .row {
   margin-left: -0.9375rem;
   margin-right: -0.9375rem;
+  /* autoprefixer: off */
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .row::after {
@@ -786,8 +793,8 @@ a:hover, a:focus {
   padding-right: 0.9375rem;
   width: 100%;
   position: relative;
-  float: left;
   min-height: 1px;
+  float: left;
 }
 
 .col-xs-pull-0 {

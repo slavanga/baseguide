@@ -3,8 +3,11 @@
   @include column($size, $columns);
 
   position: relative;
-  float: left;
   min-height: 1px;
+
+  @if $grid-fallback {
+    float: left;
+  }
 }
 
 @mixin column($size: 'expand', $columns: $grid-columns) {

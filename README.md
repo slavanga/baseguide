@@ -7,7 +7,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 **Features**
 * Responsive and scalable components
 * CSS-only custom form controls
-* Robust grid system with flexbox support
+* Robust flexbox grid
 * Extendable breakpoint system
 * Consistent vertical rhythm and modular scale
 
@@ -252,12 +252,8 @@ The grid mixins can be used to create custom containers, rows and columns.
 </div>
 ```
 
-### Flexbox
-The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. This is no kill switch for older browsers as the floats are kept in place for a basic fallback. Browsers that support flexbox and flex-wrap ([Support table](http://caniuse.com/#search=flexbox)) will get these benefits:
-
-* CSS-only equal height columns
-* Easy vertical and horizontal alignment of columns
-* Ordering and reversing of columns using CSS
+### Float Fallback
+There is a float fallback to make the grid work in browsers that don’t support flexbox. This fallback can be disabled by setting ```$grid-fallback: false```.
 
 
 ## Forms
