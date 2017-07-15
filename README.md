@@ -138,7 +138,21 @@ It’s a powerful tool that for example allows the generation of additional resp
 
 
 ## Grid
-The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
+The grid system is responsive and follows the mobile first pattern. It offers predefined classes for quick layouts as well as powerful mixins for more semantic layouts.
+
+The number of columns is controlled by the ```$grid-columns``` variable which defaults to 12.
+
+
+### Basic Example
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col col-md-6"></div>
+    <div class="col col-md-6"></div>
+  </div>
+</div>
+```
 
 ### Gutters
 The gutters are controlled by the ```$grid-gutter``` variable. It can either be a global value across all breakpoints or a map with gutter values per breakpoint.
