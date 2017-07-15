@@ -3,9 +3,7 @@
 @media print {
   *,
   *::before,
-  *::after,
-  p::first-letter,
-  p::first-line {
+  *::after {
     color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
