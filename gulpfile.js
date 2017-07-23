@@ -112,10 +112,10 @@ gulp.task('serve', ['build'], function() {
 
 // Watch files for changes
 gulp.task('watch', function() {
-  gulp.watch('*.html', ['html']);
-  gulp.watch(config.src + 'scss/**/*.scss', ['styles']);
-  gulp.watch(config.src + 'js/**/*.js', ['scripts']);
-  gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', ['images']);
+  $.watch(config.src + '*.html', function() { gulp.start('html') });
+  $.watch(config.src + 'scss/**/*.scss', function() { gulp.start('styles') });
+  $.watch(config.src + 'js/**/*.js', function() { gulp.start('scripts') });
+  $.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', function() { gulp.start('images') });
 });
 
 // Run all tasks
