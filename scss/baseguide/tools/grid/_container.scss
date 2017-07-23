@@ -1,0 +1,15 @@
+@mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
+  @if (type-of($gutter) == 'map') {
+    $width: $width - nth(map-values($gutter), length($gutter));
+  }
+  @else {
+    $width: $width - $gutter;
+  }
+
+  @include make-gutters($gutter);
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: to-rem($width);
+}

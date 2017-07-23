@@ -1,0 +1,91 @@
+label {
+  display: inline-block;
+  margin-bottom: 0.3em;
+}
+
+.label-inline {
+  margin-top: 1px;
+  padding-top: $input-padding-vertical;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+#{$input-selector} {
+  display: block;
+  width: 100%;
+  height: $input-height;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  background-clip: padding-box; // remove shadow in iOS
+  background-color: $input-bg;
+  color: $input-color;
+  transition: $input-transition;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    outline: 0;
+  }
+
+  &[disabled] {
+    border-color: $input-disabled-border-color;
+    background-color: $input-disabled-bg;
+    color: $input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+select {
+  overflow-x: hidden;
+
+  &[multiple],
+  &[size] {
+    height: auto;
+  }
+}
+
+textarea {
+  height: auto;
+  resize: vertical;
+}
+
+.checkbox,
+.radio {
+  line-height: 1.45;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  margin-top: 0.25em;
+  line-height: normal;
+
+  + label {
+    margin-bottom: 0;
+    padding-left: 20px;
+    font-weight: inherit;
+    cursor: pointer;
+  }
+
+  &[disabled] + label {
+    color: $input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+input[type="file"] {
+  display: block;
+}
+
+
+// placeholder
+[placeholder].placeholder {
+  color: $placeholder-color;
+}
+
+[placeholder]::placeholder {
+  color: $placeholder-color;
+  opacity: 1;
+}

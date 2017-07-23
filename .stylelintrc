@@ -1,20 +1,22 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "**/vendor/*.scss",
+  "ignoreFiles": [
+    "**/_mq.scss",
+    "**/_normalize.scss"
+  ],
   "rules": {
     "at-rule-empty-line-before": ["always", {
-      except: [
+      "except": [
         "blockless-after-same-name-blockless",
         "first-nested"
       ],
-      ignore: ["after-comment"],
-      ignoreAtRules: ["else"]
+      "ignore": ["after-comment"],
+      "ignoreAtRules": ["else"]
     }],
+    "at-rule-no-unknown": null,
     "declaration-block-no-duplicate-properties": [true, {
-      ignore: ["consecutive-duplicates-with-different-values"]
+      "ignore": ["consecutive-duplicates-with-different-values"]
     }],
-    "indentation": "tab",
-    "max-empty-lines": 2,
-    "selector-pseudo-element-colon-notation": null
+    "max-empty-lines": 2
   }
 }

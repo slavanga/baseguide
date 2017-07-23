@@ -1,0 +1,339 @@
+.container--narrow {
+  max-width: 55rem;
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section--intro {
+  text-align: center;
+  border-bottom: 1px solid #cae6ff;
+  background-color: #e3f2ff;
+}
+
+.intro__title {
+  font-family: Georgia, serif;
+  font-weight: 900;
+  font-size: 2.2em;
+  color: #243a54;
+}
+
+.wf-active .intro__title {
+  font-family: Merriweather, Georgia, serif;
+}
+
+.intro__text {
+  margin-bottom: 2em;
+}
+
+.title-uppercase {
+  margin-top: 1.2em;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn--outline {
+  border-color: #0275d8;
+  background-color: transparent;
+  color: #0275d8;
+}
+
+.btn--outline:hover,
+.btn--outline:focus {
+  border-color: #025aa5;
+  background-color: #025aa5;
+}
+
+.form-group > .btn {
+  margin-bottom: 0.2em;
+}
+
+.btn-group > .btn {
+  margin-left: 0.15em;
+  margin-right: 0.15em;
+}
+
+.media p:last-child {
+  margin-bottom: 0;
+}
+
+.col__item {
+  margin-bottom: 1.875rem;
+  padding: 1em;
+  font-size: 0.8em;
+  background: #efefef;
+}
+
+.footer {
+  margin-top: 3rem;
+}
+
+@media (min-width: 48em) {
+  .section--intro {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .intro__title {
+    font-size: 2.5em;
+  }
+}
+
+
+/**
+ * Styledown
+ *
+ * This is the basic styles to make a Styledown document look like a proper
+ * style guide. Recommendation: use and remove any pieces as you see fit.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h2.sg {
+  font-size: 1.8em;
+  font-weight: 100;
+}
+
+h3.sg {
+  margin-bottom: 0.8em;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+p.sg,
+ul.sg {
+  color: #666;
+}
+
+code.sg {
+  background: rgba(0, 100, 250, 0.1);
+  color: #357;
+  padding: 2px 5px;
+  margin: 0 1px;
+  border-radius: 2px;
+  font-size: 0.8em;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.01), inset -1px -1px rgba(0, 0, 0, 0.01);
+  white-space: nowrap;
+}
+
+.sg-section + .sg-section {
+  margin-top: 20px;
+}
+
+.sg-block {
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.sg-block::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 48em) {
+  h2.sg {
+    font-size: 2.2em;
+  }
+
+  .sg-section + .sg-section {
+    margin-top: 60px;
+  }
+
+  .sg-text > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sg-text {
+    float: left;
+    width: 28%;
+  }
+
+  .sg-text + .sg-example,
+  .sg-text + .sg-code {
+    float: right;
+    width: 68%;
+  }
+}
+
+.sg-canvas {
+  margin-bottom: 20px;
+}
+
+.sg-padded .sg-canvas {
+  padding: 20px;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+.sg-code {
+  border: solid 1px transparent;
+  overflow-x: auto;
+  border-radius: 3px;
+  margin: 0;
+  padding: 20px;
+  font-size: 0.85em;
+  font-family: menlo, monospace;
+  line-height: 1.5;
+  background: #002b36;
+  color: #839496;
+}
+
+.sg-code.sg-hidden {
+  display: none;
+}
+
+.sg-expando {
+  display: inline-block;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  padding: 5px 10px;
+  margin-bottom: -20px;
+}
+
+.sg-expando-contract {
+  top: 0;
+  margin-bottom: 0;
+}
+
+.sg-expando::before {
+  content: '•••';
+  display: inline-block;
+  height: 16px;
+  width: 36px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 10px;
+  background: #eee;
+  border-radius: 3px;
+  color: #888;
+}
+
+.sg-expando:hover::before,
+.sg-expando:focus::before {
+  color: #222;
+  background: #ddd;
+}
+
+.sg-expando:active::before {
+  color: #fff;
+  background: #111;
+}
+
+.sg-expando-contract::before {
+  content: '\2715';
+}
+
+.sg-section-normalize .sg-example,
+.sg-section-print .sg-example {
+  display: none;
+}
+
+
+/*
+ * Syntax highlighting
+ * Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-value,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #073642;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

@@ -1,0 +1,116 @@
+// Global
+$font-antialiased: true !default;
+$font-size-base: 1rem !default;
+$font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
+$font-weight-base: 400 !default;
+$line-height-base: 1.5 !default;
+$global-bg: #fff !default;
+$text-color: #333 !default;
+
+
+// Spacing
+$spacing-base: 1.5rem !default;
+
+
+// Headings
+$headings: (
+  'h1, .h1', 'h2, .h2', 'h3, .h3',
+  'h4, .h4', 'h5, .h5', 'h6, .h6'
+) !default;
+
+$headings-spacing: 0.4em !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+
+$type-scale-base: $font-size-base !default;
+$type-scale: 1.333 !default; // Perfect Fourth, see: http://type-scale.com/
+
+
+// Link
+$link-color: #0283f1 !default;
+$link-hover-color: $link-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+
+// Breakpoints
+$mq-breakpoints: (
+  xs: 0,
+  sm: 400px,
+  md: 680px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+$mq-breakpoints-list: map-keys($mq-breakpoints) !default;
+$mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !default;
+
+
+// Grid
+$grid-fallback: true !default;
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
+$grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
+$grid-container-gutter: $grid-gutter !default;
+
+
+// Form
+$input-selector: (
+  'input[type="email"]',
+  'input[type="number"]',
+  'input[type="password"]',
+  'input[type="search"]',
+  'input[type="tel"]',
+  'input[type="text"]',
+  'input[type="url"]',
+  'textarea',
+  'select'
+) !default;
+
+$input-height: 2.375em !default;
+$input-padding-vertical: 0.375em !default;
+$input-padding-horizontal: 0.75em !default;
+$input-bg: #fff !default;
+$input-color: $text-color !default;
+$input-border-color: #b6b6b6 !default;
+$input-focus-border-color: darken($input-border-color, 20%) !default;
+$input-border-radius: 0 !default;
+$input-transition: border-color 0.15s ease-out !default;
+$input-disabled-bg: #eee !default;
+$input-disabled-color: #555 !default;
+$input-disabled-border-color: #ccc !default;
+
+$placeholder-color: lighten($input-color, 50%) !default;
+
+$icon-radio: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E" !default;
+$icon-radio-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVChTYyAEGKE0i6KiYjOQjoFwGZZwcnK2Xrt27QsziAeUbGVkZKwAYj4otvnz5w/b+/fvdzOB1TMw+EBpOPj//787iIYpwAnACoBG7gDzUMFeEAF2g6Sk5HGQnUBj5YDcT0A8D+jI2tevX/8CyeMBDAwAQ4wgZq0O/WQAAAAASUVORK5CYII=' !default;
+$icon-checkbox: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E" !default;
+$icon-checkbox-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVChTYyAEGKE0CjA2Ntb4////dGZm5khmqBgcQCX3MzIy6gBpBkZk1f/+/ROASkoA6TW8vLyRTCBJoIDD379/96NLHjx48A8TSCdQ4AZQQgNdEmQl2JGmpqYSIBOAzCvIkigA6BYRe3t7FigXChgYAGONRUtL5Ld6AAAAAElFTkSuQmCC' !default;
+$icon-select: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath fill='%23333' d='M0 0l6 6 6-6h-12z'/%3E%3C/svg%3E" !default;
+$icon-select-fallback: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABlSURBVChTYzQyMqpnZGRsYCAC/P//v4H5+fPnByUlJRmAmhyg4lgBSPG5c+camUEcQppgikFssAYQwKUJWTEIwDWAAEiTlJSUAJBpAeIDFRcCFXeC2HiBsbFxPzAwCqBcJMDAAAD1cjECKulnugAAAABJRU5ErkJggg==' !default;
+
+
+// Button
+$button-selector: '.btn' !default;
+$button-padding-vertical: 0.375em !default;
+$button-padding-horizontal: 1em !default;
+$button-bg: #0275d8 !default;
+$button-color: #fff !default;
+$button-hover-bg: darken($button-bg, 10%) !default;
+$button-hover-color: #fff !default;
+$button-active-bg: $button-hover-bg !default;
+$button-active-color: $button-hover-color !default;
+$button-border-color: transparent !default;
+$button-border-radius: 0 !default;
+$button-disabled-opacity: 0.65 !default;
+$button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
+
+
+// Table
+$table-selector: '.table' !default;
+$table-padding-vertical: 0.4em !default;
+$table-padding-horizontal: 0.6em !default;
+$table-border-color: #dedede !default;
+$table-stripe-bg: #efefef !default;

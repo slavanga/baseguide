@@ -1,0 +1,36 @@
+@function pow($number, $exp) {
+  $return: 1;
+
+  @if $exp > 0 {
+    // If the exponent is positive then multiply it
+    @for $i from 1 through $exp {
+      $return: $return * $number;
+    }
+  }
+  @else if $exp < 0 {
+    // If the number is 0 or negative then divide it
+    @for $i from 1 through -$exp {
+      $return: $return / $number;
+    }
+  }
+
+  @return $return;
+}
+
+@function modular-scale($number, $base: $type-scale-base) {
+  $size: pow($type-scale, $number) * $base;
+
+  @return $size;
+}
+
+@function strip-unit($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function to-rem($value, $base: 16px) {
+  @if (unit($value) != 'rem') and (strip-unit($value) != 0) {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  @return $value;
+}

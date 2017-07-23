@@ -1,0 +1,50 @@
+@function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
+  @if (type-of($gutter) == 'map') {
+    @if $breakpoint {
+      @if map-has-key($gutter, $breakpoint) {
+        $gutter: map-get($gutter, $breakpoint);
+      }
+      @else {
+        @error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
+      }
+    }
+    @else {
+      $gutter: nth(map-values($gutter), 1);
+    }
+  }
+
+  @return to-rem($gutter);
+}
+
+@mixin gutter($gutter, $type) {
+  $gutter: $gutter / 2;
+
+  @if $type == 'inner' {
+    padding-left: to-rem($gutter);
+    padding-right: to-rem($gutter);
+  }
+  @else {
+    $gutter: $gutter * -1;
+
+    margin-left: to-rem($gutter);
+    margin-right: to-rem($gutter);
+  }
+}
+
+@mixin make-gutters($gutter: $grid-gutter, $type: 'inner') {
+  @if (type-of($gutter) == 'map') {
+    @each $breakpoint, $width in $gutter {
+      @if $breakpoint == nth($mq-breakpoints-list, 1) {
+        @include gutter($width, $type);
+      }
+      @else {
+        @include mq($breakpoint) {
+          @include gutter($width, $type);
+        }
+      }
+    }
+  }
+  @else {
+    @include gutter($gutter, $type);
+  }
+}

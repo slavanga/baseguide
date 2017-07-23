@@ -1,0 +1,27 @@
+.small {
+  font-size: 80% !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-hide {
+  @include text-hide;
+}
+
+.text-truncate {
+  @include text-truncate;
+}
+
+.text-hyphenate {
+  @include text-hyphenate;
+}
