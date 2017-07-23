@@ -1,0 +1,221 @@
+// list
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin list-inline($spacing: 1em, $child-selector: 'li') {
+  @include list-unstyled;
+  @include clearfix;
+
+  margin-left: -$spacing;
+
+  > #{$child-selector} {
+    float: left;
+    margin-left: $spacing;
+  }
+
+  > #{$child-selector} > a {
+    display: inline-block;
+  }
+}
+
+@mixin list-equal($child-selector: 'li') {
+  @include list-unstyled;
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  > #{$child-selector} {
+    display: table-cell;
+    text-align: center;
+  }
+
+  > #{$child-selector} > a {
+    display: inline-block;
+  }
+}
+
+
+// clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+
+// text
+@mixin text-hide {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  text-shadow: none;
+}
+
+@mixin text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin text-hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+
+// visibility
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: inherit;
+  }
+}
+
+
+// beautiful underline
+@mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
+  text-decoration: none;
+  background-image: linear-gradient($color, $color);
+  background-position: 0 $distance;
+  background-size: 1px $size;
+  background-repeat: repeat-x;
+}
+
+
+// target HiDPI screens
+@mixin hidpi($ratio: 1.5) {
+  @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
+    @content;
+  }
+}
+
+
+// scale headings using modular scale
+@mixin scale-headings($max-scale: 4, $base: $type-scale-base) {
+  @each $heading in $headings {
+    #{$heading} {
+      font-size: modular-scale($max-scale, $base);
+    }
+
+    $max-scale: $max-scale - 1;
+  }
+}
+
+
+// triangle mixin adapted from bourbon
+@mixin triangle($direction, $width, $height, $color: currentColor) {
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  @if $direction == 'up' {
+    border-color: transparent transparent $color;
+    border-width: 0 ($width / 2) $height;
+  }
+  @else if $direction == 'up-right' {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $width $width 0;
+  }
+  @else if $direction == 'right' {
+    border-color: transparent transparent transparent $color;
+    border-width: ($height / 2) 0 ($height / 2) $width;
+  }
+  @else if $direction == 'down-right' {
+    border-color: transparent transparent $color;
+    border-width: 0 0 $width $width;
+  }
+  @else if $direction == 'down' {
+    border-color: $color transparent transparent;
+    border-width: $height ($width / 2) 0;
+  }
+  @else if $direction == 'down-left' {
+    border-color: transparent transparent transparent $color;
+    border-width: $width 0 0 $width;
+  }
+  @else if $direction == 'left' {
+    border-color: transparent $color transparent transparent;
+    border-width: ($height / 2) $width ($height / 2) 0;
+  }
+  @else if $direction == 'up-left' {
+    border-color: $color transparent transparent;
+    border-width: $width $width 0 0;
+  }
+}
+
+
+// loop all breakpoints and output content
+@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
+  $breakpoint-keys: map-keys($breakpoints);
+
+  @for $i from 1 through length($breakpoint-keys) {
+    $breakpoint: nth($breakpoint-keys, $i) !global;
+    $is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
+    $is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+
+    @if $mq {
+      @if $inclusive {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @content;
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      }
+      @else {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @if length($breakpoint-keys) > 1 {
+            @include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+              @content;
+            }
+          }
+          @else {
+            @content;
+          }
+        }
+        // last breakpoint
+        @else if $is-last-breakpoint {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      }
+    }
+    @else {
+      @content;
+    }
+  }
+}

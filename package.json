@@ -1,7 +1,7 @@
 {
   "name": "baseguide",
   "description": "Lightweight and robust CSS framework for prototyping and production code.",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "keywords": [
     "css",
     "sass",
@@ -16,30 +16,32 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "browser-sync": "^2.18.8",
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.6",
-    "gulp-clean-css": "^3.0.4",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-eslint": "^4.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.3.0",
     "gulp-include": "^2.3.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-postcss": "^6.4.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.1.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "postcss-scss": "^0.4.1",
-    "stylelint": "^7.9.0",
-    "stylelint-config-standard": "^16.0.0"
+    "gulp-watch": "^4.3.11",
+    "postcss-scss": "^1.0.2",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0"
   },
   "browserslist": [
     "last 2 versions",
     "android >= 2.3",
     "firefox esr",
     "ie >= 9",
-    "safari >= 6"
+    "safari >= 8"
   ]
 }

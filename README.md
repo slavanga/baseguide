@@ -7,14 +7,14 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 **Features**
 * Responsive and scalable components
 * CSS-only custom form controls
-* Robust grid system with flexbox support
+* Robust flexbox grid
 * Extendable breakpoint system
 * Consistent vertical rhythm and modular scale
 
 
 ## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
+* [Install](#install)
+* [Development](#development)
 * [Breakpoints](#breakpoints)
 * [Grid](#grid)
 * [Forms](#forms)
@@ -23,35 +23,45 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [License](#license)
 
 
-## Installation
+## Install
 
-**Install from npm**
+### Download
 
-```sh
-npm install baseguide
+* [baseguide.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.css) (uncompressed)
+* [baseguide.min.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.min.css) (compressed)
+
+### CDN
+
+Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/2.0.0/css/baseguide.min.css">
 ```
 
-**Clone the Repo**
+### Package Managers
 
-```sh
-git clone -b master https://github.com/slavanga/baseguide
-```
+[npm](https://www.npmjs.com/package/baseguide): `npm install baseguide`
 
-**Load from CDN**
-
-[https://cdnjs.com/libraries/baseguide](https://cdnjs.com/libraries/baseguide)
-
-**Download**
-
-[https://github.com/slavanga/baseguide/archive/master.zip](https://github.com/slavanga/baseguide/archive/master.zip)
+[yarn](https://yarnpkg.com/en/package/baseguide): `yarn add baseguide`
 
 
-## Usage
+## Development
+
+### Dependencies
+Use `npm install` or `yarn install` to install the dev dependencies.
+
+### Gulp
+The included gulpfile takes care of compiling, optimizing and minifying your assets.
+
+| Command           | Description                                                                                              |
+| :---------------- | :------------------------------------------------------------------------------------------------------- |
+| `gulp`            | Build files, watch for changes and start a local server using [Browsersync](https://www.browsersync.io/) |
+| `gulp build`      | Build files once                                                                                         |
+| `gulp watch`      | Watch files and build when a change occurs                                                               |
 
 ### Sass
-
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/_settings.scss) file to get an overview of all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/settings/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
@@ -61,13 +71,6 @@ $button-bg: #bada55; // 1. Customize default variables
 // 3. Add your own styles here
 ```
 
-### Gulp
-
-The included gulpfile takes care of compiling, optimizing and minifying your assets. Running the following command will install all dependencies and start a local server using [Browsersync](https://www.browsersync.io/).
-
-```sh
-npm install && gulp
-```
 
 ## Breakpoints
 Breakpoints can easily be configured using the ```$mq-breakpoints``` map. Note that the breakpoints have to be sorted from small to large.
@@ -76,10 +79,11 @@ The default configuration looks like this:
 
 ```scss
 $mq-breakpoints: (
-  xs: 480px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px
+  xs: 0,
+  sm: 400px,
+  md: 680px,
+  lg: 960px,
+  xl: 1200px
 );
 ```
 
@@ -91,42 +95,24 @@ Media Queries are handled by [Sass MQ](https://github.com/sass-mq/sass-mq).
 ```scss
 // include the media query mixin and pass the breakpoint key
 @include mq(md) {
-  
+
 }
 ```
 
 The snippet above compiles to the following CSS:
 
 ```css
-@media (min-width: 62em) {
+@media (min-width: 42.5em) {
 
 }
 ```
 
 Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
-#### Legacy Support
-To support browsers without native media query support you could use [respond.js](https://github.com/scottjehl/Respond).
-
-A static solution without Javascript is possible by setting ```$mq-responsive``` to ```false```. The code below generates an additional stylesheet where only styles in large (lg) media queries are included.
-
-```scss
-// oldie.scss
-$mq-responsive: false;
-$mq-static-breakpoint: lg;
-
-@import 'main';
-```
-
-Include the generated CSS file after the rest of your styles to serve a fixed width layout to legacy browsers.
-```html
-<!--[if lt IE 9]><link rel="stylesheet" href="css/oldie.css"><![endif]-->
-```
-
 ### Breakpoint Loop
 The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three global variables and outputs the ```@content``` for each breakpoint.
 ```scss
-@include loop-breakpoints($mq: true, $inclusive: false, $breakpoint-keys: $mq-breakpoints-list) {
+@include loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
   @debug $breakpoint;
   @debug $is-first-breakpoint;
   @debug $is-last-breakpoint;
@@ -152,7 +138,21 @@ It’s a powerful tool that for example allows the generation of additional resp
 
 
 ## Grid
-The grid system is inspired by [Bootstrap](https://getbootstrap.com/css/#grid).
+The grid system is responsive and follows the mobile first pattern. It offers predefined classes for quick layouts as well as powerful mixins for more semantic layouts.
+
+The number of columns is controlled by the ```$grid-columns``` variable which defaults to 12.
+
+
+### Basic Example
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col col-md-6"></div>
+    <div class="col col-md-6"></div>
+  </div>
+</div>
+```
 
 ### Gutters
 The gutters are controlled by the ```$grid-gutter``` variable. It can either be a global value across all breakpoints or a map with gutter values per breakpoint.
@@ -203,18 +203,16 @@ The grid mixins can be used to create custom containers, rows and columns.
 @include column-block($columns);
 ```
 
-Tip: You can turn off the default columns output by setting ```$grid-columns-output``` to ```false```.
-
 #### Two Column Layout
 
 ```scss
 @include mq(sm) {
   .col-content {
-    @include column(8);
+    @include column(80%);
   }
 
   .col-sidebar {
-    @include column(4);
+    @include column(40%);
   }
 }
 ```
@@ -254,12 +252,8 @@ Tip: You can turn off the default columns output by setting ```$grid-columns-out
 </div>
 ```
 
-### Flexbox
-The flexbox grid can be activated by setting ```$grid-flexbox``` to ```true```. This is no kill switch for older browsers as the floats are kept in place for a basic fallback. Browsers that support flexbox and flex-wrap ([Support table](http://caniuse.com/#search=flexbox)) will get these benefits:
-
-* CSS-only equal height columns
-* Easy vertical and horizontal alignment of columns
-* Ordering and reversing of columns using CSS
+### Float Fallback
+There is a float fallback to make the grid work in browsers that don’t support flexbox. This fallback can be disabled by setting ```$grid-fallback: false```.
 
 
 ## Forms
@@ -277,33 +271,14 @@ textarea.form-control {
 
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
-While the controls are functional in all browsers the following ones get the fully enhanced experience:
-
-* Android 2.3+
-* Chrome
-* Firefox 35+
-* IE 10+
-* Mobile Safari 4+
-* Safari 5.1+
-* Opera 15+
-
-You can set the variable ```$use-custom-forms``` to ```false``` to disable custom form styles in all browsers.
-
-### Caveats
-In iOS versions prior to 5.1.1 the code below is required to make custom radio buttons and checkboxes work.
-
-```js
-if (document.addEventListener) {
-  document.addEventListener('click', function() {}, false);
-}
-```
+IE 9 doesn’t support the custom select styles. All other [supported browsers](#browser-support) get the fully enhanced experience.
 
 
 ## Browser Support
 * Latest stable: Chrome, Firefox, Opera
-* IE 8+
-* Safari 6+
-* Mobile Safari 6+
+* IE 9+
+* Safari 8+
+* Mobile Safari 8+
 * Android Browser 2.3+
 
 Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.

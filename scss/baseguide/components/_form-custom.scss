@@ -1,0 +1,112 @@
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+  opacity: 0;
+
+  + label,
+  + label::after {
+    position: relative;
+    padding-left: 1.4em;
+  }
+
+  + label::before {
+    content: '';
+    position: absolute;
+    top: 0.1875em;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    border: 1px solid $input-border-color;
+    background-color: $input-bg;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  + label:hover::before,
+  &:focus + label::before {
+    border-color: $input-focus-border-color;
+  }
+
+  + label:active::before {
+    background-color: darken($input-bg, 10%);
+  }
+
+  &[disabled] + label::before {
+    border-color: $input-disabled-border-color;
+    background-color: $input-disabled-bg;
+  }
+}
+
+.radio input[type="radio"] + label::before {
+  border-radius: 1em;
+}
+
+// use the invisible gradient technique for a css only svg fallback: http://pauginer.com/post/36614680636/invisible-gradient-technique
+.radio input[type="radio"]:checked + label::before {
+  @if $icon-radio-fallback {
+    background-image: url($icon-radio-fallback);
+  }
+
+  /* autoprefixer: off */
+  background-image: url($icon-radio), linear-gradient(transparent, transparent);
+}
+
+.checkbox input[type="checkbox"]:checked + label::before {
+  @if $icon-checkbox-fallback {
+    background-image: url($icon-checkbox-fallback);
+  }
+
+  /* autoprefixer: off */
+  background-image: url($icon-checkbox), linear-gradient(transparent, transparent);
+}
+
+
+.select {
+  position: relative;
+
+  select {
+    padding-right: 2em;
+    padding-right: $input-padding-horizontal \9;
+    appearance: none;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select:focus::-ms-value {
+    background: transparent;
+    color: currentColor;
+  }
+
+  &::after {
+    content: '';
+    display: none \9;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: $input-padding-horizontal;
+    width: 12px;
+    height: $input-height;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @if $icon-select-fallback {
+      background-image: url($icon-select-fallback);
+    }
+
+    /* autoprefixer: off */
+    background-image: url($icon-select), linear-gradient(transparent, transparent);
+  }
+}
+
+// show custom arrow in IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .select::after {
+    display: block;
+  }
+
+  .select select {
+    padding-right: 2em;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin fade-in($duration: 0.3s) {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity $duration;
+}
+
+@mixin fade-out($duration: 0.3s) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear $duration, opacity $duration;
+}

@@ -1,0 +1,67 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  max-width: 100%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  line-height: inherit;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+address {
+  font-style: inherit;
+}
+
+pre {
+  overflow: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid;
+  color: inherit;
+  opacity: 0.2;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}

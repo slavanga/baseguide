@@ -1,0 +1,14 @@
+#{$headings} {
+  margin-top: $headings-spacing * 2;
+  margin-bottom: $headings-spacing;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@include scale-headings;
