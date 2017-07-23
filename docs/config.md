@@ -7,7 +7,6 @@
     <meta name="description" content="Baseguide is a lightweight and robust CSS framework for prototyping and production code.">
     <link rel="stylesheet" href="dist/css/baseguide.min.css">
     <link rel="stylesheet" href="docs/assets/styledown.css" />
-    <link rel="stylesheet" href="docs/assets/docs.css" />
 
     <script>
       WebFontConfig = {

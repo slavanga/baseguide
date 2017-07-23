@@ -9,7 +9,7 @@ Baseguide uses [normalize.css](https://necolas.github.io/normalize.css/)
 
 ### Content
 
-Base spacing is applied to all HTML flow content elements.
+Base spacing is applied to all flow content elements.
 
     @example
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
@@ -267,6 +267,11 @@ class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
           <label for="radio-2">Radio 2</label>
         </div>
       </div>
+
+      <div class="form-group">
+        <label for="file">Upload File</label>
+        <input id="file" type="file">
+      </div>
     </form>
 
 ### Form Custom
@@ -304,6 +309,11 @@ class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
         <input id="radio-custom-2" type="radio" name="radio">
         <label for="radio-custom-2">Radio 2</label>
       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="file-custom" class="btn">Upload File</label>
+      <input type="file" id="file-custom" class="sr-only">
     </div>
 
 ### Button
@@ -365,7 +375,7 @@ class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
     @example
      <img class="block-center" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAChklEQVR4nO3X0U7iQACFYd//CSS2VgtESUm0GARSIQQoSjvvdPZisbHsImRjssf4X/whMxczZL52AhchBJFPF//7CxAg1gFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZlmC1HV91txXrPtVa397kM1moyiKNJvNmrmqqnR3d6c0TbXZbJr5oiiUJInyPD9r7TRNlWVZay7PcyVJoqIoTu73I0FCCHp4eGiBzOdzZVmm5+fn1uGnaaqyLBXHsaqqauZfX19bn4frvI93u52ur6+1Xq/V7XZP7gfIfjyZTPT4+KiiKFoHGkWR6rrWzc2NttutQvh9zfR6PQ0Ggz8O8xCkLEuladrAnNoPkP14PB4rz3O9vLxoMBg081dXVwoh6Pb2tnW1jEYjXV5earlcfgry/mbsdjtFUXRyP0D24+l02jyxw+GwmY/jWHVdK0mS5nqq61p5nqssS43H409B3t+Qt7e31htybD9A9uPFYqH7+3s9PT1pNBo1891uV6vVqrm6Tq17CFJVleI41nK5VL/fP7kfIB8OLkkSRVHUupqm06k6nc7ZT/EhSAhBWZap0+mctd+PBTnW396Cj7+u/rVja/A/hAD5LgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBmAWIWIGYBYhYgZgFiFiBm/QJ7sycEPKoJDQAAAABJRU5ErkJggg==" alt="...">
 
-### Clearfix
+### Float / Clearfix
 
     @example
     <div class="clearfix">
@@ -383,11 +393,6 @@ class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
     <p class="text-left">Text left</p>
     <p class="text-center">Text left</p>
     <p class="text-right">Text left</p>
-
-    <p class="text-hide">Text hide</p>
-
-    <p class="text-truncate" style="max-width: 5.5em">Text truncate</p>
-    <p class="text-hyphenate" style="max-width: 5.5em">Text hyphenate</p>
 
 ### Visibility
 

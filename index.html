@@ -9,7 +9,6 @@
   <meta name="description" content="Baseguide is a lightweight and robust CSS framework for prototyping and production code.">
   <link rel="stylesheet" href="dist/css/baseguide.min.css">
   <link rel="stylesheet" href="docs/assets/styledown.css">
-  <link rel="stylesheet" href="docs/assets/docs.css">
 
   <script>
     WebFontConfig = {
@@ -95,7 +94,7 @@
         <section class="sg-block sg-section-content">
           <div class="sg-text">
             <h3 id="content" class="sg">Content</h3>
-            <p class="sg">Base spacing is applied to all HTML flow content elements.</p>
+            <p class="sg">Base spacing is applied to all flow content elements.</p>
           </div>
           <div class="sg-example">
             <div class="sg-canvas">
@@ -586,6 +585,11 @@
                     <label for="radio-2">Radio 2</label>
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="file">Upload File</label>
+                  <input id="file" type="file">
+                </div>
               </form>
             </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">form</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row form-group&quot;</span>&gt;</span>
@@ -671,6 +675,11 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-2&quot;</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;file&quot;</span>&gt;</span>Upload File<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;file&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;file&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre>
           </div>
         </section>
@@ -713,6 +722,11 @@
                   <label for="radio-custom-2">Radio 2</label>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label for="file-custom" class="btn">Upload File</label>
+                <input type="file" id="file-custom" class="sr-only">
+              </div>
             </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;select&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
@@ -745,6 +759,11 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radio-custom-2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio-custom-2&quot;</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;file-custom&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn&quot;</span>&gt;</span>Upload File<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;file&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;file-custom&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sr-only&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
           </div>
         </section>
@@ -865,9 +884,9 @@
 <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;...&quot;</span>&gt;</span></pre>
           </div>
         </section>
-        <section class="sg-block sg-section-clearfix">
+        <section class="sg-block sg-section-float-clearfix">
           <div class="sg-text">
-            <h3 id="clearfix" class="sg">Clearfix</h3>
+            <h3 id="float-clearfix" class="sg">Float / Clearfix</h3>
           </div>
           <div class="sg-example">
             <div class="sg-canvas">
@@ -898,19 +917,9 @@
               <p class="text-left">Text left</p>
               <p class="text-center">Text left</p>
               <p class="text-right">Text left</p>
-
-              <p class="text-hide">Text hide</p>
-
-              <p class="text-truncate" style="max-width: 5.5em">Text truncate</p>
-              <p class="text-hyphenate" style="max-width: 5.5em">Text hyphenate</p>
             </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-left&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-center&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-right&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-hide&quot;</span>&gt;</span>Text hide<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-truncate&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;max-width: 5.5em&quot;</span>&gt;</span>Text truncate<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-hyphenate&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;max-width: 5.5em&quot;</span>&gt;</span>Text hyphenate<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-right&quot;</span>&gt;</span>Text left<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
           </div>
         </section>
         <section class="sg-block sg-section-visibility">
