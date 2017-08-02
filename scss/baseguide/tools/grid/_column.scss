@@ -29,14 +29,12 @@
       width: auto;
       max-width: 100%;
 
-      @if $grid-flexbox {
-        @if $size == 'shrink' {
-          flex: 0 0 auto;
-        }
+      @if $size == 'shrink' {
+        flex: 0 0 auto;
+      }
 
-        @if $size == 'expand' {
-          flex: 1 1 auto;
-        }
+      @if $size == 'expand' {
+        flex: 1 1 auto;
       }
     }
   }
