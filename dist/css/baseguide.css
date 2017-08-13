@@ -1682,7 +1682,6 @@ input[type="checkbox"] + label {
   margin-bottom: 0;
   padding-left: 20px;
   font-weight: inherit;
-  cursor: pointer;
 }
 
 input[type="radio"][disabled] + label,
