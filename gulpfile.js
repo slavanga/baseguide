@@ -3,7 +3,7 @@ var $ = require('gulp-load-plugins')();
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var config = {
-  'src': './',
+  'src': '',
   'dest': 'dist/',
   'minify': true,
   'sourcemaps': false
@@ -112,10 +112,10 @@ gulp.task('serve', ['build'], function() {
 
 // Watch files for changes
 gulp.task('watch', function() {
-  $.watch(config.src + '*.html', function() { gulp.start('html') });
-  $.watch(config.src + 'scss/**/*.scss', function() { gulp.start('styles') });
-  $.watch(config.src + 'js/**/*.js', function() { gulp.start('scripts') });
-  $.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', function() { gulp.start('images') });
+  gulp.watch(config.src + '*.html', ['html']);
+  gulp.watch(config.src + 'scss/**/*.scss', ['styles']);
+  gulp.watch(config.src + 'js/**/*.js', ['scripts']);
+  gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', ['images']);
 });
 
 // Run all tasks
