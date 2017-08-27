@@ -1,4 +1,4 @@
-/*! Baseguide v2.0.1 | MIT License | http://basegui.de */
+/*! Baseguide v2.0.2 | MIT License | http://basegui.de */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -628,6 +628,9 @@ a:hover, a:focus {
   }
   abbr[title]::after {
     content: " (" attr(title) ")";
+  }
+  pre {
+    white-space: pre-wrap !important;
   }
   pre,
   blockquote {
@@ -1679,7 +1682,6 @@ input[type="checkbox"] + label {
   margin-bottom: 0;
   padding-left: 20px;
   font-weight: inherit;
-  cursor: pointer;
 }
 
 input[type="radio"][disabled] + label,

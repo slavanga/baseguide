@@ -1,7 +1,10 @@
-# Files to Ignore
-prepros.cfg
+# OS Files
+.DS_Store
+Thumbs.db
 
-# Folders to Ignore
+# Caches
+.sass-cache
+
+# Package Managers
 bower_components
 node_modules
-.sass-cache

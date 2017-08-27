@@ -1,7 +1,7 @@
 {
   "name": "baseguide",
   "description": "Lightweight and robust CSS framework for prototyping and production code.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "keywords": [
     "css",
     "sass",
@@ -29,10 +29,9 @@
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11",
     "postcss-scss": "^1.0.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0"
