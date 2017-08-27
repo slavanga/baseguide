@@ -35,7 +35,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/2.0.0/css/baseguide.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/2.0.2/css/baseguide.min.css">
 ```
 
 ### Package Managers

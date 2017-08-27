@@ -31,10 +31,11 @@
   $hover-color: $button-hover-color,
   $active-bg: $button-active-bg,
   $active-color: $button-active-color,
+  $border-width: $button-border-width,
   $border-color: $button-border-color,
   $border-radius: $button-border-radius
 ) {
-  border: 1px solid $border-color;
+  border: $border-width solid $border-color;
   border-radius: $border-radius;
   background-color: $bg;
   color: $color;
