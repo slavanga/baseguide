@@ -1,15 +1,13 @@
 # [Baseguide](http://basegui.de)
 
-[![npm version](https://badge.fury.io/js/baseguide.svg)](https://badge.fury.io/js/baseguide)
+[![npm version](https://badge.fury.io/js/baseguide.svg)](https://www.npmjs.com/package/baseguide)
 
-Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
+Baseguide is a lightweight and robust CSS framework for prototyping and production code.
 
-**Features**
-* Responsive and scalable components
-* CSS-only custom form controls
-* Robust flexbox grid
-* Extendable breakpoint system
-* Consistent vertical rhythm and modular scale
+* **Responsive** and scalable components
+* **Robust** flexbox grid
+* **Extendable** breakpoint system
+* **Consistent** vertical rhythm and modular scale
 
 
 ## Table of Contents
