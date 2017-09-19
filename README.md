@@ -32,10 +32,10 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 
 ### CDN
 
-Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
+This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your ```<head>```:
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/2.0.2/css/baseguide.min.css">
+<link rel="stylesheet" href="https://unpkg.com/baseguide@2.0.2/dist/css/baseguide.min.css">
 ```
 
 ### Package Managers
