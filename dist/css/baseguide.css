@@ -1661,8 +1661,15 @@ select[multiple], select[size] {
 }
 
 textarea {
-  height: auto;
   resize: vertical;
+}
+
+textarea[rows] {
+  height: auto;
+}
+
+textarea:not([rows]) {
+  height: 4.75em;
 }
 
 .checkbox,

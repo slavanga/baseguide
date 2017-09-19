@@ -261,14 +261,6 @@ There is a float fallback to make the grid work in browsers that don’t support
 ### Standard Form Controls
 All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
 
-Remember to reset the height of textareas if you choose a custom selector:
-
-```scss
-textarea.form-control {
-  height: auto;
-}
-```
-
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
 IE 9 doesn’t support the custom select styles. All other [supported browsers](#browser-support) get the fully enhanced experience.
