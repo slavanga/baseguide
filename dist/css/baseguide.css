@@ -1909,7 +1909,7 @@ input[type="file"] {
 }
 
 .small {
-  font-size: 80% !important;
+  font-size: 0.8rem !important;
 }
 
 .text-left {
