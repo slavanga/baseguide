@@ -1630,7 +1630,7 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   width: 100%;
   height: 2.375em;
   border: 1px solid #b6b6b6;
-  border-radius: 0;
+  border-radius: 0.125em;
   padding: 0.375em 0.75em;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
@@ -1845,7 +1845,7 @@ input[type="file"] {
       touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 0.125em;
   background-color: #0275d8;
   color: #fff;
 }
