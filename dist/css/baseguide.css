@@ -1,4 +1,4 @@
-/*! Baseguide v2.0.2 | MIT License | http://basegui.de */
+/*! Baseguide v2.1.0 | MIT License | http://basegui.de */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -580,27 +580,27 @@ h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child
 }
 
 h1, .h1 {
-  font-size: 3.15733452rem;
+  font-size: 3.05175781rem;
 }
 
 h2, .h2 {
-  font-size: 2.36859304rem;
+  font-size: 2.44140625rem;
 }
 
 h3, .h3 {
-  font-size: 1.776889rem;
+  font-size: 1.953125rem;
 }
 
 h4, .h4 {
-  font-size: 1.333rem;
+  font-size: 1.5625rem;
 }
 
 h5, .h5 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 h6, .h6 {
-  font-size: 0.75018755rem;
+  font-size: 1rem;
 }
 
 a {
@@ -1630,7 +1630,7 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   width: 100%;
   height: 2.375em;
   border: 1px solid #b6b6b6;
-  border-radius: 0;
+  border-radius: 0.125em;
   padding: 0.375em 0.75em;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
@@ -1661,8 +1661,15 @@ select[multiple], select[size] {
 }
 
 textarea {
-  height: auto;
   resize: vertical;
+}
+
+textarea[rows] {
+  height: auto;
+}
+
+textarea:not([rows]) {
+  height: 4.75em;
 }
 
 .checkbox,
@@ -1704,6 +1711,11 @@ input[type="file"] {
 }
 
 [placeholder]:-ms-input-placeholder {
+  color: #b3b2b2;
+  opacity: 1;
+}
+
+[placeholder]::-ms-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
@@ -1838,7 +1850,7 @@ input[type="file"] {
       touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 0.125em;
   background-color: #0275d8;
   color: #fff;
 }
@@ -1909,7 +1921,7 @@ input[type="file"] {
 }
 
 .small {
-  font-size: 80% !important;
+  font-size: 0.8rem !important;
 }
 
 .text-left {

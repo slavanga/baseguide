@@ -47,8 +47,15 @@ select {
 }
 
 textarea {
-  height: auto;
   resize: vertical;
+
+  &[rows] {
+    height: auto;
+  }
+
+  &:not([rows]) {
+    height: $input-height * 2;
+  }
 }
 
 .checkbox,

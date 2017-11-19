@@ -33,9 +33,9 @@ gulp.task('styles', function() {
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + 'css'))
     .pipe(browserSync.stream())
-    .pipe($.cleanCss({compatibility: 'ie9'}))
+    .pipe($.if(config.minify, $.cleanCss({compatibility: 'ie9'})))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
-    .pipe($.rename({suffix: '.min'}))
+    .pipe($.if(config.minify, $.rename({suffix: '.min'})))
     .pipe($.if(config.minify, gulp.dest(config.dest + 'css')))
     .pipe(browserSync.stream());
 });
@@ -60,12 +60,12 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(config.dest + 'js'))
     .pipe(browserSync.stream())
     .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
-    .pipe($.uglify().on('error', function(error) {
+    .pipe($.if(config.minify, $.uglify().on('error', function(error) {
       $.util.log($.util.colors.red(error.message));
       this.emit('end');
-    }))
+    })))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
-    .pipe($.rename({suffix: '.min'}))
+    .pipe($.if(config.minify, $.rename({suffix: '.min'})))
     .pipe($.if(config.minify, gulp.dest(config.dest + 'js')))
     .pipe(browserSync.stream());
 });
