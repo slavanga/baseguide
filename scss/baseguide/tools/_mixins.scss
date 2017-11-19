@@ -114,7 +114,7 @@
 
 
 // scale headings using modular scale
-@mixin scale-headings($max-scale: 4, $base: $type-scale-base) {
+@mixin scale-headings($max-scale: 5, $base: $type-scale-base) {
   @each $heading in $headings {
     #{$heading} {
       font-size: modular-scale($max-scale, $base);

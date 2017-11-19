@@ -1,15 +1,13 @@
 # [Baseguide](http://basegui.de)
 
-[![npm version](https://badge.fury.io/js/baseguide.svg)](https://badge.fury.io/js/baseguide)
+[![npm version](https://badge.fury.io/js/baseguide.svg)](https://www.npmjs.com/package/baseguide)
 
-Baseguide is a lightweight and robust CSS framework for prototyping and production code. It combines all essential components in a customizable and easy to use package.
+Baseguide is a lightweight and robust CSS framework for prototyping and production code.
 
-**Features**
-* Responsive and scalable components
-* CSS-only custom form controls
-* Robust flexbox grid
-* Extendable breakpoint system
-* Consistent vertical rhythm and modular scale
+* **Responsive** and scalable components
+* **Robust** flexbox grid
+* **Extendable** breakpoint system
+* **Consistent** vertical rhythm and modular scale
 
 
 ## Table of Contents
@@ -32,10 +30,10 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 
 ### CDN
 
-Link directly to Baseguide on [cdnjs](https://cdnjs.com/libraries/baseguide).
+This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your ```<head>```:
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baseguide/2.0.2/css/baseguide.min.css">
+<link rel="stylesheet" href="https://unpkg.com/baseguide@2.1.0/dist/css/baseguide.min.css">
 ```
 
 ### Package Managers
@@ -260,14 +258,6 @@ There is a float fallback to make the grid work in browsers that don’t support
 
 ### Standard Form Controls
 All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
-
-Remember to reset the height of textareas if you choose a custom selector:
-
-```scss
-textarea.form-control {
-  height: auto;
-}
-```
 
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
