@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var log = require('fancy-log');
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var config = {
@@ -23,10 +24,7 @@ gulp.task('styles', function() {
     .pipe($.sass({
       precision: 8,
       outputStyle: 'expanded'
-    }).on('error', function(error) {
-      $.util.log($.util.colors.red(error.message));
-      this.emit('end');
-    }))
+    }).on('error', $.sass.logError))
     .pipe($.postcss([
       autoprefixer()
     ]))
@@ -54,14 +52,14 @@ gulp.task('stylelint', function() {
 gulp.task('scripts', function() {
   return gulp.src(config.src + 'js/*.js')
     .pipe($.include().on('error', function(error) {
-      $.util.log($.util.colors.red(error.message));
+      log.error(error.message);
       this.emit('end');
     }))
     .pipe(gulp.dest(config.dest + 'js'))
     .pipe(browserSync.stream())
     .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
     .pipe($.if(config.minify, $.uglify().on('error', function(error) {
-      $.util.log($.util.colors.red(error.message));
+      log.error(error.message);
       this.emit('end');
     })))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
