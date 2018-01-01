@@ -85,7 +85,7 @@ function images() {
 }
 
 // Serve compiled files
-function serve() {
+function serve(done) {
   browserSync.init({
     server: true,
     notify: false,
@@ -103,14 +103,16 @@ function serve() {
     }],
     */
   });
+  done();
 }
 
 // Watch files for changes
-function watch() {
+function watch(done) {
   gulp.watch(config.src + '*.html', html);
   gulp.watch(config.src + 'scss/**/*.scss', styles);
   gulp.watch(config.src + 'js/**/*.js', scripts);
   gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', images);
+  done();
 }
 
 
