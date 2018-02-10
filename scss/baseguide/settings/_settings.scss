@@ -58,13 +58,13 @@ $grid-container-gutter: $grid-gutter !default;
 
 // Form
 $input-selector: (
-  'input[type="email"]',
-  'input[type="number"]',
-  'input[type="password"]',
-  'input[type="search"]',
-  'input[type="tel"]',
-  'input[type="text"]',
-  'input[type="url"]',
+  '[type="email"]',
+  '[type="number"]',
+  '[type="password"]',
+  '[type="search"]',
+  '[type="tel"]',
+  '[type="text"]',
+  '[type="url"]',
   'textarea',
   'select'
 ) !default;
