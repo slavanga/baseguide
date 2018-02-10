@@ -1,4 +1,4 @@
-/*! Baseguide v2.1.0 | MIT License | http://basegui.de */
+/*! Baseguide v2.2.0 | MIT License | http://basegui.de */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1625,7 +1625,7 @@ label {
   margin-bottom: 1em;
 }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], textarea, select {
+[type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"], textarea, select {
   display: block;
   width: 100%;
   height: 2.375em;
@@ -1640,12 +1640,12 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   transition: border-color 0.15s ease-out;
 }
 
-input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+[type="email"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="url"]:focus, textarea:focus, select:focus {
   border-color: #838383;
   outline: 0;
 }
 
-input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="text"][disabled], input[type="url"][disabled], textarea[disabled], select[disabled] {
+[type="email"][disabled], [type="number"][disabled], [type="password"][disabled], [type="search"][disabled], [type="tel"][disabled], [type="text"][disabled], [type="url"][disabled], textarea[disabled], select[disabled] {
   border-color: #ccc;
   background-color: #eee;
   color: #555;
@@ -2082,8 +2082,6 @@ input[type="file"] {
   height: 1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
   white-space: nowrap;
 }
 
@@ -2093,7 +2091,5 @@ input[type="file"] {
   height: auto;
   overflow: visible;
   clip: auto;
-  -webkit-clip-path: none;
-          clip-path: none;
   white-space: inherit;
 }
