@@ -1510,7 +1510,7 @@ a:hover, a:focus {
 
 label {
   display: inline-block;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3rem;
 }
 
 .label-inline {
@@ -1519,7 +1519,7 @@ label {
 }
 
 .form-group {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 [type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"], textarea, select {
