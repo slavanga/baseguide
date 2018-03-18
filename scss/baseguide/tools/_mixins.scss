@@ -57,7 +57,7 @@
 
 @mixin button-disabled($disabled-opacity: $button-disabled-opacity) {
   &.disabled,
-  &[disabled] {
+  &:disabled {
     opacity: $disabled-opacity;
     cursor: default;
     pointer-events: none;

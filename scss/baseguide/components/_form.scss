@@ -29,7 +29,7 @@ label {
     outline: 0;
   }
 
-  &[disabled] {
+  &:disabled {
     border-color: $input-disabled-border-color;
     background-color: $input-disabled-bg;
     color: $input-disabled-color;
@@ -75,7 +75,7 @@ input[type="checkbox"] {
     font-weight: inherit;
   }
 
-  &[disabled] + label {
+  &:disabled + label {
     color: $input-disabled-color;
     cursor: not-allowed;
   }
@@ -85,13 +85,7 @@ input[type="file"] {
   display: block;
 }
 
-
-// placeholder
-[placeholder].placeholder {
-  color: $placeholder-color;
-}
-
-[placeholder]::placeholder {
+::placeholder {
   color: $placeholder-color;
   opacity: 1;
 }

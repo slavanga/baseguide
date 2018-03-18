@@ -31,7 +31,7 @@ function styles() {
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + 'css'))
     .pipe(browserSync.stream())
-    .pipe($.if(config.minify, $.cleanCss({compatibility: 'ie9'})))
+    .pipe($.if(config.minify, $.cleanCss()))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe($.if(config.minify, $.rename({suffix: '.min'})))
     .pipe($.if(config.minify, gulp.dest(config.dest + 'css')))

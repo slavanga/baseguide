@@ -736,7 +736,6 @@ a:hover, a:focus {
   min-height: 100%;
   max-width: none;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
@@ -1645,7 +1644,7 @@ label {
   outline: 0;
 }
 
-[type="email"][disabled], [type="number"][disabled], [type="password"][disabled], [type="search"][disabled], [type="tel"][disabled], [type="text"][disabled], [type="url"][disabled], textarea[disabled], select[disabled] {
+[type="email"]:disabled, [type="number"]:disabled, [type="password"]:disabled, [type="search"]:disabled, [type="tel"]:disabled, [type="text"]:disabled, [type="url"]:disabled, textarea:disabled, select:disabled {
   border-color: #ccc;
   background-color: #eee;
   color: #555;
@@ -1691,8 +1690,8 @@ input[type="checkbox"] + label {
   font-weight: inherit;
 }
 
-input[type="radio"][disabled] + label,
-input[type="checkbox"][disabled] + label {
+input[type="radio"]:disabled + label,
+input[type="checkbox"]:disabled + label {
   color: #555;
   cursor: not-allowed;
 }
@@ -1701,26 +1700,22 @@ input[type="file"] {
   display: block;
 }
 
-[placeholder].placeholder {
-  color: #b3b2b2;
-}
-
-[placeholder]::-webkit-input-placeholder {
+::-webkit-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
 
-[placeholder]:-ms-input-placeholder {
+:-ms-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
 
-[placeholder]::-ms-input-placeholder {
+::-ms-input-placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
 
-[placeholder]::placeholder {
+::placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
@@ -1764,8 +1759,8 @@ input[type="file"] {
   background-color: #e6e5e5;
 }
 
-.checkbox input[type="checkbox"][disabled] + label::before,
-.radio input[type="radio"][disabled] + label::before {
+.checkbox input[type="checkbox"]:disabled + label::before,
+.radio input[type="radio"]:disabled + label::before {
   border-color: #ccc;
   background-color: #eee;
 }
@@ -1867,7 +1862,7 @@ input[type="file"] {
   color: #fff;
 }
 
-.btn.disabled, .btn[disabled] {
+.btn.disabled, .btn:disabled {
   opacity: 0.65;
   cursor: default;
   pointer-events: none;

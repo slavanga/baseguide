@@ -30,7 +30,7 @@
     background-color: darken($input-bg, 10%);
   }
 
-  &[disabled] + label::before {
+  &:disabled + label::before {
     border-color: $input-disabled-border-color;
     background-color: $input-disabled-bg;
   }

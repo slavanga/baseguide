@@ -265,8 +265,8 @@ IE 9 doesn’t support the custom select styles. All other [supported browsers](
 
 
 ## Browser Support
-* Latest stable: Chrome, Firefox, Opera
-* IE 9+
+* Latest stable: Chrome, Edge, Firefox
+* IE 11+
 * Safari 8+
 * Mobile Safari 8+
 * Android Browser 2.3+
