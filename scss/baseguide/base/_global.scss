@@ -11,17 +11,7 @@ body {
   html,
   button,
   input {
-    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  // disable antialiasing on HiDPI screens
-  @include hidpi {
-    html,
-    button,
-    input {
-      -webkit-font-smoothing: subpixel-antialiased;
-      -moz-osx-font-smoothing: auto;
-    }
+    -webkit-font-smoothing: antialiased;
   }
 }
