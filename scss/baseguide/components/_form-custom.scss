@@ -1,58 +1,4 @@
-.checkbox,
-.radio {
-  line-height: 1.45;
-}
-
-.checkbox input[type="checkbox"],
-.radio input[type="radio"] {
-  opacity: 0;
-
-  + label {
-    position: relative;
-    padding-left: 1.4em;
-  }
-
-  + label::before {
-    content: '';
-    position: absolute;
-    top: 0.1875em;
-    left: 0;
-    width: 1em;
-    height: 1em;
-    border: 1px solid $input-border-color;
-    background-color: $input-bg;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
-  + label:hover::before,
-  &:focus + label::before {
-    border-color: $input-focus-border-color;
-  }
-
-  + label:active::before {
-    background-color: darken($input-bg, 10%);
-  }
-
-  &:disabled + label::before {
-    border-color: $input-disabled-border-color;
-    background-color: $input-disabled-bg;
-  }
-}
-
-.radio input[type="radio"] + label::before {
-  border-radius: 1em;
-}
-
-.radio input[type="radio"]:checked + label::before {
-  background-image: url($icon-radio);
-}
-
-.checkbox input[type="checkbox"]:checked + label::before {
-  background-image: url($icon-checkbox);
-}
-
-.select {
+@supports (appearance: none) {
   select {
     appearance: none;
     padding-right: 2em;
@@ -60,14 +6,51 @@
     background-position: right center;
     background-position: right $input-padding-horizontal center;
     background-image: url($icon-select);
+  }
 
-    &::-ms-expand {
-      display: none;
+  input[type="radio"],
+  input[type="checkbox"] {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 1px solid $input-border-color;
+    background-color: $input-bg;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      border-color: $input-focus-border-color;
     }
 
-    &:focus::-ms-value {
-      background: transparent;
-      color: currentColor;
+    &:active {
+      background-color: darken($input-bg, 10%);
+    }
+
+    &:disabled {
+      border-color: $input-disabled-border-color;
+      background-color: $input-disabled-bg;
+    }
+
+    & + label {
+      padding-left: 1.4em;
+    }
+  }
+
+  input[type="radio"] {
+    border-radius: 50%;
+
+    &:checked {
+      background-image: url($icon-radio);
+    }
+  }
+
+  input[type="checkbox"] {
+    border-radius: 0.125em;
+
+    &:checked {
+      background-image: url($icon-checkbox);
     }
   }
 }

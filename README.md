@@ -261,7 +261,7 @@ All form controls listed in ```$input-selector``` get styled by default. The var
 
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
-IE 9 doesn’t support the custom select styles. All other [supported browsers](#browser-support) get the fully enhanced experience.
+Browsers that support [feature queries](https://caniuse.com/#feat=css-featurequeries) and [appearance](https://caniuse.com/#feat=css-appearance) get the fully enhanced experience.
 
 
 ## Browser Support

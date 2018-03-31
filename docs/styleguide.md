@@ -272,49 +272,12 @@ class. Their width can be set using a modifier class (e.g. ```.col-md-6```).
         <label for="file">Upload File</label>
         <input id="file" type="file">
       </div>
+
+      <div class="form-group">
+        <label for="file-custom" class="btn">Upload File</label>
+        <input type="file" id="file-custom" class="sr-only">
+      </div>
     </form>
-
-### Form Custom
-
-    @example
-    <div class="form-group">
-      <div class="select">
-        <select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="checkbox">
-        <input id="checkbox-custom-1" type="checkbox">
-        <label for="checkbox-custom-1">Checkbox 1</label>
-      </div>
-
-      <div class="checkbox">
-        <input id="checkbox-custom-2" type="checkbox">
-        <label for="checkbox-custom-2">Checkbox 2</label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="radio">
-        <input id="radio-custom-1" type="radio" name="radio">
-        <label for="radio-custom-1">Radio 1</label>
-      </div>
-
-      <div class="radio">
-        <input id="radio-custom-2" type="radio" name="radio">
-        <label for="radio-custom-2">Radio 2</label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="file-custom" class="btn">Upload File</label>
-      <input type="file" id="file-custom" class="sr-only">
-    </div>
 
 ### Button
 

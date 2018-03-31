@@ -40,6 +40,11 @@ label {
 select {
   overflow-x: hidden;
 
+  &:focus::-ms-value {
+    background: transparent;
+    color: currentColor;
+  }
+
   &[multiple],
   &[size] {
     height: auto;
