@@ -1580,6 +1580,7 @@ input[type="checkbox"]:disabled + label {
 
 input[type="file"] {
   display: block;
+  max-width: 100%;
 }
 
 ::-webkit-input-placeholder {
