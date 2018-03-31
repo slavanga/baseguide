@@ -1,5 +1,5 @@
 @supports (appearance: none) {
-  select {
+  select:not([multiple]) {
     appearance: none;
     padding-right: 2em;
     background-repeat: no-repeat;
