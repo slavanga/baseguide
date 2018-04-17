@@ -546,7 +546,7 @@ a:hover, a:focus {
 .list-inline {
   padding-left: 0;
   list-style: none;
-  margin-left: -1em;
+  margin-left: -1rem;
 }
 
 .list-inline::after {
@@ -557,7 +557,7 @@ a:hover, a:focus {
 
 .list-inline > li {
   float: left;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .list-inline > li > a {
@@ -586,11 +586,11 @@ a:hover, a:focus {
 }
 
 .media-left {
-  padding-right: 1em;
+  padding-right: 1rem;
 }
 
 .media-right {
-  padding-left: 1em;
+  padding-left: 1rem;
 }
 
 .media-left,

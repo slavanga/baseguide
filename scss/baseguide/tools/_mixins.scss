@@ -77,7 +77,7 @@
   list-style: none;
 }
 
-@mixin list-inline($spacing: 1em, $child-selector: 'li') {
+@mixin list-inline($spacing: 1rem, $child-selector: 'li') {
   @include list-unstyled;
   @include clearfix;
 
