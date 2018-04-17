@@ -22,7 +22,6 @@
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @mixin button-style(

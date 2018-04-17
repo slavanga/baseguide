@@ -1674,7 +1674,6 @@ input[type="file"] {
           user-select: none;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.125em;
   background-color: #0275d8;
