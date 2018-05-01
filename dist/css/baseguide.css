@@ -38,8 +38,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -224,8 +223,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -259,8 +257,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -336,15 +333,13 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 canvas,
@@ -500,8 +495,7 @@ a:hover, a:focus {
   *::before,
   *::after {
     color: #000 !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
   a,
@@ -656,12 +650,7 @@ a:hover, a:focus {
 .row {
   margin-left: -1rem;
   margin-right: -1rem;
-  /* autoprefixer: off */
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -1513,11 +1502,9 @@ label {
   border: 1px solid #b6b6b6;
   border-radius: 0.125em;
   padding: 0.375em 0.75em;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
+  background-clip: padding-box;
   background-color: #fff;
   color: #333;
-  -webkit-transition: border-color 0.15s ease-out;
   transition: border-color 0.15s ease-out;
 }
 
@@ -1663,7 +1650,6 @@ input[type="file"] {
   display: inline-block;
   vertical-align: middle;
   padding: 0.375em 1em;
-  -webkit-transition: background-color 0.15s ease-out, color 0.15s ease-out;
   transition: background-color 0.15s ease-out, color 0.15s ease-out;
   text-align: center;
   text-decoration: none;
@@ -1672,8 +1658,7 @@ input[type="file"] {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   border: 1px solid transparent;
   border-radius: 0.125em;
   background-color: #0275d8;

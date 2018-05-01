@@ -38,9 +38,7 @@
   },
   "browserslist": [
     "last 2 versions",
-    "android >= 2.3",
-    "firefox esr",
-    "ie >= 11",
-    "safari >= 8"
+    "not dead",
+    "firefox esr"
   ]
 }
