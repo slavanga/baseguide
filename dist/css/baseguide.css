@@ -448,8 +448,6 @@ p:last-child {
   margin-bottom: 0;
 }
 
-nav > ul,
-nav > ol,
 li > ul,
 li > ol {
   margin-bottom: 0;
