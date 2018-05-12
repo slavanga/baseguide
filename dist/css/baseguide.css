@@ -455,10 +455,6 @@ li > ol {
   margin-bottom: 0;
 }
 
-.spacing-bottom {
-  margin-bottom: 1.5rem;
-}
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 0.8em;
   margin-bottom: 0.4em;
@@ -1724,6 +1720,118 @@ input[type="file"] {
 
 .table tbody tr:nth-child(2n+1) {
   background-color: #efefef;
+}
+
+.nospace {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 24.99em) {
+  .nospace-xs {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 25em) and (max-width: 42.49em) {
+  .nospace-sm {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 42.5em) and (max-width: 59.99em) {
+  .nospace-md {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 60em) and (max-width: 74.99em) {
+  .nospace-lg {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 75em) {
+  .nospace-xl {
+    margin-bottom: 0 !important;
+  }
+}
+
+.nospace-xs-up {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 25em) {
+  .nospace-sm-up {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 42.5em) {
+  .nospace-md-up {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 60em) {
+  .nospace-lg-up {
+    margin-bottom: 0 !important;
+  }
+}
+
+.space {
+  margin-bottom: 2rem !important;
+}
+
+@media (max-width: 24.99em) {
+  .space-xs {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 25em) and (max-width: 42.49em) {
+  .space-sm {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 42.5em) and (max-width: 59.99em) {
+  .space-md {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 60em) and (max-width: 74.99em) {
+  .space-lg {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 75em) {
+  .space-xl {
+    margin-bottom: 2rem !important;
+  }
+}
+
+.space-xs-up {
+  margin-bottom: 2rem !important;
+}
+
+@media (min-width: 25em) {
+  .space-sm-up {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 42.5em) {
+  .space-md-up {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 60em) {
+  .space-lg-up {
+    margin-bottom: 2rem !important;
+  }
 }
 
 .block-center {
