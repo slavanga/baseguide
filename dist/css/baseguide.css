@@ -1698,6 +1698,14 @@ input[type="file"] {
   background-color: #efefef;
 }
 
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 .nospace {
   margin-bottom: 0 !important;
 }
