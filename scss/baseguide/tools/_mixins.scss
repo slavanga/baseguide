@@ -88,23 +88,6 @@
   }
 }
 
-@mixin list-equal($child-selector: 'li') {
-  @include list-unstyled;
-
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-
-  > #{$child-selector} {
-    display: table-cell;
-    text-align: center;
-  }
-
-  > #{$child-selector} > a {
-    display: inline-block;
-  }
-}
-
 
 // clearfix
 @mixin clearfix {

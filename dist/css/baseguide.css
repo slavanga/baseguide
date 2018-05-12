@@ -559,23 +559,6 @@ a:hover, a:focus {
   margin-left: 1rem;
 }
 
-.list-equal {
-  padding-left: 0;
-  list-style: none;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-
-.list-equal > li {
-  display: table-cell;
-  text-align: center;
-}
-
-.list-equal > li > a {
-  display: inline-block;
-}
-
 .media img {
   max-width: none;
 }
