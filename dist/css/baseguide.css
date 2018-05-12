@@ -559,8 +559,18 @@ a:hover, a:focus {
   margin-left: 1rem;
 }
 
-.media img {
-  max-width: none;
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 0 1 auto;
+}
+
+.media-left,
+.media-right {
+  flex: 0 0 auto;
 }
 
 .media-left {
@@ -568,22 +578,16 @@ a:hover, a:focus {
 }
 
 .media-right {
+  order: 1;
   padding-left: 1rem;
 }
 
-.media-left,
-.media-right,
-.media-body {
-  display: table-cell;
-  vertical-align: top;
-}
-
 .media-middle {
-  vertical-align: middle;
+  align-self: center;
 }
 
 .media-bottom {
-  vertical-align: bottom;
+  align-self: flex-end;
 }
 
 .media-fullscreen {
