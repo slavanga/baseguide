@@ -432,6 +432,22 @@ p {
   margin-bottom: 1.5rem;
 }
 
+address:last-child,
+blockquote:last-child,
+table:last-child,
+figure:last-child,
+form:last-child,
+fieldset:last-child,
+legend:last-child,
+pre:last-child,
+dl:last-child,
+ul:last-child,
+ol:last-child,
+hr:last-child,
+p:last-child {
+  margin-bottom: 0;
+}
+
 nav > ul,
 nav > ol,
 li > ul,
