@@ -78,17 +78,13 @@
 
 @mixin list-inline($spacing: 1rem, $child-selector: 'li') {
   @include list-unstyled;
-  @include clearfix;
 
-  margin-left: -$spacing;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $spacing * -1;
 
   > #{$child-selector} {
-    float: left;
     margin-left: $spacing;
-  }
-
-  > #{$child-selector} > a {
-    display: inline-block;
   }
 }
 

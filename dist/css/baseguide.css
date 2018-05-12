@@ -550,22 +550,13 @@ a:hover, a:focus {
 .list-inline {
   padding-left: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
   margin-left: -1rem;
 }
 
-.list-inline::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .list-inline > li {
-  float: left;
   margin-left: 1rem;
-}
-
-.list-inline > li > a {
-  display: inline-block;
 }
 
 .list-equal {
