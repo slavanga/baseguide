@@ -65,9 +65,12 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-  position: absolute;
-  margin-top: 0.25em;
   line-height: normal;
+
+  &:not(:only-child) {
+    position: absolute;
+    margin-top: 0.2em;
+  }
 
   + label {
     margin-bottom: 0;

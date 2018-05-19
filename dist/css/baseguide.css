@@ -1535,9 +1535,13 @@ textarea:not([rows]) {
 
 input[type="radio"],
 input[type="checkbox"] {
-  position: absolute;
-  margin-top: 0.25em;
   line-height: normal;
+}
+
+input[type="radio"]:not(:only-child),
+input[type="checkbox"]:not(:only-child) {
+  position: absolute;
+  margin-top: 0.2em;
 }
 
 input[type="radio"] + label,
