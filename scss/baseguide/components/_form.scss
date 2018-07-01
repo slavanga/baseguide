@@ -65,20 +65,18 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-  line-height: normal;
-
   &:not(:only-child) {
     position: absolute;
-    margin-top: 0.2em;
+    margin-top: 0.3em;
   }
 
-  + label {
+  ~ label {
     margin-bottom: 0;
     padding-left: 20px;
     font-weight: inherit;
   }
 
-  &:disabled + label {
+  &:disabled ~ label {
     color: $input-disabled-color;
     cursor: not-allowed;
   }

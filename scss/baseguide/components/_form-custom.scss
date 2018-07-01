@@ -10,46 +10,67 @@
 
   input[type="radio"],
   input[type="checkbox"] {
-    appearance: none;
-    width: 1em;
-    height: 1em;
-    border: 1px solid $input-border-color;
-    background-color: $input-bg;
-    background-repeat: no-repeat;
-    background-position: center center;
+    &:not(:only-child) {
+      opacity: 0;
+    }
 
-    &:hover,
-    &:focus {
-      outline: 0;
+    ~ label {
+      position: relative;
+      padding-left: 1.4em;
+      line-height: 1.5;
+    }
+
+    ~ label::before,
+    ~ label::after {
+      content: '';
+      position: absolute;
+      top: 0.25em;
+      left: 0;
+      width: 1em;
+      height: 1em;
+    }
+
+    ~ label::before {
+      border: 1px solid $input-border-color;
+      background-color: $input-bg;
+    }
+
+    ~ label::after {
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &:hover:not(:disabled) ~ label:hover::before,
+    &:focus ~ label::before {
       border-color: $input-focus-border-color;
     }
 
-    &:active {
+    &:active ~ label::before {
       background-color: darken($input-bg, 10%);
     }
 
-    &:disabled {
+    &:disabled ~ label::before {
       border-color: $input-disabled-border-color;
       background-color: $input-disabled-bg;
-    }
-
-    & + label {
-      padding-left: 1.4em;
     }
   }
 
   input[type="radio"] {
-    border-radius: 50%;
+    ~ label::before {
+      border-radius: 50%;
+    }
 
-    &:checked {
+    &:checked ~ label::after {
       background-image: url($icon-radio);
     }
   }
 
   input[type="checkbox"] {
-    border-radius: 0.125em;
+    ~ label::before {
+      border-radius: 0.125em;
+    }
 
-    &:checked {
+    &:checked ~ label::after {
       background-image: url($icon-checkbox);
     }
   }
