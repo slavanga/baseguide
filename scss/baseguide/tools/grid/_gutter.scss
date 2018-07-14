@@ -13,11 +13,11 @@
     }
   }
 
-  @return $gutter;
+  @return to-rem($gutter);
 }
 
 @mixin gutter($gutter, $type) {
-  $gutter: $gutter / 2;
+  $gutter: to-rem($gutter / 2);
 
   @if $type == 'inner' {
     padding-left: $gutter;

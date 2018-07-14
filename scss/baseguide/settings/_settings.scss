@@ -56,7 +56,7 @@ $mq-static-breakpoint: nth($mq-breakpoints-list, length($mq-breakpoints-list)) !
 // Grid
 $grid-fallback: true !default;
 $grid-columns: 12 !default;
-$grid-gutter: 2rem !default;
+$grid-gutter: 30px !default;
 $grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints-list)) !default;
 $grid-container-gutter: $grid-gutter !default;
 

@@ -627,17 +627,17 @@ a:hover, a:focus {
 }
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 73rem;
+  max-width: 73.125rem;
 }
 
 .row {
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -649,8 +649,8 @@ a:hover, a:focus {
 }
 
 .col {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
   width: 100%;
   position: relative;
   min-height: 1px;
