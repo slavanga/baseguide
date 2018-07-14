@@ -1,4 +1,4 @@
-# [Baseguide](http://basegui.de)
+# [Baseguide](https://basegui.de)
 
 [![npm version](https://badge.fury.io/js/baseguide.svg)](https://www.npmjs.com/package/baseguide)
 
@@ -105,7 +105,7 @@ The snippet above compiles to the following CSS:
 }
 ```
 
-Check out the [Sass MQ documentation](http://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
+Check out the [Sass MQ documentation](https://sass-mq.github.io/sass-mq/#mixin-mq) for more details and advanced usage of media queries.
 
 ### Breakpoint Loop
 The ```loop-breakpoints``` mixin iterates through all breakpoints. It sets three global variables and outputs the ```@content``` for each breakpoint.
@@ -267,9 +267,9 @@ Browsers that support [feature queries](https://caniuse.com/#feat=css-featureque
 ## Browser Support
 * Latest stable: Chrome, Edge, Firefox
 * IE 11+
-* Safari 8+
-* Mobile Safari 8+
-* Android Browser 2.3+
+* Safari 9+
+* Mobile Safari 9+
+* Android Browser 4.4+
 
 Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
 
@@ -277,8 +277,8 @@ Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle
 ## Inspired By…
 * [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf)
 * [Bootstrap](https://getbootstrap.com)
-* [Bourbon](http://bourbon.io)
-* [Foundation](http://foundation.zurb.com)
+* [Bourbon](https://www.bourbon.io)
+* [Foundation](https://foundation.zurb.com)
 * [HTML5 Boilerplate](https://html5boilerplate.com)
 
 
