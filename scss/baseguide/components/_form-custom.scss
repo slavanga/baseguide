@@ -7,71 +7,71 @@
     background-position: right $input-padding-horizontal center;
     background-image: url($icon-select);
   }
+}
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    &:not(:only-child) {
-      opacity: 0;
-    }
-
-    ~ label {
-      position: relative;
-      padding-left: 1.4em;
-      line-height: 1.5;
-    }
-
-    ~ label::before,
-    ~ label::after {
-      content: '';
-      position: absolute;
-      top: 0.25em;
-      left: 0;
-      width: 1em;
-      height: 1em;
-    }
-
-    ~ label::before {
-      border: 1px solid $input-border-color;
-      background-color: $input-bg;
-    }
-
-    ~ label::after {
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-
-    &:hover:not(:disabled) ~ label:hover::before,
-    &:focus ~ label::before {
-      border-color: $input-focus-border-color;
-    }
-
-    &:active ~ label::before {
-      background-color: darken($input-bg, 10%);
-    }
-
-    &:disabled ~ label::before {
-      border-color: $input-disabled-border-color;
-      background-color: $input-disabled-bg;
-    }
+input[type="radio"],
+input[type="checkbox"] {
+  &:not(:only-child) {
+    opacity: 0;
   }
 
-  input[type="radio"] {
-    ~ label::before {
-      border-radius: 50%;
-    }
-
-    &:checked ~ label::after {
-      background-image: url($icon-radio);
-    }
+  ~ label {
+    position: relative;
+    padding-left: 1.4em;
+    line-height: 1.5;
   }
 
-  input[type="checkbox"] {
-    ~ label::before {
-      border-radius: 0.125em;
-    }
+  ~ label::before,
+  ~ label::after {
+    content: '';
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    width: 1em;
+    height: 1em;
+  }
 
-    &:checked ~ label::after {
-      background-image: url($icon-checkbox);
-    }
+  ~ label::before {
+    border: 1px solid $input-border-color;
+    background-color: $input-bg;
+  }
+
+  ~ label::after {
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &:hover:not(:disabled) ~ label:hover::before,
+  &:focus ~ label::before {
+    border-color: $input-focus-border-color;
+  }
+
+  &:active ~ label::before {
+    background-color: darken($input-bg, 10%);
+  }
+
+  &:disabled ~ label::before {
+    border-color: $input-disabled-border-color;
+    background-color: $input-disabled-bg;
+  }
+}
+
+input[type="radio"] {
+  ~ label::before {
+    border-radius: 50%;
+  }
+
+  &:checked ~ label::after {
+    background-image: url($icon-radio);
+  }
+}
+
+input[type="checkbox"] {
+  ~ label::before {
+    border-radius: 0.125em;
+  }
+
+  &:checked ~ label::after {
+    background-image: url($icon-checkbox);
   }
 }
