@@ -1578,7 +1578,7 @@ input[type="file"] {
 }
 
 @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
-  select:not([multiple]) {
+  .select select:not([multiple]) {
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -1590,22 +1590,22 @@ input[type="file"] {
   }
 }
 
-input[type="radio"]:not(:only-child),
-input[type="checkbox"]:not(:only-child) {
+.radio input[type="radio"]:not(:only-child),
+.checkbox input[type="checkbox"]:not(:only-child) {
   opacity: 0;
 }
 
-input[type="radio"] ~ label,
-input[type="checkbox"] ~ label {
+.radio input[type="radio"] ~ label,
+.checkbox input[type="checkbox"] ~ label {
   position: relative;
   padding-left: 1.4em;
   line-height: 1.5;
 }
 
-input[type="radio"] ~ label::before,
-input[type="radio"] ~ label::after,
-input[type="checkbox"] ~ label::before,
-input[type="checkbox"] ~ label::after {
+.radio input[type="radio"] ~ label::before,
+.radio input[type="radio"] ~ label::after,
+.checkbox input[type="checkbox"] ~ label::before,
+.checkbox input[type="checkbox"] ~ label::after {
   content: '';
   position: absolute;
   top: 0.2em;
@@ -1614,49 +1614,49 @@ input[type="checkbox"] ~ label::after {
   height: 1em;
 }
 
-input[type="radio"] ~ label::before,
-input[type="checkbox"] ~ label::before {
+.radio input[type="radio"] ~ label::before,
+.checkbox input[type="checkbox"] ~ label::before {
   border: 1px solid #b6b6b6;
   background-color: #fff;
 }
 
-input[type="radio"] ~ label::after,
-input[type="checkbox"] ~ label::after {
+.radio input[type="radio"] ~ label::after,
+.checkbox input[type="checkbox"] ~ label::after {
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-input[type="radio"]:hover:not(:disabled) ~ label:hover::before,
-input[type="radio"]:focus ~ label::before,
-input[type="checkbox"]:hover:not(:disabled) ~ label:hover::before,
-input[type="checkbox"]:focus ~ label::before {
+.radio input[type="radio"]:hover:not(:disabled) ~ label:hover::before,
+.radio input[type="radio"]:focus ~ label::before,
+.checkbox input[type="checkbox"]:hover:not(:disabled) ~ label:hover::before,
+.checkbox input[type="checkbox"]:focus ~ label::before {
   border-color: #838383;
 }
 
-input[type="radio"]:active ~ label::before,
-input[type="checkbox"]:active ~ label::before {
+.radio input[type="radio"]:active ~ label::before,
+.checkbox input[type="checkbox"]:active ~ label::before {
   background-color: #e6e5e5;
 }
 
-input[type="radio"]:disabled ~ label::before,
-input[type="checkbox"]:disabled ~ label::before {
+.radio input[type="radio"]:disabled ~ label::before,
+.checkbox input[type="checkbox"]:disabled ~ label::before {
   border-color: #ccc;
   background-color: #eee;
 }
 
-input[type="radio"] ~ label::before {
+.radio input[type="radio"] ~ label::before {
   border-radius: 50%;
 }
 
-input[type="radio"]:checked ~ label::after {
+.radio input[type="radio"]:checked ~ label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E");
 }
 
-input[type="checkbox"] ~ label::before {
+.checkbox input[type="checkbox"] ~ label::before {
   border-radius: 0.125em;
 }
 
-input[type="checkbox"]:checked ~ label::after {
+.checkbox input[type="checkbox"]:checked ~ label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E");
 }
 
