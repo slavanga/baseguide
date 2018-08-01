@@ -42,10 +42,11 @@ function styles() {
 function stylelint() {
   return gulp.src(config.src + 'scss/**/*.scss')
     .pipe($.postcss([
-      require('stylelint')
+      require('stylelint')({fix: true})
     ], {
       syntax: require('postcss-scss')
-    }));
+    }))
+    .pipe(gulp.dest(config.src + 'scss'));
 }
 
 // Compile javascript
