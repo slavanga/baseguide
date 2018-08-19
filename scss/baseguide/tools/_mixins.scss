@@ -29,6 +29,7 @@
   $color: $button-color,
   $hover-bg: $button-hover-bg,
   $hover-color: $button-hover-color,
+  $hover-border-color: $button-hover-border-color,
   $active-bg: $button-active-bg,
   $active-color: $button-active-color,
   $border-width: $button-border-width,
@@ -44,6 +45,7 @@
   &:focus {
     outline: 0;
     text-decoration: none;
+    border-color: $hover-border-color;
     background-color: $hover-bg;
     color: $hover-color;
   }

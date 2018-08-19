@@ -1682,6 +1682,7 @@ input[type="file"] {
 .btn:hover, .btn:focus {
   outline: 0;
   text-decoration: none;
+  border-color: transparent;
   background-color: #025aa5;
   color: #fff;
 }

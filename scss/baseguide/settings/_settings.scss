@@ -100,13 +100,14 @@ $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
 $button-bg: #0275d8 !default;
 $button-color: #fff !default;
-$button-hover-bg: darken($button-bg, 10%) !default;
-$button-hover-color: #fff !default;
-$button-active-bg: $button-hover-bg !default;
-$button-active-color: $button-hover-color !default;
 $button-border-width: 1px !default;
 $button-border-color: transparent !default;
 $button-border-radius: 0.125em !default;
+$button-hover-bg: darken($button-bg, 10%) !default;
+$button-hover-color: #fff !default;
+$button-hover-border-color: $button-border-color !default;
+$button-active-bg: $button-hover-bg !default;
+$button-active-color: $button-hover-color !default;
 $button-disabled-opacity: 0.65 !default;
 $button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
 
