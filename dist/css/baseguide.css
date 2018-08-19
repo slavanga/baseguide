@@ -1536,7 +1536,7 @@ textarea:not([rows]) {
 input[type="radio"]:not(:only-child),
 input[type="checkbox"]:not(:only-child) {
   position: absolute;
-  margin-top: 0.3em;
+  margin-top: 0.35em;
 }
 
 input[type="radio"] ~ label,
@@ -1608,7 +1608,7 @@ input[type="file"] {
 .checkbox input[type="checkbox"] ~ label::after {
   content: '';
   position: absolute;
-  top: 0.2em;
+  top: 0.25em;
   left: 0;
   width: 1em;
   height: 1em;
