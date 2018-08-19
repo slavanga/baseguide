@@ -18,9 +18,7 @@
 }
 
 @function modular-scale($number, $base: $type-scale-base) {
-  $size: pow($type-scale, $number) * $base;
-
-  @return $size;
+  @return pow($type-scale, $number) * $base;
 }
 
 @function strip-unit($number) {
