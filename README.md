@@ -33,7 +33,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your ```<head>```:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/baseguide@3.0.1/dist/css/baseguide.min.css">
+<link rel="stylesheet" href="https://unpkg.com/baseguide@3.0.11/dist/css/baseguide.min.css">
 ```
 
 ### Package Managers
@@ -59,7 +59,7 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 
 ### Sass
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/settings/_settings.scss) file to see all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
