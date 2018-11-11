@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var log = require('fancy-log');
-var autoprefixer = require('autoprefixer');
-var browserSync = require('browser-sync').create();
-var config = {
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+const log = require('fancy-log');
+const autoprefixer = require('autoprefixer');
+const browserSync = require('browser-sync').create();
+const config = {
   'src': '',
   'dest': 'dist/',
   'minify': true,
@@ -117,7 +117,7 @@ function watch(done) {
 }
 
 
-var build = gulp.parallel(html, styles, scripts, images);
+const build = gulp.parallel(html, styles, scripts, images);
 
 gulp.task('build', build);
 gulp.task('watch', watch);
