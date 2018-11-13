@@ -59,7 +59,7 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 
 ### Sass
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/settings/_settings.scss) file to see all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
