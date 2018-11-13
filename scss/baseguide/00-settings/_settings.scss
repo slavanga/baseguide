@@ -82,7 +82,7 @@ $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
 $input-focus-border-color: darken($input-border-color, 20%) !default;
 $input-border-radius: 0.125em !default;
-$input-transition: border-color 0.15s ease-out !default;
+$input-transition: border-color 0.15s ease !default;
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
@@ -109,7 +109,7 @@ $button-hover-border-color: $button-border-color !default;
 $button-active-bg: $button-hover-bg !default;
 $button-active-color: $button-hover-color !default;
 $button-disabled-opacity: 0.65 !default;
-$button-transition: background-color 0.15s ease-out, color 0.15s ease-out !default;
+$button-transition: background-color 0.15s ease, color 0.15s ease !default;
 
 
 // Table

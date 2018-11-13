@@ -1500,7 +1500,7 @@ label {
   background-clip: padding-box;
   background-color: #fff;
   color: #333;
-  transition: border-color 0.15s ease-out;
+  transition: border-color 0.15s ease;
 }
 
 [type="email"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="url"]:focus, textarea:focus, select:focus {
@@ -1671,7 +1671,7 @@ input[type="file"] {
   display: inline-block;
   vertical-align: middle;
   padding: 0.375em 1em;
-  transition: background-color 0.15s ease-out, color 0.15s ease-out;
+  transition: background-color 0.15s ease, color 0.15s ease;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
