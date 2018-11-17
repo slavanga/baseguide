@@ -20,8 +20,10 @@
     vertical-align: bottom;
   }
 
-  tbody tr:nth-child(2n+1) {
-    background-color: $table-stripe-bg;
+  @if $table-stripe-bg {
+    tbody tr:nth-child(2n+1) {
+      background-color: $table-stripe-bg;
+    }
   }
 }
 
