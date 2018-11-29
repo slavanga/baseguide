@@ -4,7 +4,7 @@
     padding-right: 2em;
     background-repeat: no-repeat;
     background-position: right center;
-    background-position: right $input-padding-horizontal center;
+    background-position: right var(--input-padding-horizontal) center;
     background-image: url($icon-select);
   }
 }
@@ -32,8 +32,8 @@
   }
 
   ~ label::before {
-    border: 1px solid $input-border-color;
-    background-color: $input-bg;
+    border: 1px solid var(input-border-color);
+    background-color: var(input-bg);
   }
 
   ~ label::after {
@@ -43,16 +43,16 @@
 
   &:hover:not(:disabled) ~ label:hover::before,
   &:focus ~ label::before {
-    border-color: $input-focus-border-color;
+    border-color: var(input-focus-border-color);
   }
 
   &:active ~ label::before {
-    background-color: darken($input-bg, 10%);
+    background-color: var(--input-disabled-color);
   }
 
   &:disabled ~ label::before {
-    border-color: $input-disabled-border-color;
-    background-color: $input-disabled-bg;
+    border-color: var(input-disabled-border-color);
+    background-color: var(input-disabled-bg);
   }
 }
 

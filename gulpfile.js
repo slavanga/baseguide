@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
-const log = require('fancy-log');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const config = {
@@ -49,42 +48,6 @@ function stylelint() {
     .pipe(gulp.dest(config.src + 'scss'));
 }
 
-// Compile javascript
-function scripts() {
-  return gulp.src(config.src + 'js/*.js')
-    .pipe($.include().on('error', function(error) {
-      log.error(error.message);
-      this.emit('end');
-    }))
-    .pipe(gulp.dest(config.dest + 'js'))
-    .pipe(browserSync.stream())
-    .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
-    .pipe($.if(config.minify, $.uglify().on('error', function(error) {
-      log.error(error.message);
-      this.emit('end');
-    })))
-    .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
-    .pipe($.if(config.minify, $.rename({suffix: '.min'})))
-    .pipe($.if(config.minify, gulp.dest(config.dest + 'js')))
-    .pipe(browserSync.stream());
-}
-
-// Lint javascript
-function eslint() {
-  return gulp.src(config.src + 'js/**/*.js')
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-    .pipe($.eslint.failAfterError());
-}
-
-// Optimize images
-function images() {
-  return gulp.src(config.src + 'img/**/*.{gif,jpg,png,svg}')
-    .pipe($.cache($.imagemin()))
-    .pipe(gulp.dest(config.dest + 'img'))
-    .pipe(browserSync.stream());
-}
-
 // Serve compiled files
 function serve(done) {
   browserSync.init({
@@ -111,15 +74,12 @@ function serve(done) {
 function watch(done) {
   gulp.watch(config.src + '*.html', html);
   gulp.watch(config.src + 'scss/**/*.scss', styles);
-  gulp.watch(config.src + 'js/**/*.js', scripts);
-  gulp.watch(config.src + 'img/**/*.{gif,jpg,png,svg}', images);
   done();
 }
 
-
-const build = gulp.parallel(html, styles, scripts, images);
+const build = gulp.parallel(html, styles);
 
 gulp.task('build', build);
 gulp.task('watch', watch);
-gulp.task('lint', gulp.parallel(stylelint, eslint));
+gulp.task('lint', stylelint);
 gulp.task('default', gulp.series(build, gulp.parallel(serve, watch)));

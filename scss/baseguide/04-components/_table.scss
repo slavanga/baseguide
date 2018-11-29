@@ -6,8 +6,8 @@
 
   th,
   td {
-    padding: $table-padding-vertical $table-padding-horizontal;
-    border-bottom: 1px solid $table-border-color;
+    padding: var(--table-padding-vertical) var(--table-padding-horizontal);
+    border-bottom: 1px solid var(-table-border-color);
     vertical-align: top;
   }
 
@@ -20,10 +20,8 @@
     vertical-align: bottom;
   }
 
-  @if $table-stripe-bg {
-    tbody tr:nth-child(2n+1) {
-      background-color: $table-stripe-bg;
-    }
+  tbody tr:nth-child(2n+1) {
+    background-color: var(--table-stripe-bg);
   }
 }
 

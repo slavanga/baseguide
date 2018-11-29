@@ -1,10 +1,10 @@
 a {
-  color: $link-color;
-  text-decoration: $link-decoration;
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-decoration);
   }
 }

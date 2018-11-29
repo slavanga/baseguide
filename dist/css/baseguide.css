@@ -1,4 +1,63 @@
 /*! Baseguide v3.1.0 | MIT License | http://basegui.de */
+:root {
+  --font-family-base: 'Helvetica Neue', Helvetica, sans-serif;
+  --font-weight-base: 400;
+  --line-height-base: 1.5;
+  --global-bg: #fff;
+  --text-color: #333;
+  --headings-font-family: inherit;
+  --headings-font-weight: 700;
+  --headings-line-height: 1.2;
+  --headings-color: inherit;
+  --link-color: #0283f1;
+  --link-hover-color: var(--link-color);
+  --link-decoration: none;
+  --link-hover-decoration: underline;
+  --input-height: 2.375em;
+  --input-padding-vertical: 0.375em;
+  --input-padding-horizontal: 0.75em;
+  --input-bg: #fff;
+  --input-color: var(--text-color);
+  --input-border-color: #b6b6b6;
+  --input-focus-border-color: #888888;
+  --input-border-radius: 0.125em;
+  --input-transition: border-color 0.15s ease;
+  --input-disabled-bg: #eee;
+  --input-disabled-color: #555;
+  --input-disabled-border-color: #ccc;
+  --input-height: 2.375em;
+  --input-padding-vertical: 0.375em;
+  --input-padding-horizontal: 0.75em;
+  --input-bg: #fff;
+  --input-color: var(--text-color);
+  --input-border-color: #b6b6b6;
+  --input-focus-border-color: #888888;
+  --input-border-radius: 0.125em;
+  --input-transition: border-color 0.15s ease;
+  --input-disabled-bg: #eee;
+  --input-disabled-color: #555;
+  --input-disabled-border-color: #ccc;
+  --placeholder-color: #b6b6b6;
+  --button-padding-vertical: 0.375em;
+  --button-padding-horizontal: 1em;
+  --button-bg: #0275d8;
+  --button-color: #fff;
+  --button-border-width: 1px;
+  --button-border-color: transparent;
+  --button-border-radius: 0.125em;
+  --button-hover-bg: #0055a0;
+  --button-hover-color: #fff;
+  --button-hover-border-color: transparent;
+  --button-active-bg: #0055a0;
+  --button-active-color: #fff;
+  --button-disabled-opacity: 0.65;
+  --button-transition: background-color 0.15s ease, color 0.15s ease;
+  --table-padding-vertical: 0.4em;
+  --table-padding-horizontal: 0.6em;
+  --table-border-color: #dedede;
+  --table-stripe-bg: #efefef;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -408,12 +467,12 @@ hr {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #333;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  background-color: var(--global-bg);
+  color: var(--text-color);
 }
 
 blockquote,
@@ -461,12 +520,12 @@ li > ol {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.4em;
-  font-family: inherit;
-  font-weight: 700;
-  line-height: 1.2;
-  color: inherit;
+  margin-top: calc(var(--headings-spacing) * 2);
+  margin-bottom: var(--headings-spacing);
+  font-family: var(--headings-font-family);
+  font-weight: var(--headings-font-weight);
+  line-height: var(--headings-line-height);
+  color: var(--headings-color);
 }
 
 h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child, h4:first-child, .h4:first-child, h5:first-child, .h5:first-child, h6:first-child, .h6:first-child {
@@ -498,13 +557,15 @@ h6, .h6 {
 }
 
 a {
-  color: #0283f1;
-  text-decoration: none;
+  color: var(--link-color);
+  -webkit-text-decoration: var(--link-decoration);
+          text-decoration: var(--link-decoration);
 }
 
 a:hover, a:focus {
-  color: #0283f1;
-  text-decoration: underline;
+  color: var(--link-hover-color);
+  -webkit-text-decoration: var(--link-hover-decoration);
+          text-decoration: var(--link-hover-decoration);
 }
 
 @media print {
@@ -1483,7 +1544,7 @@ label {
 
 .label-inline {
   margin-top: 1px;
-  padding-top: 0.375em;
+  padding-top: var(--input-padding-vertical);
 }
 
 .form-group {
@@ -1493,25 +1554,25 @@ label {
 [type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"], textarea, select {
   display: block;
   width: 100%;
-  height: 2.375em;
-  border: 1px solid #b6b6b6;
-  border-radius: 0.125em;
-  padding: 0.375em 0.75em;
+  height: var(--input-height);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   background-clip: padding-box;
-  background-color: #fff;
-  color: #333;
-  transition: border-color 0.15s ease;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  transition: var(--input-transition);
 }
 
 [type="email"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="url"]:focus, textarea:focus, select:focus {
-  border-color: #838383;
+  border-color: var(--input-focus-border-color);
   outline: 0;
 }
 
 [type="email"]:disabled, [type="number"]:disabled, [type="password"]:disabled, [type="search"]:disabled, [type="tel"]:disabled, [type="text"]:disabled, [type="url"]:disabled, textarea:disabled, select:disabled {
-  border-color: #ccc;
-  background-color: #eee;
-  color: #555;
+  border-color: var(--input-disabled-border-color);
+  background-color: var(--input-disabled-bg);
+  color: var(--input-disabled-color);
   cursor: not-allowed;
 }
 
@@ -1537,7 +1598,7 @@ textarea[rows] {
 }
 
 textarea:not([rows]) {
-  height: 4.75em;
+  height: calc(var(--input-height) * 2);
 }
 
 input[type="radio"]:not(:only-child),
@@ -1555,7 +1616,7 @@ input[type="checkbox"] ~ label {
 
 input[type="radio"]:disabled ~ label,
 input[type="checkbox"]:disabled ~ label {
-  color: #555;
+  color: var(--input-disabled-color);
   cursor: not-allowed;
 }
 
@@ -1565,22 +1626,22 @@ input[type="file"] {
 }
 
 ::-webkit-input-placeholder {
-  color: #b3b2b2;
+  color: var(--placeholder-color);
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #b3b2b2;
+  color: var(--placeholder-color);
   opacity: 1;
 }
 
 ::-ms-input-placeholder {
-  color: #b3b2b2;
+  color: var(--placeholder-color);
   opacity: 1;
 }
 
 ::placeholder {
-  color: #b3b2b2;
+  color: var(--placeholder-color);
   opacity: 1;
 }
 
@@ -1592,7 +1653,7 @@ input[type="file"] {
     padding-right: 2em;
     background-repeat: no-repeat;
     background-position: right center;
-    background-position: right 0.75em center;
+    background-position: right var(--input-padding-horizontal) center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath fill='%23333' d='M0 0l6 6 6-6h-12z'/%3E%3C/svg%3E");
   }
 }
@@ -1623,8 +1684,8 @@ input[type="file"] {
 
 .radio input[type="radio"] ~ label::before,
 .checkbox input[type="checkbox"] ~ label::before {
-  border: 1px solid #b6b6b6;
-  background-color: #fff;
+  border: 1px solid var(input-border-color);
+  background-color: var(input-bg);
 }
 
 .radio input[type="radio"] ~ label::after,
@@ -1637,18 +1698,18 @@ input[type="file"] {
 .radio input[type="radio"]:focus ~ label::before,
 .checkbox input[type="checkbox"]:hover:not(:disabled) ~ label:hover::before,
 .checkbox input[type="checkbox"]:focus ~ label::before {
-  border-color: #838383;
+  border-color: var(input-focus-border-color);
 }
 
 .radio input[type="radio"]:active ~ label::before,
 .checkbox input[type="checkbox"]:active ~ label::before {
-  background-color: #e6e5e5;
+  background-color: var(--input-disabled-color);
 }
 
 .radio input[type="radio"]:disabled ~ label::before,
 .checkbox input[type="checkbox"]:disabled ~ label::before {
-  border-color: #ccc;
-  background-color: #eee;
+  border-color: var(input-disabled-border-color);
+  background-color: var(input-disabled-bg);
 }
 
 .radio input[type="radio"] ~ label::before {
@@ -1670,8 +1731,8 @@ input[type="file"] {
 .btn {
   display: inline-block;
   vertical-align: middle;
-  padding: 0.375em 1em;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+  transition: var(--button-transition);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -1680,27 +1741,27 @@ input[type="file"] {
       -ms-user-select: none;
           user-select: none;
   touch-action: manipulation;
-  border: 1px solid transparent;
-  border-radius: 0.125em;
-  background-color: #0275d8;
-  color: #fff;
+  border: var(--button-border-width) solid --button-border-color;
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-color);
 }
 
 .btn:hover, .btn:focus {
   outline: 0;
   text-decoration: none;
-  border-color: transparent;
-  background-color: #025aa5;
-  color: #fff;
+  border-color: var(--button-hover-border-color);
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
 }
 
 .btn:active {
-  background-color: #025aa5;
-  color: #fff;
+  background-color: var(--button-active-bg);
+  color: var(--button-active-color);
 }
 
 .btn.disabled, .btn:disabled {
-  opacity: 0.65;
+  opacity: var(--button-disabled-opacity);
   cursor: default;
   pointer-events: none;
 }
@@ -1714,8 +1775,8 @@ input[type="file"] {
 
 .table th,
 .table td {
-  padding: 0.4em 0.6em;
-  border-bottom: 1px solid #dedede;
+  padding: var(--table-padding-vertical) var(--table-padding-horizontal);
+  border-bottom: 1px solid var(-table-border-color);
   vertical-align: top;
 }
 
@@ -1729,7 +1790,7 @@ input[type="file"] {
 }
 
 .table tbody tr:nth-child(2n+1) {
-  background-color: #efefef;
+  background-color: var(--table-stripe-bg);
 }
 
 .table-responsive {

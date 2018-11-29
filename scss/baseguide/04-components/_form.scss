@@ -5,7 +5,7 @@ label {
 
 .label-inline {
   margin-top: 1px;
-  padding-top: $input-padding-vertical;
+  padding-top: var(--input-padding-vertical);
 }
 
 .form-group {
@@ -15,24 +15,24 @@ label {
 #{$input-selector} {
   display: block;
   width: 100%;
-  height: $input-height;
-  border: 1px solid $input-border-color;
-  border-radius: $input-border-radius;
-  padding: $input-padding-vertical $input-padding-horizontal;
+  height: var(--input-height);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   background-clip: padding-box; // remove shadow in iOS
-  background-color: $input-bg;
-  color: $input-color;
-  transition: $input-transition;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  transition: var(--input-transition);
 
   &:focus {
-    border-color: $input-focus-border-color;
+    border-color: var(--input-focus-border-color);
     outline: 0;
   }
 
   &:disabled {
-    border-color: $input-disabled-border-color;
-    background-color: $input-disabled-bg;
-    color: $input-disabled-color;
+    border-color: var(--input-disabled-border-color);
+    background-color: var(--input-disabled-bg);
+    color: var(--input-disabled-color);
     cursor: not-allowed;
   }
 }
@@ -59,7 +59,7 @@ textarea {
   }
 
   &:not([rows]) {
-    height: $input-height * 2;
+    height: calc(var(--input-height) * 2);
   }
 }
 
@@ -77,7 +77,7 @@ input[type="checkbox"] {
   }
 
   &:disabled ~ label {
-    color: $input-disabled-color;
+    color: var(--input-disabled-color);
     cursor: not-allowed;
   }
 }
@@ -88,6 +88,6 @@ input[type="file"] {
 }
 
 ::placeholder {
-  color: $placeholder-color;
+  color: var(--placeholder-color);
   opacity: 1;
 }

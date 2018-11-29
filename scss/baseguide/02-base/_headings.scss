@@ -1,10 +1,10 @@
 #{$headings} {
-  margin-top: $headings-spacing * 2;
-  margin-bottom: $headings-spacing;
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
+  margin-top: calc(var(--headings-spacing) * 2);
+  margin-bottom: var(--headings-spacing);
+  font-family: var(--headings-font-family);
+  font-weight: var(--headings-font-weight);
+  line-height: var(--headings-line-height);
+  color: var(--headings-color);
 
   &:first-child {
     margin-top: 0;

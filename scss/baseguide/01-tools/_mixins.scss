@@ -8,15 +8,11 @@
   color: inherit;
 }
 
-@mixin button-base(
-  $padding-vertical: $button-padding-vertical,
-  $padding-horizontal: $button-padding-horizontal,
-  $transition: $button-transition
-) {
+@mixin button-base() {
   display: inline-block;
   vertical-align: middle;
-  padding: $padding-vertical $padding-horizontal;
-  transition: $transition;
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+  transition: var(--button-transition);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -24,42 +20,31 @@
   touch-action: manipulation;
 }
 
-@mixin button-style(
-  $bg: $button-bg,
-  $color: $button-color,
-  $hover-bg: $button-hover-bg,
-  $hover-color: $button-hover-color,
-  $hover-border-color: $button-hover-border-color,
-  $active-bg: $button-active-bg,
-  $active-color: $button-active-color,
-  $border-width: $button-border-width,
-  $border-color: $button-border-color,
-  $border-radius: $button-border-radius
-) {
-  border: $border-width solid $border-color;
-  border-radius: $border-radius;
-  background-color: $bg;
-  color: $color;
+@mixin button-style() {
+  border: var(--button-border-width) solid (--button-border-color);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-color);
 
   &:hover,
   &:focus {
     outline: 0;
     text-decoration: none;
-    border-color: $hover-border-color;
-    background-color: $hover-bg;
-    color: $hover-color;
+    border-color: var(--button-hover-border-color);
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
   }
 
   &:active {
-    background-color: $active-bg;
-    color: $active-color;
+    background-color: var(--button-active-bg);
+    color: var(--button-active-color);
   }
 }
 
-@mixin button-disabled($disabled-opacity: $button-disabled-opacity) {
+@mixin button-disabled() {
   &.disabled,
   &:disabled {
-    opacity: $disabled-opacity;
+    opacity: var(--button-disabled-opacity);
     cursor: default;
     pointer-events: none;
   }

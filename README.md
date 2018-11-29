@@ -33,7 +33,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your ```<head>```:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/baseguide@3.1.0/dist/css/baseguide.min.css">
+<link rel="stylesheet" href="https://unpkg.com/baseguide@4.0.0/dist/css/baseguide.min.css">
 ```
 
 ### Package Managers
@@ -61,8 +61,10 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 Default variables can be changed before importing Baseguide.
 Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_settings.scss) file to see all variables.
 
-```scss
-$button-bg: #bada55; // 1. Customize default variables
+```css
+:root {
+  --button-bg: #bada55; // 1. Customize default variables
+}
 
 @import 'baseguide'; // 2. Import Baseguide
 
@@ -134,12 +136,10 @@ It’s a powerful tool that for example allows the generation of additional resp
 }
 ```
 
-
 ## Grid
 The grid system is responsive and follows the mobile first pattern. It offers predefined classes for quick layouts as well as powerful mixins for more semantic layouts.
 
 The number of columns is controlled by the ```$grid-columns``` variable which defaults to 12.
-
 
 ### Basic Example
 
@@ -253,9 +253,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 ### Float Fallback
 There is a float fallback to make the grid work in browsers that don’t support flexbox. This fallback can be disabled by setting ```$grid-fallback: false```.
 
-
 ## Forms
-
 ### Standard Form Controls
 All form controls listed in ```$input-selector``` get styled by default. The variable can be changed to a custom selector like ```.form-control```. This will allow you to selectively style form controls based on that selector.
 
@@ -263,16 +261,16 @@ All form controls listed in ```$input-selector``` get styled by default. The var
 The custom forms component was designed with progressive enhancement in mind.
 Browsers that support [feature queries](https://caniuse.com/#feat=css-featurequeries) and [appearance](https://caniuse.com/#feat=css-appearance) get the fully enhanced experience.
 
-
+https://caniuse.com/#search=variables
 ## Browser Support
+Browsers that support [CSS Variables (Custom Properties)](https://caniuse.com/#search=variables).
+
 * Latest stable: Chrome, Edge, Firefox
-* IE 11+
 * Safari 9+
 * Mobile Safari 9+
 * Android Browser 4.4+
 
 Baseguide uses [Autoprefixer](https://github.com/postcss/autoprefixer) to handle CSS vendor prefixes.
-
 
 ## Inspired By…
 * [Article: Styling with STRINGS](http://simurai.com/blog/2014/05/04/cssconf)
