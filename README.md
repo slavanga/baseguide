@@ -62,11 +62,11 @@ Default variables can be changed before importing Baseguide.
 Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_settings.scss) file to see all variables.
 
 ```css
-:root {
-  --button-bg: #bada55; // 1. Customize default variables
-}
+@import 'baseguide'; // 1. Import Baseguide
 
-@import 'baseguide'; // 2. Import Baseguide
+:root {
+  --button-bg: #bada55; // 2. Customize default variables
+}
 
 // 3. Add your own styles here
 ```
