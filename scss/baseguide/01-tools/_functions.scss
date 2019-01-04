@@ -72,7 +72,8 @@
 @function get-icon($icon, $color: $text-color) {
   @if(str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
-      @return str-replace(map-get($icons, $icon), '%23333', url-friendly-colour($color));
+      $replace: url-friendly-color($color);
+      @return str-replace(map-get($icons, $icon), $icon-default-color, $replace);
     }
 
     @error "Please make '#{$icon}' is defined in `$icons` map.";
