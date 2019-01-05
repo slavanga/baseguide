@@ -51,35 +51,20 @@
   @return $string;
 }
 
-@function url-friendly-color($color) {
-  @return '%23'+str-slice('#{$color}', 2, -1);
-}
+// Usage example:
+//
+// .icon {
+//   background-image: url(get-icon('radio', '#fff'));
+// }
 
-/*
-  Usage example:
-  
-  .radio input[type="radio"] {
-    ~label::before {
-      border-radius: 50%;
-    }
-
-    &:checked~label::after {
-      background-image: url(get-icon('radio', '#f0f0f0'));
-    }
-  }
-*/
-
-@function get-icon($icon, $color: $text-color) {
-  @if(str-index($color, '#') != null) {
+@function get-icon($icon, $color: $icon-color) {
+  @if (str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
-      $replace: url-friendly-color($color);
-      @return str-replace(map-get($icons, $icon), $icon-default-color, $replace);
+      @return str-replace(str-replace(map-get($icons, $icon), $icon-color, $color), '#', '%23');
     }
 
-    @error "Please make '#{$icon}' is defined in `$icons` map.";
-    @return null;
+    @error "Please make sure '#{$icon}' is defined in the $icons map.";
   }
 
-  @error "`$color` has to be HEX-code";
-  @return null;
+  @error "Please make sure '#{$color}' is a HEX value.";
 }

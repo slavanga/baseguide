@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: right center;
     background-position: right $input-padding-horizontal center;
-    background-image: url($icon-select);
+    background-image: url(get-icon('select'));
   }
 }
 
@@ -62,7 +62,7 @@
   }
 
   &:checked ~ label::after {
-    background-image: url($icon-radio);
+    background-image: url(get-icon('radio'));
   }
 }
 
@@ -72,6 +72,6 @@
   }
 
   &:checked ~ label::after {
-    background-image: url($icon-checkbox);
+    background-image: url(get-icon('checkbox'));
   }
 }
