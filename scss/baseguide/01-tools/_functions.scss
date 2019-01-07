@@ -40,3 +40,31 @@
 
   @return $value;
 }
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Usage example:
+//
+// .icon {
+//   background-image: url(get-icon('radio', '#fff'));
+// }
+
+@function get-icon($icon, $color: $icon-color) {
+  @if (str-index($color, '#') != null) {
+    @if map-has-key($icons, $icon) {
+      @return str-replace(str-replace(map-get($icons, $icon), $icon-color, $color), '#', '%23');
+    }
+
+    @error "Please make sure '#{$icon}' is defined in the $icons map.";
+  }
+
+  @error "Please make sure '#{$color}' is a HEX value.";
+}
