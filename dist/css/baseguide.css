@@ -1674,6 +1674,7 @@ input[type="file"] {
   transition: background-color 0.15s ease, color 0.15s ease;
   text-align: center;
   text-decoration: none;
+  white-space: normal;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
