@@ -45,7 +45,7 @@
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
 
   @return $string;
@@ -56,7 +56,6 @@
 // .icon {
 //   background-image: url(get-icon('radio', '#fff'));
 // }
-
 @function get-icon($icon, $color: $icon-color) {
   @if (str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
