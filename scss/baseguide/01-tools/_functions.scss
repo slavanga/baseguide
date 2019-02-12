@@ -54,12 +54,14 @@
 // Usage example:
 //
 // .icon {
-//   background-image: url(get-icon('radio', '#fff'));
+//   background-image: url(get-icon('radio', #fff));
 // }
 @function get-icon($icon, $color: $icon-color) {
+  $color: inspect($color);
+
   @if (str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
-      @return str-replace(str-replace(map-get($icons, $icon), $icon-color, $color), '#', '%23');
+      @return str-replace(str-replace(map-get($icons, $icon), inspect($icon-color), $color), '#', '%23');
     }
 
     @error "Please make sure '#{$icon}' is defined in the $icons map.";
