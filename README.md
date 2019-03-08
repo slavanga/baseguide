@@ -56,6 +56,7 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 | `gulp`            | Build files, watch for changes and start a local server using [Browsersync](https://www.browsersync.io/) |
 | `gulp build`      | Build files once                                                                                         |
 | `gulp watch`      | Watch files and build when a change occurs                                                               |
+| `gulp lint`       | Lint the scss and js source files                                                                        |
 
 ### Sass
 Default variables can be changed before importing Baseguide.
