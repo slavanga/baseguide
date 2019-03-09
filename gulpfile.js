@@ -13,7 +13,7 @@ const config = {
 
 // HTML
 function html() {
-  return gulp.src('*.html')
+  return gulp.src(config.src + '*.html')
     .pipe(browserSync.stream());
 }
 
