@@ -82,13 +82,12 @@
 
   display: flex;
   flex-wrap: wrap;
-  margin-left: $spacing * -1;
 
   @if $center {
     justify-content: center;
   }
 
-  > #{$child-selector} {
+  > #{$child-selector} & #{$child-selector} {
     margin-left: $spacing;
   }
 }
