@@ -606,8 +606,7 @@ a:hover, a:focus {
   min-width: 100%;
   min-height: 100%;
   max-width: none;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .embed-responsive {
@@ -1565,6 +1564,11 @@ input[type="file"] {
 }
 
 ::-webkit-input-placeholder {
+  color: #b3b2b2;
+  opacity: 1;
+}
+
+::-moz-placeholder {
   color: #b3b2b2;
   opacity: 1;
 }
