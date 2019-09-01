@@ -8,6 +8,15 @@ html {
   box-sizing: inherit;
 }
 
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
 canvas,
 img,
 video {
@@ -19,13 +28,8 @@ audio {
   max-width: 100%;
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+iframe {
+  border: 0;
 }
 
 button,
