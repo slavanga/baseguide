@@ -1596,7 +1596,7 @@ input[type="file"] {
     background-repeat: no-repeat;
     background-position: right center;
     background-position: right 0.75em center;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath fill='%23333' d='M0 0l6 6 6-6h-12z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8' fill='%23333'%3E%3Cpath fill='none' d='m-0.91525-1.4714h24v24h-24z'/%3E%3Cpath d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   }
 }
 
