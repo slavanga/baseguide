@@ -403,10 +403,6 @@ hr {
   opacity: 0.2;
 }
 
-[tabindex="-1"]:focus {
-  outline: none !important;
-}
-
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1rem;
