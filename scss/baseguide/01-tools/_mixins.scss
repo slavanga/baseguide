@@ -9,7 +9,8 @@
 @mixin button-base(
   $padding-vertical: $button-padding-vertical,
   $padding-horizontal: $button-padding-horizontal,
-  $transition: $button-transition
+  $transition: $button-transition,
+  $cursor-pointer: $button-cursor-pointer
 ) {
   display: inline-block;
   vertical-align: middle;
@@ -18,9 +19,12 @@
   text-align: center;
   text-decoration: none;
   white-space: normal;
-  cursor: pointer;
   user-select: none;
   touch-action: manipulation;
+
+  @if ($cursor-pointer) {
+    cursor: pointer;
+  }
 }
 
 @mixin button-style(

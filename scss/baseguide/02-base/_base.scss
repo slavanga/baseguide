@@ -51,6 +51,15 @@ fieldset {
   border: 0;
 }
 
+@if $button-cursor-pointer {
+  [type="button"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 address {
   font-style: inherit;
 }

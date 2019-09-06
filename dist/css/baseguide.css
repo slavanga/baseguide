@@ -392,6 +392,13 @@ fieldset {
   border: 0;
 }
 
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 address {
   font-style: inherit;
 }
@@ -1673,12 +1680,12 @@ input[type="file"] {
   text-align: center;
   text-decoration: none;
   white-space: normal;
-  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
   border: 1px solid transparent;
   border-radius: 0.125em;
   background-color: #0275d8;
