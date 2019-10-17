@@ -329,9 +329,9 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
-ansi-styles@^3.2.0, ansi-styles@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
+ansi-styles@^3.2.0, ansi-styles@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.2.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
   dependencies:
     color-convert "^1.9.0"
 
@@ -998,7 +998,7 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
-    ansi-styles "^3.2.1"
+    ansi-styles "^3.2.2"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
@@ -1006,7 +1006,7 @@ chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   dependencies:
-    ansi-styles "^3.2.1"
+    ansi-styles "^3.2.2"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
@@ -1724,8 +1724,8 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
     once "^1.4.0"
 
 engine.io-client@~3.2.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-3.2.1.tgz#6f54c0475de487158a1a7c77d10178708b6add36"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/engine.io-client/-/engine.io-client-3.2.2.tgz#6f54c0475de487158a1a7c77d10178708b6add36"
   dependencies:
     component-emitter "1.2.1"
     component-inherit "0.0.3"
@@ -6737,9 +6737,9 @@ xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
-y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+y18n@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
 
 yallist@^2.1.2:
   version "2.1.2"
@@ -6783,7 +6783,7 @@ yargs@6.4.0:
     string-width "^1.0.2"
     which-module "^1.0.0"
     window-size "^0.2.0"
-    y18n "^3.2.1"
+    y18n "^3.2.2"
     yargs-parser "^4.1.0"
 
 yargs@6.6.0:
@@ -6801,7 +6801,7 @@ yargs@6.6.0:
     set-blocking "^2.0.0"
     string-width "^1.0.2"
     which-module "^1.0.0"
-    y18n "^3.2.1"
+    y18n "^3.2.2"
     yargs-parser "^4.2.0"
 
 yargs@^7.0.0, yargs@^7.1.0:
@@ -6819,7 +6819,7 @@ yargs@^7.0.0, yargs@^7.1.0:
     set-blocking "^2.0.0"
     string-width "^1.0.2"
     which-module "^1.0.0"
-    y18n "^3.2.1"
+    y18n "^3.2.2"
     yargs-parser "^5.0.0"
 
 yauzl@^2.4.2:

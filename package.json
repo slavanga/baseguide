@@ -2,12 +2,6 @@
   "name": "baseguide",
   "description": "Lightweight and robust CSS framework for prototyping and production code.",
   "version": "3.2.2",
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "lint": "gulp lint"
-  },
   "keywords": [
     "css",
     "sass",
