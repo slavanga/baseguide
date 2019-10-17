@@ -59,6 +59,10 @@ $grid-gutter: 30px !default;
 $grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints)) !default;
 $grid-container-gutter: $grid-gutter !default;
 
+$grid-pull-classes: true !default;
+$grid-push-classes: true !default;
+$grid-offset-classes: true !default;
+
 
 // Form
 $input-selector: (
