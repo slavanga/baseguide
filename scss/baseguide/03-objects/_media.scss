@@ -28,15 +28,3 @@
 .media-bottom {
   align-self: flex-end;
 }
-
-.media-fullscreen {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-}
