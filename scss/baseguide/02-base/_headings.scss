@@ -9,6 +9,12 @@
   &:first-child {
     margin-top: 0;
   }
+
+  @if $spacing-reset {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @include scale-headings;
