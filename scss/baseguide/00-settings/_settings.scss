@@ -53,7 +53,6 @@ $mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
 
 
 // Grid
-$grid-fallback: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 $grid-container: map-get($mq-breakpoints, xl) !default;

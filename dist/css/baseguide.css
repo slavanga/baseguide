@@ -637,19 +637,11 @@ a:hover, a:focus {
   flex-wrap: wrap;
 }
 
-.row::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .col {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;
   position: relative;
-  min-height: 1px;
-  float: left;
 }
 
 .col-xs-pull-0 {
