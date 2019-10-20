@@ -251,9 +251,6 @@ The grid mixins can be used to create custom containers, rows and columns.
 </div>
 ```
 
-### Float Fallback
-There is a float fallback to make the grid work in browsers that don’t support flexbox. This fallback can be disabled by setting ```$grid-fallback: false```.
-
 
 ## Forms
 
