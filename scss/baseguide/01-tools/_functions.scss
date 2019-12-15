@@ -61,11 +61,21 @@
 
   @if (str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
-      @return str-replace(str-replace(map-get($icons, $icon), inspect($icon-color), $color), '#', '%23');
-    }
+      $icon: 'data:image/svg+xml;charset=utf8,' + map-get($icons, $icon);
 
-    @error "Please make sure '#{$icon}' is defined in the $icons map.";
+      @each $char, $encoded in ( ('<', '%3C'), ('>', '%3E'), ('#', '%23'), ('"', "'") ) {
+        $icon: str-replace($icon, $char, $encoded);
+      }
+
+      $icon: str-replace($icon, inspect($icon-color), $color);
+    }
+    @else {
+      @error "Please make sure '#{$icon}' is defined in the $icons map.";
+    }
+  }
+  @else {
+    @error "Please make sure '#{$color}' is a HEX value.";
   }
 
-  @error "Please make sure '#{$color}' is a HEX value.";
+  @return $icon;
 }
