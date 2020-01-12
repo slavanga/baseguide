@@ -56,9 +56,11 @@ function scripts() {
       log.error(error.message);
       this.emit('end');
     }))
+    .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
+    .pipe($.babel())
+    .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + 'js'))
     .pipe(browserSync.stream())
-    .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
     .pipe($.if(config.minify, $.uglify().on('error', function(error) {
       log.error(error.message);
       this.emit('end');
