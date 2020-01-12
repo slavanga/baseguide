@@ -68,7 +68,7 @@
 
 .checkbox input[type="checkbox"] {
   ~ label::before {
-    border-radius: 0.125em;
+    border-radius: $checkbox-border-radius;
   }
 
   &:checked ~ label::after {

@@ -89,6 +89,8 @@ $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
 
+$checkbox-border-radius: $input-border-radius !default;
+
 $placeholder-color: lighten($input-color, 50%) !default;
 
 
