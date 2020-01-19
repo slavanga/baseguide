@@ -18,6 +18,7 @@
       "ignore": ["consecutive-duplicates-with-different-values"]
     }],
     "max-empty-lines": 2,
+    "length-zero-no-unit": null,
     "no-descending-specificity": null
   }
 }
