@@ -173,13 +173,32 @@
 
 
 // scale headings using modular scale
-@mixin scale-headings($max-scale: 5, $base: $type-scale-base) {
-  @each $heading in $headings {
-    #{$heading} {
-      font-size: modular-scale($max-scale, $base);
-    }
+@mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
+  @if (type-of($scale) == 'map') {
+    @each $breakpoint, $size in $scale {
+      $max-scale: 0;
 
-    $max-scale: $max-scale - 1;
+      @include mq($breakpoint) {
+        @each $heading in $headings {
+          #{$heading} {
+            font-size: to-rem(modular-scale($max-scale, $size));
+          }
+
+          $max-scale: $max-scale + 1;
+        }
+      }
+    }
+  }
+  @else {
+    $max-scale: 0;
+
+    @each $heading in $headings {
+      #{$heading} {
+        font-size: to-rem(modular-scale($max-scale, $scale));
+      }
+
+      $max-scale: $max-scale + 1;
+    }
   }
 }
 
