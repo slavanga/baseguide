@@ -17,8 +17,9 @@
     "declaration-block-no-duplicate-properties": [true, {
       "ignore": ["consecutive-duplicates-with-different-values"]
     }],
-    "max-empty-lines": 2,
     "length-zero-no-unit": null,
-    "no-descending-specificity": null
+    "max-empty-lines": 2,
+    "no-descending-specificity": null,
+    "value-keyword-case": null
   }
 }
