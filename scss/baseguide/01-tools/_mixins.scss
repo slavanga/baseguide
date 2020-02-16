@@ -176,29 +176,27 @@
 @mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
   @if (type-of($scale) == 'map') {
     @each $breakpoint, $size in $scale {
-      $max-scale: 0;
-
       @include mq($breakpoint) {
-        @each $heading in $headings {
-          #{$heading} {
-            font-size: to-rem(modular-scale($max-scale, $size));
-          }
-
-          $max-scale: $max-scale + 1;
-        }
+        @include loop-headings($size);
       }
     }
   }
   @else {
-    $max-scale: 0;
+    @include loop-headings($scale);
+  }
+}
 
-    @each $heading in $headings {
-      #{$heading} {
-        font-size: to-rem(modular-scale($max-scale, $scale));
-      }
 
-      $max-scale: $max-scale + 1;
+// helper mixin for scale-headings
+@mixin loop-headings($size) {
+  $max-scale: 0;
+
+  @each $heading in $headings {
+    #{$heading} {
+      font-size: to-rem(modular-scale($max-scale, $size));
     }
+
+    $max-scale: $max-scale + 1;
   }
 }
 

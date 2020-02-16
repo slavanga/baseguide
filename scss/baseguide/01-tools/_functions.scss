@@ -17,7 +17,7 @@
   @return $return;
 }
 
-@function modular-scale($exp, $size) {
+@function modular-scale($exp, $size, $type-scale: $type-scale) {
   @return pow($type-scale, $exp) * $size;
 }
 
