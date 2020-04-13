@@ -295,3 +295,23 @@
     }
   }
 }
+
+@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
+  @if ($prop and type-of($sizes) == 'list') {
+    $breakpoints: map-values($breakpoints);
+    $min-breakpoint: nth($breakpoints, 1);
+    $max-breakpoint: nth($breakpoints, length($breakpoints));
+    $min-size: nth($sizes, 1);
+    $max-size: nth($sizes, length($sizes));
+
+    #{$prop}: $min-size;
+
+    @include mq($min-breakpoint) {
+      #{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint)}) / #{strip-unit(to-rem($max-breakpoint) - to-rem($min-breakpoint))});
+    }
+
+    @include mq($max-breakpoint) {
+      #{$prop}: $max-size;
+    }
+  }
+}
