@@ -1563,11 +1563,6 @@ input[type="file"] {
   opacity: 1;
 }
 
-::-ms-input-placeholder {
-  color: #b3b2b2;
-  opacity: 1;
-}
-
 ::placeholder {
   color: #b3b2b2;
   opacity: 1;
