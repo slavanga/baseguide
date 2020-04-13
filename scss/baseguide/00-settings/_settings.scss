@@ -50,8 +50,8 @@ $mq-breakpoints: (
 ) !default;
 
 $fluid-breakpoints: (
-  min: 400px,
-  max: 1200px
+  min: map-get($mq-breakpoints, sm),
+  max: map-get($mq-breakpoints, xl)
 ) !default;
 
 $mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
