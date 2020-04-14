@@ -296,6 +296,12 @@
   }
 }
 
+
+// Usage example:
+//
+// body {
+//  @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
+// }
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
   @if ($prop and type-of($sizes) == 'list') {
     $breakpoints: map-values($breakpoints);
