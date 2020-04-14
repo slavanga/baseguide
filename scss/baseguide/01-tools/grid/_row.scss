@@ -1,10 +1,6 @@
 @mixin row($gutter: $grid-gutter) {
   @include make-gutters($gutter, 'outer');
 
-  @if $grid-fallback {
-    @include clearfix;
-  }
-
   display: flex;
   flex-wrap: wrap;
 }

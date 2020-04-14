@@ -19,8 +19,8 @@ $spacers: (
 
 // Headings
 $headings: (
-  'h1, .h1', 'h2, .h2', 'h3, .h3',
-  'h4, .h4', 'h5, .h5', 'h6, .h6'
+  'h6, .h6', 'h5, .h5', 'h4, .h4',
+  'h3, .h3', 'h2, .h2', 'h1, .h1'
 ) !default;
 
 $headings-spacing: 0.4em !default;
@@ -42,21 +42,25 @@ $link-hover-decoration: underline !default;
 
 // Breakpoints
 $mq-breakpoints: (
-  xs: 0,
+  xs: 0px,
   sm: 400px,
   md: 680px,
   lg: 960px,
   xl: 1200px
 ) !default;
 
-$mq-static-breakpoint: nth(map-keys($mq-breakpoints), length($mq-breakpoints)) !default;
+$fluid-breakpoints: (
+  min: map-get($mq-breakpoints, sm),
+  max: map-get($mq-breakpoints, xl)
+) !default;
+
+$mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
 
 
 // Grid
-$grid-fallback: true !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
-$grid-container: nth(map-values($mq-breakpoints), length($mq-breakpoints)) !default;
+$grid-container: map-get($mq-breakpoints, xl) !default;
 $grid-container-gutter: $grid-gutter !default;
 
 $grid-pull-classes: true !default;
@@ -90,15 +94,17 @@ $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
 
+$checkbox-border-radius: $input-border-radius !default;
+
 $placeholder-color: lighten($input-color, 50%) !default;
 
 
 // Icons
 $icon-color: #333 !default;
 
-$icon-radio: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='#{$icon-color}' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E" !default;
-$icon-checkbox: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='#{$icon-color}' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E" !default;
-$icon-select: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8' fill='#{$icon-color}'%3E%3Cpath fill='none' d='m-0.91525-1.4714h24v24h-24z'/%3E%3Cpath d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E" !default;
+$icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
+$icon-checkbox: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>' !default;
+$icon-select: '<svg xmlns="http://www.w3.org/2000/svg" height="8" width="12" viewBox="0 0 12 8"><path fill="#{$icon-color}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>' !default;
 
 $icons: (
   radio: $icon-radio,

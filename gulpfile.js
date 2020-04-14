@@ -56,9 +56,11 @@ function scripts() {
       log.error(error.message);
       this.emit('end');
     }))
+    .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
+    .pipe($.babel())
+    .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + 'js'))
     .pipe(browserSync.stream())
-    .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
     .pipe($.if(config.minify, $.uglify().on('error', function(error) {
       log.error(error.message);
       this.emit('end');
@@ -119,7 +121,7 @@ function watch(done) {
 
 const build = gulp.parallel(html, styles, scripts, images);
 
-gulp.task('build', build);
-gulp.task('watch', watch);
-gulp.task('lint', gulp.parallel(stylelint, eslint));
-gulp.task('default', gulp.series(build, gulp.parallel(serve, watch)));
+exports.build = build;
+exports.watch = watch;
+exports.lint = gulp.parallel(stylelint, eslint);
+exports.default = gulp.series(build, gulp.parallel(serve, watch));

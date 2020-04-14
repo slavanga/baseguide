@@ -154,12 +154,13 @@
 
 
 // beautiful underline
-@mixin underline($color: currentColor, $distance: 100%, $size: 1px) {
-  text-decoration: none;
+@mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) {
+  padding-bottom: $distance;
   background-image: linear-gradient($color, $color);
-  background-position: 0 $distance;
-  background-size: 1px $size;
-  background-repeat: repeat-x;
+  background-size: $width $height;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  text-decoration: none;
 }
 
 
@@ -172,13 +173,30 @@
 
 
 // scale headings using modular scale
-@mixin scale-headings($max-scale: 5, $base: $type-scale-base) {
+@mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
+  @if (type-of($scale) == 'map') {
+    @each $breakpoint, $size in $scale {
+      @include mq($breakpoint) {
+        @include loop-headings($size);
+      }
+    }
+  }
+  @else {
+    @include loop-headings($scale);
+  }
+}
+
+
+// helper mixin for scale-headings
+@mixin loop-headings($size) {
+  $max-scale: 0;
+
   @each $heading in $headings {
     #{$heading} {
-      font-size: modular-scale($max-scale, $base);
+      font-size: to-rem(modular-scale($max-scale, $size));
     }
 
-    $max-scale: $max-scale - 1;
+    $max-scale: $max-scale + 1;
   }
 }
 
@@ -274,6 +292,32 @@
     }
     @else {
       @content;
+    }
+  }
+}
+
+
+// Usage example:
+//
+// body {
+//  @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
+// }
+@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
+  @if ($prop and type-of($sizes) == 'list') {
+    $breakpoints: map-values($breakpoints);
+    $min-breakpoint: nth($breakpoints, 1);
+    $max-breakpoint: nth($breakpoints, length($breakpoints));
+    $min-size: nth($sizes, 1);
+    $max-size: nth($sizes, length($sizes));
+
+    #{$prop}: $min-size;
+
+    @include mq($min-breakpoint) {
+      #{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint)}) / #{strip-unit(to-rem($max-breakpoint) - to-rem($min-breakpoint))});
+    }
+
+    @include mq($max-breakpoint) {
+      #{$prop}: $max-size;
     }
   }
 }

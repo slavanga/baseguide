@@ -1,4 +1,4 @@
-/*! Baseguide v3.3.0 | MIT License | http://basegui.de */
+/*! Baseguide v4.0.0 | MIT License | http://basegui.de */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -462,7 +462,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   font-family: inherit;
@@ -471,32 +471,36 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: inherit;
 }
 
-h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child, h4:first-child, .h4:first-child, h5:first-child, .h5:first-child, h6:first-child, .h6:first-child {
+h6:first-child, .h6:first-child, h5:first-child, .h5:first-child, h4:first-child, .h4:first-child, h3:first-child, .h3:first-child, h2:first-child, .h2:first-child, h1:first-child, .h1:first-child {
   margin-top: 0;
 }
 
-h1, .h1 {
-  font-size: 3.05175781rem;
+h6:last-child, .h6:last-child, h5:last-child, .h5:last-child, h4:last-child, .h4:last-child, h3:last-child, .h3:last-child, h2:last-child, .h2:last-child, h1:last-child, .h1:last-child {
+  margin-bottom: 0;
 }
 
-h2, .h2 {
-  font-size: 2.44140625rem;
-}
-
-h3, .h3 {
-  font-size: 1.953125rem;
-}
-
-h4, .h4 {
-  font-size: 1.5625rem;
+h6, .h6 {
+  font-size: 1rem;
 }
 
 h5, .h5 {
   font-size: 1.25rem;
 }
 
-h6, .h6 {
-  font-size: 1rem;
+h4, .h4 {
+  font-size: 1.5625rem;
+}
+
+h3, .h3 {
+  font-size: 1.953125rem;
+}
+
+h2, .h2 {
+  font-size: 2.44140625rem;
+}
+
+h1, .h1 {
+  font-size: 3.05175781rem;
 }
 
 a {
@@ -599,18 +603,6 @@ a:hover, a:focus {
   align-self: flex-end;
 }
 
-.media-fullscreen {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-}
-
 .embed-responsive {
   position: relative;
   overflow: hidden;
@@ -649,19 +641,11 @@ a:hover, a:focus {
   flex-wrap: wrap;
 }
 
-.row::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .col {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;
   position: relative;
-  min-height: 1px;
-  float: left;
 }
 
 .col-xs-pull-0 {
@@ -1579,11 +1563,6 @@ input[type="file"] {
   opacity: 1;
 }
 
-::-ms-input-placeholder {
-  color: #b3b2b2;
-  opacity: 1;
-}
-
 ::placeholder {
   color: #b3b2b2;
   opacity: 1;
@@ -1598,7 +1577,7 @@ input[type="file"] {
     background-repeat: no-repeat;
     background-position: right center;
     background-position: right 0.75em center;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8' fill='%23333'%3E%3Cpath fill='none' d='m-0.91525-1.4714h24v24h-24z'/%3E%3Cpath d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   }
 }
 
