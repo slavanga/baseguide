@@ -34,7 +34,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your ```<head>```:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/baseguide@3.3.0/dist/css/baseguide.min.css">
+<link rel="stylesheet" href="https://unpkg.com/baseguide@4.0.0/dist/css/baseguide.min.css">
 ```
 
 ### Package Managers
