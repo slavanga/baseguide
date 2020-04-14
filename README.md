@@ -16,6 +16,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [Breakpoints](#breakpoints)
 * [Grid](#grid)
 * [Forms](#forms)
+* [Typography](#typography)
 * [Browser Support](#browser-support)
 * [Inspired By](#inspired-by)
 * [License](#license)
@@ -260,6 +261,21 @@ All form controls listed in ```$input-selector``` get styled by default. The var
 ### Custom Form Controls
 The custom forms component was designed with progressive enhancement in mind.
 Browsers that support [feature queries](https://caniuse.com/#feat=css-featurequeries) and [appearance](https://caniuse.com/#feat=css-appearance) get the fully enhanced experience.
+
+
+## Typography
+
+### Headings
+The value for ```$type-scale-base``` defines the smallest heading (h6). From there the remaining heading font sizes are calculated using the ```$type-scale```. Major Third (1.25) is the default type scale. Check [type-scale.com](https://type-scale.com/) for more scales.
+
+By using a map for ```$type-scale-base``` you can scale all headings up or down in harmony on a specific breakpoint.
+
+```scss
+$type-scale-base: (
+  xs: $font-size-base,
+  md: $font-size-base * 2
+);
+```
 
 
 ## Browser Support
