@@ -16,7 +16,7 @@ label {
   display: block;
   width: 100%;
   height: $input-height;
-  border: 1px solid $input-border-color;
+  border: $input-border-width solid $input-border-color;
   border-radius: $input-border-radius;
   padding: $input-padding-vertical $input-padding-horizontal;
   background-clip: padding-box; // remove shadow in iOS
