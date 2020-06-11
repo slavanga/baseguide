@@ -1548,11 +1548,6 @@ input[type="file"] {
   max-width: 100%;
 }
 
-::-webkit-input-placeholder {
-  color: #b3b2b2;
-  opacity: 1;
-}
-
 ::-moz-placeholder {
   color: #b3b2b2;
   opacity: 1;
