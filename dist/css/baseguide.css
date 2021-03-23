@@ -852,7 +852,7 @@ a:hover, a:focus {
   left: 100%;
 }
 
-@media (min-width: 25em) {
+@media (min-width: 23.4375em) {
   .col-sm-pull-0 {
     right: auto;
   }
@@ -1728,13 +1728,13 @@ input[type="file"] {
   margin-bottom: 0 !important;
 }
 
-@media (max-width: 24.99em) {
+@media (max-width: 23.4275em) {
   .nospace-xs {
     margin-bottom: 0 !important;
   }
 }
 
-@media (min-width: 25em) and (max-width: 42.49em) {
+@media (min-width: 23.4375em) and (max-width: 42.49em) {
   .nospace-sm {
     margin-bottom: 0 !important;
   }
@@ -1762,7 +1762,7 @@ input[type="file"] {
   margin-bottom: 0 !important;
 }
 
-@media (min-width: 25em) {
+@media (min-width: 23.4375em) {
   .nospace-sm-up {
     margin-bottom: 0 !important;
   }
@@ -1784,13 +1784,13 @@ input[type="file"] {
   margin-bottom: 1.875rem !important;
 }
 
-@media (max-width: 24.99em) {
+@media (max-width: 23.4275em) {
   .space-xs {
     margin-bottom: 1.875rem !important;
   }
 }
 
-@media (min-width: 25em) and (max-width: 42.49em) {
+@media (min-width: 23.4375em) and (max-width: 42.49em) {
   .space-sm {
     margin-bottom: 1.875rem !important;
   }
@@ -1818,7 +1818,7 @@ input[type="file"] {
   margin-bottom: 1.875rem !important;
 }
 
-@media (min-width: 25em) {
+@media (min-width: 23.4375em) {
   .space-sm-up {
     margin-bottom: 1.875rem !important;
   }
@@ -1940,7 +1940,7 @@ input[type="file"] {
   display: none !important;
 }
 
-@media (max-width: 24.99em) {
+@media (max-width: 23.4275em) {
   .hidden-xs {
     display: none !important;
   }
@@ -1949,7 +1949,7 @@ input[type="file"] {
   }
 }
 
-@media (min-width: 25em) and (max-width: 42.49em) {
+@media (min-width: 23.4375em) and (max-width: 42.49em) {
   .hidden-sm {
     display: none !important;
   }
@@ -1985,7 +1985,7 @@ input[type="file"] {
   }
 }
 
-@media (min-width: 25em) {
+@media (min-width: 23.4375em) {
   .hidden-sm-up {
     display: none !important;
   }
