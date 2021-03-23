@@ -300,15 +300,15 @@
 // Usage example:
 //
 // body {
-//  @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
+//   @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
 // }
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
   @if ($prop and type-of($sizes) == 'list') {
     $breakpoints: map-values($breakpoints);
     $min-breakpoint: nth($breakpoints, 1);
     $max-breakpoint: nth($breakpoints, length($breakpoints));
-    $min-size: nth($sizes, 1);
-    $max-size: nth($sizes, length($sizes));
+    $min-size: to-rem(nth($sizes, 1));
+    $max-size: to-rem(nth($sizes, length($sizes)));
 
     #{$prop}: $min-size;
 
