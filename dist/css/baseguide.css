@@ -379,7 +379,8 @@ optgroup,
 select,
 textarea {
   font: inherit;
-  line-height: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
 }
 
 optgroup {
