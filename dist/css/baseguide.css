@@ -1694,9 +1694,6 @@ label {
   cursor: not-allowed;
 }
 
-select {
-  overflow-x: hidden;
-}
 select:focus::-ms-value {
   background: transparent;
   color: currentColor;
