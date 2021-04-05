@@ -120,7 +120,11 @@ $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
 $button-border-width: 1px !default;
 $button-border-radius: 0.125em !default;
-$button-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !default;
+$button-transition:
+  background-color 0.15s ease,
+  color 0.15s ease,
+  border-color 0.15s ease,
+  box-shadow 0.15s ease !default;
 $button-cursor-pointer: true !default;
 
 // Button Variations
@@ -128,14 +132,11 @@ $button-variations: (
   $button-selector: (
     background-color: #0275d8,
     color: #fff,
-    border-color: transparent,
     hover: (
-      background-color: darken(#0275d8, 10%),
-      color: #fff,
+      background-color: darken(#0275d8, 5%)
     ),
     focus: (
-      background-color: darken(#0275d8, 10%),
-      color: #fff,
+      background-color: darken(#0275d8, 10%)
     ),
     disabled: (
       opacity: 0.65

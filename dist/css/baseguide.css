@@ -1829,7 +1829,7 @@ input[type=file] {
   padding: 0.375em 1em;
   border: 1px solid transparent;
   border-radius: 0.125em;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   text-align: center;
   text-decoration: none;
   white-space: normal;
@@ -1844,8 +1844,7 @@ input[type=file] {
   outline: 0;
   text-decoration: none;
 }
-.btn:disabled,
-.btn .disabled {
+.btn:disabled, .btn.disabled {
   cursor: default;
   pointer-events: none;
 }
@@ -1853,18 +1852,14 @@ input[type=file] {
 .btn {
   background-color: #0275d8;
   color: #fff;
-  border-color: transparent;
 }
 .btn:hover {
-  background-color: #025aa5;
-  color: #fff;
+  background-color: #0267bf;
 }
 .btn:focus {
   background-color: #025aa5;
-  color: #fff;
 }
-.btn:disabled,
-.btn .disabled {
+.btn:disabled, .btn.disabled {
   opacity: 0.65;
 }
 

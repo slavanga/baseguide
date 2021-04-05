@@ -260,7 +260,7 @@
     }
     @else if ($key == 'disabled') {
       &:disabled,
-      .disabled {
+      &.disabled {
         @each $disabled-key, $disabled-value in $value {
           #{$disabled-key}: $disabled-value;
         }
