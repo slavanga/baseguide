@@ -1,24 +1,7 @@
-@function pow($number, $exp) {
-  $return: 1;
-
-  @if $exp > 0 {
-    // If the exponent is positive then multiply it
-    @for $i from 1 through $exp {
-      $return: $return * $number;
-    }
-  }
-  @else if $exp < 0 {
-    // If the number is 0 or negative then divide it
-    @for $i from 1 through -$exp {
-      $return: $return / $number;
-    }
-  }
-
-  @return $return;
-}
+@use 'sass:math';
 
 @function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) {
-  @return pow($type-scale, $exp) * $size;
+  @return math.pow($type-scale, $exp) * $size;
 }
 
 @function strip-unit($number) {
