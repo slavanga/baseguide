@@ -1701,6 +1701,9 @@ select:focus::-ms-value {
   background: transparent;
   color: currentColor;
 }
+select:disabled {
+  opacity: 1;
+}
 select[multiple], select[size] {
   height: auto;
 }

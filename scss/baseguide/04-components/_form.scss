@@ -45,6 +45,11 @@ select {
     color: currentColor;
   }
 
+  // Undo opacity in Chrome
+  &:disabled {
+    opacity: 1;
+  }
+
   &[multiple],
   &[size] {
     height: auto;
