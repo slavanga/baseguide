@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const log = require('fancy-log');
+const fibers = require('fibers');
+const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const config = {
@@ -9,6 +11,8 @@ const config = {
   'minify': true,
   'sourcemaps': false
 };
+
+sass.compiler = require('sass');
 
 
 // HTML
@@ -21,10 +25,11 @@ function html() {
 function styles() {
   return gulp.src(config.src + 'scss/*.scss')
     .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
-    .pipe($.sass({
+    .pipe(sass({
       precision: 8,
-      outputStyle: 'expanded'
-    }).on('error', $.sass.logError))
+      outputStyle: 'expanded',
+      fiber: fibers
+    }).on('error', sass.logError))
     .pipe($.postcss([
       autoprefixer()
     ]))
