@@ -43,8 +43,9 @@
     "stylelint-config-standard": "^21.0.0"
   },
   "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "firefox esr"
+    "> 0.5%",
+    "last 2 major versions",
+    "Firefox ESR",
+    "not dead"
   ]
 }
