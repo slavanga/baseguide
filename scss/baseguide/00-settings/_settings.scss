@@ -114,23 +114,34 @@ $icons: (
 ) !default;
 
 
-// Button
+// Button Base
 $button-selector: '.btn' !default;
 $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
-$button-bg: #0275d8 !default;
-$button-color: #fff !default;
 $button-border-width: 1px !default;
-$button-border-color: transparent !default;
 $button-border-radius: 0.125em !default;
-$button-hover-bg: darken($button-bg, 10%) !default;
-$button-hover-color: #fff !default;
-$button-hover-border-color: $button-border-color !default;
-$button-active-bg: $button-hover-bg !default;
-$button-active-color: $button-hover-color !default;
-$button-disabled-opacity: 0.65 !default;
-$button-transition: background-color 0.15s ease, color 0.15s ease !default;
+$button-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !default;
 $button-cursor-pointer: true !default;
+
+// Button Variations
+$button-variations: (
+  $button-selector: (
+    background-color: #0275d8,
+    color: #fff,
+    border-color: transparent,
+    hover: (
+      background-color: darken(#0275d8, 10%),
+      color: #fff,
+    ),
+    focus: (
+      background-color: darken(#0275d8, 10%),
+      color: #fff,
+    ),
+    disabled: (
+      opacity: 0.65
+    )
+  )
+) !default;
 
 
 // Table

@@ -1,0 +1,76 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin button-unstyled {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+@mixin button-base(
+  $padding-vertical: $button-padding-vertical,
+  $padding-horizontal: $button-padding-horizontal,
+  $border-width: $button-border-width,
+  $border-radius: $button-border-radius,
+  $transition: $button-transition,
+  $cursor-pointer: $button-cursor-pointer
+) {
+  display: inline-block;
+  vertical-align: middle;
+  padding: $padding-vertical $padding-horizontal;
+  border: $border-width solid transparent;
+  border-radius: $border-radius;
+  transition: $transition;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  user-select: none;
+  touch-action: manipulation;
+
+  @if ($cursor-pointer) {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &:disabled,
+  .disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+@mixin config-variation($config, $variation) {
+  @each $key, $value in map.get($config, $variation) {
+    @if (list.index(('hover', 'focus', 'active'), $key)) {
+      &:#{$key} {
+        @each $pseudo-key, $pseudo-value in $value {
+          #{$pseudo-key}: $pseudo-value;
+        }
+      }
+    }
+    @else if (list.index(('before', 'after'), $key)) {
+      &::#{$key} {
+        @each $pseudo-key, $pseudo-value in $value {
+          #{$pseudo-key}: $pseudo-value;
+        }
+      }
+    }
+    @else if ($key == 'disabled') {
+      &:disabled,
+      .disabled {
+        @each $disabled-key, $disabled-value in $value {
+          #{$disabled-key}: $disabled-value;
+        }
+      }
+    }
+    @else {
+      #{$key}: $value;
+    }
+  }
+}

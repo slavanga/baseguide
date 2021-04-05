@@ -1827,7 +1827,9 @@ input[type=file] {
   display: inline-block;
   vertical-align: middle;
   padding: 0.375em 1em;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  border: 1px solid transparent;
+  border-radius: 0.125em;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   text-align: center;
   text-decoration: none;
   white-space: normal;
@@ -1837,26 +1839,33 @@ input[type=file] {
           user-select: none;
   touch-action: manipulation;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 0.125em;
-  background-color: #0275d8;
-  color: #fff;
 }
 .btn:hover, .btn:focus {
   outline: 0;
   text-decoration: none;
-  border-color: transparent;
-  background-color: #025aa5;
-  color: #fff;
 }
-.btn:active {
-  background-color: #025aa5;
-  color: #fff;
-}
-.btn.disabled, .btn:disabled {
-  opacity: 0.65;
+.btn:disabled,
+.btn .disabled {
   cursor: default;
   pointer-events: none;
+}
+
+.btn {
+  background-color: #0275d8;
+  color: #fff;
+  border-color: transparent;
+}
+.btn:hover {
+  background-color: #025aa5;
+  color: #fff;
+}
+.btn:focus {
+  background-color: #025aa5;
+  color: #fff;
+}
+.btn:disabled,
+.btn .disabled {
+  opacity: 0.65;
 }
 
 .table {
