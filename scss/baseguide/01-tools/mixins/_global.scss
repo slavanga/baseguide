@@ -1,24 +1,5 @@
-// list
-@mixin list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-@mixin list-inline($spacing: 1rem, $center: false, $child-selector: 'li') {
-  @include list-unstyled;
-
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: $spacing * -1;
-
-  @if $center {
-    justify-content: center;
-  }
-
-  > #{$child-selector} {
-    margin-left: $spacing;
-  }
-}
+@use 'sass:list';
+@use 'sass:map';
 
 
 // clearfix
@@ -121,6 +102,20 @@
 
     $max-scale: $max-scale + 1;
   }
+}
+
+
+// accessible fade in and fade out transitions
+@mixin fade-in($duration: 0.15s) {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity $duration;
+}
+
+@mixin fade-out($duration: 0.15s) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear $duration, opacity $duration;
 }
 
 
@@ -241,6 +236,38 @@
 
     @include mq($max-breakpoint) {
       #{$prop}: $max-size;
+    }
+  }
+}
+
+
+// Config variation (e.g for buttons)
+@mixin config-variation($config, $variation) {
+  @each $key, $value in map.get($config, $variation) {
+    @if (list.index(('hover', 'focus', 'active'), $key)) {
+      &:#{$key} {
+        @each $pseudo-key, $pseudo-value in $value {
+          #{$pseudo-key}: $pseudo-value;
+        }
+      }
+    }
+    @else if (list.index(('before', 'after'), $key)) {
+      &::#{$key} {
+        @each $pseudo-key, $pseudo-value in $value {
+          #{$pseudo-key}: $pseudo-value;
+        }
+      }
+    }
+    @else if ($key == 'disabled') {
+      &:disabled,
+      .disabled {
+        @each $disabled-key, $disabled-value in $value {
+          #{$disabled-key}: $disabled-value;
+        }
+      }
+    }
+    @else {
+      #{$key}: $value;
     }
   }
 }

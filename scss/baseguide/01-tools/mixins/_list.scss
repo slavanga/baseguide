@@ -1,0 +1,20 @@
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin list-inline($spacing: 1rem, $center: false, $child-selector: 'li') {
+  @include list-unstyled;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $spacing * -1;
+
+  @if $center {
+    justify-content: center;
+  }
+
+  > #{$child-selector} {
+    margin-left: $spacing;
+  }
+}

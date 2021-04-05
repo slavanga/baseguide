@@ -1,6 +1,3 @@
-@use 'sass:list';
-@use 'sass:map';
-
 @mixin button-unstyled {
   border: 0;
   padding: 0;
@@ -42,35 +39,5 @@
   .disabled {
     cursor: default;
     pointer-events: none;
-  }
-}
-
-@mixin config-variation($config, $variation) {
-  @each $key, $value in map.get($config, $variation) {
-    @if (list.index(('hover', 'focus', 'active'), $key)) {
-      &:#{$key} {
-        @each $pseudo-key, $pseudo-value in $value {
-          #{$pseudo-key}: $pseudo-value;
-        }
-      }
-    }
-    @else if (list.index(('before', 'after'), $key)) {
-      &::#{$key} {
-        @each $pseudo-key, $pseudo-value in $value {
-          #{$pseudo-key}: $pseudo-value;
-        }
-      }
-    }
-    @else if ($key == 'disabled') {
-      &:disabled,
-      .disabled {
-        @each $disabled-key, $disabled-value in $value {
-          #{$disabled-key}: $disabled-value;
-        }
-      }
-    }
-    @else {
-      #{$key}: $value;
-    }
   }
 }
