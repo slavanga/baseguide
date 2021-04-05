@@ -53,11 +53,13 @@ fieldset {
 }
 
 @if $button-cursor-pointer {
-  [type="button"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  button:not(:disabled) {
-    cursor: pointer;
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  button {
+    &:not(:disabled) {
+      cursor: pointer;
+    }
   }
 }
 
