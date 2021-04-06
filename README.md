@@ -15,6 +15,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [Development](#development)
 * [Breakpoints](#breakpoints)
 * [Grid](#grid)
+* [Buttons](#buttons)
 * [Forms](#forms)
 * [Typography](#typography)
 * [Browser Support](#browser-support)
@@ -251,6 +252,45 @@ The grid mixins can be used to create custom containers, rows and columns.
   </div>
 </div>
 ```
+
+## Buttons
+Buttons consist of base styles and variations. Both can be configured in the settings. It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
+
+An advanced button variations config could look like this:
+
+```scss
+$button-variations: (
+  #{$button-selector}: (
+    hover: (
+      background-color: darken($color-primary, 5%)
+    ),
+    focus: (
+      background-color: darken($color-primary, 10%),
+      box-shadow: 0 0 0 0.188rem transparentize($color-primary, 0.5)
+    ),
+    disabled: (
+      opacity: 0.65
+    )
+  ),
+  #{$button-selector}--default: (
+    background-color: $color-primary,
+    color: #fff,
+  ),
+  #{$button-selector}--ghost: (
+    background-color: transparent,
+    color: $color-primary,
+    border-color: $color-primary,
+    hover: (
+      color: #fff
+    ),
+    focus: (
+      color: #fff
+    ),
+  )
+);
+```
+
+You can also just use the base button styles and define variations on your own. Just leave the ```$button-variations``` map empty to do so.
 
 
 ## Forms
