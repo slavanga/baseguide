@@ -1675,16 +1675,18 @@ label {
   display: block;
   width: 100%;
   height: 2.375em;
+  padding: 0.375em 0.75em;
   border: 1px solid #b6b6b6;
   border-radius: 0.125em;
-  padding: 0.375em 0.75em;
+  box-shadow: none;
   background-clip: padding-box;
   background-color: #fff;
   color: #333;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 [type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
   border-color: #838383;
+  box-shadow: none;
   outline: 0;
 }
 [type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {

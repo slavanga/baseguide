@@ -93,13 +93,15 @@ $input-padding-vertical: 0.375em !default;
 $input-padding-horizontal: 0.75em !default;
 $input-border-width: 1px !default;
 $input-border-radius: 0.125em !default;
-$input-transition: border-color 0.15s ease !default;
+$input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
 
 // Input Style
 $input-bg: #fff !default;
 $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
+$input-box-shadow: none !default;
 $input-focus-border-color: darken($input-border-color, 20%) !default;
+$input-focus-box-shadow: none !default;
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
