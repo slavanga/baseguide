@@ -28,6 +28,7 @@
     left: 0;
     width: 1em;
     height: 1em;
+    color-adjust: exact; // Keep custom styles for print
   }
 
   ~ label::before {

@@ -23,6 +23,7 @@ label {
   background-clip: padding-box; // remove shadow in iOS
   background-color: $input-bg;
   color: $input-color;
+  color-adjust: exact; // Keep custom styles for print
   transition: $input-transition;
 
   &:focus {

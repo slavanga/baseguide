@@ -1682,6 +1682,8 @@ label {
   background-clip: padding-box;
   background-color: #fff;
   color: #333;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 [type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
@@ -1785,6 +1787,8 @@ input[type=file] {
   left: 0;
   width: 1em;
   height: 1em;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
 }
 .radio input[type=radio] ~ label::before,
 .checkbox input[type=checkbox] ~ label::before {
