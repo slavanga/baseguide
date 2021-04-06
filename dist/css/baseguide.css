@@ -1790,25 +1790,26 @@ input[type=file] {
 .checkbox input[type=checkbox] ~ label::before {
   border: 1px solid #b6b6b6;
   background-color: #fff;
+  box-shadow: none;
 }
 .radio input[type=radio] ~ label::after,
 .checkbox input[type=checkbox] ~ label::after {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.radio input[type=radio]:hover:not(:disabled) ~ label:hover::before, .radio input[type=radio]:focus ~ label::before,
-.checkbox input[type=checkbox]:hover:not(:disabled) ~ label:hover::before,
+.radio input[type=radio]:focus ~ label::before,
 .checkbox input[type=checkbox]:focus ~ label::before {
   border-color: #838383;
+  box-shadow: none;
 }
-.radio input[type=radio]:active ~ label::before,
-.checkbox input[type=checkbox]:active ~ label::before {
-  background-color: #e6e6e6;
+.radio input[type=radio]:active:not(:disabled) ~ label::before,
+.checkbox input[type=checkbox]:active:not(:disabled) ~ label::before {
+  filter: brightness(90%);
 }
 .radio input[type=radio]:disabled ~ label::before,
 .checkbox input[type=checkbox]:disabled ~ label::before {
-  border-color: #ccc;
   background-color: #eee;
+  border-color: #ccc;
 }
 
 .radio input[type=radio] ~ label::before {

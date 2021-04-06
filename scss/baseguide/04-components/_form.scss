@@ -4,7 +4,7 @@ label {
 }
 
 .label-inline {
-  margin-top: 1px;
+  margin-top: $input-border-width;
   padding-top: $input-padding-vertical;
 }
 
@@ -82,7 +82,7 @@ input[type="checkbox"] {
   }
 
   &:disabled ~ label {
-    color: $input-disabled-color;
+    color: $checkbox-disabled-color;
     cursor: not-allowed;
   }
 }

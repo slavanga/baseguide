@@ -24,15 +24,16 @@
   ~ label::after {
     content: '';
     position: absolute;
-    top: 0.25em;
+    top: $checkbox-top-offset;
     left: 0;
     width: 1em;
     height: 1em;
   }
 
   ~ label::before {
-    border: $input-border-width solid $input-border-color;
-    background-color: $input-bg;
+    border: $checkbox-border-width solid $checkbox-border-color;
+    background-color: $checkbox-bg;
+    box-shadow: $checkbox-box-shadow;
   }
 
   ~ label::after {
@@ -40,18 +41,18 @@
     background-position: center center;
   }
 
-  &:hover:not(:disabled) ~ label:hover::before,
   &:focus ~ label::before {
-    border-color: $input-focus-border-color;
+    border-color: $checkbox-focus-border-color;
+    box-shadow: $checkbox-focus-box-shadow;
   }
 
-  &:active ~ label::before {
-    background-color: darken($input-bg, 10%);
+  &:active:not(:disabled) ~ label::before {
+    filter: $checkbox-active-filter;
   }
 
   &:disabled ~ label::before {
-    border-color: $input-disabled-border-color;
-    background-color: $input-disabled-bg;
+    background-color: $checkbox-disabled-bg;
+    border-color: $checkbox-disabled-border-color;
   }
 }
 
