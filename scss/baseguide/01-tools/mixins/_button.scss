@@ -48,11 +48,11 @@
 
   #{$button-selector} {
     @include config-variation($button-variations, $first-key);
-  }
 
-  @each $key, $value in $variations {
-    #{$button-selector}#{$meta-class-separator}#{$key} {
-      @include config-variation($button-variations, $key);
+    @each $key, $value in $variations {
+      &#{$meta-class-separator}#{$key} {
+        @include config-variation($button-variations, $key);
+      }
     }
   }
 }
