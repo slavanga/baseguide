@@ -12,6 +12,42 @@
 }
 
 
+// Creates an aspect ratio box with optional support for growing content
+// @param {String|List} $ratio [default] - Can be a key from the `$embed-ratios` map or a list formatted as `x by y`
+// @param {Bool} $grow [false] - Output styles to enable container growing if it has more content
+@mixin aspect-ratio($ratio: base, $grow: false) {
+  @if type-of($ratio) == 'string' or type-of($ratio) == 'list' {
+    $key: map-get($embed-ratios, $ratio);
+
+    @if $key {
+      $ratio: ratio-to-percentage($key);
+    }
+    @else {
+      $ratio: ratio-to-percentage($ratio);
+    }
+  }
+  @else {
+    $ratio: percentage($ratio);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: $ratio;
+  }
+
+  @if $grow {
+    @include clearfix;
+
+    &::before {
+      float: left;
+      width: 1px;
+      margin-left: -1px;
+    }
+  }
+}
+
+
 // text
 @mixin text-hide {
   text-indent: 110%;

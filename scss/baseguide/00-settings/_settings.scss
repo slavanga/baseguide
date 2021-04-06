@@ -68,6 +68,13 @@ $grid-push-classes: true !default;
 $grid-offset-classes: true !default;
 
 
+// Embed Ratios
+$embed-selector: '.embed-responsive' !default;
+$embed-ratios: (
+  base: 16 by 9
+) !default;
+
+
 // Form
 $input-selector: (
   '[type="email"]',

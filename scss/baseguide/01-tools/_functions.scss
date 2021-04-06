@@ -24,6 +24,13 @@
   @return $value;
 }
 
+@function ratio-to-percentage($ratio) {
+  $width: nth($ratio, 1);
+  $height: nth($ratio, 3);
+
+  @return percentage($height / $width);
+}
+
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
