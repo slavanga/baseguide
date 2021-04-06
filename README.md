@@ -254,8 +254,9 @@ The grid mixins can be used to create custom containers, rows and columns.
 ```
 
 ## Buttons
-Buttons consist of base styles and variations. Both can be configured in the settings. It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
+Buttons consist of base settings as wells as variations. Both can be configured in the settings file. It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
 
+The first button variation just adds to the existing base styles and get’s no class output. All further variations get their own class output, respecting the ```$meta-class-separator``` setting.
 An advanced button variations config could look like this:
 
 ```scss
@@ -294,7 +295,7 @@ $button-variations: (
 );
 ```
 
-You can also just use the base button styles and define variations on your own. Just leave the ```$button-variations``` map empty to do so.
+You can also use no extra button styles and define variations on your own. Just leave the ```$button-variations``` map empty to do so.
 
 
 ## Forms
