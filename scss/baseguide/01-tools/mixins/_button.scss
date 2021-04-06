@@ -41,3 +41,18 @@
     pointer-events: none;
   }
 }
+
+@mixin button-variations($variations: $button-variations) {
+  $first-key: nth(map-keys($variations), 1);
+  $variations: map-remove($variations, $first-key);
+
+  #{$button-selector} {
+    @include config-variation($button-variations, $first-key);
+  }
+
+  @each $key, $value in $variations {
+    #{$button-selector}#{$meta-class-separator}#{$key} {
+      @include config-variation($button-variations, $key);
+    }
+  }
+}

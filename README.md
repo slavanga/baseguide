@@ -260,30 +260,34 @@ An advanced button variations config could look like this:
 
 ```scss
 $button-variations: (
-  #{$button-selector}: (
-    hover: (
-      background-color: darken($color-primary, 5%)
-    ),
+  base: (
     focus: (
-      background-color: darken($color-primary, 10%),
       box-shadow: 0 0 0 0.188rem transparentize($color-primary, 0.5)
     ),
     disabled: (
       opacity: 0.65
     )
   ),
-  #{$button-selector}--default: (
+  default: (
     background-color: $color-primary,
     color: #fff,
+    hover: (
+      background-color: darken($color-primary, 5%)
+    ),
+    focus: (
+      background-color: darken($color-primary, 10%)
+    )
   ),
-  #{$button-selector}--ghost: (
+  ghost: (
     background-color: transparent,
     color: $color-primary,
     border-color: $color-primary,
     hover: (
+      background-color: darken($color-primary, 5%),
       color: #fff
     ),
     focus: (
+      background-color: darken($color-primary, 10%),
       color: #fff
     ),
   )

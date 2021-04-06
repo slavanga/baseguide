@@ -129,7 +129,7 @@ $button-cursor-pointer: true !default;
 
 // Button Variations
 $button-variations: (
-  $button-selector: (
+  base: (
     background-color: #0275d8,
     color: #fff,
     hover: (
@@ -151,3 +151,7 @@ $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
 $table-border-color: #dedede !default;
 $table-stripe-bg: #efefef !default;
+
+
+// Meta
+$meta-class-separator: '-' !default;
