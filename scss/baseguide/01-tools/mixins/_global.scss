@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 
-// clearfix
+// Micro Clearfix
 @mixin clearfix {
   &::after {
     content: '';
@@ -48,7 +48,7 @@
 }
 
 
-// text
+// Old school way of hiding text. Better use sr-only with an additional <span>.
 @mixin text-hide {
   text-indent: 110%;
   white-space: nowrap;
@@ -57,12 +57,14 @@
   text-shadow: none;
 }
 
+// Truncate text using ellipsis (single-line)
 @mixin text-truncate {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
+// Activate hyphenation with fallbacks. Make sure to set the lang attribute on the <html> tag.
 @mixin text-hyphenate {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -70,7 +72,7 @@
 }
 
 
-// visibility
+// Hide content accessibly
 @mixin sr-only {
   position: absolute;
   width: 1px;
@@ -80,6 +82,7 @@
   white-space: nowrap;
 }
 
+// Undo styles from sr-only
 @mixin sr-only-focusable {
   &:active,
   &:focus {
@@ -93,7 +96,7 @@
 }
 
 
-// beautiful underline
+// Beautiful underline with control over text spacing
 @mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) {
   padding-bottom: $distance;
   background-image: linear-gradient($color, $color);
@@ -104,7 +107,7 @@
 }
 
 
-// target HiDPI screens
+// Target HiDPI screens
 @mixin hidpi($ratio: 1.5) {
   @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
     @content;
@@ -112,7 +115,7 @@
 }
 
 
-// scale headings using modular scale
+// Scale headings using modular scale
 @mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
   @if (type-of($scale) == 'map') {
     @each $breakpoint, $size in $scale {
@@ -127,7 +130,7 @@
 }
 
 
-// helper mixin for scale-headings
+// Helper mixin for scale-headings
 @mixin loop-headings($size) {
   $max-scale: 0;
 
@@ -141,7 +144,7 @@
 }
 
 
-// accessible fade in and fade out transitions
+// Accessible fade in and fade out transitions
 @mixin fade-in($duration: 0.15s) {
   visibility: visible;
   opacity: 1;
@@ -155,7 +158,7 @@
 }
 
 
-// triangle mixin adapted from bourbon
+// Triangle mixin adapted from bourbon
 @mixin triangle($direction, $width, $height, $color: currentColor) {
   border-style: solid;
   height: 0;
@@ -196,7 +199,7 @@
 }
 
 
-// loop all breakpoints and output content
+// Loops all breakpoints and outputs @content
 @mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
   $breakpoint-keys: map-keys($breakpoints);
 

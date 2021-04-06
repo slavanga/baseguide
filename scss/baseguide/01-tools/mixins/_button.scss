@@ -1,3 +1,4 @@
+// Removes browser default button styles
 @mixin button-unstyled {
   border: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   color: inherit;
 }
 
+// Generates global base button styles
 @mixin button-base(
   $padding-vertical: $button-padding-vertical,
   $padding-horizontal: $button-padding-horizontal,
@@ -42,6 +44,7 @@
   }
 }
 
+// Generates button variations
 @mixin button-variations($variations: $button-variations) {
   $first-key: nth(map-keys($variations), 1);
   $variations: map-remove($variations, $first-key);
