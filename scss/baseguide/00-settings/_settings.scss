@@ -8,15 +8,6 @@ $global-bg: #fff !default;
 $text-color: #333 !default;
 
 
-// Spacing
-$spacing-base: 1.5rem !default;
-$spacing-reset: true !default;
-$spacers: (
-  nospace: 0,
-  space: 30px
-) !default;
-
-
 // Headings
 $headings: (
   'h6, .h6', 'h5, .h5', 'h4, .h4',
@@ -49,12 +40,14 @@ $mq-breakpoints: (
   xl: 1200px
 ) !default;
 
+$mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
+
+
+// Fluid Scaling
 $fluid-breakpoints: (
   min: map-get($mq-breakpoints, sm),
   max: map-get($mq-breakpoints, xl)
 ) !default;
-
-$mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
 
 
 // Grid
@@ -66,6 +59,21 @@ $grid-container-gutter: $grid-gutter !default;
 $grid-pull-classes: true !default;
 $grid-push-classes: true !default;
 $grid-offset-classes: true !default;
+
+
+// Spacing
+$spacing-reset: true !default;
+
+$spacings: (
+  base: (
+    min: 24px
+  )
+) !default;
+
+$spacers: (
+  nospace: 0,
+  space: 30px
+) !default;
 
 
 // Embed Ratios

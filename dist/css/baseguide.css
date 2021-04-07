@@ -447,8 +447,8 @@ ul,
 ol,
 hr,
 p {
-  margin-top: 0;
   margin-bottom: 1.5rem;
+  margin-top: 0;
 }
 address:last-child,
 blockquote:last-child,
@@ -571,9 +571,9 @@ h3 {
 .list-inline {
   padding-left: 0;
   list-style: none;
+  margin-left: -1rem;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -1rem;
 }
 .list-inline > li {
   margin-left: 1rem;

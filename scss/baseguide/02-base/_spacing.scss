@@ -17,8 +17,9 @@ ul,
 ol,
 hr,
 p {
+  @include fluid-spacing('margin-bottom', 'base');
+
   margin-top: 0;
-  margin-bottom: $spacing-base;
 
   @if $spacing-reset {
     &:last-child {

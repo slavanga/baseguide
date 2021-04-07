@@ -13,7 +13,7 @@
 
 
 // Creates an aspect ratio box with optional support for growing content
-// @param {String|List} $ratio [default] - Can be a key from the `$embed-ratios` map or a list formatted as `x by y`
+// @param {String|List} $ratio [default] - Can be a key from the $embed-ratios map or a list formatted as `x by y`
 // @param {Bool} $grow [false] - Output styles to enable container growing if it has more content
 @mixin aspect-ratio($ratio: base, $grow: false) {
   @if (type-of($ratio) == 'string' or type-of($ratio) == 'list') {
@@ -257,26 +257,68 @@
 // Usage example:
 //
 // body {
-//   @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
+//   @include fluid-calc('font-size', (min: 1rem, max: 1.25rem), $breakpoints: (min: 400px, max: 960px));
 // }
-@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
-  @if ($prop and type-of($sizes) == 'list') {
-    $breakpoints: map-values($breakpoints);
-    $min-breakpoint: nth($breakpoints, 1);
-    $max-breakpoint: nth($breakpoints, length($breakpoints));
-    $min-size: to-rem(nth($sizes, 1));
-    $max-size: to-rem(nth($sizes, length($sizes)));
+@mixin fluid-calc($prop, $sizes, $negative: false, $important: false, $breakpoints: $fluid-breakpoints) {
+  @if (type-of($sizes) == 'map') {
+    $min-breakpoint: map-get($breakpoints, 'min');
+    $max-breakpoint: map-get($breakpoints, 'max');
+    $min-size: map-get($sizes, 'min');
+    $max-size: map-get($sizes, 'max');
+    $multiplicand: 1;
 
-    #{$prop}: $min-size;
-
-    @include mq($min-breakpoint) {
-      #{$prop}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint)}) / #{strip-unit(to-rem($max-breakpoint) - to-rem($min-breakpoint))});
+    @if $negative == true {
+      $multiplicand: -1;
     }
 
-    @include mq($max-breakpoint) {
-      #{$prop}: $max-size;
+    @if $important == true {
+      $important: unquote('!important');
+    }
+    @else {
+      $important: null;
+    }
+
+    @if $min-size {
+      $min-size: to-rem($min-size);
+
+      #{$prop}: $min-size * $multiplicand $important;
+
+      @if $max-size {
+        $max-size: to-rem($max-size);
+
+        @include mq($min-breakpoint) {
+          #{$prop}: calc((#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint)}) / #{strip-unit(to-rem($max-breakpoint) - to-rem($min-breakpoint))}) * #{$multiplicand}) $important;
+        }
+
+        @include mq($max-breakpoint) {
+          #{$prop}: $max-size * $multiplicand $important;
+        }
+      }
     }
   }
+}
+
+
+// Wrapper for fluid-calc that gets spacings from the map $spacings-sizes
+
+// Usage example:
+//
+// .example {
+//   @include fluid-spacing('margin-bottom', 'base');
+// }
+@mixin fluid-spacing($prop, $size, $negative: false, $important: false, $breakpoints: $fluid-breakpoints) {
+  @if (type-of($size) == 'string') {
+    $size: map-get($spacings, $size);
+
+    @if not $size {
+      @error "The spacing #{$size} wasn't found in map $spacings-sizes.";
+    }
+  }
+  @else if (type-of($size) == 'number') {
+    $size: (min: $size);
+  }
+
+  @include fluid-calc($prop, $size, $negative, $important, $breakpoints);
 }
 
 

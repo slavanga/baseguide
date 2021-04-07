@@ -1,18 +1,18 @@
 @each $size, $length in $spacers {
   .#{$size} {
-    margin-bottom: to-rem($length) !important;
+    @include fluid-spacing('margin-bottom', $length, $important: true);
   }
 
   @include loop-breakpoints($inclusive: false) {
     .#{$size}-#{$breakpoint} {
-      margin-bottom: to-rem($length) !important;
+      @include fluid-spacing('margin-bottom', $length, $important: true);
     }
   }
 
   @include loop-breakpoints {
     @if not $is-last-breakpoint {
       .#{$size}-#{$breakpoint}-up {
-        margin-bottom: to-rem($length) !important;
+        @include fluid-spacing('margin-bottom', $length, $important: true);
       }
     }
   }
