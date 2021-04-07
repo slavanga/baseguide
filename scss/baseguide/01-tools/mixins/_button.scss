@@ -53,7 +53,7 @@
     @include config-variation($button-variations, $first-key);
 
     @each $key, $value in $variations {
-      &#{$meta-class-separator}#{$key} {
+      &#{$meta-class-modifier}#{$key} {
         @include config-variation($button-variations, $key);
       }
     }

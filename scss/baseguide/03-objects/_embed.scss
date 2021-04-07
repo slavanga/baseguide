@@ -5,7 +5,7 @@
   @include aspect-ratio($first-key);
 
   @each $name, $ratio in $ratios {
-    &#{$meta-class-separator}#{$name} {
+    &#{$meta-class-modifier}#{$name} {
       &::before {
         padding-bottom: ratio-to-percentage($ratio);
       }

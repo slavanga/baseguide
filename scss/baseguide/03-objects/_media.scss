@@ -3,11 +3,11 @@
   align-items: flex-start;
 }
 
-.media#{$meta-class-separator}middle {
+.media#{$meta-class-modifier}middle {
   align-self: center;
 }
 
-.media#{$meta-class-separator}bottom {
+.media#{$meta-class-modifier}bottom {
   align-self: flex-end;
 }
 
