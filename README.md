@@ -161,7 +161,9 @@ The gutters are controlled by the ```$grid-gutter``` variable. It can either be 
 ```scss
 // set gutter for all breakpoints
 $grid-gutter: 60px;
+```
 
+```scss
 // start with 20px gutter and increase to 40px from the md breakpoint
 // note: breakpoints can be skipped to keep the last defined value
 $grid-gutter: (
