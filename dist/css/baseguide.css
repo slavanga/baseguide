@@ -1741,6 +1741,10 @@ input[type=file] {
   max-width: 100%;
 }
 
+::file-selector-button {
+  font: inherit;
+}
+
 ::-moz-placeholder {
   color: #b3b3b3;
   opacity: 1;

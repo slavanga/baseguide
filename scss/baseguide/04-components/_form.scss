@@ -93,6 +93,10 @@ input[type="file"] {
   max-width: 100%;
 }
 
+::file-selector-button {
+  font: inherit;
+}
+
 ::placeholder {
   color: $placeholder-color;
   opacity: 1;
