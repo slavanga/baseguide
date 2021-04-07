@@ -584,6 +584,14 @@ h3 {
   align-items: flex-start;
 }
 
+.media-middle {
+  align-self: center;
+}
+
+.media-bottom {
+  align-self: flex-end;
+}
+
 .media-body {
   flex: 0 1 auto;
 }
@@ -600,14 +608,6 @@ h3 {
 .media-right {
   order: 1;
   padding-left: 1rem;
-}
-
-.media-middle {
-  align-self: center;
-}
-
-.media-bottom {
-  align-self: flex-end;
 }
 
 .embed-responsive {
