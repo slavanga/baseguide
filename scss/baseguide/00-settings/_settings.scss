@@ -71,8 +71,12 @@ $spacings: (
 ) !default;
 
 $spacers: (
-  nospace: 0,
-  space: 30px
+  nospace: (
+    min: 0
+  ),
+  space: (
+    min: 30px
+  )
 ) !default;
 
 
