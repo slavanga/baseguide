@@ -8,29 +8,6 @@ $global-bg: #fff !default;
 $text-color: #333 !default;
 
 
-// Headings
-$headings: (
-  'h6, .h6', 'h5, .h5', 'h4, .h4',
-  'h3, .h3', 'h2, .h2', 'h1, .h1'
-) !default;
-
-$headings-spacing: 0.4em !default;
-$headings-font-family: inherit !default;
-$headings-font-weight: 700 !default;
-$headings-line-height: 1.2 !default;
-$headings-color: inherit !default;
-
-$type-scale-base: $font-size-base !default;
-$type-scale: 1.25 !default;
-
-
-// Link
-$link-color: #0283f1 !default;
-$link-hover-color: $link-color !default;
-$link-decoration: none !default;
-$link-hover-decoration: underline !default;
-
-
 // Breakpoints
 $mq-breakpoints: (
   xs: 0px,
@@ -44,10 +21,35 @@ $mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
 
 
 // Fluid Scaling
+$fluid-scaling: true !default;
 $fluid-breakpoints: (
-  min: map-get($mq-breakpoints, sm),
-  max: map-get($mq-breakpoints, xl)
+  min: sm,
+  max: xl
 ) !default;
+
+
+// Headings
+$headings: (
+  'h6, .h6', 'h5, .h5', 'h4, .h4',
+  'h3, .h3', 'h2, .h2', 'h1, .h1'
+) !default;
+
+$headings-spacing: 0.4em !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+$headings-breakpoints: $fluid-breakpoints !default;
+
+$type-scale-base: $font-size-base !default;
+$type-scale: 1.25 !default;
+
+
+// Link
+$link-color: #0283f1 !default;
+$link-hover-color: $link-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
 
 
 // Grid

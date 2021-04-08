@@ -5,7 +5,7 @@
 
 @mixin list-inline($spacing: 1rem, $center: false, $child-selector: 'li') {
   @include list-unstyled;
-  @include fluid-spacing('margin-left', $spacing, true);
+  @include fluid-spacing('margin-left', $spacing, $negative: true);
 
   display: flex;
   flex-wrap: wrap;

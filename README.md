@@ -315,12 +315,12 @@ Browsers that support [feature queries](https://caniuse.com/#feat=css-featureque
 ### Headings
 The value for ```$type-scale-base``` defines the smallest heading (h6). From there the remaining heading font sizes are calculated using the ```$type-scale```. Major Third (1.25) is the default type scale. Check [type-scale.com](https://type-scale.com/) for more scales.
 
-By using a map for ```$type-scale-base``` you can scale all headings up or down in harmony on a specific breakpoint.
+By using a map for ```$type-scale-base``` you can scale all headings up or down in harmony, respecting the ```$headings-breakpoints```.
 
 ```scss
 $type-scale-base: (
-  xs: $font-size-base,
-  md: $font-size-base * 2
+  min: $font-size-base,
+  max: $font-size-base * 2
 );
 ```
 
