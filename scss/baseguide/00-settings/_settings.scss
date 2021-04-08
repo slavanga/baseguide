@@ -174,6 +174,9 @@ $button-variations: (
       background-color: darken(#0275d8, 5%)
     ),
     focus: (
+      background-color: darken(#0275d8, 5%)
+    ),
+    active: (
       background-color: darken(#0275d8, 10%)
     ),
     disabled: (

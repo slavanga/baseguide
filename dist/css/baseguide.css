@@ -1868,6 +1868,9 @@ input[type=file] {
   background-color: #0267bf;
 }
 .btn:focus {
+  background-color: #0267bf;
+}
+.btn:active {
   background-color: #025aa5;
 }
 .btn:disabled, .btn.disabled {
