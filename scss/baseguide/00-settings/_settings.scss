@@ -41,10 +41,10 @@ $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
 $headings-breakpoints: $fluid-breakpoints !default;
 
+$type-scale: 1.25 !default;
 $type-scale-base: (
   min: $font-size-base
 ) !default;
-$type-scale: 1.25 !default;
 
 
 // Link
