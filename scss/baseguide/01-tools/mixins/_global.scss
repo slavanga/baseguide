@@ -264,11 +264,23 @@
 //   @include fluid-calc('font-size', (min: 1rem, max: 1.25rem), (min: 400px, max: 960px));
 // }
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
-  $min-breakpoint: map-get($breakpoints, 'min');
-  $max-breakpoint: map-get($breakpoints, 'max');
   $min-size: null;
   $max-size: null;
+  $min-breakpoint: map-get($breakpoints, 'min');
+  $max-breakpoint: map-get($breakpoints, 'max');
   $multiplicand: 1;
+
+  @if (type-of($sizes) == 'map') {
+    $min-size: map-get($sizes, 'min');
+    $max-size: map-get($sizes, 'max');
+  }
+  @else if (type-of($sizes) == 'list') {
+    $min-size: nth($sizes, 1);
+    $max-size: nth($sizes, 2);
+  }
+  @else if (type-of($sizes) == 'number') {
+    $min-size: $sizes;
+  }
 
   @if map-has-key($mq-breakpoints, $min-breakpoint) {
     $min-breakpoint: map-get($mq-breakpoints, $min-breakpoint);
@@ -276,14 +288,6 @@
 
   @if map-has-key($mq-breakpoints, $max-breakpoint) {
     $max-breakpoint: map-get($mq-breakpoints, $max-breakpoint);
-  }
-
-  @if (type-of($sizes) == 'map') {
-    $min-size: map-get($sizes, 'min');
-    $max-size: map-get($sizes, 'max');
-  }
-  @else if (type-of($sizes) == 'number') {
-    $min-size: $sizes;
   }
 
   @if $negative == true {
