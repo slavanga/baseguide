@@ -14,6 +14,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [Install](#install)
 * [Development](#development)
 * [Breakpoints](#breakpoints)
+* [Fluid Scaling](#fluid-scaling)
 * [Grid](#grid)
 * [Buttons](#buttons)
 * [Forms](#forms)
@@ -136,6 +137,42 @@ It’s a powerful tool that for example allows the generation of additional resp
   }
 }
 ```
+
+
+## Fluid Scaling
+With fluid scaling values between two points (min and max) can be interpolated using vh units and calc. Originally this technique was mostly used for font-size, but it can be used with other CSS properties that support calc in their value as well. There is an [article](https://www.madebymike.com.au/writing/precise-control-responsive-typography/) that explains the concept.
+
+All maps in the settings with a min value support fluid scaling, if a max value is added.
+By default the scaling happens between the breakpoints sm and xl. These breakpoints are configurable in ```$fluid-breakpoints``` and ```$headings-breakpoints```.
+
+Using the ```fluid-calc``` mixin you can apply fluid scaling in your own code.
+
+
+```scss
+body {
+  @include fluid-calc('font-size', (min: 1rem, max: 1.25rem));
+}
+```
+
+```scss
+body {
+  @include fluid-calc('font-size', (min: 1rem, max: 1.25rem), (min: md, max: xl));
+}
+```
+
+The mixin ```fluid-spacing``` is a small wrapper for ```fluid-calc``` that looks for spacings in the map ```$spacings```
+
+```scss
+.my-list {
+  @include fluid-spacing('margin-bottom', 'base', $negative: true);
+}
+
+.my-item {
+  @include fluid-spacing('margin-bottom', 'base');
+}
+```
+
+Use the global settings switch ```$fluid-scaling``` to disable the fluid scaling feature.
 
 
 ## Grid

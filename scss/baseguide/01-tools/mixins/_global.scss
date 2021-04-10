@@ -257,12 +257,6 @@
 // @param {Map} $breakpoints - Map of named breakpoints from $mq-breakpoints or custom px values formatted as (min: x, max: y)
 // @param {Bool} $negative - Negates the values if true
 // @param {Bool} $important - Adds important flag if true
-
-// Usage example:
-//
-// body {
-//   @include fluid-calc('font-size', (min: 1rem, max: 1.25rem), (min: 400px, max: 960px));
-// }
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
   $min-size: null;
   $max-size: null;
@@ -323,19 +317,13 @@
 }
 
 
-// Wrapper for fluid-calc that gets spacings from the map $spacings-sizes
-
-// Usage example:
-//
-// .example {
-//   @include fluid-spacing('margin-bottom', 'base');
-// }
+// Wrapper for fluid-calc that gets spacings from the map $spacings
 @mixin fluid-spacing($prop, $size, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
   @if (type-of($size) == 'string') {
     $size: map-get($spacings, $size);
 
     @if not $size {
-      @error "The spacing #{$size} wasn't found in map $spacings-sizes.";
+      @error "The spacing #{$size} wasn't found in map $spacings.";
     }
   }
 
