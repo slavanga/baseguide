@@ -32,37 +32,6 @@ iframe {
   border: 0;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-}
-
-optgroup {
-  font-weight: bolder;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  border: 0;
-}
-
-@if $button-cursor-pointer {
-  [type="button"],
-  [type="reset"],
-  [type="submit"],
-  button {
-    &:not(:disabled) {
-      cursor: pointer;
-    }
-  }
-}
-
 address {
   font-style: inherit;
 }

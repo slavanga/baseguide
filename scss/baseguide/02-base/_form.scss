@@ -1,0 +1,55 @@
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+optgroup {
+  font-weight: bolder;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  &:focus::-ms-value {
+    background: transparent;
+    color: currentColor;
+  }
+
+  // Undo opacity in Chrome
+  &:disabled {
+    opacity: 1;
+  }
+}
+
+@if $button-cursor-pointer {
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  button {
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+}
+
+::file-selector-button {
+  font: inherit;
+}
+
+::placeholder {
+  color: $placeholder-color;
+  opacity: 1;
+}
