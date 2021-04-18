@@ -1,10 +1,11 @@
-body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-  background-color: $global-bg;
-  color: $text-color;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 @if $font-antialiased {
@@ -14,4 +15,56 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  background-color: $global-bg;
+  color: $text-color;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+address {
+  font-style: inherit;
+}
+
+pre {
+  overflow: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid;
+  color: inherit;
+  opacity: 0.2;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
