@@ -334,7 +334,10 @@
 // Config variation (e.g for buttons)
 @mixin config-variation($config, $variation) {
   @each $key, $value in map.get($config, $variation) {
-    @if (list.index(('hover', 'focus', 'active'), $key)) {
+    @if (type-of($value) == 'map' and map-get($value, 'min')) {
+      @include fluid-calc($key, $value);
+    }
+    @else if (list.index(('hover', 'focus', 'active'), $key)) {
       &:#{$key} {
         @each $pseudo-key, $pseudo-value in $value {
           #{$pseudo-key}: $pseudo-value;
@@ -360,4 +363,10 @@
       #{$key}: $value;
     }
   }
+}
+
+
+// Wrapper for config-variation that uses the $type-variations as config by default
+@mixin type($variation) {
+  @include config-variation($type-variations, $variation);
 }

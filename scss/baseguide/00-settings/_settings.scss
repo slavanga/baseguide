@@ -46,6 +46,17 @@ $type-scale-base: (
   min: $font-size-base
 ) !default;
 
+$type-variations: (
+  base: (
+    font-family: $font-family-base,
+    font-size: (
+      min: $font-size-base
+    ),
+    font-weight: $font-weight-base,
+    line-height: $line-height-base
+  )
+) !default;
+
 
 // Link
 $link-color: #0283f1 !default;
