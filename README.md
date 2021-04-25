@@ -155,19 +155,19 @@ body {
 ```
 
 ```scss
-body {
-  @include fluid-calc('font-size', (min: 1rem, max: 1.25rem), (min: md, max: xl));
+.my-component {
+  @include fluid-calc('padding', (min: 1rem, max: 1.5rem), (min: md, max: xl));
 }
 ```
 
 The mixin ```fluid-spacing``` is a small wrapper for ```fluid-calc``` that looks for spacings in the map ```$spacings```
 
 ```scss
-.my-list {
+.my-component {
   @include fluid-spacing('margin-bottom', 'base', $negative: true);
 }
 
-.my-item {
+.my-component {
   @include fluid-spacing('margin-bottom', 'base');
 }
 ```
