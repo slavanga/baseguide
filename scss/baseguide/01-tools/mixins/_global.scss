@@ -121,7 +121,7 @@
 
 
 // Scale headings using modular scale
-@mixin scale-headings($scale: $type-scale-base, $headings: $headings, $breakpoints: $headings-breakpoints) {
+@mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
   $max-scale: 0;
   $sizes: $scale;
 
@@ -137,7 +137,7 @@
         $sizes: modular-scale($max-scale, $scale);
       }
 
-      @include fluid-calc('font-size', $sizes, $breakpoints);
+      @include fluid-calc('font-size', $sizes);
     }
 
     $max-scale: $max-scale + 1;

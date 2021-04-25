@@ -143,7 +143,7 @@ It’s a powerful tool that for example allows the generation of additional resp
 With fluid scaling values between two points (min and max) can be interpolated using vh units and calc. Originally this technique was mostly used for font-size, but it can be used with other CSS properties that support calc in their value as well. There is an [article](https://www.madebymike.com.au/writing/precise-control-responsive-typography/) that explains the concept.
 
 All maps in the settings with a min value support fluid scaling, if a max value is added.
-By default the scaling happens between the breakpoints sm and xl. These breakpoints are configurable in ```$fluid-breakpoints``` and ```$headings-breakpoints```.
+By default the scaling happens between the breakpoints sm and xl. These breakpoints are configurable in ```$fluid-breakpoints```.
 
 Using the ```fluid-calc``` mixin you can apply fluid scaling in your own code.
 
