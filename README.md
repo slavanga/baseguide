@@ -81,8 +81,8 @@ The default configuration looks like this:
 
 ```scss
 $mq-breakpoints: (
-  xs: 0,
-  sm: 400px,
+  xs: 0px,
+  sm: 375px,
   md: 680px,
   lg: 960px,
   xl: 1200px
