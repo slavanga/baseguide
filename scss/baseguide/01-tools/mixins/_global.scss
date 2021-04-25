@@ -83,15 +83,20 @@
 }
 
 // Undo styles from sr-only
+@mixin sr-only-reset {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: inherit;
+}
+
+// Undo styles from sr-only when element is activated or focused
 @mixin sr-only-focusable {
   &:active,
   &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: inherit;
+    @include sr-only-reset;
   }
 }
 
