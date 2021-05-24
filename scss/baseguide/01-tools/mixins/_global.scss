@@ -325,9 +325,12 @@
 // Wrapper for fluid-calc that gets spacings from the map $spacings
 @mixin fluid-spacing($prop, $size, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
   @if (type-of($size) == 'string') {
-    $size: map-get($spacings, $size);
+    $size-value: map-get($spacings, $size);
 
-    @if not $size {
+    @if $size-value {
+      $size: $size-value;
+    }
+    @else {
       @error "The spacing #{$size} wasn't found in map $spacings.";
     }
   }
@@ -338,7 +341,13 @@
 
 // Config variation (e.g for buttons)
 @mixin config-variation($config, $variation) {
-  @each $key, $value in map.get($config, $variation) {
+  $config-value: map.get($config, $variation);
+
+  @if not $config-value {
+    @error "The config #{$variation} wasn't found in map $config.";
+  }
+
+  @each $key, $value in $config-value {
     @if (type-of($value) == 'map' and map-get($value, 'min')) {
       @include fluid-calc($key, $value);
     }
