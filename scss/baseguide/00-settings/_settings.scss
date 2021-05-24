@@ -125,8 +125,8 @@ $input-bg: #fff !default;
 $input-color: $text-color !default;
 $input-border-color: #b6b6b6 !default;
 $input-box-shadow: none !default;
-$input-focus-border-color: darken($input-border-color, 20%) !default;
-$input-focus-box-shadow: none !default;
+$input-focus-border-color: #0275d8 !default;
+$input-focus-box-shadow: 0 0 0 0.188em transparentize(#0275d8, 0.75) !default;
 $input-disabled-bg: #eee !default;
 $input-disabled-color: #555 !default;
 $input-disabled-border-color: #ccc !default;
@@ -186,10 +186,8 @@ $button-variations: (
       background-color: darken(#0275d8, 5%)
     ),
     focus: (
-      background-color: darken(#0275d8, 5%)
-    ),
-    active: (
-      background-color: darken(#0275d8, 10%)
+      background-color: darken(#0275d8, 10%),
+      box-shadow: 0 0 0 0.188em transparentize(#0275d8, 0.7)
     ),
     disabled: (
       opacity: 0.65

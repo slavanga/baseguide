@@ -1718,8 +1718,8 @@ label {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 [type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
-  border-color: #838383;
-  box-shadow: none;
+  border-color: #0275d8;
+  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.25);
   outline: 0;
 }
 [type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
@@ -1809,8 +1809,8 @@ input[type=file] {
 }
 .radio input[type=radio]:focus ~ label::before,
 .checkbox input[type=checkbox]:focus ~ label::before {
-  border-color: #838383;
-  box-shadow: none;
+  border-color: #0275d8;
+  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.25);
 }
 .radio input[type=radio]:active:not(:disabled) ~ label::before,
 .checkbox input[type=checkbox]:active:not(:disabled) ~ label::before {
@@ -1870,10 +1870,8 @@ input[type=file] {
   background-color: #0267bf;
 }
 .btn:focus {
-  background-color: #0267bf;
-}
-.btn:active {
   background-color: #025aa5;
+  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.3);
 }
 .btn:disabled, .btn.disabled {
   opacity: 0.65;
