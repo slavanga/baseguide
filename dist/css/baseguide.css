@@ -479,11 +479,11 @@ h1, .h1 {
 }
 
 a {
-  color: #0283f1;
+  color: #0275d8;
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #0283f1;
+  color: #0275d8;
   text-decoration: underline;
 }
 
@@ -531,17 +531,17 @@ button:not(:disabled) {
 }
 
 ::-moz-placeholder {
-  color: #b3b3b3;
+  color: #808080;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #808080;
   opacity: 1;
 }
 
 ::placeholder {
-  color: #b3b3b3;
+  color: #808080;
   opacity: 1;
 }
 
@@ -1707,7 +1707,7 @@ label {
   width: 100%;
   height: 2.375em;
   padding: 0.375em 0.75em;
-  border: 1px solid #b6b6b6;
+  border: 1px solid #ccc;
   border-radius: 0.125em;
   box-shadow: none;
   background-clip: padding-box;
@@ -1724,8 +1724,8 @@ label {
 }
 [type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
   border-color: #ccc;
-  background-color: #eee;
-  color: #555;
+  background-color: #e6e6e6;
+  color: #808080;
   cursor: not-allowed;
 }
 
@@ -1753,7 +1753,7 @@ input[type=checkbox] ~ label {
 }
 input[type=radio]:disabled ~ label,
 input[type=checkbox]:disabled ~ label {
-  color: #555;
+  color: #808080;
   cursor: not-allowed;
 }
 
@@ -1798,7 +1798,7 @@ input[type=file] {
 }
 .radio input[type=radio] ~ label::before,
 .checkbox input[type=checkbox] ~ label::before {
-  border: 1px solid #b6b6b6;
+  border: 1px solid #ccc;
   background-color: #fff;
   box-shadow: none;
 }
@@ -1818,7 +1818,7 @@ input[type=file] {
 }
 .radio input[type=radio]:disabled ~ label::before,
 .checkbox input[type=checkbox]:disabled ~ label::before {
-  background-color: #eee;
+  background-color: #e6e6e6;
   border-color: #ccc;
 }
 
@@ -1871,7 +1871,7 @@ input[type=file] {
 }
 .btn:focus {
   background-color: #025aa5;
-  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.3);
+  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.35);
 }
 .btn:disabled, .btn.disabled {
   opacity: 0.65;
@@ -1886,7 +1886,7 @@ input[type=file] {
 .table th,
 .table td {
   padding: 0.4em 0.6em;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.65);
   vertical-align: top;
 }
 .table th {
@@ -1897,7 +1897,7 @@ input[type=file] {
   vertical-align: bottom;
 }
 .table tbody tr:nth-child(2n+1) {
-  background-color: #efefef;
+  background-color: rgba(230, 230, 230, 0.65);
 }
 
 .table-responsive {

@@ -1,11 +1,33 @@
+// Colors
+$color-white: #fff !default;
+$color-gray-100: #e6e6e6 !default;
+$color-gray-200: #ccc !default;
+$color-gray-300: #b3b3b3 !default;
+$color-gray-400: #999 !default;
+$color-gray-500: #808080 !default;
+$color-gray-600: #666 !default;
+$color-gray-700: #4d4d4d !default;
+$color-gray-800: #333 !default;
+$color-gray-900: #1a1a1a !default;
+$color-black: #000 !default;
+$color-blue: #0275d8 !default;
+
+$color-primary: $color-blue !default;
+$color-foreground: $color-gray-800 !default;
+$color-foreground-muted: $color-gray-500 !default;
+$color-background: $color-white !default;
+$color-background-muted: $color-gray-100 !default;
+$color-line: $color-gray-200 !default;
+
+
 // Global
 $font-antialiased: false !default;
 $font-size-base: 1rem !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $font-weight-base: 400 !default;
 $line-height-base: 1.5 !default;
-$global-bg: #fff !default;
-$text-color: #333 !default;
+$global-bg: $color-background !default;
+$text-color: $color-foreground !default;
 
 
 // Breakpoints
@@ -58,7 +80,7 @@ $type-variations: (
 
 
 // Link
-$link-color: #0283f1 !default;
+$link-color: $color-primary !default;
 $link-hover-color: $link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
@@ -121,15 +143,15 @@ $input-border-width: 1px !default;
 $input-border-radius: 0.125em !default;
 $input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
 
-$input-bg: #fff !default;
-$input-color: $text-color !default;
-$input-border-color: #b6b6b6 !default;
+$input-bg: $color-background !default;
+$input-color: $color-foreground !default;
+$input-border-color: $color-line !default;
 $input-box-shadow: none !default;
-$input-focus-border-color: #0275d8 !default;
-$input-focus-box-shadow: 0 0 0 0.188em transparentize(#0275d8, 0.75) !default;
-$input-disabled-bg: #eee !default;
-$input-disabled-color: #555 !default;
-$input-disabled-border-color: #ccc !default;
+$input-focus-border-color: $color-primary !default;
+$input-focus-box-shadow: 0 0 0 0.188em rgba($color-primary, 0.25) !default;
+$input-disabled-bg: $color-background-muted !default;
+$input-disabled-color: $color-foreground-muted !default;
+$input-disabled-border-color: $color-line !default;
 
 // Checkbox & Radio
 $checkbox-border-width: $input-border-width !default;
@@ -147,11 +169,11 @@ $checkbox-disabled-color: $input-disabled-color !default;
 $checkbox-disabled-border-color: $input-disabled-border-color !default;
 
 // Placeholder
-$placeholder-color: lighten($input-color, 50%) !default;
+$placeholder-color: $color-foreground-muted !default;
 
 
 // Icons
-$icon-color: #333 !default;
+$icon-color: $color-foreground !default;
 
 $icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
 $icon-checkbox: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>' !default;
@@ -180,14 +202,14 @@ $button-cursor-pointer: true !default;
 // Button Variations
 $button-variations: (
   base: (
-    background-color: #0275d8,
-    color: #fff,
+    background-color: $color-primary,
+    color: $color-white,
     hover: (
-      background-color: darken(#0275d8, 5%)
+      background-color: darken($color-primary, 5%)
     ),
     focus: (
-      background-color: darken(#0275d8, 10%),
-      box-shadow: 0 0 0 0.188em transparentize(#0275d8, 0.7)
+      background-color: darken($color-primary, 10%),
+      box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35)
     ),
     disabled: (
       opacity: 0.65
@@ -200,8 +222,8 @@ $button-variations: (
 $table-selector: '.table' !default;
 $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
-$table-border-color: #dedede !default;
-$table-stripe-bg: #efefef !default;
+$table-border-color: rgba($color-line, 0.65) !default;
+$table-stripe-bg: rgba($color-background-muted, 0.65) !default;
 
 
 // Meta
