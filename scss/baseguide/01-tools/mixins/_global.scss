@@ -324,7 +324,7 @@
 
 
 // Wrapper for fluid-calc that gets spacings from the map $spacings
-@mixin fluid-spacing($prop, $size, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
+@mixin fluid-spacing($prop, $size: base, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
   @if (type-of($size) == 'string') {
     $size-value: map-get($spacings, $size);
 
@@ -382,6 +382,6 @@
 
 
 // Wrapper for config-variation that uses the $type-variations as config by default
-@mixin type($variation) {
+@mixin type($variation: base) {
   @include config-variation($type-variations, $variation);
 }

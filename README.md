@@ -160,15 +160,16 @@ body {
 }
 ```
 
-The mixin ```fluid-spacing``` is a small wrapper for ```fluid-calc``` that looks for spacings in the map ```$spacings```
+The mixin ```fluid-spacing``` is a small wrapper for ```fluid-calc``` that looks for spacings in the map ```$spacings```.
+If no size parameter is passed then the first value (base) from the map will be used.
 
 ```scss
 .my-component {
-  @include fluid-spacing('margin-bottom', 'base', $negative: true);
+  @include fluid-spacing('margin-bottom', $negative: true);
 }
 
 .my-component {
-  @include fluid-spacing('margin-bottom', 'base');
+  @include fluid-spacing('margin-bottom');
 }
 ```
 

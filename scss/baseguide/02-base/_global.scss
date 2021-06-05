@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  @include type(base);
+  @include type;
 
   background-color: $global-bg;
   color: $text-color;
