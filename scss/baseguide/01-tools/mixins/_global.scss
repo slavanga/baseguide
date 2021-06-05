@@ -349,10 +349,7 @@
   }
 
   @each $key, $value in $config-value {
-    @if (type-of($value) == 'map' and map-get($value, 'min')) {
-      @include fluid-calc($key, $value);
-    }
-    @else if (list.index(('hover', 'focus', 'active'), $key)) {
+    @if (list.index(('hover', 'focus', 'active'), $key)) {
       &:#{$key} {
         @each $pseudo-key, $pseudo-value in $value {
           #{$pseudo-key}: $pseudo-value;
@@ -373,6 +370,9 @@
           #{$disabled-key}: $disabled-value;
         }
       }
+    }
+    @else if (type-of($value) == 'map' and map-get($value, 'min')) {
+      @include fluid-calc($key, $value);
     }
     @else {
       #{$key}: $value;
