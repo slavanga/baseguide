@@ -5,7 +5,7 @@
 }
 
 @function strip-unit($number) {
-  @return $number / ($number * 0 + 1);
+  @return math.div($number, $number * 0 + 1);
 }
 
 @function to-rem($value, $base: 16px) {
@@ -14,7 +14,7 @@
   }
 
   @if (unit($value) != 'rem') {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
   @if (strip-unit($value) == 0) {
@@ -28,7 +28,7 @@
   $width: nth($ratio, 1);
   $height: nth($ratio, 3);
 
-  @return percentage($height / $width);
+  @return percentage(math.div($height, $width));
 }
 
 @function str-replace($string, $search, $replace: '') {

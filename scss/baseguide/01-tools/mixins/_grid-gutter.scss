@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
   @if (type-of($gutter) == 'map') {
     @if $breakpoint {
@@ -17,7 +19,7 @@
 }
 
 @mixin gutter($gutter, $type) {
-  $gutter: to-rem($gutter / 2);
+  $gutter: to-rem(math.div($gutter, 2));
 
   @if $type == 'inner' {
     padding-left: $gutter;
