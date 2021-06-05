@@ -293,6 +293,27 @@ The grid mixins can be used to create custom containers, rows and columns.
 </div>
 ```
 
+
+## Embed
+Use the embed object for fixed ratio resources like videos or maps using iframes.
+The default (base) ratio is 16 by 9. Extend the ```$embed-rations``` map to add more ratios. Custom ratios will respect the ```$meta-class-modifier``` setting.
+
+```scss
+$embed-ratios: (
+  base: 16 by 9,
+  square: 1 by 1
+);
+```
+
+```html
+<div class="embed-responsive embed-responsive-square">
+  <iframe src="https://player.vimeo.com/video/23237102?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+```
+
+The embed selector is defined by the ```$embed-selector``` variable.
+
+
 ## Buttons
 Buttons consist of base settings as wells as variations. Both can be configured in the settings file. It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
 
