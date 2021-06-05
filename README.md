@@ -325,7 +325,7 @@ An advanced button variations config could look like this:
 $button-variations: (
   base: (
     focus: (
-      box-shadow: 0 0 0 0.188rem transparentize($color-primary, 0.5)
+      box-shadow: 0 0 0 0.188rem rgba($color-primary, 0.5)
     ),
     disabled: (
       opacity: 0.65
