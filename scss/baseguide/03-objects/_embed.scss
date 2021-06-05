@@ -1,13 +1,15 @@
 #{$embed-selector} {
-  $first-key: nth(map-keys($embed-ratios), 1);
-  $ratios: map-remove($embed-ratios, $first-key);
+  @if (type-of($embed-ratios) == 'map') {
+    $first-key: nth(map-keys($embed-ratios), 1);
+    $ratios: map-remove($embed-ratios, $first-key);
 
-  @include aspect-ratio($first-key);
+    @include aspect-ratio($first-key);
 
-  @each $name, $ratio in $ratios {
-    &#{$meta-class-modifier}#{$name} {
-      &::before {
-        padding-bottom: ratio-to-percentage($ratio);
+    @each $name, $ratio in $ratios {
+      &#{$meta-class-modifier}#{$name} {
+        &::before {
+          padding-bottom: ratio-to-percentage($ratio);
+        }
       }
     }
   }
