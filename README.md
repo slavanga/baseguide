@@ -16,6 +16,7 @@ Baseguide is a lightweight and robust CSS framework for prototyping and producti
 * [Breakpoints](#breakpoints)
 * [Fluid Scaling](#fluid-scaling)
 * [Grid](#grid)
+* [Embed](#embed)
 * [Buttons](#buttons)
 * [Forms](#forms)
 * [Typography](#typography)
@@ -296,7 +297,7 @@ The grid mixins can be used to create custom containers, rows and columns.
 
 ## Embed
 Use the embed object for fixed ratio resources like videos or maps using iframes.
-The default (base) ratio is 16 by 9. Extend the ```$embed-rations``` map to add more ratios. Custom ratios will respect the ```$meta-class-modifier``` setting.
+The default (base) ratio is 16 by 9. Extend the ```$embed-ratios``` map to add more ratios. Custom ratios will respect the ```$meta-class-modifier``` setting.
 
 ```scss
 $embed-ratios: (
