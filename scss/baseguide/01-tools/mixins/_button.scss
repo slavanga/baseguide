@@ -6,6 +6,21 @@
   color: inherit;
 }
 
+@mixin button-link {
+  @include button-unstyled;
+
+  color: $link-color;
+  text-decoration: $link-decoration;
+  font-weight: $font-weight-base;
+  user-select: text;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
 // Generates global base button styles
 @mixin button-base(
   $padding-vertical: $button-padding-vertical,

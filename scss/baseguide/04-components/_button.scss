@@ -1,3 +1,7 @@
+#{$button-selector}#{$meta-class-modifier}link {
+  @include button-link;
+}
+
 #{$button-selector} {
   @include button-base;
 }
