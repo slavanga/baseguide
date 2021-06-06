@@ -162,7 +162,7 @@ body {
 ```
 
 The mixin ```fluid-spacing``` is a small wrapper for ```fluid-calc``` that looks for spacings in the map ```$spacings```.
-If no size parameter is passed then the first value (base) from the map will be used.
+If no size parameter is passed then the first value (base) from the ```$spacings``` map will be used.
 
 ```scss
 .my-component {
@@ -316,7 +316,7 @@ The embed selector is defined by the ```$embed-selector``` variable.
 
 
 ## Buttons
-Buttons consist of base settings as wells as variations. Both can be configured in the settings file. It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
+Buttons consist of base settings as well as variations. Both can be configured in the settings file.
 
 The first button variation (base) just adds to the existing base styles and get’s no class output. All further variations get their own class output, respecting the ```$meta-class-modifier``` setting.
 An advanced button variations config could look like this:
@@ -357,7 +357,15 @@ $button-variations: (
 );
 ```
 
+```html
+<button class="btn">Base Button</button>
+<button class="btn btn-default">Default Button</button>
+<button class="btn btn-ghost">Ghost Button</button>
+```
+
 You can also use no extra button styles and define variations on your own. Just leave the ```$button-variations``` map empty to do so.
+
+ It’s recommended to use a class for ```$button-selector``` instead of an element selector. Buttons often come in multiple forms (e.g. close buttons) where a lot of the base styles would have to be undone.
 
 
 ## Forms
@@ -375,7 +383,7 @@ Browsers that support [feature queries](https://caniuse.com/#feat=css-featureque
 ### Headings
 The value for ```$type-scale-base``` defines the smallest heading (h6). From there the remaining heading font sizes are calculated using the ```$type-scale```. Major Third (1.25) is the default type scale. Check [type-scale.com](https://type-scale.com/) for more scales.
 
-By using a map for ```$type-scale-base``` you can scale all headings up or down in harmony, respecting the ```$headings-breakpoints```.
+By using a map for ```$type-scale-base``` you can scale all headings up or down in harmony, respecting the ```$fluid-breakpoints```.
 
 ```scss
 $type-scale-base: (
