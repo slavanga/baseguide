@@ -1,4 +1,8 @@
-// Removes browser default button styles
+////
+/// @group button
+////
+
+/// Remove browser default styles from `<button>`
 @mixin button-unstyled {
   border: 0;
   padding: 0;
@@ -6,6 +10,7 @@
   color: inherit;
 }
 
+// Generate styles for a `<button>` that looks like a link
 @mixin button-link {
   @include button-unstyled;
 
@@ -21,7 +26,14 @@
   }
 }
 
-// Generates global base button styles
+/// Generate button base styles
+///
+/// @param {Number} $padding-vertical [$button-padding-vertical]
+/// @param {Number} $padding-horizontal [$button-padding-horizontal]
+/// @param {Number} $border-width [$button-border-width]
+/// @param {Number} $border-radius [$button-border-radius]
+/// @param {List} $transition [$button-transition]
+/// @param {Bool} $cursor-pointer [$button-cursor-pointer]
 @mixin button-base(
   $padding-vertical: $button-padding-vertical,
   $padding-horizontal: $button-padding-horizontal,
@@ -59,7 +71,9 @@
   }
 }
 
-// Generates button variations
+/// Generate button variation styles
+///
+/// @param {Map} $variations [$button-variations] - Map of button variations
 @mixin button-variations($variations: $button-variations) {
   @if (type-of($variations) == 'map') {
     $first-key: nth(map-keys($variations), 1);

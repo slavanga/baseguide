@@ -1,13 +1,32 @@
 @use 'sass:math';
 
+/// Scale value according to the passed exponent and type scale
+///
+/// @param {Number} $exp - Exponent
+/// @param {Number} $size [$font-size-base] - Size to scale
+/// @param {Number} $type-scale [$type-scale] - Type scale (e.g 1.2)
+/// @return {Number} - Scaled value
 @function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) {
   @return math.pow($type-scale, $exp) * $size;
 }
 
-@function strip-unit($number) {
-  @return math.div($number, $number * 0 + 1);
+/// Remove unit from a value
+///
+/// @param {Number} $value - value to be stripped
+/// @return {Number} - Raw number without unit
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
 }
 
+/// Convert a value to rem
+///
+/// @param {Number} $value - Value to be converted
+/// @param {Number} $base [16px] - Base font size
+/// @example scss
+/// body {
+///   font-size: to-rem(20px);
+/// }
+/// @return {Number} - Rem value
 @function to-rem($value, $base: 16px) {
   @if (unit($value) == 'em') {
     $value: strip-unit($value) * 1rem;
@@ -24,6 +43,10 @@
   @return $value;
 }
 
+/// Convert an aspect ratio to a percentage value
+///
+/// @param {String} $ratio - Aspect ratio formatted as `x by y`
+/// @return {Number} - Percentage value
 @function ratio-to-percentage($ratio) {
   $width: nth($ratio, 1);
   $height: nth($ratio, 3);
@@ -31,6 +54,12 @@
   @return percentage(math.div($height, $width));
 }
 
+/// Replace `$search` with `$replace` in `$string`
+///
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace [''] - New value
+/// @return {String} - Replaced string
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
@@ -41,11 +70,16 @@
   @return $string;
 }
 
-// Usage example:
-//
-// .icon {
-//   background-image: url(get-icon('radio', #fff));
-// }
+
+/// Get an icon from the `$icons` map in the specified color
+///
+/// @param {String} $icon - Map key of `$icons`
+/// @param {String} $color [$icon-color] - Hex color value
+/// @example scss
+/// .icon {
+///   background-image: url(get-icon('radio', #fff));
+/// }
+/// @returns {String} Encoded SVG icon string
 @function get-icon($icon, $color: $icon-color) {
   $color: inspect($color);
 

@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 
-// Micro Clearfix
+/// Micro clearfix
 @mixin clearfix {
   &::after {
     content: '';
@@ -13,10 +13,11 @@
 }
 
 
-// Creates an aspect ratio box with optional support for growing content
-// @param {String|List} $ratio - Can be a key from the $embed-ratios map or a list formatted as `x by y`
-// @param {Bool} $grow - Enable dynamic growing if container has more content
-@mixin aspect-ratio($ratio: base, $grow: false) {
+/// Create an aspect ratio box with optional support for dynamic growing content
+///
+/// @param {String|List} $ratio ['base'] - Map key of the `$embed-ratios` map or a list formatted as `x by y`
+/// @param {Bool} $grow [false] - Enables dynamic growing of the container if true
+@mixin aspect-ratio($ratio: 'base', $grow: false) {
   @if (type-of($ratio) == 'string' or type-of($ratio) == 'list') {
     $key: map-get($embed-ratios, $ratio);
 
@@ -49,7 +50,7 @@
 }
 
 
-// Old school way of hiding text. Better use sr-only with an additional <span>.
+/// Old school way of hiding text. Better use sr-only with an additional `<span>`
 @mixin text-hide {
   text-indent: 110%;
   white-space: nowrap;
@@ -58,14 +59,14 @@
   text-shadow: none;
 }
 
-// Truncate text using ellipsis (single-line)
+/// Truncate text using ellipsis (single-line)
 @mixin text-truncate {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-// Activate hyphenation with fallbacks. Make sure to set the lang attribute on the <html> tag.
+/// Activate hyphenation with fallbacks. Make sure to set the lang attribute on the `<html>` tag.
 @mixin text-hyphenate {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -73,7 +74,7 @@
 }
 
 
-// Hide content accessibly
+/// Hide content accessibly
 @mixin sr-only {
   position: absolute;
   width: 1px;
@@ -83,7 +84,7 @@
   white-space: nowrap;
 }
 
-// Undo styles from sr-only
+/// Undo styles from sr-only
 @mixin sr-only-reset {
   position: static;
   width: auto;
@@ -93,7 +94,7 @@
   white-space: inherit;
 }
 
-// Undo styles from sr-only when element is activated or focused
+/// Undo styles from sr-only when element is activated or focused
 @mixin sr-only-focusable {
   &:active,
   &:focus {
@@ -102,7 +103,12 @@
 }
 
 
-// Beautiful underline with control over text spacing
+/// Beautiful underline with control over text spacing
+///
+/// @param {String|Color} $color [currentColor] - Color of the underline
+/// @param {Number} $distance [0] - Distance from the text
+/// @param {Number} $width [100%] - Width of the underline
+/// @param {Number} $height [1px] - Thickness of the underline
 @mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) {
   padding-bottom: $distance;
   background-image: linear-gradient($color, $color);
@@ -113,7 +119,9 @@
 }
 
 
-// Target HiDPI screens
+/// Target HiDPI screens
+///
+/// @param {Number} $ratio [1.5] - Screen resolution ratio
 @mixin hidpi($ratio: 1.5) {
   @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
     @content;
@@ -121,7 +129,10 @@
 }
 
 
-// Scale headings using modular scale
+/// Scale headings using modular scale
+///
+/// @param {Number} $scale [$type-scale-base]
+/// @param {List} $headings [$headings]
 @mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
   $max-scale: 0;
   $sizes: $scale;
@@ -146,13 +157,18 @@
 }
 
 
-// Accessible fade in and fade out transitions
+/// Accessible fade in transition
+///
+/// @param {Number} $duration [0.15s]
 @mixin fade-in($duration: 0.15s) {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity $duration;
 }
 
+/// Accessible fade out transition
+///
+/// @param {Number} $duration [0.15s]
 @mixin fade-out($duration: 0.15s) {
   visibility: hidden;
   opacity: 0;
@@ -160,7 +176,12 @@
 }
 
 
-// Triangle mixin adapted from bourbon
+/// CSS only triangle icon (adapted from bourbon)
+///
+/// @param {String} $direction
+/// @param {Number} $width
+/// @param {Number} $height
+/// @param {String|Color} $color [currentColor]
 @mixin triangle($direction, $width, $height, $color: currentColor) {
   border-style: solid;
   height: 0;
@@ -201,7 +222,11 @@
 }
 
 
-// Loops all breakpoints and outputs @content
+/// Loop all breakpoints and output `@content`
+///
+/// @param {Map} $breakpoints [$mq-breakpoints] - Map of breakpoints
+/// @param {Bool} $inclusive [true] - Outputs inclusive media queries (only min-width) if true
+/// @param {Bool} $mq [true] - Outputs media queries if true
 @mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
   $breakpoint-keys: map-keys($breakpoints);
 
@@ -256,7 +281,6 @@
 }
 
 
-// Generates min, max and fluid in-between values for given CSS property
 /// Output content in a media query excluding the first breakpoint
 ///
 /// @param {String} $breakpoint - Named breakpoint key of `$mq-breakpoints`
@@ -272,11 +296,13 @@
 }
 
 
-// @param {String} $prop - Any CSS property
-// @param {Map|Number} $sizes - Map of sizes formatted as (min: x, max y)
-// @param {Map} $breakpoints - Map of named breakpoints from $mq-breakpoints or custom px values formatted as (min: x, max: y)
-// @param {Bool} $negative - Negates the values if true
-// @param {Bool} $important - Adds important flag if true
+/// Generate min, max and fluid in-between values for a given CSS property
+///
+/// @param {String} $prop - Any CSS property that supports calc as a value
+/// @param {Map|Number|List} $sizes - Map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or a single number for min size
+/// @param {Map} $breakpoints - Map of two named breakpoints from `$mq-breakpoints` formatted as (min: md, max: lg) or custom px values formatted as (min: 600px, max: 900px)
+/// @param {Bool} $negative [false] - Negates the values if true
+/// @param {Bool} $important [false] - Adds important flag if true
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
   $min-size: null;
   $max-size: null;
@@ -337,13 +363,20 @@
 }
 
 
-// Wrapper for fluid-calc that gets spacings from the map $spacings
-@mixin fluid-spacing($prop, $size: base, $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
+/// Wrapper mixin for fluid-calc that gets spacings from the map `$spacings`
+///
+/// @param {String} $prop - Any CSS property that supports calc as a value
+/// @param {Map|Number|List|String} $sizes -  Map key of `$spacings`, map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or a single number for min size
+/// @param {Map} $breakpoints - Map of two named breakpoints from `$mq-breakpoints` formatted as (md, lg) or custom px values formatted as (min: 600px, max: 900px)
+/// @param {Bool} $negative [false] - Negates the values if true
+/// @param {Bool} $important [false] - Adds important flag if true
+@mixin fluid-spacing($prop, $size: 'base', $breakpoints: $fluid-breakpoints, $negative: false, $important: false) {
+  // get spacing value from map by key
   @if (type-of($size) == 'string') {
-    $size-value: map-get($spacings, $size);
+    $spacings-size: map-get($spacings, $size);
 
-    @if $size-value {
-      $size: $size-value;
+    @if $spacings-size {
+      $size: $spacings-size;
     }
     @else {
       @error "The spacing #{$size} wasn't found in map $spacings.";
@@ -395,7 +428,9 @@
 }
 
 
-// Wrapper for config-variation that uses the $type-variations as config by default
-@mixin type($variation: base) {
+/// Wrapper for config-variation that uses the `$type-variations` map as default lookup map
+///
+/// @param {String} $variation ['base'] - Map key of `$type-variations`
+@mixin type($variation: 'base') {
   @include config-variation($type-variations, $variation);
 }
