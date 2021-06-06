@@ -257,6 +257,20 @@
 
 
 // Generates min, max and fluid in-between values for given CSS property
+/// Output content in a media query excluding the first breakpoint
+///
+/// @param {String} $breakpoint - Named breakpoint key of `$mq-breakpoints`
+@mixin skip-first-breakpoint($breakpoint) {
+  @if ($breakpoint == nth(map-keys($mq-breakpoints), 1)) {
+    @content;
+  }
+  @else {
+    @include mq($breakpoint) {
+      @content;
+    }
+  }
+}
+
 
 // @param {String} $prop - Any CSS property
 // @param {Map|Number} $sizes - Map of sizes formatted as (min: x, max y)
