@@ -140,9 +140,10 @@
   @each $heading in $headings {
     #{$heading} {
       @if (type-of($scale) == 'map') {
+        // Replace map values with modular scaled values
         @each $key, $value in $scale {
           $sizes: map-remove($sizes, $key);
-          $sizes: map-merge($scale, ($key: modular-scale($max-scale, $value)));
+          $sizes: map-merge($sizes, ($key: modular-scale($max-scale, $value)));
         }
       }
       @else {
