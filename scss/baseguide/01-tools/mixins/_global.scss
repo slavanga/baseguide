@@ -380,7 +380,7 @@
       $size: $spacings-size;
     }
     @else {
-      @error "The spacing #{$size} wasn't found in map $spacings.";
+      @error "The spacing `#{$size}` wasn't found in map $spacings.";
     }
   }
 

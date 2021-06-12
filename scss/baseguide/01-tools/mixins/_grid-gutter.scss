@@ -7,7 +7,7 @@
         $gutter: map-get($gutter, $breakpoint);
       }
       @else {
-        @error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
+        @error "Breakpoint `#{$breakpoint}` wasn't found in $gutter.";
       }
     }
     @else {

@@ -132,7 +132,7 @@ $mq-media-type: all !default;
     @if map-has-key($breakpoints, $name) {
         @return map-get($breakpoints, $name);
     } @else {
-        @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
+        @warn "Breakpoint `#{$name}` wasn't found in $breakpoints.";
     }
 }
 
