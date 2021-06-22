@@ -10,6 +10,7 @@
   @return math.pow($type-scale, $exp) * $size;
 }
 
+
 /// Remove unit from a value
 ///
 /// @param {Number} $value - value to be stripped
@@ -17,6 +18,7 @@
 @function strip-unit($value) {
   @return math.div($value, $value * 0 + 1);
 }
+
 
 /// Convert a value to rem
 ///
@@ -43,6 +45,7 @@
   @return $value;
 }
 
+
 /// Convert an aspect ratio to a percentage value
 ///
 /// @param {String} $ratio - Aspect ratio formatted as `x by y`
@@ -53,6 +56,7 @@
 
   @return percentage(math.div($height, $width));
 }
+
 
 /// Replace `$search` with `$replace` in `$string`
 ///
@@ -71,6 +75,36 @@
 }
 
 
+/// Validate a sizing map
+///
+/// @param {Map} $map - Map to test
+/// @return {Boolean} - True if the parameter is a map with a `min` key
+@function is-sizing-map($map) {
+  @return (type-of($map) == 'map' and map-has-key($map, 'min'));
+}
+
+
+/// Get the next breakpoint from a map
+///
+/// @param {String} $name - Current breakpoint name
+/// @param {Map} $breakpoints [map-keys($mq-breakpoints)] - Map of breakpoints
+/// @return {String} - Next breakpoint name
+@function breakpoint-next($name, $breakpoints: map-keys($mq-breakpoints)) {
+  $breakpoint-index: index($breakpoints, $name);
+  $next: false;
+
+  @if not $breakpoint-index {
+    @error "Breakpoint `#{$name}` not found in $breakpoints";
+  }
+
+  @if (length($breakpoints) > 1 and $breakpoint-index < length($breakpoints)) {
+    $next: nth($breakpoints, $breakpoint-index + 1);
+  }
+
+  @return $next;
+}
+
+
 /// Get an icon from the `$icons` map in the specified color
 ///
 /// @param {String} $icon - Map key of `$icons`
@@ -79,7 +113,7 @@
 /// .icon {
 ///   background-image: url(get-icon('radio', #fff));
 /// }
-/// @returns {String} Encoded SVG icon string
+/// @return {String} Encoded SVG icon string
 @function get-icon($icon, $color: $icon-color) {
   $color: inspect($color);
 
@@ -93,11 +127,11 @@
       }
     }
     @else {
-      @error "Please make sure '#{$icon}' is defined in the $icons map.";
+      @error "Please make sure `#{$icon}` is defined in the $icons map.";
     }
   }
   @else {
-    @error "Please make sure '#{$color}' is a HEX value.";
+    @error "Please make sure `#{$color}` is a HEX value.";
   }
 
   @return $icon;
