@@ -36,7 +36,7 @@ $mq-breakpoints: (
   sm: 375px,
   md: 680px,
   lg: 960px,
-  xl: 1200px
+  xl: 1200px,
 ) !default;
 
 $mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
@@ -46,7 +46,7 @@ $mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
 $fluid-scaling: true !default;
 $fluid-breakpoints: (
   min: sm,
-  max: xl
+  max: xl,
 ) !default;
 
 
@@ -64,18 +64,18 @@ $headings-color: inherit !default;
 
 $type-scale: 1.25 !default;
 $type-scale-base: (
-  min: $font-size-base
+  min: $font-size-base,
 ) !default;
 
 $type-variations: (
   base: (
     font-family: $font-family-base,
     font-size: (
-      min: $font-size-base
+      min: $font-size-base,
     ),
     font-weight: $font-weight-base,
-    line-height: $line-height-base
-  )
+    line-height: $line-height-base,
+  ),
 ) !default;
 
 
@@ -102,24 +102,24 @@ $spacing-reset: true !default;
 
 $spacings: (
   base: (
-    min: 24px
-  )
+    min: 24px,
+  ),
 ) !default;
 
 $spacers: (
   nospace: (
-    min: 0
+    min: 0,
   ),
   space: (
-    min: 30px
-  )
+    min: 30px,
+  ),
 ) !default;
 
 
 // Embed Ratios
 $embed-selector: '.embed-responsive' !default;
 $embed-ratios: (
-  base: 16 by 9
+  base: 16 by 9,
 ) !default;
 
 
@@ -133,7 +133,7 @@ $input-selector: (
   '[type="text"]',
   '[type="url"]',
   'textarea',
-  'select'
+  'select',
 ) !default;
 
 $input-height: 2.375em !default;
@@ -182,7 +182,7 @@ $icon-select: '<svg xmlns="http://www.w3.org/2000/svg" height="8" width="12" vie
 $icons: (
   radio: $icon-radio,
   checkbox: $icon-checkbox,
-  select: $icon-select
+  select: $icon-select,
 ) !default;
 
 
@@ -205,15 +205,15 @@ $button-variations: (
     background-color: $color-primary,
     color: $color-white,
     hover: (
-      background-color: darken($color-primary, 5%)
+      background-color: darken($color-primary, 5%),
     ),
     focus: (
       background-color: darken($color-primary, 10%),
-      box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35)
+      box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35),
     ),
     disabled: (
-      opacity: 0.65
-    )
+      opacity: 0.65,
+    ),
   )
 ) !default;
 
