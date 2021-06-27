@@ -1,18 +1,18 @@
 @each $name, $size in $spacing-utilities {
   .#{$name} {
-    @include fluid-spacing('margin-bottom', $size, $important: true);
+    @include spacing('margin-bottom', $size, $important: true);
   }
 
   @include loop-breakpoints($inclusive: false) {
     .#{$name}-#{$breakpoint} {
-      @include fluid-spacing('margin-bottom', $size, $important: true);
+      @include spacing('margin-bottom', $size, $important: true);
     }
   }
 
   @include loop-breakpoints {
     @if not $is-last-breakpoint {
       .#{$name}-#{$breakpoint}-up {
-        @include fluid-spacing('margin-bottom', $size, $important: true);
+        @include spacing('margin-bottom', $size, $important: true);
       }
     }
   }

@@ -17,7 +17,7 @@ ul,
 ol,
 hr,
 p {
-  @include fluid-spacing('margin-bottom');
+  @include spacing('margin-bottom');
 
   margin-top: 0;
 

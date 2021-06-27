@@ -15,7 +15,7 @@
 /// @param {String} $child-selector ['li'] - Any valid CSS selector
 @mixin list-inline($spacing: 1rem, $center: false, $child-selector: 'li') {
   @include list-unstyled;
-  @include fluid-spacing('margin-left', $spacing, $negative: true);
+  @include spacing('margin-left', $spacing, $negative: true);
 
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +25,6 @@
   }
 
   > #{$child-selector} {
-    @include fluid-spacing('margin-left', $spacing);
+    @include spacing('margin-left', $spacing);
   }
 }
