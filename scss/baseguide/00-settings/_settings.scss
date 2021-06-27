@@ -76,6 +76,16 @@ $type-variations: (
     font-weight: $font-weight-base,
     line-height: $line-height-base,
   ),
+  headings: (
+    font-family: $headings-font-family,
+    font-weight: $headings-font-weight,
+    line-height: $headings-line-height,
+  ),
+  small: (
+    font-size: (
+      min: $font-size-base * 0.8,
+    ),
+  ),
 ) !default;
 
 

@@ -1,5 +1,5 @@
 .small {
-  font-size: $font-size-base * 0.8 !important;
+  @include type('small');
 }
 
 .text-left {
