@@ -1,0 +1,40 @@
+////
+/// @group typography
+////
+
+
+/// Scale headings using modular scale
+///
+/// @param {Number} $scale [$type-scale-base]
+/// @param {List} $headings [$headings]
+@mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
+  $max-scale: 0;
+  $sizes: $scale;
+
+  @each $heading in $headings {
+    #{$heading} {
+      @if (type-of($scale) == 'map') {
+        // Replace map values with modular scaled values
+        @each $key, $value in $scale {
+          $sizes: map-remove($sizes, $key);
+          $sizes: map-merge($sizes, ($key: modular-scale($max-scale, $value)));
+        }
+      }
+      @else {
+        $sizes: modular-scale($max-scale, $scale);
+      }
+
+      @include fluid-calc('font-size', $sizes);
+    }
+
+    $max-scale: $max-scale + 1;
+  }
+}
+
+
+/// Wrapper mixin for get-config that uses the `$type-variations` map as default lookup map
+///
+/// @param {String} $variation ['base'] - Map key of `$type-variations`
+@mixin type($variation: 'base') {
+  @include get-config($type-variations, $variation);
+}

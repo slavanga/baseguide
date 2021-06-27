@@ -1,0 +1,39 @@
+////
+/// @group global
+////
+
+
+/// Helper mixin for `loop-config` mixin
+///
+/// @param {String} $key
+/// @param {String|Number|Color|Map} $value
+@mixin output-props($key, $value) {
+  @if (index(('hover', 'focus', 'active'), $key)) {
+    &:#{$key} {
+      @each $pseudo-key, $pseudo-value in $value {
+        #{$pseudo-key}: $pseudo-value;
+      }
+    }
+  }
+  @else if (index(('before', 'after'), $key)) {
+    &::#{$key} {
+      @each $pseudo-key, $pseudo-value in $value {
+        #{$pseudo-key}: $pseudo-value;
+      }
+    }
+  }
+  @else if ($key == 'disabled') {
+    &:disabled,
+    &.disabled {
+      @each $disabled-key, $disabled-value in $value {
+        #{$disabled-key}: $disabled-value;
+      }
+    }
+  }
+  @else if (is-sizing-map($value)) {
+    @include fluid-calc($key, $value);
+  }
+  @else {
+    #{$key}: $value;
+  }
+}

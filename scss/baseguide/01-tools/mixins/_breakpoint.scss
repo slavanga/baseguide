@@ -1,0 +1,87 @@
+////
+/// @group breakpoint
+////
+
+
+/// Loop all breakpoints and output `@content`
+///
+/// @param {Map} $breakpoints [$mq-breakpoints] - Map of breakpoints
+/// @param {Bool} $inclusive [true] - Outputs inclusive media queries (only min-width) if true
+/// @param {Bool} $mq [true] - Outputs media queries if true
+@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
+  $breakpoint-keys: map-keys($breakpoints);
+
+  @for $i from 1 through length($breakpoint-keys) {
+    $breakpoint: nth($breakpoint-keys, $i) !global;
+    $is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
+    $is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+
+    @if $mq {
+      @if $inclusive {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @content;
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      }
+      @else {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @if length($breakpoint-keys) > 1 {
+            @include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+              @content;
+            }
+          }
+          @else {
+            @content;
+          }
+        }
+        // last breakpoint
+        @else if $is-last-breakpoint {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      }
+    }
+    @else {
+      @content;
+    }
+  }
+}
+
+
+/// Output content in a media query excluding the first breakpoint
+///
+/// @param {String} $breakpoint - Named breakpoint key of `$mq-breakpoints`
+@mixin skip-first-breakpoint($breakpoint) {
+  @if ($breakpoint == nth(map-keys($mq-breakpoints), 1)) {
+    @content;
+  }
+  @else {
+    @include mq($breakpoint) {
+      @content;
+    }
+  }
+}
+
+
+/// Target HiDPI screens
+///
+/// @param {Number} $ratio [1.5] - Screen resolution ratio
+@mixin hidpi($ratio: 1.5) {
+  @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
+    @content;
+  }
+}

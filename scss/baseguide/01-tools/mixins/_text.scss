@@ -1,0 +1,27 @@
+////
+/// @group utilities
+////
+
+
+/// Old school way of hiding text. Better use sr-only with an additional `<span>`
+@mixin text-hide {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  text-shadow: none;
+}
+
+/// Truncate text using ellipsis (single-line)
+@mixin text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/// Activate hyphenation with fallbacks. Make sure to set the lang attribute on the `<html>` tag.
+@mixin text-hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}

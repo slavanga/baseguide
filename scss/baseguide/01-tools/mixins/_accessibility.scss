@@ -1,0 +1,50 @@
+////
+/// @group utilities
+////
+
+
+/// Hide content accessibly
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/// Undo styles from sr-only
+@mixin sr-only-reset {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: inherit;
+}
+
+/// Undo styles from sr-only when element is activated or focused
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    @include sr-only-reset;
+  }
+}
+
+/// Accessible fade in transition
+///
+/// @param {Number} $duration [0.15s]
+@mixin fade-in($duration: 0.15s) {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity $duration;
+}
+
+/// Accessible fade out transition
+///
+/// @param {Number} $duration [0.15s]
+@mixin fade-out($duration: 0.15s) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear $duration, opacity $duration;
+}

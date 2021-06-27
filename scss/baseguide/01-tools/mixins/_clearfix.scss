@@ -1,0 +1,13 @@
+////
+/// @group utilities
+////
+
+
+/// Micro clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

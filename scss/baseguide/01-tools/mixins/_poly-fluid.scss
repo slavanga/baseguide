@@ -1,0 +1,125 @@
+////
+/// @group poly-fluid
+////
+
+
+/// Generate min, max and fluid in-between values for a given CSS property
+///
+/// @param {String} $prop - Any CSS property that supports calc as a value
+/// @param {Map|Number|List} $sizes - Map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
+/// @param {Map} $breakpoints [$fluid-breakpoints] - Map of two named breakpoints from `$mq-breakpoints` formatted as (min: md, max: lg) or custom px values formatted as (min: 600px, max: 900px)
+/// @param {Bool} $negative [false] - Negates the values if true
+/// @param {Bool} $important [false] - Adds important flag if true
+/// @param {String} $current-breakpoint [null]
+/// @param {List} $all-breakpoints [null]
+@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false, $current-breakpoint: null, $all-breakpoints: null) {
+  $min-size: null;
+  $max-size: null;
+  $min-breakpoint: map-get($breakpoints, 'min');
+  $max-breakpoint: map-get($breakpoints, 'max');
+  $min-breakpoint-value: $min-breakpoint;
+  $max-breakpoint-value: $max-breakpoint;
+  $multiplicand: 1;
+
+  @if (type-of($sizes) == 'map') {
+    $min-size: map-get($sizes, 'min');
+    $max-size: map-get($sizes, 'max');
+  }
+  @else if (type-of($sizes) == 'list') {
+    $min-size: nth($sizes, 1);
+    $max-size: nth($sizes, 2);
+  }
+  @else if (type-of($sizes) == 'number') {
+    $min-size: $sizes;
+  }
+
+  @if map-has-key($mq-breakpoints, $min-breakpoint) {
+    $min-breakpoint-value: map-get($mq-breakpoints, $min-breakpoint);
+  }
+
+  @if map-has-key($mq-breakpoints, $max-breakpoint) {
+    $max-breakpoint-value: map-get($mq-breakpoints, $max-breakpoint);
+  }
+
+  @if $negative == true {
+    $multiplicand: -1;
+  }
+
+  @if $important == true {
+    $important: unquote('!important');
+  }
+  @else {
+    $important: null;
+  }
+
+  @if $min-size {
+    $min-size: to-rem($min-size);
+
+    @if (
+      not $current-breakpoint
+      or $current-breakpoint == nth($all-breakpoints, 1)
+      or $current-breakpoint == nth($all-breakpoints, length($all-breakpoints)) and not $max-size
+    ) {
+      #{$prop}: $min-size * $multiplicand $important;
+    }
+
+    @if $max-size and $max-breakpoint-value {
+      $max-size: to-rem($max-size);
+
+      @if $fluid-scaling and $min-breakpoint-value {
+        $value: calc((#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint-value)}) / #{strip-unit(to-rem($max-breakpoint-value) - to-rem($min-breakpoint-value))}) * #{$multiplicand}) $important;
+
+        @if ($current-breakpoint) {
+          // Breakpoint set already in parent mixin (loop-config)
+          #{$prop}: $value;
+        }
+        @else {
+          @include mq($min-breakpoint-value) {
+            #{$prop}: $value;
+          }
+        }
+      }
+
+      @if (
+        not $current-breakpoint
+        or $current-breakpoint == nth($all-breakpoints, length($all-breakpoints))
+      ) {
+        @include mq($max-breakpoint-value) {
+          #{$prop}: $max-size * $multiplicand $important;
+        }
+      }
+    }
+  }
+}
+
+
+/// Wrapper mixin for fluid-calc that gets spacings from the map `$spacings`
+///
+/// @param {String} $prop - Any CSS property that supports calc as a value
+/// @param {Map|Number|List|String} $sizes - Map key of `$spacings`, map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
+/// @param {Map} $breakpoints - Map of two named breakpoints from `$mq-breakpoints` formatted as (md, lg) or custom px values formatted as (min: 600px, max: 900px)
+/// @param {Bool} $negative [false] - Negates the values if true
+/// @param {Bool} $important [false] - Adds important flag if true
+@mixin fluid-spacing($prop, $sizes: 'base', $negative: false, $important: false) {
+  @if (type-of($sizes) == 'string') {
+    $spacings-size: map-get($spacings, $sizes);
+
+    @if $spacings-size {
+      $sizes: $spacings-size;
+    }
+    @else {
+      @error "The spacing `#{$sizes}` wasn't found in map $spacings.";
+    }
+  }
+
+  // If we have a map of named breakpoints
+  @if (
+    type-of($sizes) == 'map'
+    and map-has-key($mq-breakpoints, nth(map-keys($sizes), 1))
+  ) {
+    @include loop-config($sizes, $prop, $negative: $negative, $important: $important);
+  }
+  @else {
+    @include fluid-calc($prop, $sizes, $negative: $negative, $important: $important);
+  }
+}

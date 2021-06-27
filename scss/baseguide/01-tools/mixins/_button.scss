@@ -80,11 +80,11 @@
     $variations: map-remove($variations, $first-key);
 
     #{$button-selector} {
-      @include config-variation($button-variations, $first-key);
+      @include get-config($button-variations, $first-key);
 
       @each $key, $value in $variations {
         &#{$meta-class-modifier}#{$key} {
-          @include config-variation($button-variations, $key);
+          @include get-config($button-variations, $key);
         }
       }
     }

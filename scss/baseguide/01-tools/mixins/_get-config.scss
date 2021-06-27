@@ -1,0 +1,18 @@
+////
+/// @group global
+////
+
+
+/// Generate config variations (e.g buttons or type)
+///
+/// @param {Map} $variation-map
+/// @param {String} $variation
+@mixin get-config($variation-map, $variation) {
+  $config: map-get($variation-map, $variation);
+
+  @if not $config {
+    @error "The key `#{$variation}` wasn't found in map $variation-map.";
+  }
+
+  @include loop-config($config);
+}
