@@ -215,9 +215,11 @@ $button-variations: (
     color: $color-white,
     hover: (
       background-color: darken($color-primary, 5%),
+      color: $color-white,
     ),
     focus: (
       background-color: darken($color-primary, 10%),
+      color: $color-white,
       box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35),
     ),
     disabled: (

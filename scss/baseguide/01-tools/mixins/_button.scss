@@ -71,6 +71,16 @@
   }
 }
 
+
+/// Generate styles for a single button variation
+///
+/// @param {String} $variation ['base'] - Map key of `$button-variations`
+@mixin button($variation: 'base') {
+  @include button-base;
+  @include get-config($button-variations, $variation);
+}
+
+
 /// Generate button variation styles
 ///
 /// @param {Map} $variations [$button-variations] - Map of button variations

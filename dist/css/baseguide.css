@@ -1886,9 +1886,11 @@ input[type=file] {
 }
 .btn:hover {
   background-color: #0267bf;
+  color: #fff;
 }
 .btn:focus {
   background-color: #025aa5;
+  color: #fff;
   box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.35);
 }
 .btn:disabled, .btn.disabled {
