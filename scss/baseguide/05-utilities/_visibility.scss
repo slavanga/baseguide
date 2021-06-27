@@ -17,7 +17,7 @@
     display: none !important;
   }
 
-  @if not ($is-first-breakpoint or $is-last-breakpoint) {
+  @if (not ($is-first-breakpoint or $is-last-breakpoint)) {
     .visible-#{$breakpoint}-up {
       display: none !important;
     }
@@ -35,7 +35,7 @@
 }
 
 @include loop-breakpoints {
-  @if not ($is-first-breakpoint or $is-last-breakpoint) {
+  @if (not ($is-first-breakpoint or $is-last-breakpoint)) {
     .hidden-#{$breakpoint}-up {
       display: none !important;
     }

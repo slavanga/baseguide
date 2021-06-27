@@ -133,7 +133,7 @@ $input-selector: (
   '[type="text"]',
   '[type="url"]',
   'textarea',
-  'select',
+  'select'
 ) !default;
 
 $input-height: 2.375em !default;
@@ -214,7 +214,7 @@ $button-variations: (
     disabled: (
       opacity: 0.65,
     ),
-  )
+  ),
 ) !default;
 
 

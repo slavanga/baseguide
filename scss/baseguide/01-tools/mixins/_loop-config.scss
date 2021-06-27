@@ -14,7 +14,10 @@
     @if (map-has-key($mq-breakpoints, $key)) {
       $breakpoint-keys: map-keys($sizes);
       $next-breakpoint: breakpoint-next($key, $breakpoint-keys) or map-get($fluid-breakpoints, 'max');
-      $breakpoint-range: (min: $key, max: $next-breakpoint);
+      $breakpoint-range: (
+        min: $key,
+        max: $next-breakpoint
+      );
 
       @include skip-first-breakpoint($key) {
         @if (is-sizing-map($value)) {

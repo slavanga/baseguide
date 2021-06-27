@@ -5,10 +5,10 @@ const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const config = {
-  'src': '',
-  'dest': 'dist/',
-  'minify': true,
-  'sourcemaps': false
+  src: '',
+  dest: 'dist/',
+  minify: true,
+  sourcemaps: false,
 };
 
 sass.compiler = require('sass');
@@ -24,19 +24,19 @@ function html() {
 function styles() {
   return gulp.src(config.src + 'scss/*.scss')
     .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
-    .pipe(sass({
-      outputStyle: 'expanded',
-      fiber: fibers
-    }).on('error', sass.logError))
-    .pipe($.postcss([
-      autoprefixer()
-    ]))
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+        fiber: fibers,
+      }).on('error', sass.logError)
+    )
+    .pipe($.postcss([autoprefixer()]))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + 'css'))
     .pipe(browserSync.stream())
     .pipe($.if(config.minify, $.cleanCss()))
     .pipe($.if(config.sourcemaps, $.sourcemaps.write()))
-    .pipe($.if(config.minify, $.rename({suffix: '.min'})))
+    .pipe($.if(config.minify, $.rename({ suffix: '.min' })))
     .pipe($.if(config.minify, gulp.dest(config.dest + 'css')))
     .pipe(browserSync.stream());
 }
@@ -44,11 +44,13 @@ function styles() {
 // Lint stylesheets
 function stylelint() {
   return gulp.src(config.src + 'scss/**/*.scss')
-    .pipe($.postcss([
-      require('stylelint')({fix: true})
-    ], {
-      syntax: require('postcss-scss')
-    }))
+    .pipe(
+      $.postcss([
+        require('stylelint')({ fix: true })
+      ], {
+        syntax: require('postcss-scss'),
+      })
+    )
     .pipe(gulp.dest(config.src + 'scss'));
 }
 
@@ -59,9 +61,9 @@ function serve(done) {
     notify: false,
     snippetOptions: {
       rule: {
-        match: /<\/body>/i
-      }
-    }
+        match: /<\/body>/i,
+      },
+    },
     /*
     proxy: 'example.com',
     files: config.dest,

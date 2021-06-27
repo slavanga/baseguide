@@ -21,7 +21,7 @@
   }
 
   @if $table-stripe-bg {
-    tbody tr:nth-child(2n+1) {
+    tbody tr:nth-child(2n + 1) {
       background-color: $table-stripe-bg;
     }
   }
