@@ -26,7 +26,6 @@ function styles() {
   return gulp.src(config.src + 'scss/*.scss')
     .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
     .pipe(sass({
-      precision: 8,
       outputStyle: 'expanded',
       fiber: fibers
     }).on('error', sass.logError))
