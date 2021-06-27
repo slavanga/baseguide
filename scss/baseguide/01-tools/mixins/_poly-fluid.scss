@@ -93,22 +93,22 @@
 }
 
 
-/// Wrapper mixin for fluid-calc that gets spacings from the map `$spacings`
+/// Wrapper mixin for fluid-calc that gets spacings from the map `$spacing-variations`
 ///
 /// @param {String} $prop - Any CSS property that supports calc as a value
-/// @param {Map|Number|List|String} $sizes - Map key of `$spacings`, map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
+/// @param {Map|Number|List|String} $sizes - Map key of `$spacing-variations`, map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
 /// @param {Map} $breakpoints - Map of two named breakpoints from `$mq-breakpoints` formatted as (md, lg) or custom px values formatted as (min: 600px, max: 900px)
 /// @param {Bool} $negative [false] - Negates the values if true
 /// @param {Bool} $important [false] - Adds important flag if true
 @mixin fluid-spacing($prop, $sizes: 'base', $negative: false, $important: false) {
   @if (type-of($sizes) == 'string') {
-    $spacings-size: map-get($spacings, $sizes);
+    $spacing-sizes: map-get($spacing-variations, $sizes);
 
-    @if $spacings-size {
-      $sizes: $spacings-size;
+    @if $spacing-sizes {
+      $sizes: $spacing-sizes;
     }
     @else {
-      @error "The spacing `#{$sizes}` wasn't found in map $spacings.";
+      @error "The spacing `#{$sizes}` wasn't found in map $spacing-variations.";
     }
   }
 

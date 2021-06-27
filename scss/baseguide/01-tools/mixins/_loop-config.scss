@@ -5,7 +5,7 @@
 
 /// Helper mixin for `fluid-calc` and `get-config`
 ///
-/// @param {Map|Number|List|String} $sizes - Map key of `$spacings`, map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
+/// @param {Map|Number|List|String} $sizes - Map of two sizes formatted as (min: x, max y), list of two sizes formatted as (x, y) or just a number (min size)
 /// @param {String} $prop [null] - Any CSS property that supports calc as a value
 /// @param {Bool} $negative [false] - Negates the values if true
 /// @param {Bool} $important [false] - Adds important flag if true

@@ -10,7 +10,7 @@
 
 /// Generate styles for an inline list
 ///
-/// @param {Number|String} $spacing [1rem] - The amount of space between list items as a number or map key of `$spacings`. Beware that large spacing values can affect the clickability of nearby elements in some cases.
+/// @param {Number|String} $spacing [1rem] - The amount of space between list items as a number or map key of `$spacing-variations`. Beware that large spacing values can affect the clickability of nearby elements in some cases.
 /// @param {Bool} $center [false] - Centers the list if true
 /// @param {String} $child-selector ['li'] - Any valid CSS selector
 @mixin list-inline($spacing: 1rem, $center: false, $child-selector: 'li') {

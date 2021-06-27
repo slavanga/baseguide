@@ -109,10 +109,11 @@ $grid-offset-classes: true !default;
 
 // Spacing
 $spacing-reset: true !default;
+$spacing-base: 24px !default;
 
-$spacings: (
+$spacing-variations: (
   base: (
-    min: 24px,
+    min: $spacing-base,
   ),
 ) !default;
 
