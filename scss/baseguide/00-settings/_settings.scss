@@ -118,9 +118,7 @@ $spacing-variations: (
 ) !default;
 
 $spacing-utilities: (
-  nospace: (
-    min: 0,
-  ),
+  nospace: 0,
   space: (
     min: 30px,
   ),
