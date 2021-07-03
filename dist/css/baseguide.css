@@ -354,6 +354,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   background-color: #fff;
   color: #333;
 }
@@ -443,6 +444,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: inherit;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: normal;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   color: inherit;

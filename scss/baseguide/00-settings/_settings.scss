@@ -26,6 +26,7 @@ $font-size-base: 1rem !default;
 $font-family-base: 'Helvetica Neue', Helvetica, sans-serif !default;
 $font-weight-base: 400 !default;
 $line-height-base: 1.5 !default;
+$letter-spacing-base: normal !default;
 $global-bg: $color-background !default;
 $text-color: $color-foreground !default;
 
@@ -60,6 +61,7 @@ $headings-spacing: 0.4em !default;
 $headings-font-family: inherit !default;
 $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
+$headings-letter-spacing: normal !default;
 $headings-color: inherit !default;
 
 $type-scale: 1.25 !default;
@@ -75,11 +77,13 @@ $type-variations: (
     ),
     font-weight: $font-weight-base,
     line-height: $line-height-base,
+    letter-spacing: $letter-spacing-base,
   ),
   headings: (
     font-family: $headings-font-family,
     font-weight: $headings-font-weight,
     line-height: $headings-line-height,
+    letter-spacing: $headings-letter-spacing,
   ),
   small: (
     font-size: (
