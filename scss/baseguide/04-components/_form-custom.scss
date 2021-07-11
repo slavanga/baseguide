@@ -1,5 +1,5 @@
 @supports (appearance: none) {
-  .select select:not([multiple]) {
+  .#{$meta-prefix-components}select select:not([multiple]) {
     appearance: none;
     padding-right: 2em;
     background-repeat: no-repeat;
@@ -8,8 +8,8 @@
   }
 }
 
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
+.#{$meta-prefix-components}radio input[type="radio"],
+.#{$meta-prefix-components}checkbox input[type="checkbox"] {
   &:not(:only-child) {
     opacity: 0;
   }
@@ -57,7 +57,7 @@
   }
 }
 
-.radio input[type="radio"] {
+.#{$meta-prefix-components}radio input[type="radio"] {
   ~ label::before {
     border-radius: 50%;
   }
@@ -67,7 +67,7 @@
   }
 }
 
-.checkbox input[type="checkbox"] {
+.#{$meta-prefix-components}checkbox input[type="checkbox"] {
   ~ label::before {
     border-radius: $checkbox-border-radius;
   }

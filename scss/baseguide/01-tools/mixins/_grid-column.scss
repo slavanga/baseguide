@@ -82,25 +82,25 @@
 @mixin loop-columns($breakpoint, $pull: $grid-pull-classes, $push: $grid-push-classes, $offset: $grid-offset-classes) {
   @for $i from 0 through $grid-columns {
     @if $i > 0 {
-      .col-#{$breakpoint}-#{$i} {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {
         @include column($i, $grid-columns);
       }
     }
 
     @if $pull {
-      .col-#{$breakpoint}-pull-#{$i} {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-pull-#{$i} {
         @include column-pull($i, $grid-columns);
       }
     }
 
     @if $push {
-      .col-#{$breakpoint}-push-#{$i} {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-push-#{$i} {
         @include column-push($i, $grid-columns);
       }
     }
 
     @if $offset {
-      .col-#{$breakpoint}-offset-#{$i} {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-offset-#{$i} {
         @include column-offset($i, $grid-columns);
       }
     }

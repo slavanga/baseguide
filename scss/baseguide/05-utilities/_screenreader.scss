@@ -1,7 +1,7 @@
-.sr-only {
+.#{$meta-prefix-utilities}sr-only {
   @include sr-only;
 }
 
-.sr-only-focusable {
+.#{$meta-prefix-utilities}sr-only-focusable {
   @include sr-only-focusable;
 }

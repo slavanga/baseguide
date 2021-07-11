@@ -1,17 +1,17 @@
 @each $name, $size in $spacing-utilities {
-  .#{$name} {
+  .#{$meta-prefix-utilities}#{$name} {
     @include spacing('margin-bottom', $size, $important: true);
   }
 
   @include loop-breakpoints($inclusive: false) {
-    .#{$name}-#{$breakpoint} {
+    .#{$meta-prefix-utilities}#{$name}-#{$breakpoint} {
       @include spacing('margin-bottom', $size, $important: true);
     }
   }
 
   @include loop-breakpoints {
     @if not $is-last-breakpoint {
-      .#{$name}-#{$breakpoint}-up {
+      .#{$meta-prefix-utilities}#{$name}-#{$breakpoint}-up {
         @include spacing('margin-bottom', $size, $important: true);
       }
     }

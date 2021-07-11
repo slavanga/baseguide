@@ -1,4 +1,4 @@
-#{$embed-selector} {
+.#{$meta-prefix-objects}embed-responsive {
   @if (type-of($embed-ratios) == 'map') {
     $first-key: nth(map-keys($embed-ratios), 1);
     $ratios: map-remove($embed-ratios, $first-key);

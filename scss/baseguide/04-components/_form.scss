@@ -3,12 +3,12 @@ label {
   margin-bottom: 0.3rem;
 }
 
-.label-inline {
+.#{$meta-prefix-components}label-inline {
   margin-top: $input-border-width;
   padding-top: $input-padding-vertical;
 }
 
-.form-group {
+.#{$meta-prefix-components}form-group {
   margin-bottom: 1rem;
 }
 

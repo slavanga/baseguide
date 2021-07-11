@@ -1,12 +1,12 @@
-.container {
+.#{$meta-prefix-objects}container {
   @include container;
 }
 
-.row {
+.#{$meta-prefix-objects}row {
   @include row;
 }
 
-.col {
+.#{$meta-prefix-objects}col {
   @include column-base;
 }
 

@@ -1,27 +1,27 @@
-.small {
+.#{$meta-prefix-utilities}small {
   @include type('small');
 }
 
-.text-left {
+.#{$meta-prefix-utilities}text-left {
   text-align: left !important;
 }
 
-.text-center {
+.#{$meta-prefix-utilities}text-center {
   text-align: center !important;
 }
 
-.text-right {
+.#{$meta-prefix-utilities}text-right {
   text-align: right !important;
 }
 
-.text-hide {
+.#{$meta-prefix-utilities}text-hide {
   @include text-hide;
 }
 
-.text-truncate {
+.#{$meta-prefix-utilities}text-truncate {
   @include text-truncate;
 }
 
-.text-hyphenate {
+.#{$meta-prefix-utilities}text-hyphenate {
   @include text-hyphenate;
 }
