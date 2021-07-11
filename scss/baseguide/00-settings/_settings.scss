@@ -241,5 +241,13 @@ $table-border-color: rgba($color-line, 0.65) !default;
 $table-stripe-bg: rgba($color-background-muted, 0.65) !default;
 
 
+// z-index layers
+$z-index: (
+  below: -1,
+  neutral: 0,
+  above: 1,
+);
+
+
 // Meta
 $meta-class-modifier: '-' !default;
