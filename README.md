@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/baseguide.svg)](https://www.npmjs.com/package/baseguide)
 
-Baseguide is an unoptionated, flexible and robust CSS framework for prototyping and production code.
+Baseguide is a flexible, fluid and fun CSS framework.
 
 - **Responsive** and scalable components
 - **Robust** flexbox grid
@@ -13,6 +13,7 @@ Baseguide is an unoptionated, flexible and robust CSS framework for prototyping 
 
 - [Install](#install)
 - [Development](#development)
+- [Philosophy](#philosophy)
 - [Breakpoints](#breakpoints)
 - [Fluid Scaling](#fluid-scaling)
 - [Spacing](#spacing)
@@ -75,6 +76,16 @@ $button-bg: #bada55; // 1. Customize default variables
 
 // 3. Add your own styles here
 ```
+
+## Philosophy
+
+Baseguide is a framework in the truest sense and does not try to be a complete UI library. As the following list shows, it strives to force as less opinons as possible.
+
+* Breakpoints and other settings are held in sass maps to be the most flexible
+* Class names can have prefixes for objects, components and utilities
+* BEM naming is not enforced and can be controlled with `$meta-class-modifier` and `$meta-class-element`
+* Default button cursor is configurable
+* Poly fluid scaling is integrated in key parts of the frameworks, but can be disabled globally
 
 ## Breakpoints
 
