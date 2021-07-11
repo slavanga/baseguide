@@ -422,36 +422,42 @@ An advanced button variations config could look like this:
 ```scss
 $button-variations: (
   base: (
-    focus: (
-      box-shadow: 0 0 0 0.188rem rgba($color-primary, 0.5),
-    ),
-    disabled: (
-      opacity: 0.65,
+    selectors: (
+      '&:focus': (
+        box-shadow: 0 0 0 0.188rem rgba($color-primary, 0.5),
+      ),
+      '&:disabled, &.disabled': (
+        opacity: 0.65,
+      ),
     ),
   ),
   default: (
     background-color: $color-primary,
     color: $color-white,
-    hover: (
-      background-color: darken($color-primary, 5%),
-      color: $color-white,
-    ),
-    focus: (
-      background-color: darken($color-primary, 10%),
-      color: $color-white,
+    selectors: (
+      '&:hover': (
+        background-color: darken($color-primary, 5%),
+        color: $color-white,
+      ),
+      '&:focus': (
+        background-color: darken($color-primary, 10%),
+        color: $color-white,
+      ),
     ),
   ),
   ghost: (
     background-color: transparent,
     color: $color-primary,
     border-color: $color-primary,
-    hover: (
-      background-color: darken($color-primary, 5%),
-      color: $color-white,
-    ),
-    focus: (
-      background-color: darken($color-primary, 10%),
-      color: $color-white,
+    selectors: (
+      '&:hover': (
+        background-color: darken($color-primary, 5%),
+        color: $color-white,
+      ),
+      '&:focus': (
+        background-color: darken($color-primary, 10%),
+        color: $color-white,
+      ),
     ),
   ),
 );
