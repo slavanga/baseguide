@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const fibers = require('fibers');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const config = {
@@ -10,8 +10,6 @@ const config = {
   minify: true,
   sourcemaps: false,
 };
-
-sass.compiler = require('sass');
 
 
 // HTML

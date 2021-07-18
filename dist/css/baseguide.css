@@ -528,6 +528,10 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+::-webkit-file-upload-button {
+  font: inherit;
+}
+
 ::file-selector-button {
   font: inherit;
 }
