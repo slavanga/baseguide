@@ -3,7 +3,30 @@
 ////
 
 
-@use 'sass:math';
+/// Returns the base to the exponent power, as in base^exponent
+///
+/// @param {Number} $base - Base
+/// @param {Number} $exponent - Exponent
+/// @return {Number} - A number representing the given base taken to the power of the given exponent
+@function pow($base, $exponent) {
+  $return: 1;
+
+  @if $exponent > 0 {
+    // If the exponent is positive then multiply it
+    @for $i from 1 through $exponent {
+      $return: $return * $base;
+    }
+  }
+  @else if $exponent < 0 {
+    // If the number is 0 or negative then divide it
+    @for $i from 1 through -$exponent {
+      $return: $return / $base;
+    }
+  }
+
+  @return $return;
+}
+
 
 /// Scale value according to the passed exponent and type scale
 ///
@@ -12,7 +35,7 @@
 /// @param {Number} $type-scale [$type-scale] - Type scale (e.g 1.2)
 /// @return {Number} - Scaled value
 @function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) {
-  @return math.pow($type-scale, $exp) * $size;
+  @return pow($type-scale, $exp) * $size;
 }
 
 
@@ -21,7 +44,7 @@
 /// @param {Number} $value - value to be stripped
 /// @return {Number} - Raw number without unit
 @function strip-unit($value) {
-  @return math.div($value, $value * 0 + 1);
+  @return $value / ($value * 0 + 1);
 }
 
 
@@ -40,7 +63,7 @@
   }
 
   @if (unit($value) != 'rem') {
-    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
   }
 
   @if (strip-unit($value) == 0) {
@@ -77,7 +100,7 @@
   $width: nth($ratio, 1);
   $height: nth($ratio, 3);
 
-  @return percentage(math.div($height, $width));
+  @return percentage($height / $width);
 }
 
 

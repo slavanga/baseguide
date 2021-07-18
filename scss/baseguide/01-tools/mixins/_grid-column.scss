@@ -3,8 +3,6 @@
 ////
 
 
-@use "sass:math";
-
 @mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
   @include make-gutters($gutter);
   @include column($size, $columns);
@@ -23,7 +21,7 @@
           width: percentage($size);
         }
         @else {
-          width: percentage(math.div($size, $columns));
+          width: percentage($size / $columns);
         }
       }
     }
@@ -43,7 +41,7 @@
 }
 
 @mixin column-block($columns: $grid-columns) {
-  width: percentage(math.div(1, $columns));
+  width: percentage(1 / $columns);
 
   &:nth-of-type(1n) {
     clear: none;
@@ -56,7 +54,7 @@
 
 @mixin column-push($size, $columns: $grid-columns) {
   @if $size > 0 {
-    left: percentage(math.div($size, $columns));
+    left: percentage($size / $columns);
   }
   @else {
     left: auto;
@@ -65,7 +63,7 @@
 
 @mixin column-pull($size, $columns: $grid-columns) {
   @if $size > 0 {
-    right: percentage(math.div($size, $columns));
+    right: percentage($size / $columns);
   }
   @else {
     right: auto;
@@ -74,7 +72,7 @@
 
 @mixin column-offset($size, $columns: $grid-columns) {
   @if $size < $columns {
-    margin-left: percentage(math.div($size, $columns));
+    margin-left: percentage($size / $columns);
   }
 }
 

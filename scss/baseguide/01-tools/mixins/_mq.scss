@@ -2,8 +2,6 @@
 /// @group sass-mq
 ////
 
-@use "sass:math";
-
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
                   // See https://github.com/sass-mq/sass-mq/pull/10
 
@@ -114,7 +112,7 @@ $mq-media-type: all !default;
     } @else if unit($px) == em {
         @return $px;
     }
-    @return math.div($px, $base-font-size) * 1em;
+    @return ($px / $base-font-size) * 1em;
 }
 
 /// Get a breakpoint's width
@@ -263,7 +261,7 @@ $mq-media-type: all !default;
     $large: ();
 
     @if length($list) > 1 {
-        $seed: nth($list, ceil(math.div(length($list), 2)));
+        $seed: nth($list, ceil(length($list) / 2));
 
         @each $item in $list {
             @if ($item == $seed) {
