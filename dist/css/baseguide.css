@@ -1877,13 +1877,13 @@ input[type=file] {
   touch-action: manipulation;
   cursor: pointer;
 }
-.btn:hover, .btn:focus {
-  outline: 0;
-  text-decoration: none;
-}
 .btn:disabled, .btn.disabled {
   cursor: default;
   pointer-events: none;
+}
+.btn:hover, .btn:focus {
+  outline: 0;
+  text-decoration: none;
 }
 
 .btn {

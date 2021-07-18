@@ -26,6 +26,15 @@
   }
 }
 
+// Generate styles for a disabled `<button>`
+@mixin button-disabled {
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
 /// Generate button base styles
 ///
 /// @param {Number} $padding-vertical [$button-padding-vertical]
@@ -42,6 +51,8 @@
   $transition: $button-transition,
   $cursor-pointer: $button-cursor-pointer
 ) {
+  @include button-disabled;
+
   display: inline-block;
   vertical-align: middle;
   padding: $padding-vertical $padding-horizontal;
@@ -62,12 +73,6 @@
   &:focus {
     outline: 0;
     text-decoration: none;
-  }
-
-  &:disabled,
-  &.disabled {
-    cursor: default;
-    pointer-events: none;
   }
 }
 
