@@ -9,16 +9,16 @@ $meta-class-element: '-' !default; // use '__' for BEM syntax
 
 // Colors
 $color-white: #fff !default;
-$color-gray-100: #e6e6e6 !default;
-$color-gray-200: #ccc !default;
-$color-gray-300: #b3b3b3 !default;
-$color-gray-400: #999 !default;
-$color-gray-500: #808080 !default;
-$color-gray-600: #666 !default;
-$color-gray-700: #4d4d4d !default;
-$color-gray-800: #333 !default;
-$color-gray-900: #1a1a1a !default;
 $color-black: #000 !default;
+$color-gray-100: tint-color($color-black, 90%) !default;
+$color-gray-200: tint-color($color-black, 80%) !default;
+$color-gray-300: tint-color($color-black, 70%) !default;
+$color-gray-400: tint-color($color-black, 60%) !default;
+$color-gray-500: tint-color($color-black, 50%) !default;
+$color-gray-600: tint-color($color-black, 40%) !default;
+$color-gray-700: tint-color($color-black, 30%) !default;
+$color-gray-800: tint-color($color-black, 20%) !default;
+$color-gray-900: tint-color($color-black, 10%) !default;
 $color-blue: #0275d8 !default;
 
 $color-primary: $color-blue !default;
@@ -226,11 +226,11 @@ $button-variations: (
     color: $color-white,
     selectors: (
       '&:hover': (
-        background-color: darken($color-primary, 5%),
+        background-color: shade-color($color-primary, 15%),
         color: $color-white,
       ),
       '&:focus': (
-        background-color: darken($color-primary, 10%),
+        background-color: shade-color($color-primary, 20%),
         color: $color-white,
         box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35),
       ),

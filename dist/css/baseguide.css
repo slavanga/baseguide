@@ -356,7 +356,7 @@ body {
   line-height: 1.5;
   letter-spacing: normal;
   background-color: #fff;
-  color: #333;
+  color: #333333;
 }
 
 audio,
@@ -537,17 +537,17 @@ button:not(:disabled) {
 }
 
 ::-moz-placeholder {
-  color: #808080;
+  color: gray;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #808080;
+  color: gray;
   opacity: 1;
 }
 
 ::placeholder {
-  color: #808080;
+  color: gray;
   opacity: 1;
 }
 
@@ -1713,12 +1713,12 @@ label {
   width: 100%;
   height: 2.375em;
   padding: 0.375em 0.75em;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 0.125em;
   box-shadow: none;
   background-clip: padding-box;
   background-color: #fff;
-  color: #333;
+  color: #333333;
   -webkit-print-color-adjust: exact;
           color-adjust: exact;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -1729,9 +1729,9 @@ label {
   outline: 0;
 }
 [type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
-  border-color: #ccc;
+  border-color: #cccccc;
   background-color: #e6e6e6;
-  color: #808080;
+  color: gray;
   cursor: not-allowed;
 }
 
@@ -1759,7 +1759,7 @@ input[type=checkbox] ~ label {
 }
 input[type=radio]:disabled ~ label,
 input[type=checkbox]:disabled ~ label {
-  color: #808080;
+  color: gray;
   cursor: not-allowed;
 }
 
@@ -1776,7 +1776,7 @@ input[type=file] {
     padding-right: 2em;
     background-repeat: no-repeat;
     background-position: right 0.75em center;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8'%3E%3Cpath fill='%23333333' d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   }
 }
 .radio input[type=radio]:not(:only-child),
@@ -1804,7 +1804,7 @@ input[type=file] {
 }
 .radio input[type=radio] ~ label::before,
 .checkbox input[type=checkbox] ~ label::before {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   background-color: #fff;
   box-shadow: none;
 }
@@ -1825,21 +1825,21 @@ input[type=file] {
 .radio input[type=radio]:disabled ~ label::before,
 .checkbox input[type=checkbox]:disabled ~ label::before {
   background-color: #e6e6e6;
-  border-color: #ccc;
+  border-color: #cccccc;
 }
 
 .radio input[type=radio] ~ label::before {
   border-radius: 50%;
 }
 .radio input[type=radio]:checked ~ label::after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333333' d='M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z'/%3E%3C/svg%3E");
 }
 
 .checkbox input[type=checkbox] ~ label::before {
   border-radius: 0.125em;
 }
 .checkbox input[type=checkbox]:checked ~ label::after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23333333' d='M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z'/%3E%3C/svg%3E");
 }
 
 .btn-link {
@@ -1891,11 +1891,11 @@ input[type=file] {
   color: #fff;
 }
 .btn:hover {
-  background-color: #0267bf;
+  background-color: #0263b8;
   color: #fff;
 }
 .btn:focus {
-  background-color: #025aa5;
+  background-color: #025ead;
   color: #fff;
   box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.35);
 }
