@@ -1,10 +1,8 @@
 /*! Baseguide v4.1.1 | MIT License | http://basegui.de */
 
-// Settings
-@import 'baseguide/00-settings/settings';
-
-// Tools
+// Tools & Settings
 @import 'baseguide/01-tools/functions';
+@import 'baseguide/01-tools/settings';
 @import 'baseguide/01-tools/mixins/index';
 
 // Base
