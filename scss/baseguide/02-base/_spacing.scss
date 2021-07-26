@@ -21,9 +21,7 @@ p {
 
   margin-top: 0;
 
-  @if $spacing-reset {
-    &:last-child {
-      margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 }
