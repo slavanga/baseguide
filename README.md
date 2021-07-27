@@ -79,7 +79,7 @@ $button-bg: #bada55; // 1. Customize default variables
 
 ## Philosophy
 
-Baseguide is a framework in the truest sense and does not try to be a complete UI library. As the following list shows, it strives to force as less opinons as possible.
+Baseguide is a framework in the truest sense and does not try to be a complete UI library. As the following list shows, it strives to force as less opinions as possible.
 
 * Breakpoints and other settings are held in sass maps to be the most flexible
 * Class names can have prefixes for objects, components and utilities
