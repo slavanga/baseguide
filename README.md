@@ -179,6 +179,10 @@ Pixel values for min and max will automatically be converted to Rem.
 
 Use the global settings switch `$fluid-scaling` to disable the fluid scaling feature.
 
+**Warning: Using fluid scaling with font-size can cause a WCAG failure under [1.4.4 Resize text (AA)](https://www.w3.org/WAI/WCAG21/Techniques/failures/F94.html), because a user may be unable to scale the text to 200% of its original size. Be certain to test the results with zoom.**
+
+[Read more about Responsive Type and Zoom](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html)
+
 ## Spacing
 
 The mixin `spacing` is a small wrapper for `fluid-calc` that looks for spacings in the map `$spacing-variations`.
