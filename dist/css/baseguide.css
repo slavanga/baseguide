@@ -1938,94 +1938,86 @@ input[type=file] {
   margin-bottom: 0 !important;
 }
 
+.space {
+  margin-bottom: 1.875rem !important;
+}
+
 @media (max-width: 23.4275em) {
   .nospace-xs {
     margin-bottom: 0 !important;
+  }
+
+  .space-xs {
+    margin-bottom: 1.875rem !important;
   }
 }
 @media (min-width: 23.4375em) and (max-width: 42.49em) {
   .nospace-sm {
     margin-bottom: 0 !important;
   }
+
+  .space-sm {
+    margin-bottom: 1.875rem !important;
+  }
 }
 @media (min-width: 42.5em) and (max-width: 59.99em) {
   .nospace-md {
     margin-bottom: 0 !important;
+  }
+
+  .space-md {
+    margin-bottom: 1.875rem !important;
   }
 }
 @media (min-width: 60em) and (max-width: 74.99em) {
   .nospace-lg {
     margin-bottom: 0 !important;
   }
+
+  .space-lg {
+    margin-bottom: 1.875rem !important;
+  }
 }
 @media (min-width: 75em) {
   .nospace-xl {
     margin-bottom: 0 !important;
+  }
+
+  .space-xl {
+    margin-bottom: 1.875rem !important;
   }
 }
 .nospace-xs-up {
   margin-bottom: 0 !important;
 }
 
+.space-xs-up {
+  margin-bottom: 1.875rem !important;
+}
+
 @media (min-width: 23.4375em) {
   .nospace-sm-up {
     margin-bottom: 0 !important;
+  }
+
+  .space-sm-up {
+    margin-bottom: 1.875rem !important;
   }
 }
 @media (min-width: 42.5em) {
   .nospace-md-up {
     margin-bottom: 0 !important;
   }
-}
-@media (min-width: 60em) {
-  .nospace-lg-up {
-    margin-bottom: 0 !important;
-  }
-}
-.space {
-  margin-bottom: 1.875rem !important;
-}
 
-@media (max-width: 23.4275em) {
-  .space-xs {
-    margin-bottom: 1.875rem !important;
-  }
-}
-@media (min-width: 23.4375em) and (max-width: 42.49em) {
-  .space-sm {
-    margin-bottom: 1.875rem !important;
-  }
-}
-@media (min-width: 42.5em) and (max-width: 59.99em) {
-  .space-md {
-    margin-bottom: 1.875rem !important;
-  }
-}
-@media (min-width: 60em) and (max-width: 74.99em) {
-  .space-lg {
-    margin-bottom: 1.875rem !important;
-  }
-}
-@media (min-width: 75em) {
-  .space-xl {
-    margin-bottom: 1.875rem !important;
-  }
-}
-.space-xs-up {
-  margin-bottom: 1.875rem !important;
-}
-
-@media (min-width: 23.4375em) {
-  .space-sm-up {
-    margin-bottom: 1.875rem !important;
-  }
-}
-@media (min-width: 42.5em) {
   .space-md-up {
     margin-bottom: 1.875rem !important;
   }
 }
 @media (min-width: 60em) {
+  .nospace-lg-up {
+    margin-bottom: 0 !important;
+  }
+
   .space-lg-up {
     margin-bottom: 1.875rem !important;
   }
