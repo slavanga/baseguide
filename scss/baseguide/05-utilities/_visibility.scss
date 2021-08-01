@@ -1,47 +1,47 @@
 .#{$meta-prefix-utilities}invisible {
-  visibility: hidden !important;
+  visibility: hidden if($utilities-important, !important, null);
 }
 
 .#{$meta-prefix-utilities}hidden {
-  display: none !important;
+  display: none if($utilities-important, !important, null);
 }
 
 @media print {
   .#{$meta-prefix-utilities}hidden-print {
-    display: none !important;
+    display: none if($utilities-important, !important, null);
   }
 }
 
 @include loop-breakpoints($mq: false) {
   .#{$meta-prefix-utilities}visible-#{$breakpoint} {
-    display: none !important;
+    display: none if($utilities-important, !important, null);
   }
 
   @if (not ($is-first-breakpoint or $is-last-breakpoint)) {
     .#{$meta-prefix-utilities}visible-#{$breakpoint}-up {
-      display: none !important;
+      display: none if($utilities-important, !important, null);
     }
   }
 }
 
 @include loop-breakpoints($inclusive: false) {
   .#{$meta-prefix-utilities}hidden-#{$breakpoint} {
-    display: none !important;
+    display: none if($utilities-important, !important, null);
   }
 
   .#{$meta-prefix-utilities}visible-#{$breakpoint} {
-    display: block !important;
+    display: block if($utilities-important, !important, null);
   }
 }
 
 @include loop-breakpoints {
   @if (not ($is-first-breakpoint or $is-last-breakpoint)) {
     .#{$meta-prefix-utilities}hidden-#{$breakpoint}-up {
-      display: none !important;
+      display: none if($utilities-important, !important, null);
     }
 
     .#{$meta-prefix-utilities}visible-#{$breakpoint}-up {
-      display: block !important;
+      display: block if($utilities-important, !important, null);
     }
   }
 }
