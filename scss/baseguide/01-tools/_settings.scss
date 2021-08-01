@@ -114,9 +114,6 @@ $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 $grid-container: map-get($mq-breakpoints, xl) !default;
 $grid-container-gutter: $grid-gutter !default;
-
-$grid-pull-classes: true !default;
-$grid-push-classes: true !default;
 $grid-offset-classes: true !default;
 
 
@@ -256,3 +253,7 @@ $z-index: (
   neutral: 0,
   above: 1,
 );
+
+
+// Utilities
+$utility-order-count: 6 !default;

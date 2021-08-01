@@ -52,24 +52,6 @@
   }
 }
 
-@mixin column-push($size, $columns: $grid-columns) {
-  @if $size > 0 {
-    left: percentage($size / $columns);
-  }
-  @else {
-    left: auto;
-  }
-}
-
-@mixin column-pull($size, $columns: $grid-columns) {
-  @if $size > 0 {
-    right: percentage($size / $columns);
-  }
-  @else {
-    right: auto;
-  }
-}
-
 @mixin column-offset($size, $columns: $grid-columns) {
   @if $size < $columns {
     margin-left: percentage($size / $columns);
@@ -77,23 +59,11 @@
 }
 
 // Generate columns for a specific breakpoint
-@mixin loop-columns($breakpoint, $pull: $grid-pull-classes, $push: $grid-push-classes, $offset: $grid-offset-classes) {
+@mixin loop-columns($breakpoint, $offset: $grid-offset-classes) {
   @for $i from 0 through $grid-columns {
     @if $i > 0 {
       .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {
         @include column($i, $grid-columns);
-      }
-    }
-
-    @if $pull {
-      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-pull-#{$i} {
-        @include column-pull($i, $grid-columns);
-      }
-    }
-
-    @if $push {
-      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-push-#{$i} {
-        @include column-push($i, $grid-columns);
       }
     }
 
