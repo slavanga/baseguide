@@ -331,8 +331,6 @@ The grid mixins can be used to create custom containers, rows and columns.
 @include column-push($size, $columns);
 @include column-pull($size, $columns);
 @include column-offset($size, $columns);
-
-@include column-block($columns);
 ```
 
 #### Two Column Layout
@@ -358,31 +356,6 @@ The grid mixins can be used to create custom containers, rows and columns.
 </div>
 ```
 
-#### Gallery Layout Using Block Grid
-
-```scss
-.col-gallery {
-  @include column-base;
-  @include column-block(3);
-
-  @include mq(md) {
-    @include column-block(6);
-  }
-}
-```
-
-```html
-<div class="container">
-  <div class="row">
-    <div class="col-gallery">Gallery item</div>
-    <div class="col-gallery">Gallery item</div>
-    <div class="col-gallery">Gallery item</div>
-    <div class="col-gallery">Gallery item</div>
-    <div class="col-gallery">Gallery item</div>
-    <div class="col-gallery">Gallery item</div>
-  </div>
-</div>
-```
 
 ## Embed
 
