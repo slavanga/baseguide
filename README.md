@@ -327,6 +327,9 @@ The grid mixins can be used to create custom containers, rows and columns.
 
 @include column-base($gutter, $size, $columns);
 @include column($size, $columns);
+
+@include column-push($size, $columns);
+@include column-pull($size, $columns);
 @include column-offset($size, $columns);
 
 @include column-block($columns);
