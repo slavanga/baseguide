@@ -12,14 +12,14 @@
 @mixin loop-config($sizes, $prop: null, $negative: false, $important: false) {
   @each $key, $value in $sizes {
     @if (map-has-key($mq-breakpoints, $key)) {
-      $breakpoint-keys: map-keys($sizes);
-      $next-breakpoint: breakpoint-next($key, $breakpoint-keys) or map-get($fluid-breakpoints, 'max');
-      $breakpoint-range: (
-        min: $key,
-        max: $next-breakpoint
-      );
-
       @include skip-first-breakpoint($key) {
+        $breakpoint-keys: map-keys($sizes);
+        $next-breakpoint: breakpoint-next($key, $sizes) or map-get($fluid-breakpoints, 'max');
+        $breakpoint-range: (
+          min: $key,
+          max: $next-breakpoint
+        );
+
         @if (is-sizing-map($value)) {
           @include fluid-calc($prop, $value, $breakpoint-range, $negative, $important, $current-breakpoint: $key, $all-breakpoints: $breakpoint-keys);
         }
