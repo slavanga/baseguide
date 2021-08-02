@@ -13,7 +13,7 @@
 }
 
 @include loop-breakpoints {
-  @if not $is-last-breakpoint {
+  @if (not is-last-breakpoint($breakpoint)) {
     @each $name, $size in $spacing-utilities {
       .#{$meta-prefix-utilities}#{$name}-#{$breakpoint}-up {
         @include spacing('margin-bottom', $size, $important: $utilities-important);

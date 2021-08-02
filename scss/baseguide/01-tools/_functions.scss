@@ -130,6 +130,26 @@
 }
 
 
+/// Check if a breakpoint is the first in the list
+///
+/// @param {String} $name - Breakpoint name
+/// @param {Map} $breakpoints [$mq-breakpoints)] - Map of breakpoints
+/// @return {Boolean} - True if the passed breakpoint is the first in the list
+@function is-first-breakpoint($name, $breakpoints: $mq-breakpoints) {
+  @return $name == nth(map-keys($breakpoints), 1);
+}
+
+
+/// Check if a breakpoint is the last in the list
+///
+/// @param {String} $name - Breakpoint name
+/// @param {Map} $breakpoints [$mq-breakpoints)] - Map of breakpoints
+/// @return {Boolean} - True if the passed breakpoint is the last in the list
+@function is-last-breakpoint($name, $breakpoints: $mq-breakpoints) {
+  @return $name == nth(map-keys($breakpoints), length(map-keys($breakpoints)));
+}
+
+
 /// Get the next breakpoint from a map
 ///
 /// @param {String} $name - Current breakpoint name

@@ -131,8 +131,8 @@ The `loop-breakpoints` mixin iterates through all breakpoints. It sets three glo
 ```scss
 @include loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
   @debug $breakpoint;
-  @debug $is-first-breakpoint;
-  @debug $is-last-breakpoint;
+  @debug is-first-breakpoint($breakpoint);
+  @debug is-last-breakpoint($breakpoint);
 }
 ```
 
