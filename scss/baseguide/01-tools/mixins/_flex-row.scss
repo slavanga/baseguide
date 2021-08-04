@@ -1,0 +1,14 @@
+////
+/// @group grid
+////
+
+
+/// Output a flex grid row with gutters
+///
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of space between columns as a number or a map formatted as `(xs: 30px, md: 60px)`
+@mixin row($gutter: $grid-gutter) {
+  @include make-gutters($gutter, 'outer');
+
+  display: flex;
+  flex-wrap: wrap;
+}

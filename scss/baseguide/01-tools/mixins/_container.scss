@@ -2,9 +2,10 @@
 /// @group grid
 ////
 
-/// Generate styles for a container
+
+/// Output a centered container with gutters
 ///
-/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of space between columns as a number or breakpoints map formatted as `(xs: 30px, md: 60px)`
+/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of space between columns as a number or a map formatted as `(xs: 30px, md: 60px)`
 /// @param {Number} $width [$grid-container] - Maximum width of the container
 @mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
   @if (type-of($gutter) == 'map') {

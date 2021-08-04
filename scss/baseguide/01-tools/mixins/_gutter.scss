@@ -3,7 +3,12 @@
 ////
 
 
-@function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
+/// Get a gutter value from the map $grid-gutter
+///
+/// @param {String} $breakpoint [null] - Breakpoint name
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or a map formatted as `(xs: 30px, md: 60px)`
+/// @return {Number} - Gutter value as a number
+@function get-gutter($breakpoint: null, $gutter: $grid-gutter) {
   @if (type-of($gutter) == 'map') {
     @if $breakpoint {
       @if map-has-key($gutter, $breakpoint) {
@@ -21,6 +26,11 @@
   @return to-rem($gutter);
 }
 
+
+/// Output margin or padding gutter depending on the type
+///
+/// @param {Number} $gutter - The amount of gutter as a number
+/// @param {String} $type - Gutter type: 'inner' or 'outer'
 @mixin gutter($gutter, $type) {
   $gutter: to-rem($gutter / 2);
 
@@ -36,6 +46,11 @@
   }
 }
 
+
+/// Wrapper for gutter mixin for switching between a gutter number or map
+///
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or a map formatted as `(xs: 30px, md: 60px)`
+/// @param {String} $type ['inner'] - Gutter type: 'inner' or 'outer'
 @mixin make-gutters($gutter: $grid-gutter, $type: 'inner') {
   @if (type-of($gutter) == 'map') {
     @each $breakpoint, $width in $gutter {

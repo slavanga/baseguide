@@ -3,6 +3,11 @@
 ////
 
 
+/// Output flex column base styles with gutter
+///
+/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of space between columns as a number or a map formatted as `(xs: 30px, md: 60px)`
+/// @param {Number} $size [100%] - Width of the column as number
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
   @include make-gutters($gutter);
   @include column($size, $columns);
@@ -10,6 +15,11 @@
   position: relative;
 }
 
+
+/// Output flex column width modifier styles
+///
+/// @param {Number|String} $size ['expand'] - Column size as number or string ('expand' or 'shrink')
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column($size: 'expand', $columns: $grid-columns) {
   @if $size {
     @if (type-of($size) == 'number') {
@@ -40,6 +50,11 @@
   }
 }
 
+
+/// Output flex column push styles
+///
+/// @param {Number} $size - Column size as number of columns
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-push($size, $columns: $grid-columns) {
   @if $size > 0 {
     left: percentage($size / $columns);
@@ -49,6 +64,11 @@
   }
 }
 
+
+/// Output flex column pull styles
+///
+/// @param {Number} $size - Column size as number of columns
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-pull($size, $columns: $grid-columns) {
   @if $size > 0 {
     right: percentage($size / $columns);
@@ -58,6 +78,11 @@
   }
 }
 
+
+/// Output flex column offset styles
+///
+/// @param {Number} $size - Column size as number of columns
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-offset($size, $columns: $grid-columns) {
   @if $size < $columns {
     margin-left: percentage($size / $columns);
@@ -65,6 +90,11 @@
 }
 
 // Generate columns for a specific breakpoint
+///
+/// @param {String} $breakpoint - Breakpoint name
+/// @param {Boolean} $pull [$grid-pull-class] - Outputs column pull class if true
+/// @param {Boolean} $push [$grid-push-class] - Outputs column push class if true
+/// @param {Boolean} $offset [$grid-offset-class] - Outputs column offset class if true
 @mixin loop-columns($breakpoint, $pull: $grid-pull-classes, $push: $grid-push-classes, $offset: $grid-offset-classes) {
   @for $i from 0 through $grid-columns {
     @if $i > 0 {
