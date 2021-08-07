@@ -1878,7 +1878,7 @@ input[type=file] {
   cursor: pointer;
 }
 .btn:disabled, .btn.disabled {
-  cursor: default;
+  cursor: not-allowed;
   pointer-events: none;
 }
 .btn:hover, .btn:focus {

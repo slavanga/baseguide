@@ -30,7 +30,7 @@
 @mixin button-disabled {
   &:disabled,
   &.disabled {
-    cursor: default;
+    cursor: not-allowed;
     pointer-events: none;
   }
 }
