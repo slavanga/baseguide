@@ -44,6 +44,13 @@ audio {
   max-width: 100%;
 }
 
+blockquote,
+dd,
+figure,
+fieldset {
+  margin: 0;
+}
+
 iframe {
   border: 0;
 }
