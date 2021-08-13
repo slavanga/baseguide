@@ -67,7 +67,7 @@ hr {
   border: 0;
   border-top: 1px solid;
   color: inherit;
-  opacity: 0.2;
+  opacity: $hr-opacity;
 }
 
 :focus:not(:focus-visible) {
