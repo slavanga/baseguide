@@ -139,17 +139,28 @@ The `loop-breakpoints` mixin iterates through all breakpoints. It sets three glo
 It’s a powerful tool that for example allows the generation of additional responsive helper classes.
 
 ```scss
+// Breakpoint specific text alignment classes
 @include loop-breakpoints {
-  .text-#{$breakpoint}-left {
+  .#{$meta-prefix-utilities}text-#{$breakpoint}-left {
     text-align: left;
   }
 
-  .text-#{$breakpoint}-center {
+  .#{$meta-prefix-utilities}text-#{$breakpoint}-center {
     text-align: center;
   }
 
-  .text-#{$breakpoint}-right {
+  .#{$meta-prefix-utilities}text-#{$breakpoint}-right {
     text-align: right;
+  }
+}
+```
+```scss
+// Breakpoint specific type utility classes
+@include loop-breakpoints {
+  @each $name in map-keys($type-variations) {
+    .#{$meta-prefix-utilities}type-#{$name}-#{$breakpoint} {
+      @include type($name);
+    }
   }
 }
 ```
