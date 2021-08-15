@@ -31,7 +31,7 @@
           width: percentage($size);
         }
         @else {
-          width: percentage($size / $columns);
+          width: percentage(divide($size, $columns));
         }
       }
     }
@@ -57,7 +57,7 @@
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-push($size, $columns: $grid-columns) {
   @if $size > 0 {
-    left: percentage($size / $columns);
+    left: percentage(divide($size, $columns));
   }
   @else {
     left: auto;
@@ -71,7 +71,7 @@
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-pull($size, $columns: $grid-columns) {
   @if $size > 0 {
-    right: percentage($size / $columns);
+    right: percentage(divide($size, $columns));
   }
   @else {
     right: auto;
@@ -85,7 +85,7 @@
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-offset($size, $columns: $grid-columns) {
   @if $size < $columns {
-    margin-left: percentage($size / $columns);
+    margin-left: percentage(divide($size, $columns));
   }
 }
 

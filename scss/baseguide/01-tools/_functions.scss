@@ -20,7 +20,7 @@
   @else if $exponent < 0 {
     // If the number is 0 or negative then divide it
     @for $i from 1 through -$exponent {
-      $return: $return / $base;
+      $return: divide($return, $base);
     }
   }
 
@@ -44,7 +44,7 @@
 /// @param {Number} $value - value to be stripped
 /// @return {Number} - Raw number without unit
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return divide($value, $value * 0 + 1);
 }
 
 
@@ -63,7 +63,7 @@
   }
 
   @if (unit($value) != 'rem') {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+    $value: divide(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
   @if (strip-unit($value) == 0) {
@@ -100,7 +100,7 @@
   $width: nth($ratio, 1);
   $height: nth($ratio, 3);
 
-  @return percentage($height / $width);
+  @return percentage(divide($height, $width));
 }
 
 
@@ -240,4 +240,49 @@
 /// @return {Color} - Shaded color
 @function shade-color($color, $percentage) {
   @return mix(#000, $color, $percentage);
+}
+
+
+/// Divide two numbers (adapted from Bootstrap)
+///
+/// @param {Number} $dividend - Dividend
+/// @param {Number} $divisor - Divisor
+/// @param {Number} $precision [10] - Precision
+/// @return {Number} - Result of the division
+@function divide($dividend, $divisor, $precision: 12) {
+  $sign: if($dividend > 0 and $divisor > 0 or $dividend < 0 and $divisor < 0, 1, -1);
+  $dividend: abs($dividend);
+  $divisor: abs($divisor);
+
+  @if $dividend == 0 {
+    @return 0;
+  }
+
+  @if $divisor == 0 {
+    @error "Cannot divide by 0";
+  }
+
+  $remainder: $dividend;
+  $result: 0;
+  $factor: 10;
+
+  @while ($remainder > 0 and $precision >= 0) {
+    $quotient: 0;
+
+    @while ($remainder >= $divisor) {
+      $remainder: $remainder - $divisor;
+      $quotient: $quotient + 1;
+    }
+
+    $result: $result * 10 + $quotient;
+    $factor: $factor * 0.1;
+    $remainder: $remainder * 10;
+    $precision: $precision - 1;
+
+    @if ($precision < 0 and $remainder >= $divisor * 5) {
+      $result: $result + 1;
+    }
+  }
+
+  @return $result * $factor * $sign;
 }

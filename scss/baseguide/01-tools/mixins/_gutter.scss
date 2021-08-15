@@ -32,7 +32,7 @@
 /// @param {Number} $gutter - The amount of gutter as a number
 /// @param {String} $type - Gutter type: 'inner' or 'outer'
 @mixin gutter($gutter, $type) {
-  $gutter: to-rem($gutter / 2);
+  $gutter: to-rem(divide($gutter, 2));
 
   @if $type == 'inner' {
     padding-left: $gutter;
