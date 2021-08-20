@@ -36,15 +36,15 @@ Baseguide is a flexible, fluid and fun CSS framework.
 
 ### Download
 
-- [baseguide.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.css) (uncompressed)
-- [baseguide.min.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/css/baseguide.min.css) (compressed)
+- [baseguide.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/baseguide.css) (uncompressed)
+- [baseguide.min.css](https://raw.githubusercontent.com/slavanga/baseguide/master/dist/baseguide.min.css) (compressed)
 
 ### CDN
 
 This is great for prototyping, but doesn’t allow any customization. To load Baseguide via [unpkg](https://unpkg.com), add this to your `<head>`:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/baseguide@4.1.1/dist/css/baseguide.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/baseguide@4.1.1/dist/baseguide.min.css" />
 ```
 
 ## Development
@@ -67,7 +67,7 @@ The included gulpfile takes care of compiling, optimizing and minifying your ass
 ### Sass
 
 Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/01-tools/_settings.scss) file to see all variables.
+Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/baseguide/01-tools/_settings.scss) file to see all variables.
 
 ```scss
 $button-bg: #bada55; // 1. Customize default variables
