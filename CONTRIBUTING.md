@@ -45,4 +45,4 @@ Baseguide can be developed locally. For instructions on how to do this, see the 
 
 ### Code Linting
 
-Please run `gulp lint` before every commit to format your code.
+Please run `npm run lint` before every commit to format your code.
