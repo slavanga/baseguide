@@ -42,6 +42,11 @@
     background-position: center center;
   }
 
+  &:disabled ~ label::before {
+    background-color: $checkbox-disabled-bg;
+    border-color: $checkbox-disabled-border-color;
+  }
+
   &:focus ~ label::before {
     border-color: $checkbox-focus-border-color;
     box-shadow: $checkbox-focus-box-shadow;
@@ -49,11 +54,6 @@
 
   &:active:not(:disabled) ~ label::before {
     filter: $checkbox-active-filter;
-  }
-
-  &:disabled ~ label::before {
-    background-color: $checkbox-disabled-bg;
-    border-color: $checkbox-disabled-border-color;
   }
 }
 
