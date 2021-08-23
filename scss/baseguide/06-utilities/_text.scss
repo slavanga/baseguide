@@ -3,15 +3,15 @@
 }
 
 .#{$meta-prefix-utilities}text-left {
-  text-align: left if($utilities-important, !important, null);
+  text-align: left !important;
 }
 
 .#{$meta-prefix-utilities}text-center {
-  text-align: center if($utilities-important, !important, null);
+  text-align: center !important;
 }
 
 .#{$meta-prefix-utilities}text-right {
-  text-align: right if($utilities-important, !important, null);
+  text-align: right !important;
 }
 
 .#{$meta-prefix-utilities}text-hide {

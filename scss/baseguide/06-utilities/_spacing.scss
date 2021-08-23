@@ -1,13 +1,13 @@
 @each $name, $size in $spacing-utilities {
   .#{$meta-prefix-utilities}#{$name} {
-    @include spacing('margin-bottom', $size, $important: $utilities-important);
+    @include spacing('margin-bottom', $size, $important: true);
   }
 }
 
 @include loop-breakpoints($inclusive: false) {
   @each $name, $size in $spacing-utilities {
     .#{$meta-prefix-utilities}#{$name}-#{$breakpoint} {
-      @include spacing('margin-bottom', $size, $important: $utilities-important);
+      @include spacing('margin-bottom', $size, $important: true);
     }
   }
 }
@@ -16,7 +16,7 @@
   @if (not is-last-breakpoint($breakpoint)) {
     @each $name, $size in $spacing-utilities {
       .#{$meta-prefix-utilities}#{$name}-#{$breakpoint}-up {
-        @include spacing('margin-bottom', $size, $important: $utilities-important);
+        @include spacing('margin-bottom', $size, $important: true);
       }
     }
   }
