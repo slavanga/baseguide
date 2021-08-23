@@ -381,9 +381,9 @@ audio {
 
 blockquote,
 dd,
-figure,
-fieldset {
-  margin: 0;
+figure {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 iframe {
@@ -409,6 +409,10 @@ hr {
   outline: none;
 }
 
+label {
+  display: inline-block;
+}
+
 button,
 input,
 optgroup,
@@ -425,6 +429,7 @@ optgroup {
 
 fieldset {
   min-width: 0;
+  margin: 0;
   padding: 0;
   border: 0;
 }
@@ -446,6 +451,11 @@ select:disabled {
 [type=submit]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
+}
+
+input[type=file] {
+  display: block;
+  max-width: 100%;
 }
 
 ::-webkit-file-upload-button {
@@ -550,6 +560,65 @@ a {
 a:hover, a:focus {
   color: #0275d8;
   text-decoration: underline;
+}
+
+label {
+  margin-bottom: 0.3rem;
+}
+
+[type=email], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], textarea, select {
+  display: block;
+  width: 100%;
+  height: 2.375em;
+  padding: 0.375em 0.75em;
+  border: 1px solid #cccccc;
+  border-radius: 0.125em;
+  box-shadow: none;
+  background-clip: padding-box;
+  background-color: #fff;
+  color: #333333;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+[type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
+  border-color: #0275d8;
+  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.25);
+  outline: 0;
+}
+[type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
+  border-color: #cccccc;
+  background-color: #e6e6e6;
+  color: gray;
+  cursor: not-allowed;
+}
+
+select[multiple], select[size] {
+  height: auto;
+}
+
+textarea {
+  height: 4.75em;
+}
+textarea[rows] {
+  height: auto;
+}
+
+input[type=radio]:not(:only-child),
+input[type=checkbox]:not(:only-child) {
+  position: absolute;
+  margin-top: 0.35em;
+}
+input[type=radio] ~ label,
+input[type=checkbox] ~ label {
+  margin-bottom: 0;
+  padding-left: 20px;
+  font-weight: inherit;
+}
+input[type=radio]:disabled ~ label,
+input[type=checkbox]:disabled ~ label {
+  color: gray;
+  cursor: not-allowed;
 }
 
 @media print {
@@ -1696,11 +1765,6 @@ h3 {
     left: 100%;
   }
 }
-label {
-  display: inline-block;
-  margin-bottom: 0.3rem;
-}
-
 .label-inline {
   margin-top: 1px;
   padding-top: 0.375em;
@@ -1708,66 +1772,6 @@ label {
 
 .form-group {
   margin-bottom: 1rem;
-}
-
-[type=email], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], textarea, select {
-  display: block;
-  width: 100%;
-  height: 2.375em;
-  padding: 0.375em 0.75em;
-  border: 1px solid #cccccc;
-  border-radius: 0.125em;
-  box-shadow: none;
-  background-clip: padding-box;
-  background-color: #fff;
-  color: #333333;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-[type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
-  border-color: #0275d8;
-  box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.25);
-  outline: 0;
-}
-[type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
-  border-color: #cccccc;
-  background-color: #e6e6e6;
-  color: gray;
-  cursor: not-allowed;
-}
-
-select[multiple], select[size] {
-  height: auto;
-}
-
-textarea[rows] {
-  height: auto;
-}
-textarea:not([rows]) {
-  height: 4.75em;
-}
-
-input[type=radio]:not(:only-child),
-input[type=checkbox]:not(:only-child) {
-  position: absolute;
-  margin-top: 0.35em;
-}
-input[type=radio] ~ label,
-input[type=checkbox] ~ label {
-  margin-bottom: 0;
-  padding-left: 20px;
-  font-weight: inherit;
-}
-input[type=radio]:disabled ~ label,
-input[type=checkbox]:disabled ~ label {
-  color: gray;
-  cursor: not-allowed;
-}
-
-input[type=file] {
-  display: block;
-  max-width: 100%;
 }
 
 @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {

@@ -1,3 +1,7 @@
+label {
+  display: inline-block;
+}
+
 button,
 input,
 optgroup,
@@ -14,6 +18,7 @@ optgroup {
 
 fieldset {
   min-width: 0;
+  margin: 0;
   padding: 0;
   border: 0;
 }
@@ -43,6 +48,11 @@ select {
       cursor: pointer;
     }
   }
+}
+
+input[type="file"] {
+  display: block;
+  max-width: 100%;
 }
 
 ::file-selector-button {
