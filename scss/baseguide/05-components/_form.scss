@@ -4,5 +4,5 @@
 }
 
 .#{$meta-prefix-components}form-group {
-  margin-bottom: 1rem;
+  margin-bottom: $form-group-spacing;
 }
