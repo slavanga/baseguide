@@ -1,0 +1,22 @@
+////
+/// @group global
+////
+
+
+/// Slightly lighten a color
+///
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - Tinted color
+@function tint-color($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+/// Slightly darken a color
+///
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - Shaded color
+@function shade-color($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}

@@ -1,0 +1,18 @@
+////
+/// @group global
+////
+
+
+/// Scale value according to the passed exponent and type scale
+///
+/// @param {Number} $exp - Exponent
+/// @param {Number} $size [$font-size-base] - Size to scale
+/// @param {Number} $type-scale [$type-scale] - Type scale (e.g 1.2)
+/// @return {Number} - Scaled value
+@function modular-scale(
+  $exp,
+  $size: $font-size-base,
+  $type-scale: $type-scale
+) {
+  @return pow($type-scale, $exp) * $size;
+}

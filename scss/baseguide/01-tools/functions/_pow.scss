@@ -1,0 +1,28 @@
+////
+/// @group global
+////
+
+
+/// Returns the base to the exponent power, as in base^exponent
+///
+/// @param {Number} $base - Base
+/// @param {Number} $exponent - Exponent
+/// @return {Number} - A number representing the given base taken to the power of the given exponent
+@function pow($base, $exponent) {
+  $return: 1;
+
+  @if $exponent > 0 {
+    // If the exponent is positive then multiply it
+    @for $i from 1 through $exponent {
+      $return: $return * $base;
+    }
+  }
+  @else if $exponent < 0 {
+    // If the number is 0 or negative then divide it
+    @for $i from 1 through -$exponent {
+      $return: divide($return, $base);
+    }
+  }
+
+  @return $return;
+}

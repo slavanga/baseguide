@@ -1,0 +1,21 @@
+////
+/// @group global
+////
+
+
+/// Get a z-index value the `$z-index` map
+///
+/// @param {String} $name - Map key of `$z-index`
+/// @example scss
+/// .layer {
+///   z-index: z-index(below);
+/// }
+/// @return {Number} z-index value
+@function z-index($name) {
+  @if map-has-key($z-index, $name) {
+    @return map-get($z-index, $name);
+  }
+  @else {
+    @error "The key `#{$z-index}` wasn't found in $z-index.";
+  }
+}
