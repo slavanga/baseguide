@@ -1,0 +1,18 @@
+////
+/// @group global
+////
+
+
+/// Enable or disable font smoothing
+///
+/// @param {Bool} $enabled ['true'] - Activates font smoothing if true
+@mixin font-smoothing($enabled: true) {
+  @if $enabled {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+  @else {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

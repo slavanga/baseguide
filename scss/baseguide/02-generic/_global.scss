@@ -8,17 +8,12 @@ html {
   box-sizing: border-box;
 }
 
-@if $font-antialiased {
-  html,
-  button,
-  input {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  }
-}
-
 body {
   @include type;
+
+  @if $font-antialiased {
+    @include font-smoothing;
+  }
 
   background-color: $global-bg;
   color: $text-color;
