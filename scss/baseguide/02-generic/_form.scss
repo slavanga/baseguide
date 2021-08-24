@@ -36,6 +36,7 @@ select {
 }
 
 @if $button-cursor-pointer {
+  [role="button"],
   [type="button"],
   [type="reset"],
   [type="submit"],
@@ -55,7 +56,11 @@ input[type="file"] {
   font: inherit;
 }
 
+// Remove inner padding from color pickers
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
 ::placeholder {
-  color: $placeholder-color;
   opacity: 1;
 }

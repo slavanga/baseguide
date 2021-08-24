@@ -26,6 +26,10 @@
   }
 }
 
+[type="color"] {
+  padding: $input-padding-vertical;
+}
+
 select {
   &[multiple],
   &[size] {
@@ -39,4 +43,8 @@ textarea {
   &[rows] {
     height: auto;
   }
+}
+
+::placeholder {
+  color: $placeholder-color;
 }

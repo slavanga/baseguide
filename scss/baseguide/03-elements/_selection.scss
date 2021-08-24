@@ -1,5 +1,5 @@
-input[type="radio"],
-input[type="checkbox"] {
+[type="radio"],
+[type="checkbox"] {
   &:not(:only-child) {
     position: absolute;
     margin-top: 0.35em;

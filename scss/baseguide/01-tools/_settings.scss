@@ -144,13 +144,18 @@ $embed-ratios: (
 
 // Input
 $input-selector: (
-  '[type="email"]',
-  '[type="number"]',
-  '[type="password"]',
-  '[type="search"]',
-  '[type="tel"]',
   '[type="text"]',
+  '[type="password"]',
+  '[type="email"]',
   '[type="url"]',
+  '[type="tel"]',
+  '[type="number"]',
+  '[type="search"]',
+  '[type="date"]',
+  '[type="month"]',
+  '[type="week"]',
+  '[type="time"]',
+  '[type="color"]',
   'textarea',
   'select'
 ) !default;

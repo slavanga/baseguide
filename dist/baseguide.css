@@ -432,6 +432,7 @@ select:disabled {
   opacity: 1;
 }
 
+[role=button]:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled),
@@ -452,18 +453,19 @@ input[type=file] {
   font: inherit;
 }
 
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
 ::-moz-placeholder {
-  color: gray;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: gray;
   opacity: 1;
 }
 
 ::placeholder {
-  color: gray;
   opacity: 1;
 }
 
@@ -563,7 +565,7 @@ label {
   margin-bottom: 0.3rem;
 }
 
-[type=email], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], textarea, select {
+[type=text], [type=password], [type=email], [type=url], [type=tel], [type=number], [type=search], [type=date], [type=month], [type=week], [type=time], [type=color], textarea, select {
   display: block;
   width: 100%;
   height: 2.375em;
@@ -578,16 +580,20 @@ label {
           color-adjust: exact;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-[type=email]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=url]:focus, textarea:focus, select:focus {
+[type=text]:focus, [type=password]:focus, [type=email]:focus, [type=url]:focus, [type=tel]:focus, [type=number]:focus, [type=search]:focus, [type=date]:focus, [type=month]:focus, [type=week]:focus, [type=time]:focus, [type=color]:focus, textarea:focus, select:focus {
   border-color: #0275d8;
   box-shadow: 0 0 0 0.188em rgba(2, 117, 216, 0.25);
   outline: 0;
 }
-[type=email]:disabled, [type=number]:disabled, [type=password]:disabled, [type=search]:disabled, [type=tel]:disabled, [type=text]:disabled, [type=url]:disabled, textarea:disabled, select:disabled {
+[type=text]:disabled, [type=password]:disabled, [type=email]:disabled, [type=url]:disabled, [type=tel]:disabled, [type=number]:disabled, [type=search]:disabled, [type=date]:disabled, [type=month]:disabled, [type=week]:disabled, [type=time]:disabled, [type=color]:disabled, textarea:disabled, select:disabled {
   border-color: #cccccc;
   background-color: #e6e6e6;
   color: gray;
   cursor: not-allowed;
+}
+
+[type=color] {
+  padding: 0.375em;
 }
 
 select[multiple], select[size] {
@@ -601,19 +607,31 @@ textarea[rows] {
   height: auto;
 }
 
-input[type=radio]:not(:only-child),
-input[type=checkbox]:not(:only-child) {
+::-moz-placeholder {
+  color: gray;
+}
+
+:-ms-input-placeholder {
+  color: gray;
+}
+
+::placeholder {
+  color: gray;
+}
+
+[type=radio]:not(:only-child),
+[type=checkbox]:not(:only-child) {
   position: absolute;
   margin-top: 0.35em;
 }
-input[type=radio] ~ label,
-input[type=checkbox] ~ label {
+[type=radio] ~ label,
+[type=checkbox] ~ label {
   margin-bottom: 0;
   padding-left: 20px;
   font-weight: inherit;
 }
-input[type=radio]:disabled ~ label,
-input[type=checkbox]:disabled ~ label {
+[type=radio]:disabled ~ label,
+[type=checkbox]:disabled ~ label {
   color: gray;
   cursor: not-allowed;
 }
