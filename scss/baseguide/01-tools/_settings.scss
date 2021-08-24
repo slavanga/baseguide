@@ -50,8 +50,6 @@ $mq-breakpoints: (
   xl: 1200px,
 ) !default;
 
-$mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
-
 
 // Fluid Scaling
 $fluid-scaling: true !default;
