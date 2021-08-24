@@ -1,0 +1,10 @@
+body {
+  @include type;
+
+  @if $font-antialiased {
+    @include font-smoothing;
+  }
+
+  background-color: $global-bg;
+  color: $text-color;
+}
