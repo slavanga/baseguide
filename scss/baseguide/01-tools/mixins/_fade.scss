@@ -1,0 +1,17 @@
+/// Accessible fade in transition
+///
+/// @param {Number} $duration [0.15s]
+@mixin fade-in($duration: duration()) {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s easing(linear) 0s, opacity $duration;
+}
+
+/// Accessible fade out transition
+///
+/// @param {Number} $duration [0.15s]
+@mixin fade-out($duration: duration()) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s easing(linear) $duration, opacity $duration;
+}
