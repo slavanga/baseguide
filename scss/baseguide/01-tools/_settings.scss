@@ -78,7 +78,7 @@ $type-scale-base: (
 ) !default;
 
 $type-variations: (
-  base: (
+  default: (
     font-family: $font-family-base,
     font-size: (
       min: $font-size-base,
@@ -123,7 +123,7 @@ $grid-offset-classes: true !default;
 $spacing-base: 24px !default;
 
 $spacing-variations: (
-  base: (
+  default: (
     min: $spacing-base,
   ),
 ) !default;
@@ -138,7 +138,7 @@ $spacing-utilities: (
 
 // Embed Ratios
 $embed-ratios: (
-  base: 16 by 9,
+  default: 16 by 9,
 ) !default;
 
 
