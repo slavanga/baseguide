@@ -7,15 +7,16 @@
 ///
 /// @param {String} $name - Map key of `$z-index`
 /// @example scss
-/// .layer {
+/// .component {
 ///   z-index: z-index(below);
 /// }
 /// @return {Number} z-index value
 @function z-index($name) {
-  @if map-has-key($z-index, $name) {
-    @return map-get($z-index, $name);
+  $index: map-get($z-index, $name);
+
+  @if not $index {
+    @error "The key `#{$name}` wasn't found in $z-index.";
   }
-  @else {
-    @error "The key `#{$z-index}` wasn't found in $z-index.";
-  }
+
+  @return $index;
 }
