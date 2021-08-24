@@ -392,7 +392,6 @@ hr {
   border: 0;
   border-top: 1px solid;
   color: inherit;
-  opacity: 0.2;
 }
 
 :focus:not(:focus-visible) {
