@@ -1,13 +1,13 @@
 @each $name, $size in $spacing-utilities {
   .#{$meta-prefix-utilities}#{$name} {
-    @include spacing('margin-bottom', $size, $important: true);
+    margin-bottom: to-rem($size) !important;
   }
 }
 
 @include loop-breakpoints($inclusive: false) {
   @each $name, $size in $spacing-utilities {
     .#{$meta-prefix-utilities}#{$name}-#{$breakpoint} {
-      @include spacing('margin-bottom', $size, $important: true);
+      margin-bottom: to-rem($size) !important;
     }
   }
 }
@@ -16,8 +16,9 @@
   @if (not is-last-breakpoint($breakpoint)) {
     @each $name, $size in $spacing-utilities {
       .#{$meta-prefix-utilities}#{$name}-#{$breakpoint}-up {
-        @include spacing('margin-bottom', $size, $important: true);
+        margin-bottom: to-rem($size) !important;
       }
     }
   }
 }
+
