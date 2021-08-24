@@ -409,10 +409,6 @@ hr {
   outline: none;
 }
 
-label {
-  display: inline-block;
-}
-
 button,
 input,
 optgroup,
@@ -563,6 +559,7 @@ a:hover, a:focus {
 }
 
 label {
+  display: inline-block;
   margin-bottom: 0.3rem;
 }
 
