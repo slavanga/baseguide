@@ -165,8 +165,6 @@ $input-padding-vertical: 0.375em !default;
 $input-padding-horizontal: 0.75em !default;
 $input-border-width: 1px !default;
 $input-border-radius: 0.125em !default;
-$input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
-
 $input-bg: $color-background !default;
 $input-color: $color-foreground !default;
 $input-border-color: $color-line !default;
@@ -176,25 +174,36 @@ $input-focus-box-shadow: 0 0 0 0.188em rgba($color-primary, 0.25) !default;
 $input-disabled-bg: $color-background-muted !default;
 $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
+$input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
+
+
+// Select
+$select-icon-color: $color-foreground !default;
+
 
 // Checkbox & Radio
 $checkbox-border-width: $input-border-width !default;
 $checkbox-border-radius: $input-border-radius !default;
 $checkbox-top-offset: 0.25em !default;
-
 $checkbox-bg: $input-bg !default;
 $checkbox-border-color: $input-border-color !default;
 $checkbox-box-shadow: $input-box-shadow !default;
 $checkbox-focus-border-color: $input-focus-border-color !default;
 $checkbox-focus-box-shadow: $input-focus-box-shadow !default;
 $checkbox-active-filter: brightness(90%) !default;
+$checkbox-checked-bg: $color-primary !default;
+$checkbox-checked-border-color: $checkbox-checked-bg !default;
+$checkbox-icon-color: $color-white !default;
 $checkbox-disabled-bg: $input-disabled-bg !default;
 $checkbox-disabled-color: $input-disabled-color !default;
 $checkbox-disabled-border-color: $input-disabled-border-color !default;
+$checkbox-transition: opacity 0.15s linear, transform 0.15s ease !default;
+
 
 // Placeholder
 $placeholder-color: $color-foreground-muted !default;
 
+// Label & Form Group
 $label-spacing: 0.3rem !default;
 $form-group-spacing: 1rem !default;
 

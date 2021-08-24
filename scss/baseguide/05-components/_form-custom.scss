@@ -4,7 +4,7 @@
     padding-right: 2em;
     background-repeat: no-repeat;
     background-position: right $input-padding-horizontal center;
-    background-image: url(get-icon('select'));
+    background-image: url(get-icon('select', $select-icon-color));
   }
 }
 
@@ -40,6 +40,9 @@
   ~ label::after {
     background-repeat: no-repeat;
     background-position: center center;
+    opacity: 0;
+    transform: scale(0);
+    transition: $checkbox-transition;
   }
 
   &:disabled ~ label::before {
@@ -50,6 +53,16 @@
   &:focus ~ label::before {
     border-color: $checkbox-focus-border-color;
     box-shadow: $checkbox-focus-box-shadow;
+  }
+
+  &:checked ~ label::before {
+    border-color: $checkbox-checked-border-color;
+    background-color: $checkbox-checked-bg;
+  }
+
+  &:checked ~ label::after {
+    opacity: 1;
+    transform: none;
   }
 
   &:active:not(:disabled) ~ label::before {
@@ -63,7 +76,7 @@
   }
 
   &:checked ~ label::after {
-    background-image: url(get-icon('radio'));
+    background-image: url(get-icon('radio', $checkbox-icon-color));
   }
 }
 
@@ -73,6 +86,6 @@
   }
 
   &:checked ~ label::after {
-    background-image: url(get-icon('checkbox'));
+    background-image: url(get-icon('checkbox', $checkbox-icon-color));
   }
 }
