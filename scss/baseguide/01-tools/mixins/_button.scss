@@ -82,7 +82,7 @@
 /// @param {String} $variation ['base'] - Map key of `$button-variations`
 @mixin button($variation: 'base') {
   @include button-base;
-  @include get-config($button-variations, $variation);
+  @include use-variation($button-variations, $variation);
 }
 
 
@@ -95,11 +95,11 @@
     $variations: map-remove($variations, $first-key);
 
     #{$button-selector} {
-      @include get-config($button-variations, $first-key);
+      @include use-variation($button-variations, $first-key);
 
       @each $key, $value in $variations {
         &#{$meta-class-modifier}#{$key} {
-          @include get-config($button-variations, $key);
+          @include use-variation($button-variations, $key);
         }
       }
     }

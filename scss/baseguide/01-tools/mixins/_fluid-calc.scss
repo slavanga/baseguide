@@ -70,7 +70,7 @@
         $value: calc((#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{to-rem($min-breakpoint-value)}) / #{strip-unit(to-rem($max-breakpoint-value) - to-rem($min-breakpoint-value))}) * #{$multiplicand}) $important;
 
         @if ($current-breakpoint) {
-          // Breakpoint set already in parent mixin (loop-config)
+          // Breakpoint set already in parent mixin (loop-variation)
           #{$prop}: $value;
         }
         @else {

@@ -1,0 +1,55 @@
+////
+/// @group global
+////
+
+
+/// Loop keys of a variation to output normal and fluid props
+///
+/// @param {Map} $config - Map of Breakpoints, CSS properties and sizing maps
+/// @param {String} $prop [null] - Any CSS property
+/// @param {Bool} $negative [false] - Negates the values if true
+/// @param {Bool} $important [false] - Adds important flag if true
+@mixin loop-variation($config, $prop: null, $negative: false, $important: false) {
+  @each $key, $value in $config {
+    @if (map-has-key($mq-breakpoints, $key)) {
+      @include skip-first-breakpoint($key) {
+        $breakpoint-keys: map-keys($config);
+        $next-breakpoint: get-next-breakpoint($key, $config) or map-get($fluid-breakpoints, 'max');
+        $breakpoint-range: (
+          min: $key,
+          max: $next-breakpoint,
+        );
+
+        @if (is-sizing-map($value)) {
+          @include fluid-calc(
+            $prop,
+            $value,
+            $breakpoint-range,
+            $negative,
+            $important,
+            $current-breakpoint: $key,
+            $all-breakpoints: $breakpoint-keys
+          );
+        } @else {
+          @each $deep-key, $deep-value in $value {
+            @if (is-sizing-map($deep-value)) {
+              @include fluid-calc(
+                $deep-key,
+                $deep-value,
+                $breakpoint-range,
+                $negative,
+                $important,
+                $current-breakpoint: $key,
+                $all-breakpoints: $breakpoint-keys
+              );
+            } @else {
+              @include output-props($deep-key, $deep-value);
+            }
+          }
+        }
+      }
+    } @else {
+      @include output-props($key, $value);
+    }
+  }
+}

@@ -38,9 +38,9 @@
 }
 
 
-/// Wrapper mixin for get-config that uses the `$type-variations` map as default lookup map
+/// Wrapper mixin for use-variation that uses the `$type-variations` map as default lookup map
 ///
 /// @param {String} $variation ['default'] - Map key of `$type-variations`
 @mixin type($variation: 'default') {
-  @include get-config($type-variations, $variation);
+  @include use-variation($type-variations, $variation);
 }

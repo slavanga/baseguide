@@ -26,7 +26,7 @@
 /// @param {String} $name - Current breakpoint name
 /// @param {Map} $breakpoints [$mq-breakpoints] - Map of breakpoints
 /// @return {String} - Next breakpoint name
-@function breakpoint-next($name, $breakpoints: $mq-breakpoints) {
+@function get-next-breakpoint($name, $breakpoints: $mq-breakpoints) {
   $breakpoint-keys: map-keys($breakpoints);
   $breakpoint-index: index($breakpoint-keys, $name);
   $next: false;
