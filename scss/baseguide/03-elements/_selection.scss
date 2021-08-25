@@ -12,7 +12,7 @@
   }
 
   &:disabled ~ label {
-    color: $checkbox-disabled-color;
+    color: $selection-disabled-color;
     cursor: not-allowed;
   }
 }

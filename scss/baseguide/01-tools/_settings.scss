@@ -185,22 +185,23 @@ $select-icon-color: $color-foreground !default;
 
 
 // Checkbox & Radio
-$checkbox-border-width: $input-border-width !default;
+$selection-border-width: $input-border-width !default;
+$selection-top-offset: 0.25em !default;
+$selection-bg: $input-bg !default;
+$selection-border-color: $input-border-color !default;
+$selection-box-shadow: $input-box-shadow !default;
+$selection-focus-border-color: $input-focus-border-color !default;
+$selection-focus-box-shadow: $input-focus-box-shadow !default;
+$selection-active-filter: brightness(90%) !default;
+$selection-checked-bg: $color-accent !default;
+$selection-checked-border-color: $selection-checked-bg !default;
+$selection-icon-color: $color-foreground-inverted !default;
+$selection-disabled-bg: $input-disabled-bg !default;
+$selection-disabled-color: $input-disabled-color !default;
+$selection-disabled-border-color: $input-disabled-border-color !default;
+$selection-transition: opacity 0.15s linear, transform 0.15s ease !default;
+
 $checkbox-border-radius: $input-border-radius !default;
-$checkbox-top-offset: 0.25em !default;
-$checkbox-bg: $input-bg !default;
-$checkbox-border-color: $input-border-color !default;
-$checkbox-box-shadow: $input-box-shadow !default;
-$checkbox-focus-border-color: $input-focus-border-color !default;
-$checkbox-focus-box-shadow: $input-focus-box-shadow !default;
-$checkbox-active-filter: brightness(90%) !default;
-$checkbox-checked-bg: $color-accent !default;
-$checkbox-checked-border-color: $checkbox-checked-bg !default;
-$checkbox-icon-color: $color-foreground-inverted !default;
-$checkbox-disabled-bg: $input-disabled-bg !default;
-$checkbox-disabled-color: $input-disabled-color !default;
-$checkbox-disabled-border-color: $input-disabled-border-color !default;
-$checkbox-transition: opacity 0.15s linear, transform 0.15s ease !default;
 
 
 // Placeholder

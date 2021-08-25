@@ -14,7 +14,7 @@
   ~ label::after {
     content: '';
     position: absolute;
-    top: $checkbox-top-offset;
+    top: $selection-top-offset;
     left: 0;
     width: 1em;
     height: 1em;
@@ -22,9 +22,9 @@
   }
 
   ~ label::before {
-    border: $checkbox-border-width solid $checkbox-border-color;
-    background-color: $checkbox-bg;
-    box-shadow: $checkbox-box-shadow;
+    border: $selection-border-width solid $selection-border-color;
+    background-color: $selection-bg;
+    box-shadow: $selection-box-shadow;
   }
 
   ~ label::after {
@@ -32,22 +32,22 @@
     background-position: center center;
     opacity: 0;
     transform: scale(0);
-    transition: $checkbox-transition;
+    transition: $selection-transition;
   }
 
   &:disabled ~ label::before {
-    background-color: $checkbox-disabled-bg;
-    border-color: $checkbox-disabled-border-color;
+    background-color: $selection-disabled-bg;
+    border-color: $selection-disabled-border-color;
   }
 
   &:focus ~ label::before {
-    border-color: $checkbox-focus-border-color;
-    box-shadow: $checkbox-focus-box-shadow;
+    border-color: $selection-focus-border-color;
+    box-shadow: $selection-focus-box-shadow;
   }
 
   &:checked ~ label::before {
-    border-color: $checkbox-checked-border-color;
-    background-color: $checkbox-checked-bg;
+    border-color: $selection-checked-border-color;
+    background-color: $selection-checked-bg;
   }
 
   &:checked ~ label::after {
@@ -56,7 +56,7 @@
   }
 
   &:active:not(:disabled) ~ label::before {
-    filter: $checkbox-active-filter;
+    filter: $selection-active-filter;
   }
 }
 
@@ -66,7 +66,7 @@
   }
 
   &:checked ~ label::after {
-    background-image: url(get-icon('radio', $checkbox-icon-color));
+    background-image: url(get-icon('radio', $selection-icon-color));
   }
 }
 
@@ -76,6 +76,6 @@
   }
 
   &:checked ~ label::after {
-    background-image: url(get-icon('checkbox', $checkbox-icon-color));
+    background-image: url(get-icon('checkbox', $selection-icon-color));
   }
 }
