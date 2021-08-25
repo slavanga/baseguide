@@ -20,7 +20,7 @@
     "build": "npm-run-all sass postcss postcss:minify",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\"",
     "lint": "stylelint **/*.scss --fix",
-    "sass": "sass baseguide.scss dist/baseguide.css",
+    "sass": "sass scss/baseguide.scss dist/baseguide.css",
     "postcss": "postcss dist/baseguide.css --replace",
     "postcss:minify": "postcss dist/baseguide.css --output dist/baseguide.min.css --env=production",
     "sassdoc": "sassdoc **/*.scss --config sassdocrc"
