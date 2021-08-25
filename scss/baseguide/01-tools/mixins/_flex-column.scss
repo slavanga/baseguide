@@ -5,7 +5,7 @@
 
 /// Output flex column base styles with gutter
 ///
-/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of space between columns as a number or a map formatted as `(xs: 30px, md: 60px)`
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
 /// @param {Number} $size [100%] - Width of the column as number
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
