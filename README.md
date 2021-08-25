@@ -412,7 +412,7 @@ $button-variations: (
   base: (
     selectors: (
       '&:focus': (
-        box-shadow: 0 0 0 0.188rem rgba($color-primary, 0.5),
+        box-shadow: 0 0 0 0.188rem rgba($color-accent, 0.5),
       ),
       '&:disabled, &.disabled': (
         opacity: 0.65,
@@ -420,31 +420,31 @@ $button-variations: (
     ),
   ),
   default: (
-    background-color: $color-primary,
-    color: $color-white,
+    background-color: $color-accent,
+    color: $color-foreground-inverted,
     selectors: (
       '&:hover': (
-        background-color: darken($color-primary, 5%),
-        color: $color-white,
+        background-color: shade-color($color-accent, 15%),
+        color: $color-foreground-inverted,
       ),
       '&:focus': (
-        background-color: darken($color-primary, 10%),
-        color: $color-white,
+        background-color: shade-color($color-accent, 20%),
+        color: $color-foreground-inverted,
       ),
     ),
   ),
   ghost: (
     background-color: transparent,
-    color: $color-primary,
-    border-color: $color-primary,
+    color: $color-accent,
+    border-color: $color-accent,
     selectors: (
       '&:hover': (
-        background-color: darken($color-primary, 5%),
-        color: $color-white,
+        background-color: shade-color($color-accent, 15%),
+        color: $color-foreground-inverted,
       ),
       '&:focus': (
-        background-color: darken($color-primary, 10%),
-        color: $color-white,
+        background-color: shade-color($color-accent, 20%),
+        color: $color-foreground-inverted,
       ),
     ),
   ),

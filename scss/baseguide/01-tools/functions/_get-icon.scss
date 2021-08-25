@@ -6,19 +6,19 @@
 /// Get an icon from the `$icons` map in the specified color
 ///
 /// @param {String} $icon - Map key of `$icons`
-/// @param {String} $color [$icon-color] - Hex color value
+/// @param {String} $color [$color-icon] - Hex color value
 /// @example scss
 /// .icon {
 ///   background-image: url(get-icon('radio', #fff));
 /// }
 /// @return {String} Encoded SVG icon string
-@function get-icon($icon, $color: $icon-color) {
+@function get-icon($icon, $color: $color-icon) {
   $color: inspect($color);
 
   @if (str-index($color, '#') != null) {
     @if map-has-key($icons, $icon) {
       $icon: 'data:image/svg+xml;charset=utf8,' + map-get($icons, $icon);
-      $icon: str-replace($icon, inspect($icon-color), $color);
+      $icon: str-replace($icon, inspect($color-icon), $color);
 
       @each $char, $encoded in (('<', '%3C'), ('>', '%3E'), ('#', '%23'), ('"', "'")) {
         $icon: str-replace($icon, $char, $encoded);

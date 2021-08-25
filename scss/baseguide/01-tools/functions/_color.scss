@@ -3,8 +3,31 @@
 ////
 
 
+/// Get a color from the `$colors` map
+///
+/// @example scss
+/// .component {
+///   color: color(black);
+/// }
+/// @param {String} $name - Map key of `$colors`
+/// @return {Color} color value
+@function color($name) {
+  $color: map-get($colors, $name);
+
+  @if not $color {
+    @error "The key `#{$name}` wasn't found in $colors.";
+  }
+
+  @return $color;
+}
+
+
 /// Slightly lighten a color
 ///
+/// @example scss
+/// .component {
+///   color: tint-color(#bada55, 20%);
+/// }
 /// @param {Color} $color - color to tint
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color} - Tinted color
@@ -12,8 +35,13 @@
   @return mix(#fff, $color, $percentage);
 }
 
+
 /// Slightly darken a color
 ///
+/// @example scss
+/// .component {
+///   color: shade-color(#bada55, 20%);
+/// }
 /// @param {Color} $color - color to shade
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color} - Shaded color

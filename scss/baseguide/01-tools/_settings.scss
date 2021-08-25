@@ -8,25 +8,31 @@ $meta-class-element: '-' !default; // use '__' for BEM syntax
 
 
 // Colors
-$color-white: #fff !default;
-$color-black: #000 !default;
-$color-gray-100: tint-color($color-black, 90%) !default;
-$color-gray-200: tint-color($color-black, 80%) !default;
-$color-gray-300: tint-color($color-black, 70%) !default;
-$color-gray-400: tint-color($color-black, 60%) !default;
-$color-gray-500: tint-color($color-black, 50%) !default;
-$color-gray-600: tint-color($color-black, 40%) !default;
-$color-gray-700: tint-color($color-black, 30%) !default;
-$color-gray-800: tint-color($color-black, 20%) !default;
-$color-gray-900: tint-color($color-black, 10%) !default;
-$color-blue: #0275d8 !default;
+$colors: (
+  blue: #0275d8,
+  white: #fff,
+  black: #000,
+  gray-100: tint-color(#000, 90%),
+  gray-200: tint-color(#000, 80%),
+  gray-300: tint-color(#000, 70%),
+  gray-400: tint-color(#000, 60%),
+  gray-500: tint-color(#000, 50%),
+  gray-600: tint-color(#000, 40%),
+  gray-700: tint-color(#000, 30%),
+  gray-800: tint-color(#000, 20%),
+  gray-900: tint-color(#000, 10%),
+) !default;
 
-$color-primary: $color-blue !default;
-$color-foreground: $color-gray-800 !default;
-$color-foreground-muted: $color-gray-500 !default;
-$color-background: $color-white !default;
-$color-background-muted: $color-gray-100 !default;
-$color-line: $color-gray-200 !default;
+// Abstract Colors
+$color-accent: color(blue) !default;
+$color-foreground: color(gray-800) !default;
+$color-foreground-inverted: color(white) !default;
+$color-foreground-muted: color(gray-500) !default;
+$color-background: color(white) !default;
+$color-background-inverted: color(gray-800) !default;
+$color-background-muted: color(gray-100) !default;
+$color-line: color(gray-200) !default;
+$color-icon: color(gray-800) !default;
 
 
 // Global
@@ -101,7 +107,7 @@ $type-variations: (
 
 
 // Link
-$link-color: $color-primary !default;
+$link-color: $color-accent !default;
 $link-hover-color: $link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
@@ -166,8 +172,8 @@ $input-bg: $color-background !default;
 $input-color: $color-foreground !default;
 $input-border-color: $color-line !default;
 $input-box-shadow: none !default;
-$input-focus-border-color: $color-primary !default;
-$input-focus-box-shadow: 0 0 0 0.188em rgba($color-primary, 0.25) !default;
+$input-focus-border-color: $color-accent !default;
+$input-focus-box-shadow: 0 0 0 0.188em rgba($color-accent, 0.25) !default;
 $input-disabled-bg: $color-background-muted !default;
 $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
@@ -188,9 +194,9 @@ $checkbox-box-shadow: $input-box-shadow !default;
 $checkbox-focus-border-color: $input-focus-border-color !default;
 $checkbox-focus-box-shadow: $input-focus-box-shadow !default;
 $checkbox-active-filter: brightness(90%) !default;
-$checkbox-checked-bg: $color-primary !default;
+$checkbox-checked-bg: $color-accent !default;
 $checkbox-checked-border-color: $checkbox-checked-bg !default;
-$checkbox-icon-color: $color-white !default;
+$checkbox-icon-color: $color-foreground-inverted !default;
 $checkbox-disabled-bg: $input-disabled-bg !default;
 $checkbox-disabled-color: $input-disabled-color !default;
 $checkbox-disabled-border-color: $input-disabled-border-color !default;
@@ -206,11 +212,9 @@ $form-group-spacing: 1rem !default;
 
 
 // Icons
-$icon-color: $color-foreground !default;
-
-$icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
-$icon-checkbox: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>' !default;
-$icon-select: '<svg xmlns="http://www.w3.org/2000/svg" height="8" width="12" viewBox="0 0 12 8"><path fill="#{$icon-color}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>' !default;
+$icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
+$icon-checkbox: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>' !default;
+$icon-select: '<svg xmlns="http://www.w3.org/2000/svg" height="8" width="12" viewBox="0 0 12 8"><path fill="#{$color-icon}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>' !default;
 
 $icons: (
   radio: $icon-radio,
@@ -235,17 +239,17 @@ $button-cursor-pointer: true !default;
 // Button Variations
 $button-variations: (
   base: (
-    background-color: $color-primary,
-    color: $color-white,
+    background-color: $color-accent,
+    color: $color-foreground-inverted,
     selectors: (
       '&:hover': (
-        background-color: shade-color($color-primary, 15%),
-        color: $color-white,
+        background-color: shade-color($color-accent, 15%),
+        color: $color-foreground-inverted,
       ),
       '&:focus': (
-        background-color: shade-color($color-primary, 20%),
-        color: $color-white,
-        box-shadow: 0 0 0 0.188em rgba($color-primary, 0.35),
+        background-color: shade-color($color-accent, 20%),
+        color: $color-foreground-inverted,
+        box-shadow: 0 0 0 0.188em rgba($color-accent, 0.35),
       ),
       '&:disabled, &.disabled': (
         opacity: 0.65,
