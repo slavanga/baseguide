@@ -225,7 +225,7 @@ An advanced type config with scaling font-sizes per breakpoint could look like t
 
 ```scss
 $type-variations: (
-  base: (
+  default: (
     xs: (
       font-family: $font-family-base,
       font-size: (
@@ -373,7 +373,7 @@ The default (base) ratio is 16 by 9. Extend the `$embed-ratios` map to add more 
 
 ```scss
 $embed-ratios: (
-  base: 16 by 9,
+  default: 16 by 9,
   square: 1 by 1,
 );
 ```
