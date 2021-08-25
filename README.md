@@ -295,7 +295,7 @@ The number of columns is controlled by the `$grid-columns` variable which defaul
 
 ### Gutters
 
-The gutters are controlled by the `$grid-gutter` variable. It can either be a global value across all breakpoints or a map with gutter values per breakpoint.
+The gutters are controlled by the `$grid-gutter` variable. It can be a global value across all breakpoints, a map with gutter values per breakpoint or a sizing map.
 
 ```scss
 // set gutter for all breakpoints
@@ -311,16 +311,14 @@ $grid-gutter: (
 );
 ```
 
-Accessing gutter values is easy using the `get-gutter` function. The smallest gutter gets returned by default.
-
 ```scss
-.col {
-  margin-bottom: get-gutter();
-
-  @include mq(md) {
-    margin-bottom: get-gutter(md);
-  }
-}
+// start with 20px gutter and fluidly increase to 40px
+$grid-gutter: (
+  xs: (
+    min: 20px,
+    max: 40px,
+  ),
+);
 ```
 
 ### Mixins

@@ -3,30 +3,6 @@
 ////
 
 
-/// Get a gutter value from the map $grid-gutter
-///
-/// @param {String} $breakpoint [null] - Breakpoint name
-/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or a map formatted as `(xs: 30px, md: 60px)`
-/// @return {Number} - Gutter value as a number
-@function get-gutter($breakpoint: null, $gutter: $grid-gutter) {
-  @if (type-of($gutter) == 'map') {
-    @if $breakpoint {
-      @if map-has-key($gutter, $breakpoint) {
-        $gutter: map-get($gutter, $breakpoint);
-      }
-      @else {
-        @error "Breakpoint `#{$breakpoint}` wasn't found in $gutter.";
-      }
-    }
-    @else {
-      $gutter: nth(map-values($gutter), 1);
-    }
-  }
-
-  @return to-rem($gutter);
-}
-
-
 /// Output margin or padding gutter depending on the type
 ///
 /// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or sizing map formatted as `(min: 30px, max: 60px)`
