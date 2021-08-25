@@ -15,7 +15,7 @@
     $width: to-rem($width) - to-rem($gutter);
   }
 
-  @include make-gutters($gutter);
+  @include make-gutters($gutter, 'padding');
 
   margin-left: auto;
   margin-right: auto;

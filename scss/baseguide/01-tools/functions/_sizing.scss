@@ -1,0 +1,67 @@
+////
+/// @group global
+////
+
+
+/// Validate a sizing map
+///
+/// @param {Map} $map - Map to test
+/// @return {Boolean} - True if the parameter is a map with a `min` key
+@function is-sizing-map($map) {
+  @return (type-of($map) == 'map' and map-has-key($map, 'min'));
+}
+
+
+/// Get largest sizing of sizing map
+///
+/// @param {Map|Number} $sizing - Sizing map or number
+/// @return {Number} - Largest sizing in the map
+@function get-largest-sizing($sizing) {
+  $largest-sizing: $sizing;
+
+  @if (type-of($sizing) == 'map') {
+    $sizing-value: nth(map-values($sizing), length($sizing));
+
+    @if is-sizing-map($sizing-value) {
+      $largest-sizing: map-get($sizing-value, 'max');
+
+      @if not $largest-sizing {
+        $largest-sizing: map-get($sizing-value, 'min');
+      }
+    }
+    @else {
+      $largest-sizing: $sizing-value;
+    }
+  }
+
+  @return $largest-sizing;
+}
+
+
+/// Half values of a sizing map
+///
+/// @param {Map|Number} $sizing - Sizing map or number
+/// @return {Map|Number} - Sizing map with halved values or halved number
+@function get-half-sizing($sizing) {
+  $half-sizing: $sizing;
+
+  @if is-sizing-map($sizing) {
+    $half-sizing: (
+      'min': divide(map-get($sizing, 'min'), 2),
+    );
+
+    @if map-has-key($sizing, 'max') {
+      $half-sizing: map-merge(
+        $half-sizing,
+        (
+          'max': divide(map-get($sizing, 'max'), 2),
+        )
+      );
+    }
+  }
+  @else {
+    $half-sizing: divide($sizing, 2);
+  }
+
+  @return $half-sizing;
+}

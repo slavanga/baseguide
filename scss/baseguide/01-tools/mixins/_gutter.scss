@@ -29,37 +29,43 @@
 
 /// Output margin or padding gutter depending on the type
 ///
-/// @param {Number} $gutter - The amount of gutter as a number
-/// @param {String} $type - Gutter type: 'inner' or 'outer'
-@mixin gutter($gutter, $type) {
-  $gutter: to-rem(divide($gutter, 2));
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or sizing map formatted as `(min: 30px, max: 60px)`
+/// @param {String} $prop ['gap'] - Property to use for the gutter ('gap', 'margin' or 'padding')
+@mixin gutter($gutter: $grid-gutter, $prop: 'gap') {
+  $negative: false;
 
-  @if $type == 'inner' {
-    padding-left: $gutter;
-    padding-right: $gutter;
+  @if ($prop == 'margin') {
+    $negative: true;
+  }
+
+  @if ($prop != 'gap') {
+    $gutter: get-half-sizing($gutter);
+
+    @include fluid-calc(#{$prop}-left, $gutter, $negative: $negative);
+    @include fluid-calc(#{$prop}-right, $gutter, $negative: $negative);
   }
   @else {
-    $gutter: $gutter * -1;
-
-    margin-left: $gutter;
-    margin-right: $gutter;
+    @include fluid-calc($prop, $gutter, $negative: $negative);
   }
 }
 
 
 /// Wrapper for gutter mixin for switching between a gutter number or map
 ///
-/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or a map formatted as `(xs: 30px, md: 60px)`
-/// @param {String} $type ['inner'] - Gutter type: 'inner' or 'outer'
-@mixin make-gutters($gutter: $grid-gutter, $type: 'inner') {
-  @if (type-of($gutter) == 'map') {
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
+/// @param {String} $prop ['gap'] - Property to use for the gutter ('gap', 'margin' or 'padding')
+@mixin make-gutters($gutter: $grid-gutter, $prop: 'gap') {
+  @if is-sizing-map($gutter) {
+    @include gutter($gutter, $prop);
+  }
+  @else if (type-of($gutter) == 'map') {
     @each $breakpoint, $width in $gutter {
       @include skip-first-breakpoint($breakpoint) {
-        @include gutter($width, $type);
+        @include gutter($width, $prop);
       }
     }
   }
   @else {
-    @include gutter($gutter, $type);
+    @include gutter($gutter, $prop);
   }
 }

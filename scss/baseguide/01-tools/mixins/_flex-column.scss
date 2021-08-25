@@ -9,7 +9,7 @@
 /// @param {Number} $size [100%] - Width of the column as number
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
-  @include make-gutters($gutter);
+  @include make-gutters($gutter, 'padding');
   @include column($size, $columns);
 
   position: relative;
