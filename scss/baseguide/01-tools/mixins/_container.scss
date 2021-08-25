@@ -5,20 +5,15 @@
 
 /// Output a centered container with gutters
 ///
-/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of space between columns as a number or a map formatted as `(xs: 30px, md: 60px)`
+/// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
 /// @param {Number} $width [$grid-container] - Maximum width of the container
 @mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
-  @if (type-of($gutter) == 'map') {
-    $width: to-rem($width) - to-rem(nth(map-values($gutter), length($gutter)));
-  }
-  @else {
-    $width: to-rem($width) - to-rem($gutter);
-  }
+  $max-width: to-rem($width) - to-rem(get-largest-sizing($gutter));
 
   @include make-gutters($gutter, 'padding');
 
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: $width;
+  max-width: $max-width;
 }
