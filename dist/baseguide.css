@@ -1884,7 +1884,6 @@ h3 {
       -ms-user-select: none;
           user-select: none;
   touch-action: manipulation;
-  cursor: pointer;
 }
 .btn:disabled, .btn.disabled {
   cursor: not-allowed;
