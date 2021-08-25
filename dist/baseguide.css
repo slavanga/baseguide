@@ -431,31 +431,6 @@ select:disabled {
   opacity: 1;
 }
 
-[role=button]:not(:disabled),
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
-}
-
-input[type=file] {
-  display: block;
-  max-width: 100%;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
-}
-
-::file-selector-button {
-  font: inherit;
-}
-
-::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
 ::-moz-placeholder {
   opacity: 1;
 }
@@ -602,8 +577,23 @@ label {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' width='12' viewBox='0 0 12 8'%3E%3Cpath fill='%23333333' d='m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   }
 }
-[type=color] {
+input[type=color] {
+  max-width: 2.75rem;
   padding: 0.375em;
+}
+
+input[type=date] {
+  display: flex;
+}
+
+input[type=date],
+input[type=month] {
+  -webkit-appearance: none;
+}
+
+input[type=file] {
+  display: block;
+  max-width: 100%;
 }
 
 select[multiple], select[size] {
@@ -615,6 +605,10 @@ textarea {
 }
 textarea[rows] {
   height: auto;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
 }
 
 ::-moz-placeholder {
@@ -644,6 +638,20 @@ textarea[rows] {
 [type=checkbox]:disabled ~ label {
   color: gray;
   cursor: not-allowed;
+}
+
+[role=button]:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+input:not(:disabled) ::-webkit-file-upload-button {
+  cursor: pointer;
+}
+input:not(:disabled) ::file-selector-button {
+  cursor: pointer;
 }
 
 @media print {

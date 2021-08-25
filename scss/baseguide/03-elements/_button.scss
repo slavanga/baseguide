@@ -1,0 +1,21 @@
+@if $button-cursor-pointer {
+  [role="button"],
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  button {
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+}
+
+::file-selector-button {
+  font: inherit;
+
+  @if $button-cursor-pointer {
+    input:not(:disabled) & {
+      cursor: pointer;
+    }
+  }
+}
