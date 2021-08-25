@@ -1,13 +1,3 @@
-@supports (appearance: none) {
-  .#{$meta-prefix-components}select:not([multiple]) {
-    appearance: none;
-    padding-right: 2em;
-    background-repeat: no-repeat;
-    background-position: right $input-padding-horizontal center;
-    background-image: url(get-icon('select', $select-icon-color));
-  }
-}
-
 .#{$meta-prefix-components}radio input[type="radio"],
 .#{$meta-prefix-components}checkbox input[type="checkbox"] {
   &:not(:only-child) {

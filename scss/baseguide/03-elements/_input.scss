@@ -26,6 +26,16 @@
   }
 }
 
+@supports (appearance: none) {
+  select:not([multiple]) {
+    appearance: none;
+    padding-right: 2em;
+    background-repeat: no-repeat;
+    background-position: right $input-padding-horizontal center;
+    background-image: url(get-icon('select', $select-icon-color));
+  }
+}
+
 [type="color"] {
   padding: $input-padding-vertical;
 }
