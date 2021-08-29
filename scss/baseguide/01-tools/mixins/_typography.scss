@@ -2,7 +2,6 @@
 /// @group typography
 ////
 
-
 /// Scale headings using modular scale
 ///
 /// @param {Number} $scale [$type-scale-base]
@@ -27,8 +26,7 @@
         }
 
         @include fluid-calc('font-size', $sizes);
-      }
-      @else {
+      } @else {
         font-size: modular-scale($max-scale, $scale);
       }
     }
@@ -36,7 +34,6 @@
     $max-scale: $max-scale + 1;
   }
 }
-
 
 /// Wrapper mixin for use-variation that uses the `$type-variations` map as default lookup map
 ///

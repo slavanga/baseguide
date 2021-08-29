@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Returns the base to the exponent power, as in base^exponent
 ///
 /// @param {Number} $base - Base
@@ -16,8 +15,7 @@
     @for $i from 1 through $exponent {
       $return: $return * $base;
     }
-  }
-  @else if $exponent < 0 {
+  } @else if $exponent < 0 {
     // If the number is 0 or negative then divide it
     @for $i from 1 through -$exponent {
       $return: divide($return, $base);

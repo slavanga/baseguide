@@ -1,26 +1,12 @@
 module.exports = {
-  extends: "stylelint-config-standard",
-  plugins: ["stylelint-scss"],
-  ignoreFiles: ["**/_mq.scss", "**/_normalize.scss"],
+  plugins: ['stylelint-scss'],
+  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  ignoreFiles: ['**/_mq.scss', '**/_normalize.scss'],
   rules: {
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        except: ["blockless-after-same-name-blockless", "first-nested"],
-        ignore: ["after-comment"],
-        ignoreAtRules: ["else"],
-      },
-    ],
-    "at-rule-no-unknown": null,
-    "declaration-block-no-duplicate-properties": [
-      true,
-      {
-        ignore: ["consecutive-duplicates-with-different-values"],
-      },
-    ],
-    "length-zero-no-unit": null,
-    "max-empty-lines": 2,
-    "no-descending-specificity": null,
-    "value-keyword-case": null,
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
+    'declaration-empty-line-before': null,
+    'length-zero-no-unit': null,
+    'no-descending-specificity': null,
   },
 };

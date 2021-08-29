@@ -6,7 +6,6 @@ $meta-prefix-utilities: '' !default; // e.g. 'u-'
 $meta-class-modifier: '-' !default; // use '--' for BEM syntax
 $meta-class-element: '-' !default; // use '__' for BEM syntax
 
-
 // Colors
 $colors: (
   blue: #0275d8,
@@ -34,7 +33,6 @@ $color-background-muted: get-color(gray-100) !default;
 $color-line: get-color(gray-200) !default;
 $color-icon: get-color(gray-800) !default;
 
-
 // Global
 $font-antialiased: false !default;
 $font-size-base: 1rem !default;
@@ -45,7 +43,6 @@ $letter-spacing-base: normal !default;
 $global-bg: $color-background !default;
 $text-color: $color-foreground !default;
 
-
 // Breakpoints
 $mq-breakpoints: (
   xs: 0px,
@@ -55,7 +52,6 @@ $mq-breakpoints: (
   xl: 1200px,
 ) !default;
 
-
 // Fluid Scaling
 $fluid-scaling: true !default;
 $fluid-breakpoints: (
@@ -63,12 +59,8 @@ $fluid-breakpoints: (
   max: xl,
 ) !default;
 
-
 // Headings
-$headings: (
-  'h6, .h6', 'h5, .h5', 'h4, .h4',
-  'h3, .h3', 'h2, .h2', 'h1, .h1'
-) !default;
+$headings: ('h6, .h6', 'h5, .h5', 'h4, .h4', 'h3, .h3', 'h2, .h2', 'h1, .h1') !default;
 
 $headings-spacing: 0.4em !default;
 $headings-font-family: inherit !default;
@@ -105,13 +97,11 @@ $type-variations: (
   ),
 ) !default;
 
-
 // Link
 $link-color: $color-accent !default;
 $link-hover-color: $link-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
-
 
 // Grid
 $grid-columns: 12 !default;
@@ -122,7 +112,6 @@ $grid-container-gutter: $grid-gutter !default;
 $grid-pull-classes: true !default;
 $grid-push-classes: true !default;
 $grid-offset-classes: true !default;
-
 
 // Spacing
 $spacing-base: 24px !default;
@@ -135,15 +124,13 @@ $spacing-variations: (
 
 $spacing-utilities: (
   nospace: 0,
-  space: 30px
+  space: 30px,
 ) !default;
-
 
 // Embed Ratios
 $embed-ratios: (
   default: 16 by 9,
 ) !default;
-
 
 // Input
 $input-selector: (
@@ -179,10 +166,8 @@ $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
 $input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
 
-
 // Select
 $select-icon-color: $color-foreground !default;
-
 
 // Checkbox & Radio
 $selection-border-width: $input-border-width !default;
@@ -203,14 +188,12 @@ $selection-transition: opacity 0.15s linear, transform 0.15s ease !default;
 
 $checkbox-border-radius: $input-border-radius !default;
 
-
 // Placeholder
 $placeholder-color: $color-foreground-muted !default;
 
 // Label & Form Group
 $label-spacing: 0.3rem !default;
 $form-group-spacing: 1rem !default;
-
 
 // Icons
 $icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
@@ -223,17 +206,13 @@ $icons: (
   select: $icon-select,
 ) !default;
 
-
 // Button Base
 $button-selector: '.#{$meta-prefix-components}btn' !default;
 $button-padding-vertical: 0.375em !default;
 $button-padding-horizontal: 1em !default;
 $button-border-width: 1px !default;
 $button-border-radius: 0.125em !default;
-$button-transition:
-  background-color 0.15s ease,
-  color 0.15s ease,
-  border-color 0.15s ease,
+$button-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
   box-shadow 0.15s ease !default;
 $button-cursor-pointer: true !default;
 
@@ -259,14 +238,12 @@ $button-variations: (
   ),
 ) !default;
 
-
 // Table
 $table-selector: '.#{$meta-prefix-components}table' !default;
 $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
 $table-border-color: rgba($color-line, 0.65) !default;
 $table-stripe-bg: rgba($color-background-muted, 0.65) !default;
-
 
 // z-index layers
 $z-index: (

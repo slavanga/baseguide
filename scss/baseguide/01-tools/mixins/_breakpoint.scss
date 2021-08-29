@@ -2,7 +2,6 @@
 /// @group breakpoint
 ////
 
-
 /// Loop all breakpoints and output `@content`
 ///
 /// @param {Map} $breakpoints [$mq-breakpoints] - Map of breakpoints
@@ -28,16 +27,14 @@
             @content;
           }
         }
-      }
-      @else {
+      } @else {
         // first breakpoint
         @if $is-first-breakpoint {
           @if length($breakpoint-keys) > 1 {
             @include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
               @content;
             }
-          }
-          @else {
+          } @else {
             @content;
           }
         }
@@ -54,13 +51,11 @@
           }
         }
       }
-    }
-    @else {
+    } @else {
       @content;
     }
   }
 }
-
 
 /// Output content in a media query excluding the first breakpoint
 ///
@@ -68,14 +63,12 @@
 @mixin skip-first-breakpoint($breakpoint) {
   @if (is-first-breakpoint($breakpoint)) {
     @content;
-  }
-  @else {
+  } @else {
     @include mq($breakpoint) {
       @content;
     }
   }
 }
-
 
 /// Target HiDPI screens
 ///

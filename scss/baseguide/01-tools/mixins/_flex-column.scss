@@ -2,7 +2,6 @@
 /// @group grid
 ////
 
-
 /// Output flex column base styles with gutter
 ///
 /// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
@@ -15,7 +14,6 @@
   position: relative;
 }
 
-
 /// Output flex column width modifier styles
 ///
 /// @param {Number|String} $size ['expand'] - Column size as number or string ('expand' or 'shrink')
@@ -25,17 +23,14 @@
     @if (type-of($size) == 'number') {
       @if (unit($size) == '%') {
         width: $size;
-      }
-      @else {
+      } @else {
         @if $size < 1 {
           width: percentage($size);
-        }
-        @else {
+        } @else {
           width: percentage(divide($size, $columns));
         }
       }
-    }
-    @else {
+    } @else {
       width: auto;
       max-width: 100%;
 
@@ -50,7 +45,6 @@
   }
 }
 
-
 /// Output flex column push styles
 ///
 /// @param {Number} $size - Column size as number of columns
@@ -58,12 +52,10 @@
 @mixin column-push($size, $columns: $grid-columns) {
   @if $size > 0 {
     left: percentage(divide($size, $columns));
-  }
-  @else {
+  } @else {
     left: auto;
   }
 }
-
 
 /// Output flex column pull styles
 ///
@@ -72,12 +64,10 @@
 @mixin column-pull($size, $columns: $grid-columns) {
   @if $size > 0 {
     right: percentage(divide($size, $columns));
-  }
-  @else {
+  } @else {
     right: auto;
   }
 }
-
 
 /// Output flex column offset styles
 ///
@@ -95,7 +85,12 @@
 /// @param {Boolean} $pull [$grid-pull-class] - Outputs column pull class if true
 /// @param {Boolean} $push [$grid-push-class] - Outputs column push class if true
 /// @param {Boolean} $offset [$grid-offset-class] - Outputs column offset class if true
-@mixin loop-columns($breakpoint, $pull: $grid-pull-classes, $push: $grid-push-classes, $offset: $grid-offset-classes) {
+@mixin loop-columns(
+  $breakpoint,
+  $pull: $grid-pull-classes,
+  $push: $grid-push-classes,
+  $offset: $grid-offset-classes
+) {
   @for $i from 0 through $grid-columns {
     @if $i > 0 {
       .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {

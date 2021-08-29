@@ -2,7 +2,6 @@
 /// @group grid
 ////
 
-
 /// Output margin or padding gutter depending on the type
 ///
 /// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as a number or sizing map formatted as `(min: 30px, max: 60px)`
@@ -19,12 +18,10 @@
 
     @include fluid-calc(#{$prop}-left, $gutter, $negative: $negative);
     @include fluid-calc(#{$prop}-right, $gutter, $negative: $negative);
-  }
-  @else {
+  } @else {
     @include fluid-calc($prop, $gutter, $negative: $negative);
   }
 }
-
 
 /// Wrapper for gutter mixin for switching between a gutter number or map
 ///
@@ -33,15 +30,13 @@
 @mixin make-gutters($gutter: $grid-gutter, $prop: 'gap') {
   @if is-sizing-map($gutter) {
     @include gutter($gutter, $prop);
-  }
-  @else if (type-of($gutter) == 'map') {
+  } @else if (type-of($gutter) == 'map') {
     @each $breakpoint, $width in $gutter {
       @include skip-first-breakpoint($breakpoint) {
         @include gutter($width, $prop);
       }
     }
-  }
-  @else {
+  } @else {
     @include gutter($gutter, $prop);
   }
 }

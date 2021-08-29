@@ -1,8 +1,8 @@
 @if $button-cursor-pointer {
-  [role="button"],
-  [type="button"],
-  [type="reset"],
-  [type="submit"],
+  [role='button'],
+  [type='button'],
+  [type='reset'],
+  [type='submit'],
   button {
     &:not(:disabled) {
       cursor: pointer;

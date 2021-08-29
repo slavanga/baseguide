@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Check if a breakpoint is the first in the list
 ///
 /// @param {String} $name - Breakpoint name
@@ -35,9 +34,7 @@
     @error "Breakpoint `#{$name}` not found in $breakpoints";
   }
 
-  @if (
-    length($breakpoint-keys) > 1 and $breakpoint-index < length($breakpoint-keys)
-  ) {
+  @if (length($breakpoint-keys) > 1 and $breakpoint-index < length($breakpoint-keys)) {
     $next: nth($breakpoint-keys, $breakpoint-index + 1);
   }
 

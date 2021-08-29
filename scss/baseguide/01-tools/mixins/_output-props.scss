@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Output CSS properties and resolve selectors key or sizing map
 ///
 /// @param {String} $key
@@ -16,11 +15,9 @@
         }
       }
     }
-  }
-  @else if (is-sizing-map($value)) {
+  } @else if (is-sizing-map($value)) {
     @include fluid-calc($key, $value);
-  }
-  @else {
+  } @else {
     #{$key}: $value;
   }
 }

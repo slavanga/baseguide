@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Wrapper mixin for fluid-calc that gets spacings from the map `$spacing-variations`
 ///
 /// @param {String} $prop - Any CSS property that supports calc as a value
@@ -16,20 +15,15 @@
 
     @if $spacing-sizes {
       $sizes: $spacing-sizes;
-    }
-    @else {
+    } @else {
       @error "The spacing `#{$sizes}` wasn't found in map $spacing-variations.";
     }
   }
 
   // If we have a map of named breakpoints
-  @if (
-    type-of($sizes) == 'map' and
-    map-has-key($mq-breakpoints, nth(map-keys($sizes), 1))
-  ) {
+  @if (type-of($sizes) == 'map' and map-has-key($mq-breakpoints, nth(map-keys($sizes), 1))) {
     @include loop-variation($sizes, $prop, $negative: $negative, $important: $important);
-  }
-  @else {
+  } @else {
     @include fluid-calc($prop, $sizes, $negative: $negative, $important: $important);
   }
 }

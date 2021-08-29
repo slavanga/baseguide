@@ -17,7 +17,7 @@
     display: none !important;
   }
 
-  @if (not (is-first-breakpoint($breakpoint) or is-last-breakpoint($breakpoint))) {
+  @if (not(is-first-breakpoint($breakpoint) or is-last-breakpoint($breakpoint))) {
     .#{$meta-prefix-utilities}visible-#{$breakpoint}-up {
       display: none !important;
     }
@@ -35,7 +35,7 @@
 }
 
 @include loop-breakpoints {
-  @if (not (is-first-breakpoint($breakpoint) or is-last-breakpoint($breakpoint))) {
+  @if (not(is-first-breakpoint($breakpoint) or is-last-breakpoint($breakpoint))) {
     .#{$meta-prefix-utilities}hidden-#{$breakpoint}-up {
       display: none !important;
     }

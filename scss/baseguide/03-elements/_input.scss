@@ -36,23 +36,23 @@
   }
 }
 
-input[type="color"] {
+input[type='color'] {
   max-width: 2.75rem;
   padding: $input-padding-vertical;
 }
 
 // Fix date input height in Safari
-input[type="date"] {
+input[type='date'] {
   display: flex;
 }
 
 // Fix appearance for date inputs in Safari
-input[type="date"],
-input[type="month"] {
+input[type='date'],
+input[type='month'] {
   -webkit-appearance: none;
 }
 
-input[type="file"] {
+input[type='file'] {
   display: block;
   max-width: 100%;
 }

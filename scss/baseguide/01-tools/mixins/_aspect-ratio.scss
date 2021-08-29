@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Create an aspect ratio box with optional support for dynamic growing content
 ///
 /// @param {String|List} $ratio ['default'] - Map key of the `$embed-ratios` map or a list formatted as `x by y`
@@ -13,12 +12,10 @@
 
     @if $key {
       $ratio: ratio-to-percentage($key);
-    }
-    @else {
+    } @else {
       $ratio: ratio-to-percentage($ratio);
     }
-  }
-  @else {
+  } @else {
     $ratio: percentage($ratio);
   }
 

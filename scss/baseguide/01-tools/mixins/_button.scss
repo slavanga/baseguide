@@ -70,7 +70,6 @@
   }
 }
 
-
 /// Generate styles for a single button variation
 ///
 /// @param {String} $variation ['base'] - Map key of `$button-variations`
@@ -78,7 +77,6 @@
   @include button-base;
   @include use-variation($button-variations, $variation);
 }
-
 
 /// Generate button variation styles
 ///

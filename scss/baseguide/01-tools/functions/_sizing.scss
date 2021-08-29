@@ -2,7 +2,6 @@
 /// @group global
 ////
 
-
 /// Validate a sizing map
 ///
 /// @param {Map} $map - Map to test
@@ -10,7 +9,6 @@
 @function is-sizing-map($map) {
   @return (type-of($map) == 'map' and map-has-key($map, 'min'));
 }
-
 
 /// Get largest sizing of sizing map
 ///
@@ -28,15 +26,13 @@
       @if not $largest-sizing {
         $largest-sizing: map-get($sizing-value, 'min');
       }
-    }
-    @else {
+    } @else {
       $largest-sizing: $sizing-value;
     }
   }
 
   @return $largest-sizing;
 }
-
 
 /// Half values of a sizing map
 ///
@@ -58,8 +54,7 @@
         )
       );
     }
-  }
-  @else {
+  } @else {
     $half-sizing: divide($sizing, 2);
   }
 

@@ -1,5 +1,5 @@
-.#{$meta-prefix-components}radio input[type="radio"],
-.#{$meta-prefix-components}checkbox input[type="checkbox"] {
+.#{$meta-prefix-components}radio input[type='radio'],
+.#{$meta-prefix-components}checkbox input[type='checkbox'] {
   &:not(:only-child) {
     opacity: 0;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-.#{$meta-prefix-components}radio input[type="radio"] {
+.#{$meta-prefix-components}radio input[type='radio'] {
   ~ label::before {
     border-radius: 50%;
   }
@@ -70,7 +70,7 @@
   }
 }
 
-.#{$meta-prefix-components}checkbox input[type="checkbox"] {
+.#{$meta-prefix-components}checkbox input[type='checkbox'] {
   ~ label::before {
     border-radius: $checkbox-border-radius;
   }
