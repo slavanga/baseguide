@@ -7,11 +7,11 @@
 ///
 /// @example scss
 /// .component {
-///   color: color(black);
+///   color: get-color(black);
 /// }
 /// @param {String} $name - Map key of `$colors`
 /// @return {Color} color value
-@function color($name) {
+@function get-color($name) {
   $color: map-get($colors, $name);
 
   @if not $color {

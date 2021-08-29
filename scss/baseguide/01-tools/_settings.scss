@@ -24,15 +24,15 @@ $colors: (
 ) !default;
 
 // Abstract Colors
-$color-accent: color(blue) !default;
-$color-foreground: color(gray-800) !default;
-$color-foreground-inverted: color(white) !default;
-$color-foreground-muted: color(gray-500) !default;
-$color-background: color(white) !default;
-$color-background-inverted: color(gray-800) !default;
-$color-background-muted: color(gray-100) !default;
-$color-line: color(gray-200) !default;
-$color-icon: color(gray-800) !default;
+$color-accent: get-color(blue) !default;
+$color-foreground: get-color(gray-800) !default;
+$color-foreground-inverted: get-color(white) !default;
+$color-foreground-muted: get-color(gray-500) !default;
+$color-background: get-color(white) !default;
+$color-background-inverted: get-color(gray-800) !default;
+$color-background-muted: get-color(gray-100) !default;
+$color-line: get-color(gray-200) !default;
+$color-icon: get-color(gray-800) !default;
 
 
 // Global
