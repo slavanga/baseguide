@@ -143,6 +143,13 @@ $spacing-utilities: (
 $embed-ratios: (
   default: 16 by 9,
 ) !default;
+// List
+$list-indent: to-em(40px) !default;
+$list-vertical-spacing: to-em(6px) !default;
+$list-marker-color: $color-foreground !default;
+$list-unordered-offset-top: to-em(4px) !default;
+$list-unordered-offset-left: to-em(-7px) !default;
+$list-ordered-offset-left: to-em(-5px) !default;
 
 // Input
 $input-selector: (

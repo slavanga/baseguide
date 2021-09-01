@@ -1,0 +1,45 @@
+.#{$meta-prefix-components}list-unstyled {
+  @include list-unstyled;
+}
+
+.#{$meta-prefix-components}list {
+  li {
+    position: relative;
+    margin-left: $list-indent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      transform: translateX(-100%);
+    }
+  }
+
+  ol,
+  ul,
+  li + li {
+    margin-top: $list-vertical-spacing;
+  }
+}
+
+ol.#{$meta-prefix-components}list {
+  counter-reset: ordered-list;
+
+  li::before {
+    content: counters(ordered-list, '.') '. ';
+    counter-increment: ordered-list;
+    left: $list-ordered-offset-left;
+    color: $list-marker-color;
+  }
+}
+
+ul.#{$meta-prefix-components}list {
+  li::before {
+    top: $list-unordered-offset-top;
+    left: $list-unordered-offset-left;
+    height: 1em;
+    width: 1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(get-icon(bullet, $list-marker-color));
+  }
+}
