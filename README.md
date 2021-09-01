@@ -369,11 +369,11 @@ The grid mixins can be used to create custom containers, rows and columns.
 ## Embed
 
 Use the embed object for fixed ratio resources like videos or maps using iframes.
-The default (base) ratio is 16 by 9. Extend the `$embed-ratios` map to add more ratios.
+Extend the `$ratios` map to add more ratios. The first map key is used as default. Further keys generate modifier classes as seen in the example below.
 
 ```scss
-$embed-ratios: (
-  default: 16 by 9,
+$ratios: (
+  widescreen: 16 by 9,
   square: 1 by 1,
 );
 ```
@@ -391,8 +391,7 @@ $embed-ratios: (
 </div>
 ```
 
-The embed selector is defined by the `$embed-selector` variable.
-Custom ratios will respect the `$meta-class-modifier` setting.
+Custom ratios respect the `$meta-class-modifier` setting.
 
 ## Buttons
 
