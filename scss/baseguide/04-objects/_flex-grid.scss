@@ -6,7 +6,7 @@
   @include column-base;
 }
 
-// Generate columns for all breakpoints
+// Generate column classes for all breakpoints
 @include loop-breakpoints {
   @include loop-columns($breakpoint);
 }
