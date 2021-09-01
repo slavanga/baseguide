@@ -2,19 +2,20 @@
 /// @group global
 ////
 
-/// Get a z-index value from the `$z-index` map
+
+/// Get a z-index value from the `$layers` map
 ///
-/// @param {String} $name - Map key of `$z-index`
+/// @param {String} $name - Map key of `$layers`
 /// @example scss
 /// .component {
 ///   z-index: z-index(below);
 /// }
 /// @return {Number} z-index value
 @function z-index($name) {
-  $index: map-get($z-index, $name);
+  $index: map-get($layers, $name);
 
   @if not $index {
-    @error "The key `#{$name}` wasn't found in $z-index.";
+    @error "The key `#{$name}` wasn't found in $layers.";
   }
 
   @return $index;
