@@ -109,12 +109,6 @@ $type-variations: (
   ),
 ) !default;
 
-// Link
-$link-color: $color-accent !default;
-$link-hover-color: $link-color !default;
-$link-decoration: none !default;
-$link-hover-decoration: underline !default;
-
 // Grid
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
@@ -138,6 +132,15 @@ $spacing-utilities: (
   nospace: 0,
   space: 30px,
 ) !default;
+
+// Link
+$link-color: $color-accent !default;
+$link-hover-color: shade-color($link-color, 20%) !default;
+$link-active-color: $link-hover-color !default;
+$link-focus-color: $link-hover-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+$link-transition: color 0.15s linear !default;
 
 // List
 $list-indent: to-em(40px) !default;
