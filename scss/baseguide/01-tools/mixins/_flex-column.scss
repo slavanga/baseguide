@@ -89,12 +89,15 @@
   $breakpoint,
   $pull: $grid-pull-classes,
   $push: $grid-push-classes,
-  $offset: $grid-offset-classes
+  $offset: $grid-offset-classes,
+  $column: $grid-column-classes
 ) {
   @for $i from 0 through $grid-columns {
-    @if $i > 0 {
-      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {
-        @include column($i, $grid-columns);
+    @if $column {
+      @if $i > 0 {
+        .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {
+          @include column($i, $grid-columns);
+        }
       }
     }
 
