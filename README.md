@@ -409,7 +409,7 @@ $button-variations: (
   base: (
     selectors: (
       '&:focus': (
-        box-shadow: 0 0 0 0.188rem rgba($color-accent, 0.5),
+        box-shadow: 0 0 0 to-em(3px) rgba($color-accent, 0.35),
       ),
       '&:disabled, &.disabled': (
         opacity: 0.65,
