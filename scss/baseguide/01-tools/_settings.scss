@@ -43,6 +43,18 @@ $letter-spacing-base: normal !default;
 $global-bg: $color-background !default;
 $text-color: $color-foreground !default;
 
+// Icons
+$icons: (
+  radio:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>',
+  checkbox:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>',
+  select:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="#{$color-icon}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>',
+  bullet:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3"><path fill="none" stroke="#{$color-icon}" stroke-width="2" d="M1.5,1.5h8"/></svg>',
+) !default;
+
 // Breakpoints
 $mq-breakpoints: (
   xs: 0px,
@@ -194,17 +206,6 @@ $placeholder-color: $color-foreground-muted !default;
 // Label & Form Group
 $label-spacing: 0.3rem !default;
 $form-group-spacing: 1rem !default;
-
-// Icons
-$icon-radio: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>' !default;
-$icon-checkbox: '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>' !default;
-$icon-select: '<svg xmlns="http://www.w3.org/2000/svg" height="8" width="12" viewBox="0 0 12 8"><path fill="#{$color-icon}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>' !default;
-
-$icons: (
-  radio: $icon-radio,
-  checkbox: $icon-checkbox,
-  select: $icon-select,
-) !default;
 
 // Button Base
 $button-selector: '.#{$meta-prefix-components}btn' !default;
