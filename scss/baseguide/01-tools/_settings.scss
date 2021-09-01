@@ -24,12 +24,12 @@ $colors: (
 
 // Abstract Colors
 $color-accent: get-color(blue) !default;
-$color-foreground: get-color(gray-800) !default;
-$color-foreground-inverted: get-color(white) !default;
-$color-foreground-muted: get-color(gray-500) !default;
 $color-background: get-color(white) !default;
 $color-background-inverted: get-color(gray-800) !default;
 $color-background-muted: get-color(gray-100) !default;
+$color-foreground: get-color(gray-800) !default;
+$color-foreground-inverted: get-color(white) !default;
+$color-foreground-muted: get-color(gray-500) !default;
 $color-line: get-color(gray-200) !default;
 $color-icon: get-color(gray-800) !default;
 
@@ -43,38 +43,9 @@ $letter-spacing-base: normal !default;
 $global-bg: $color-background !default;
 $text-color: $color-foreground !default;
 
-// Icons
-$icons: (
-  radio:
-    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>',
-  checkbox:
-    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>',
-  select:
-    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="#{$color-icon}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>',
-  bullet:
-    '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3"><path fill="none" stroke="#{$color-icon}" stroke-width="2" d="M1.5,1.5h8"/></svg>',
-) !default;
-
-// Breakpoints
-$mq-breakpoints: (
-  xs: 0px,
-  sm: 375px,
-  md: 680px,
-  lg: 960px,
-  xl: 1200px,
-) !default;
-
-// Fluid Scaling
-$fluid-scaling: true !default;
-$fluid-breakpoints: (
-  min: sm,
-  max: xl,
-) !default;
-
 // Headings
 $headings: ('h6, .h6', 'h5, .h5', 'h4, .h4', 'h3, .h3', 'h2, .h2', 'h1, .h1') !default;
-
-$headings-spacing: 0.4em !default;
+$headings-spacing: to-em(6px) !default;
 $headings-font-family: inherit !default;
 $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
@@ -109,16 +80,6 @@ $type-variations: (
   ),
 ) !default;
 
-// Grid
-$grid-columns: 12 !default;
-$grid-gutter: 30px !default;
-$grid-container: map-get($mq-breakpoints, xl) !default;
-$grid-container-gutter: $grid-gutter !default;
-
-$grid-pull-classes: true !default;
-$grid-push-classes: true !default;
-$grid-offset-classes: true !default;
-
 // Spacing
 $spacing-base: 24px !default;
 
@@ -132,6 +93,45 @@ $spacing-utilities: (
   nospace: 0,
   space: 30px,
 ) !default;
+
+// Aspect Ratios
+$ratios: (
+  widescreen: 16 by 9,
+) !default;
+
+// z-index layers
+$layers: (
+  below: -1,
+  neutral: 0,
+  above: 1,
+) !default;
+
+// Breakpoints
+$mq-breakpoints: (
+  xs: 0px,
+  sm: 375px,
+  md: 680px,
+  lg: 960px,
+  xl: 1200px,
+) !default;
+
+// Fluid Scaling
+$fluid-scaling: true !default;
+$fluid-breakpoints: (
+  min: sm,
+  max: xl,
+) !default;
+
+// Grid
+$grid-columns: 12 !default;
+$grid-gutter: (
+  min: 30px,
+) !default;
+$grid-container: map-get($mq-breakpoints, xl) !default;
+$grid-container-gutter: $grid-gutter !default;
+$grid-pull-classes: true !default;
+$grid-push-classes: true !default;
+$grid-offset-classes: true !default;
 
 // Link
 $link-color: $color-accent !default;
@@ -167,18 +167,17 @@ $input-selector: (
   'textarea',
   'select'
 ) !default;
-
-$input-height: 2.375em !default;
-$input-padding-vertical: 0.375em !default;
-$input-padding-horizontal: 0.75em !default;
+$input-height: to-em(38px) !default;
+$input-padding-vertical: to-em(6px) !default;
+$input-padding-horizontal: to-em(12px) !default;
 $input-border-width: 1px !default;
-$input-border-radius: 0.125em !default;
+$input-border-radius: to-em(2px) !default;
 $input-bg: $color-background !default;
 $input-color: $color-foreground !default;
 $input-border-color: $color-line !default;
 $input-box-shadow: none !default;
 $input-focus-border-color: $color-accent !default;
-$input-focus-box-shadow: 0 0 0 0.188em rgba($color-accent, 0.25) !default;
+$input-focus-box-shadow: 0 0 0 to-em(3px) rgba($color-accent, 0.25) !default;
 $input-disabled-bg: $color-background-muted !default;
 $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
@@ -187,41 +186,39 @@ $input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
 // Select
 $select-icon-color: $color-foreground !default;
 
-// Checkbox & Radio
+$selection-icon-color: $color-foreground-inverted !default;
+$selection-offset-top: to-em(4px) !default;
 $selection-border-width: $input-border-width !default;
-$selection-offset-top: 0.25em !default;
-$selection-bg: $input-bg !default;
 $selection-border-color: $input-border-color !default;
+$selection-bg: $input-bg !default;
 $selection-box-shadow: $input-box-shadow !default;
 $selection-focus-border-color: $input-focus-border-color !default;
 $selection-focus-box-shadow: $input-focus-box-shadow !default;
 $selection-active-filter: brightness(90%) !default;
 $selection-checked-bg: $color-accent !default;
 $selection-checked-border-color: $selection-checked-bg !default;
-$selection-icon-color: $color-foreground-inverted !default;
 $selection-disabled-bg: $input-disabled-bg !default;
 $selection-disabled-color: $input-disabled-color !default;
 $selection-disabled-border-color: $input-disabled-border-color !default;
 $selection-transition: opacity 0.15s linear, transform 0.15s ease !default;
-
 $checkbox-border-radius: $input-border-radius !default;
 
 // Placeholder
 $placeholder-color: $color-foreground-muted !default;
 
 // Label & Form Group
-$label-spacing: 0.3rem !default;
+$label-spacing: to-rem(5px) !default;
 $form-group-spacing: 1rem !default;
 
 // Button Base
 $button-selector: '.#{$meta-prefix-components}btn' !default;
-$button-padding-vertical: 0.375em !default;
-$button-padding-horizontal: 1em !default;
+$button-cursor-pointer: true !default;
+$button-padding-vertical: to-em(6px) !default;
+$button-padding-horizontal: to-em(16px) !default;
 $button-border-width: 1px !default;
-$button-border-radius: 0.125em !default;
+$button-border-radius: to-em(2px) !default;
 $button-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
   box-shadow 0.15s ease !default;
-$button-cursor-pointer: true !default;
 
 // Button Variations
 $button-variations: (
@@ -236,7 +233,7 @@ $button-variations: (
       '&:focus': (
         background-color: shade-color($color-accent, 20%),
         color: $color-foreground-inverted,
-        box-shadow: 0 0 0 0.188em rgba($color-accent, 0.35),
+        box-shadow: 0 0 0 to-em(3px) rgba($color-accent, 0.35),
       ),
       '&:disabled, &.disabled': (
         opacity: 0.65,
@@ -252,14 +249,14 @@ $table-padding-horizontal: 0.6em !default;
 $table-border-color: rgba($color-line, 0.65) !default;
 $table-stripe-bg: rgba($color-background-muted, 0.65) !default;
 
-// Aspect Ratios
-$ratios: (
-  widescreen: 16 by 9,
-) !default;
-
-// z-index layers
-$layers: (
-  below: -1,
-  neutral: 0,
-  above: 1,
+// Icons
+$icons: (
+  radio:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>',
+  checkbox:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$color-icon}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>',
+  select:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="#{$color-icon}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>',
+  bullet:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="3" viewBox="0 0 11 3"><path fill="none" stroke="#{$color-icon}" stroke-width="2" d="M1.5,1.5h8"/></svg>',
 ) !default;
