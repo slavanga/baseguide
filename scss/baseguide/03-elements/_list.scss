@@ -1,0 +1,20 @@
+ul,
+ol {
+  @include list-unstyled;
+
+  &:not([class]) {
+    padding-left: $list-indent;
+  }
+}
+
+ul:not([class]) {
+  list-style-type: disc;
+
+  ul {
+    list-style-type: circle;
+  }
+}
+
+ol:not([class]) {
+  list-style-type: numeric;
+}
