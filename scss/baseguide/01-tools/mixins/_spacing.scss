@@ -16,7 +16,9 @@
     @if $spacing-sizes {
       $sizes: $spacing-sizes;
     } @else {
-      @error "The spacing `#{$sizes}` wasn't found in map $spacing-variations.";
+      @if (type-of($sizes) == 'string') {
+        @error "The spacing `#{$sizes}` wasn't found in map $token-spacings.";
+      }
     }
   }
 
