@@ -1,0 +1,72 @@
+////
+/// @group grid
+////
+
+/// Output a css grid row with auto fit sizing and gutters
+///
+/// @example scss
+/// .grid-row-auto {
+///   @include grid-row-auto(320px);
+/// }
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
+/// @param {Number} $min-size - Minimum size of the grid columns
+@mixin grid-row-auto($min-size, $gutter: $grid-gutter) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, #{$min-size})), 1fr));
+
+  @include make-gutters($gutter, 'gap');
+}
+
+/// Output a css grid row with gutters
+///
+/// @example scss
+/// .grid-row {
+///   @include grid-row();
+/// }
+/// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
+@mixin grid-row($gutter: $grid-gutter) {
+  display: grid;
+  grid-template-rows: repeat(var(--rows, 1), 1fr);
+  grid-template-columns: repeat(var(--columns, #{$grid-columns}), 1fr);
+
+  @include make-gutters($gutter, 'gap');
+}
+
+/// Output a css grid column
+///
+/// @example scss
+/// .grid-column {
+///   @include grid-column(6);
+/// }
+/// @param {Number} $span - Grid column span
+/// @param {Number} $columns [$grid-columns] - Number of grid columns
+@mixin grid-column($span, $columns: $grid-columns) {
+  @if (unit($span) == '%') {
+    $span: strip-unit(divide($span * $columns, 100));
+
+    @if (ceil($span) != $span) {
+      @error "Percentage value is not compatible with #{$columns} columns.";
+    }
+  }
+
+  @if ($span > 0 and $span <= $columns) {
+    grid-column: auto / span $span;
+  } @else {
+    @error "Use a span value within the range of 1 and #{$grid-columns}.";
+  }
+}
+
+/// Output a grid column start offset
+///
+/// @example scss
+/// .grid-column-offset {
+///   @include grid-column-offset(2);
+/// }
+/// @param {Number} $span - Grid column start offset
+@mixin grid-column-offset($span, $columns: $grid-columns) {
+  @if ($span > 0 and $span <= $columns) {
+    grid-column-start: $span;
+  } @else {
+    @error "Use a span value within the range of 1 and #{$grid-columns}.";
+  }
+}
