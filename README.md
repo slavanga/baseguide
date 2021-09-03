@@ -77,7 +77,8 @@ Import Baseguide’s source files in your `main.scss`.
 // 2. Customize default variable overrides here
 
 // 3. Include remainder of required partials
-@import '../node_modules/baseguide/00-settings/settings';
+@import '../node_modules/baseguide/00-settings/tokens';
+@import '../node_modules/baseguide/00-settings/variables';
 @import '../node_modules/baseguide/01-tools/mixins/index';
 
 // 4. Include any optional parts of Baseguide as needed
@@ -89,6 +90,8 @@ Import Baseguide’s source files in your `main.scss`.
 
 // 5. Add your custom styles here
 ```
+
+Take a look at the [\_tokens.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_tokens.scss) and [\_variables.scss](https://github.com/slavanga/baseguide/blob/master/scss/baseguide/00-settings/_variables.scss) files to see all available tokens and variables.
 
 ## Philosophy
 
