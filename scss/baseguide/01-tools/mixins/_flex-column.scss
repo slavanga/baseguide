@@ -16,7 +16,7 @@
 
 /// Output flex column width modifier styles
 ///
-/// @param {Number|String} $size ['expand'] - Column size as number or string ('expand' or 'shrink')
+/// @param {Number|String} $size ['expand'] - Column size as number (e.g. 20% or 0.2) or string ('expand' or 'shrink')
 /// @param {Number} $columns [$grid-columns] - Number of grid columns
 @mixin column($size: 'expand', $columns: $grid-columns) {
   @if $size {
