@@ -6,22 +6,6 @@ $meta-prefix-utilities: '' !default; // e.g. 'u-'
 $meta-class-modifier: '-' !default; // use '--' for BEM syntax
 $meta-class-element: '-' !default; // use '__' for BEM syntax
 
-// Colors
-$colors: (
-  blue: #0275d8,
-  white: #fff,
-  black: #000,
-  gray-100: tint-color(#000, 90%),
-  gray-200: tint-color(#000, 80%),
-  gray-300: tint-color(#000, 70%),
-  gray-400: tint-color(#000, 60%),
-  gray-500: tint-color(#000, 50%),
-  gray-600: tint-color(#000, 40%),
-  gray-700: tint-color(#000, 30%),
-  gray-800: tint-color(#000, 20%),
-  gray-900: tint-color(#000, 10%),
-) !default;
-
 // Functional Colors
 $color-accent: get-color(blue) !default;
 $color-background: get-color(white) !default;
@@ -35,91 +19,18 @@ $color-icon: get-color(gray-800) !default;
 
 // Global
 $font-antialiased: false !default;
-$font-size-base: 1rem !default;
-$font-family-base: 'Helvetica Neue', 'Helvetica', sans-serif !default;
-$font-weight-base: 400 !default;
-$line-height-base: 1.5 !default;
-$letter-spacing-base: normal !default;
+$fluid-scaling: true !default;
 $global-bg: $color-background !default;
 $text-color: $color-foreground !default;
 
 // Headings
 $headings: ('h6, .h6', 'h5, .h5', 'h4, .h4', 'h3, .h3', 'h2, .h2', 'h1, .h1') !default;
 $headings-spacing: to-em(6px) !default;
-$headings-font-family: inherit !default;
-$headings-font-weight: 700 !default;
-$headings-line-height: 1.2 !default;
-$headings-letter-spacing: normal !default;
 $headings-color: inherit !default;
 
 $type-scale: 1.25 !default;
 $type-scale-base: (
   min: $font-size-base,
-) !default;
-
-$type-variations: (
-  default: (
-    font-family: $font-family-base,
-    font-size: (
-      min: $font-size-base,
-    ),
-    font-weight: $font-weight-base,
-    line-height: $line-height-base,
-    letter-spacing: $letter-spacing-base,
-  ),
-  headings: (
-    font-family: $headings-font-family,
-    font-weight: $headings-font-weight,
-    line-height: $headings-line-height,
-    letter-spacing: $headings-letter-spacing,
-  ),
-  small: (
-    font-size: (
-      min: $font-size-base * 0.8,
-    ),
-  ),
-) !default;
-
-// Spacing
-$spacing-base: 24px !default;
-
-$spacing-variations: (
-  default: (
-    min: $spacing-base,
-  ),
-) !default;
-
-$spacing-utilities: (
-  nospace: 0,
-  space: 30px,
-) !default;
-
-// Aspect Ratios
-$ratios: (
-  widescreen: 16 by 9,
-) !default;
-
-// z-index layers
-$layers: (
-  below: -1,
-  neutral: 0,
-  above: 1,
-) !default;
-
-// Breakpoints
-$mq-breakpoints: (
-  xs: 0px,
-  sm: 375px,
-  md: 680px,
-  lg: 960px,
-  xl: 1200px,
-) !default;
-
-// Fluid Scaling
-$fluid-scaling: true !default;
-$fluid-breakpoints: (
-  min: sm,
-  max: xl,
 ) !default;
 
 // Grid
@@ -141,7 +52,7 @@ $link-active-color: $link-hover-color !default;
 $link-focus-color: $link-hover-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
-$link-transition: color 0.15s linear !default;
+$link-transition: color duration() easing(linear) !default;
 
 // List
 $list-indent: to-em(40px) !default;
@@ -182,7 +93,7 @@ $input-focus-box-shadow: 0 0 0 to-em(3px) rgba($color-accent, 0.25) !default;
 $input-disabled-bg: $color-background-muted !default;
 $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
-$input-transition: border-color 0.15s ease, box-shadow 0.15s ease !default;
+$input-transition: border-color duration() easing(), box-shadow duration() easing() !default;
 
 // Select
 $select-icon-color: $color-foreground !default;
@@ -202,7 +113,7 @@ $selection-checked-border-color: $selection-checked-bg !default;
 $selection-disabled-bg: $input-disabled-bg !default;
 $selection-disabled-color: $input-disabled-color !default;
 $selection-disabled-border-color: $input-disabled-border-color !default;
-$selection-transition: opacity 0.15s linear, transform 0.15s ease !default;
+$selection-transition: opacity duration() easing(linear), transform duration() easing() !default;
 $checkbox-border-radius: $input-border-radius !default;
 
 // Placeholder
@@ -219,8 +130,8 @@ $button-padding-vertical: to-em(6px) !default;
 $button-padding-horizontal: to-em(16px) !default;
 $button-border-width: 1px !default;
 $button-border-radius: to-em(2px) !default;
-$button-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
-  box-shadow 0.15s ease !default;
+$button-transition: background-color duration() easing(), color duration() easing(),
+  border-color duration() easing(), box-shadow duration() easing() !default;
 
 // Button Variations
 $button-variations: (
@@ -250,6 +161,11 @@ $table-padding-vertical: 0.4em !default;
 $table-padding-horizontal: 0.6em !default;
 $table-border-color: rgba($color-line, 0.65) !default;
 $table-stripe-bg: rgba($color-background-muted, 0.65) !default;
+
+$spacing-utilities: (
+  nospace: 0,
+  space: 30px,
+) !default;
 
 // Selector for formatted text / CMS output
 $formatted-text-selector: '.#{$meta-prefix-utilities}formatted-text' !default;

@@ -1,0 +1,17 @@
+/// Get an easing value from the `$token-easings` map
+///
+/// @param {String} $name [$token-easings-default] - Map key of `$token-easings`
+/// @example scss
+/// .component {
+///   transition: color duration() easing();
+/// }
+/// @return {String} easing value
+@function easing($name: $token-easings-default) {
+  $easing: map-get($token-easings, $name);
+
+  @if not $easing {
+    @error "The key `#{$name}` wasn't found in $token-easings.";
+  }
+
+  @return $easing;
+}

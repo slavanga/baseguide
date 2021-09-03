@@ -1,0 +1,17 @@
+/// Get an duration value from the `$token-durations` map
+///
+/// @param {String} $name [$token-durations-default] - Map key of `$token-durations`
+/// @example scss
+/// .component {
+///   transition: color duration() easing();
+/// }
+/// @return {Number} duration value
+@function duration($name: $token-durations-default) {
+  $duration: map-get($token-durations, $name);
+
+  @if not $duration {
+    @error "The key `#{$name}` wasn't found in $token-durations.";
+  }
+
+  @return $duration;
+}

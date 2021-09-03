@@ -1,6 +1,6 @@
 /// Accessible fade in transition
 ///
-/// @param {Number} $duration [0.15s]
+/// @param {Number} $duration [duration()] - Default duration token
 @mixin fade-in($duration: duration()) {
   visibility: visible;
   opacity: 1;
@@ -9,7 +9,7 @@
 
 /// Accessible fade out transition
 ///
-/// @param {Number} $duration [0.15s]
+/// @param {Number} $duration [duration()] - default duration token
 @mixin fade-out($duration: duration()) {
   visibility: hidden;
   opacity: 0;
