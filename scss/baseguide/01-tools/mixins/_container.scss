@@ -7,12 +7,22 @@
 /// @param {Number|Map} $gutter [$grid-container-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
 /// @param {Number} $width [$grid-container] - Maximum width of the container
 @mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
-  $max-width: to-rem($width) - to-rem(get-largest-sizing($gutter));
+  $largest-gutter: to-rem(get-largest-sizing($gutter));
+
+  @if (type-of($width) == 'number') {
+    @if (unit($width) == '%') {
+      @if $largest-gutter > 0 {
+        $width: calc(#{$width} - #{$largest-gutter});
+      }
+    } @else {
+      $width: to-rem($width) - $largest-gutter;
+    }
+  }
 
   @include make-gutters($gutter, 'padding');
 
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: $max-width;
+  max-width: $width;
 }
