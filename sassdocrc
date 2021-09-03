@@ -1,0 +1,16 @@
+{
+  "autofill": "false",
+  "no-update-notifier": "true",
+  "groups": {
+    "global": "Global",
+    "breakpoint": "Breakpoint",
+    "button": "Button",
+    "grid": "Grid",
+    "list": "List",
+    "poly-fluid": "Poly fluid",
+    "sass-mq": "Sass MQ",
+    "typography": "Typography",
+    "utilities": "Utilities"
+  },
+  "googleAnalytics": ""
+}
