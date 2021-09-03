@@ -6,39 +6,16 @@
 @import 'baseguide/01-tools/mixins/index';
 
 // Generic
-@import 'baseguide/02-generic/normalize';
-@import 'baseguide/02-generic/global';
-@import 'baseguide/02-generic/form';
+@import 'baseguide/02-generic/index';
 
 // Elements
-@import 'baseguide/03-elements/body';
-@import 'baseguide/03-elements/spacing';
-@import 'baseguide/03-elements/headings';
-@import 'baseguide/03-elements/link';
-@import 'baseguide/03-elements/list';
-@import 'baseguide/03-elements/label';
-@import 'baseguide/03-elements/input';
-@import 'baseguide/03-elements/selection';
-@import 'baseguide/03-elements/button';
-@import 'baseguide/03-elements/table';
-@import 'baseguide/03-elements/print';
+@import 'baseguide/03-elements/index';
 
 // Objects
-@import 'baseguide/04-objects/list-inline';
-@import 'baseguide/04-objects/embed';
-@import 'baseguide/04-objects/container';
-@import 'baseguide/04-objects/flex-grid';
+@import 'baseguide/04-objects/index';
 
 // Components
-@import 'baseguide/05-components/form';
-@import 'baseguide/05-components/selection';
-@import 'baseguide/05-components/button';
-@import 'baseguide/05-components/table';
-@import 'baseguide/05-components/list';
+@import 'baseguide/05-components/index';
 
 // Utilities
-@import 'baseguide/06-utilities/spacing';
-@import 'baseguide/06-utilities/clearfix';
-@import 'baseguide/06-utilities/text';
-@import 'baseguide/06-utilities/display';
-@import 'baseguide/06-utilities/screenreader';
+@import 'baseguide/06-utilities/index';

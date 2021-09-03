@@ -66,15 +66,28 @@ The included NPM scripts take care of compiling, optimizing and minifying.
 
 ### Sass
 
-Default variables can be changed before importing Baseguide.
-Take a look at the [_settings.scss](https://github.com/slavanga/baseguide/blob/master/baseguide/01-tools/_settings.scss) file to see all variables.
+Import Baseguide’s source files in your `main.scss`.
 
 ```scss
-$button-bg: #bada55; // 1. Customize default variables
+// main.scss
 
-@import 'baseguide'; // 2. Import Baseguide
+// 1. Include functions first (allows usage of to-rem or get-color in settings)
+@import '../node_modules/baseguide/01-tools/functions/index';
 
-// 3. Add your own styles here
+// 2. Customize default variable overrides here
+
+// 3. Include remainder of required partials
+@import '../node_modules/baseguide/00-settings/settings';
+@import '../node_modules/baseguide/01-tools/mixins/index';
+
+// 4. Include any optional parts of Baseguide as needed
+@import '../node_modules/baseguide/02-generic/index';
+@import '../node_modules/baseguide/03-elements/index';
+@import '../node_modules/baseguide/04-objects/index';
+@import '../node_modules/baseguide/05-components/index';
+@import '../node_modules/baseguide/06-utilities/index';
+
+// 5. Add your custom styles here
 ```
 
 ## Philosophy
