@@ -1,8 +1,6 @@
-.#{$meta-prefix-components}list-unstyled {
-  @include list-unstyled;
-}
-
-.#{$meta-prefix-components}list {
+.#{$meta-prefix-components}list,
+#{$formatted-text-selector} ul,
+#{$formatted-text-selector} ol {
   li {
     position: relative;
     margin-left: $list-indent;
@@ -21,18 +19,8 @@
   }
 }
 
-ol.#{$meta-prefix-components}list {
-  counter-reset: ordered-list;
-
-  li::before {
-    content: counters(ordered-list, '.') '. ';
-    counter-increment: ordered-list;
-    left: $list-ordered-offset-left;
-    color: $list-marker-color;
-  }
-}
-
-ul.#{$meta-prefix-components}list {
+.#{$meta-prefix-components}list--unordered,
+#{$formatted-text-selector} ul {
   li::before {
     top: $list-unordered-offset-top;
     left: $list-unordered-offset-left;
@@ -40,6 +28,19 @@ ul.#{$meta-prefix-components}list {
     width: 1em;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
     background-image: url(get-icon(bullet, $list-marker-color));
+  }
+}
+
+.#{$meta-prefix-components}list--ordered,
+#{$formatted-text-selector} ol {
+  counter-reset: ordered-list;
+
+  li::before {
+    content: counters(ordered-list, '.') '. ';
+    counter-increment: ordered-list;
+    left: $list-ordered-offset-left;
+    color: $list-marker-color;
   }
 }
