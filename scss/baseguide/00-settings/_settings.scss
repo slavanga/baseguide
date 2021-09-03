@@ -251,6 +251,9 @@ $table-padding-horizontal: 0.6em !default;
 $table-border-color: rgba($color-line, 0.65) !default;
 $table-stripe-bg: rgba($color-background-muted, 0.65) !default;
 
+// Selector for formatted text / CMS output
+$formatted-text-selector: '.#{$meta-prefix-utilities}formatted-text' !default;
+
 // Icons
 $icons: (
   radio:

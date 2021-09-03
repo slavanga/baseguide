@@ -1,0 +1,17 @@
+#{$formatted-text-selector} {
+  @include spacing('margin-bottom');
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Hide <br> tags starting from three consecutive uses
+  br:nth-of-type(n + 3),
+  br:nth-of-type(n + 3) ~ br {
+    display: none;
+  }
+
+  p:empty {
+    display: none;
+  }
+}
