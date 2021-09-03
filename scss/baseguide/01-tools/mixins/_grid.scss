@@ -12,7 +12,7 @@
 /// @param {Number} $min-size - Minimum size of the grid columns
 @mixin grid-row-auto($min-size, $gutter: $grid-gutter) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, #{$min-size})), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(Min(100%, var(--min, #{$min-size})), 1fr));
 
   @include make-gutters($gutter, 'gap');
 }
