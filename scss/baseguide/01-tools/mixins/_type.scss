@@ -1,0 +1,10 @@
+////
+/// @group token
+////
+
+/// Wrapper mixin for use-variation that uses the `$token-type` map as default lookup map
+///
+/// @param {String} $variation ['default'] - Map key of `$token-type`
+@mixin type($variation: 'default') {
+  @include use-variation($token-type, $variation);
+}

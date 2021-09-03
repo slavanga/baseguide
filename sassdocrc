@@ -10,7 +10,11 @@
     "poly-fluid": "Poly fluid",
     "sass-mq": "Sass MQ",
     "typography": "Typography",
-    "utilities": "Utilities"
+    "utilities": "Utilities",
+    "compat": "Sass Compatibility",
+    "color": "Color",
+    "sizing": "Sizing",
+    "token": "Token"
   },
   "googleAnalytics": ""
 }
