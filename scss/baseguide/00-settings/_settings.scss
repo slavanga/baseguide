@@ -22,7 +22,7 @@ $colors: (
   gray-900: tint-color(#000, 10%),
 ) !default;
 
-// Abstract Colors
+// Functional Colors
 $color-accent: get-color(blue) !default;
 $color-background: get-color(white) !default;
 $color-background-inverted: get-color(gray-800) !default;
