@@ -63,22 +63,7 @@ $list-unordered-offset-left: to-em(-7px) !default;
 $list-ordered-offset-left: to-em(-5px) !default;
 
 // Input
-$input-selector: (
-  '[type="text"]',
-  '[type="password"]',
-  '[type="email"]',
-  '[type="url"]',
-  '[type="tel"]',
-  '[type="number"]',
-  '[type="search"]',
-  '[type="date"]',
-  '[type="month"]',
-  '[type="week"]',
-  '[type="time"]',
-  '[type="color"]',
-  'textarea',
-  'select'
-) !default;
+$input-selector: '.form-control' !default;
 $input-height: to-em(38px) !default;
 $input-padding-vertical: to-em(6px) !default;
 $input-padding-horizontal: to-em(12px) !default;
