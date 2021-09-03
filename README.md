@@ -57,12 +57,12 @@ Use `npm install` or `yarn install` to install the dev dependencies.
 
 The included NPM scripts take care of compiling, optimizing and minifying.
 
-| Command             | Description                                |
-| :------------------ | :----------------------------------------- |
-| `npm run start`     | Build and watch for changes                |
-| `npm run build`     | Build once                                 |
-| `npm run watch`     | Watch and build when a change occurs       |
-| `npm run lint`      | Lint and fix the source files              |
+| Command         | Description                          |
+| :-------------- | :----------------------------------- |
+| `npm run start` | Build and watch for changes          |
+| `npm run build` | Build once                           |
+| `npm run watch` | Watch and build when a change occurs |
+| `npm run lint`  | Lint and fix the source files        |
 
 ### Sass
 
@@ -97,11 +97,11 @@ Take a look at the [\_tokens.scss](https://github.com/slavanga/baseguide/blob/ma
 
 Baseguide is a framework in the truest sense and does not try to be a complete UI library. As the following list shows, it strives to force as less opinions as possible.
 
-* Breakpoints and other settings are held in sass maps to be the most flexible
-* Class names can have prefixes for objects, components and utilities
-* BEM naming is not enforced and can be controlled with `$meta-class-modifier` and `$meta-class-element`
-* Default button cursor is configurable
-* Poly fluid scaling is integrated in key parts of the frameworks, but can be disabled globally
+- Breakpoints and other settings are held in sass maps to be the most flexible
+- Class names can have prefixes for objects, components and utilities
+- BEM naming is not enforced and can be controlled with `$meta-class-modifier` and `$meta-class-element`
+- Default button cursor is configurable
+- Poly fluid scaling is integrated in key parts of the frameworks, but can be disabled globally
 
 ## Breakpoints
 
@@ -170,6 +170,7 @@ It’s a powerful tool that for example allows the generation of additional resp
   }
 }
 ```
+
 ```scss
 // Breakpoint specific type utility classes
 @include loop-breakpoints {
@@ -193,14 +194,17 @@ Pixel values for min and max will automatically be converted to Rem.
 
 ```scss
 .my-component {
-  @include fluid-calc('padding', (
-    min: 20px,
-    max: 30px,
-  ),
-  (
-    min: md,
-    max: xl,
-  ));
+  @include fluid-calc(
+    'padding',
+    (
+      min: 20px,
+      max: 30px,
+    ),
+    (
+      min: md,
+      max: xl,
+    )
+  );
 }
 ```
 
@@ -291,7 +295,6 @@ $type-scale-base: (
 );
 ```
 
-
 ## Grid
 
 The grid system is responsive and follows the mobile first pattern. It offers predefined classes for quick layouts as well as powerful mixins for more semantic layouts.
@@ -380,7 +383,6 @@ The grid mixins can be used to create custom containers, rows and columns.
   </div>
 </div>
 ```
-
 
 ## Embed
 
