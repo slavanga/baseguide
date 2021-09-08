@@ -1,0 +1,16 @@
+////
+/// @group global
+////
+
+/// Slightly lighten a color
+///
+/// @example scss
+/// .component {
+///   color: tint-color(#bada55, 20%);
+/// }
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - Tinted color
+@function tint-color($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}

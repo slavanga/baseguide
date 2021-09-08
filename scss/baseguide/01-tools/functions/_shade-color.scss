@@ -1,0 +1,16 @@
+////
+/// @group global
+////
+
+/// Slightly darken a color
+///
+/// @example scss
+/// .component {
+///   color: shade-color(#bada55, 20%);
+/// }
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - Shaded color
+@function shade-color($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}

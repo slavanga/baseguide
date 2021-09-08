@@ -19,12 +19,12 @@
     "start": "npm-run-all build watch",
     "build": "npm-run-all sass postcss postcss:minify",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\"",
-    "lint": "stylelint **/*.scss --fix",
     "sass": "sass scss/baseguide.scss dist/baseguide.css",
     "postcss": "postcss dist/baseguide.css --replace",
     "postcss:minify": "postcss dist/baseguide.css --output dist/baseguide.min.css --env=production",
+    "lint": "stylelint scss/**/*.scss --fix",
     "prettier": "prettier --write scss/**/*.scss",
-    "sassdoc": "sassdoc **/*.scss --config sassdocrc"
+    "sassdoc": "sassdoc scss/**/*.scss -d docs"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",

@@ -19,7 +19,7 @@
 /// @param {Number} $value - Value to be converted
 /// @param {Number} $base [16px] - Base font size
 /// @example scss
-/// body {
+/// .component {
 ///   font-size: to-rem(20px);
 /// }
 /// @return {Number} - Rem value
@@ -44,8 +44,8 @@
 /// @param {Number} $value - Value to be converted
 /// @param {Number} $base [16px] - Base font size
 /// @example scss
-/// .heading {
-///   margin-bottom: to-em(20px);
+/// .component {
+///   padding-bottom: to-em(20px);
 /// }
 /// @return {Number} - Em value
 @function to-em($value, $base: 16px) {

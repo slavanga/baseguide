@@ -2,14 +2,17 @@
 @import 'divide';
 @import 'pow';
 
-@import 'unit';
-@import 'color';
 @import 'breakpoint';
-@import 'str-replace';
 @import 'sizing';
-@import 'get-icon';
+@import 'unit';
+@import 'str-replace';
 @import 'modular-scale';
 @import 'ratio-to-percentage';
-@import 'z-index';
+@import 'get-icon';
+@import 'tint-color';
+@import 'shade-color';
+
+@import 'get-color';
 @import 'easing';
 @import 'duration';
+@import 'z-index';

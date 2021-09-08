@@ -3,18 +3,15 @@
   "no-update-notifier": "true",
   "groups": {
     "global": "Global",
+    "typography": "Typography",
+    "token": "Token",
+    "sizing": "Poly Fluid / Sizing",
+    "variation": "Variations",
+    "sass-mq": "Sass MQ",
     "breakpoint": "Breakpoint",
-    "button": "Button",
     "grid": "Grid",
     "list": "List",
-    "poly-fluid": "Poly fluid",
-    "sass-mq": "Sass MQ",
-    "typography": "Typography",
-    "utilities": "Utilities",
-    "compat": "Sass Compatibility",
-    "color": "Color",
-    "sizing": "Sizing",
-    "token": "Token"
-  },
-  "googleAnalytics": ""
+    "button": "Button",
+    "utilities": "Utilities"
+  }
 }
