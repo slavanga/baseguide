@@ -1,5 +1,5 @@
 #{$headings} {
-  @include type('headings');
+  @include type('heading');
 
   margin-top: $headings-spacing * 2;
   margin-bottom: $headings-spacing;
