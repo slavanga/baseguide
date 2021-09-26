@@ -1,3 +1,7 @@
+////
+/// @group global
+////
+
 // Colors
 $token-colors: (
   blue: #0275d8,
@@ -26,6 +30,44 @@ $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
 $headings-letter-spacing: normal !default;
 
+/// Type
+///
+/// @example scss
+///   $token-type: (
+///     default: (
+///       font-family: $font-family-base,
+///       font-size: $font-size-base,
+///     ),
+///   );
+///
+/// @example scss
+///   $token-type: (
+///     default: (
+///       font-family: $font-family-base,
+///       font-size: (
+///         min: $font-size-base,
+///         max: $font-size-base * 2,
+///       ),
+///     ),
+///   );
+///
+/// @example scss
+///   $token-type: (
+///     default: (
+///       xs: (
+///         font-family: $font-family-base,
+///         font-size: $font-size-base,
+///       ),
+///       md: (
+///         font-size: (
+///           min: $font-size-base,
+///           max: $font-size-base * 2,
+///         ),
+///       ),
+///     ),
+///   );
+///
+/// @type {Map}
 $token-type: (
   default: (
     font-family: $font-family-base,
@@ -49,7 +91,33 @@ $token-type: (
   ),
 ) !default;
 
-// Spacings
+/// Spacings
+///
+/// @example scss
+///   $token-spacings: (
+///     default: 24px,
+///   );
+///
+/// @example scss
+///   $token-spacings: (
+///     default: (
+///       min: 24px,
+///       max: 48px,
+///     ),
+///   );
+///
+/// @example scss
+///   $token-spacings: (
+///     default: (
+///       xs: 24px,
+///       md: (
+///         min: 24px,
+///         max: 48px,
+///       ),
+///     ),
+///   );
+///
+/// @type {Map}
 $token-spacings: (
   default: 24px,
 ) !default;

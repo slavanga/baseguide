@@ -1,3 +1,7 @@
+////
+/// @group global
+////
+
 // Meta
 $meta-prefix-objects: '' !default; // e.g. 'o-'
 $meta-prefix-components: '' !default; // e.g. 'c-'
@@ -35,10 +39,54 @@ $type-scale-base: (
 
 // Grid
 $grid-columns: 12 !default;
+
+/// Grid Gutter
+///
+/// @example scss
+///   $grid-gutter: 30px;
+///
+/// @example scss
+///   $grid-gutter: (
+///     min: 30px,
+///     max: 60px,
+///   );
+///
+/// @example scss
+///   $grid-gutter: (
+///     xs: 30px,
+///     md: (
+///       min: 30px,
+///       max: 60px,
+///     )
+///   );
+///
+/// @type {Number|Map}
 $grid-gutter: (
   min: 30px,
 ) !default;
 $grid-container: map-get($mq-breakpoints, xl) !default;
+
+/// Grid Container Gutter
+///
+/// @example scss
+///   $grid-container-gutter: 30px;
+///
+/// @example scss
+///   $grid-container-gutter: (
+///     min: 30px,
+///     max: 60px,
+///   );
+///
+/// @example scss
+///   $grid-container-gutter: (
+///     xs: 30px,
+///     md: (
+///       min: 30px,
+///       max: 60px,
+///     )
+///   );
+///
+/// @type {Number|Map}
 $grid-container-gutter: $grid-gutter !default;
 $grid-pull-classes: true !default;
 $grid-push-classes: true !default;
