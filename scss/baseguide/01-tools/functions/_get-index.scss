@@ -11,11 +11,27 @@
 /// }
 /// @return {Number} z-index value
 @function get-index($name) {
-  $index: map-get($layers, $name);
+  @if map-has-key($layers, $name) {
+    $accumulator: nth(map-values($layers), 1);
 
-  @if not $index {
+    @each $key, $val in $layers {
+      @if $val == null {
+        $accumulator: $accumulator + 1;
+        $val: $accumulator;
+      } @else {
+        @if $val < $accumulator {
+          // If the z-index is not greater than the elements preceding it,
+          // the whole element-order paradigm is invalidated
+          @error "z-index for #{$key} must be greater than the preceding value!";
+        }
+        $accumulator: $val;
+      }
+
+      @if $key == $name {
+        @return $accumulator;
+      }
+    }
+  } @else {
     @error "The key `#{$name}` wasn't found in $layers.";
   }
-
-  @return $index;
 }

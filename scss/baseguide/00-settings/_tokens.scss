@@ -162,6 +162,6 @@ $ratios: (
 // Layers
 $layers: (
   below: -1,
-  neutral: 0,
-  above: 1,
+  neutral: null,
+  above: null,
 ) !default;
