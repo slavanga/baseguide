@@ -1,17 +1,19 @@
-#{$headings} {
-  @include type('heading');
+@if ($headings and length($headings) > 0) {
+  #{$headings} {
+    @include type('heading');
 
-  margin-top: $headings-spacing * 2;
-  margin-bottom: $headings-spacing;
-  color: $headings-color;
+    margin-top: $headings-spacing * 2;
+    margin-bottom: $headings-spacing;
+    color: $headings-color;
 
-  &:first-child {
-    margin-top: 0;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include scale-headings;
 }
-
-@include scale-headings;
