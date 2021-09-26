@@ -20,10 +20,5 @@
     }
   }
 
-  // If we have a map of named breakpoints
-  @if ((type-of($sizes) == 'map') and map-has-key($mq-breakpoints, nth(map-keys($sizes), 1))) {
-    @include loop-variation($sizes, $prop, $negative: $negative, $important: $important);
-  } @else {
-    @include fluid-calc($prop, $sizes, $negative: $negative, $important: $important);
-  }
+  @include loop-variation($sizes, $prop, $negative: $negative, $important: $important);
 }

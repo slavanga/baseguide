@@ -19,7 +19,7 @@
     }
   }
 
-  @include make-gutters($gutter, 'padding');
+  @include gutter($gutter, 'padding');
 
   margin-left: auto;
   margin-right: auto;

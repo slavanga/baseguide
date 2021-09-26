@@ -6,7 +6,7 @@
 ///
 /// @param {Number|Map} $gutter [$grid-gutter] - The amount of gutter as number, breakpoint map `(xs: 30px, md: 60px)` or sizing map (min: 30px, max: 60px)
 @mixin row($gutter: $grid-gutter) {
-  @include make-gutters($gutter, 'margin');
+  @include gutter($gutter, 'margin');
 
   display: flex;
   flex-wrap: wrap;

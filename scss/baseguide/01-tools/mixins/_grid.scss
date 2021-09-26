@@ -15,7 +15,7 @@
   /* stylelint-disable-next-line function-name-case */
   grid-template-columns: repeat(auto-fit, minmax(Min(100%, var(--min, #{$min-size})), 1fr));
 
-  @include make-gutters($gutter, 'gap');
+  @include gutter($gutter, 'gap');
 }
 
 /// Output a css grid row with gutters
@@ -30,7 +30,7 @@
   grid-template-rows: repeat(var(--rows, 1), 1fr);
   grid-template-columns: repeat(var(--columns, #{$grid-columns}), 1fr);
 
-  @include make-gutters($gutter, 'gap');
+  @include gutter($gutter, 'gap');
 }
 
 /// Output a css grid column

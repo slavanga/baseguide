@@ -7,7 +7,7 @@
 /// @param {Map} $map - Map to test
 /// @return {Boolean} - True if the parameter is a map with a `min` key
 @function is-sizing-map($map) {
-  @return (type-of($map) == 'map' and map-has-key($map, 'min'));
+  @return (type-of($map) == 'map' and map-has-key($map, 'min') and length($map) < 3);
 }
 
 /// Get largest sizing of sizing map
@@ -15,48 +15,61 @@
 /// @param {Map|Number} $sizing - Sizing map or number
 /// @return {Number} - Largest sizing in the map
 @function get-largest-sizing($sizing) {
-  $largest-sizing: $sizing;
-
   @if (type-of($sizing) == 'map') {
-    $sizing-value: nth(map-values($sizing), length($sizing));
+    $sizing: nth(map-values($sizing), length($sizing));
 
-    @if is-sizing-map($sizing-value) {
-      $largest-sizing: map-get($sizing-value, 'max');
+    @if is-sizing-map($sizing) {
+      $sizing: map-get($sizing, 'max');
 
-      @if not $largest-sizing {
-        $largest-sizing: map-get($sizing-value, 'min');
+      @if not $sizing {
+        $sizing: map-get($sizing, 'min');
       }
-    } @else {
-      $largest-sizing: $sizing-value;
     }
   }
 
-  @return $largest-sizing;
+  @return $sizing;
 }
 
 /// Half values of a sizing map
 ///
-/// @param {Map|Number} $sizing - Sizing map or number
-/// @return {Map|Number} - Sizing map with halved values or halved number
+/// @param {Map|Number} $sizing - Sizing map, breakpoint map or number
+/// @return {Map|Number} - Map with halved values or halved number
 @function get-half-sizing($sizing) {
-  $half-sizing: $sizing;
+  @if (type-of($sizing) == 'map') {
+    @each $key, $value in $sizing {
+      @if (type-of($value) == 'map') {
+        $nested-map: ();
 
-  @if is-sizing-map($sizing) {
-    $half-sizing: (
-      'min': divide(map-get($sizing, 'min'), 2),
-    );
+        @each $deep-key, $deep-value in $value {
+          // Divide nested map values and add to new map
+          $nested-map: map-merge(
+            $nested-map,
+            (
+              $deep-key: divide($deep-value, 2),
+            )
+          );
+        }
 
-    @if map-has-key($sizing, 'max') {
-      $half-sizing: map-merge(
-        $half-sizing,
-        (
-          'max': divide(map-get($sizing, 'max'), 2),
-        )
-      );
+        // Merge new map into map key of the original map
+        $sizing: map-merge(
+          $sizing,
+          (
+            $key: $nested-map,
+          )
+        );
+      } @else {
+        // Replace map values with divided values
+        $sizing: map-merge(
+          $sizing,
+          (
+            $key: divide($value, 2),
+          )
+        );
+      }
     }
   } @else {
-    $half-sizing: divide($sizing, 2);
+    $sizing: divide($sizing, 2);
   }
 
-  @return $half-sizing;
+  @return $sizing;
 }

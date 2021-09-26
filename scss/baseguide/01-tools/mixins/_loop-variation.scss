@@ -9,28 +9,33 @@
 /// @param {Bool} $negative [false] - Negates the values if true
 /// @param {Bool} $important [false] - Adds important flag if true
 @mixin loop-variation($config, $prop: null, $negative: false, $important: false) {
-  @each $key, $value in $config {
-    @if (map-has-key($mq-breakpoints, $key)) {
-      @include skip-first-breakpoint($key) {
-        $breakpoint-keys: map-keys($config);
-        $next-breakpoint: get-next-breakpoint($key, $config) or map-get($fluid-breakpoints, 'max');
+  @if (is-sizing-map($config)) {
+    @include fluid-calc($prop, $config, $negative: $negative, $important: $important);
+  } @else if is-breakpoint-map($config) {
+    @each $breakpoint-key, $breakpoint-value in $config {
+      @include skip-first-breakpoint($breakpoint-key) {
+        $all-breakpoints: map-keys($config);
+        $next-breakpoint: get-next-breakpoint($breakpoint-key, $config) or
+          map-get($fluid-breakpoints, 'max');
         $breakpoint-range: (
-          min: $key,
+          min: $breakpoint-key,
           max: $next-breakpoint,
         );
 
-        @if (is-sizing-map($value)) {
+        @if (is-sizing-map($breakpoint-value)) {
+          // Sizing map in breakpoint
           @include fluid-calc(
             $prop,
-            $value,
+            $breakpoint-value,
             $breakpoint-range,
             $negative,
             $important,
-            $current-breakpoint: $key,
-            $all-breakpoints: $breakpoint-keys
+            $current-breakpoint: $breakpoint-key,
+            $all-breakpoints: $all-breakpoints
           );
-        } @else {
-          @each $deep-key, $deep-value in $value {
+        } @else if (type-of($breakpoint-value) == 'map') {
+          @each $deep-key, $deep-value in $breakpoint-value {
+            // Nested sizing map in breakpoint (e.g. font-size map in type)
             @if (is-sizing-map($deep-value)) {
               @include fluid-calc(
                 $deep-key,
@@ -38,17 +43,59 @@
                 $breakpoint-range,
                 $negative,
                 $important,
-                $current-breakpoint: $key,
-                $all-breakpoints: $breakpoint-keys
+                $current-breakpoint: $breakpoint-key,
+                $all-breakpoints: $all-breakpoints
               );
             } @else {
-              @include output-props($deep-key, $deep-value);
+              // Nested props in breakpoint
+              #{$deep-key}: $deep-value;
+            }
+          }
+        } @else if $prop {
+          // Single prop for current breakpoint
+          @include fluid-calc(
+            $prop,
+            $breakpoint-value,
+            $breakpoint-range,
+            $negative,
+            $important,
+            $current-breakpoint: $breakpoint-key,
+            $all-breakpoints: $all-breakpoints
+          );
+        }
+      }
+    }
+  } @else if (type-of($config) == 'map') {
+    @each $key, $value in $config {
+      @if ($key == 'selectors') {
+        // Special selectors key for pseudo classes
+        @each $selector-key, $selector-value in $value {
+          #{$selector-key} {
+            @each $deep-key, $deep-value in $selector-value {
+              @if ($deep-key == 'selectors') {
+                @include loop-variation(
+                  (
+                    'selectors': $deep-value,
+                  ),
+                  $prop,
+                  $negative,
+                  $important
+                );
+              } @else {
+                #{$deep-key}: $deep-value;
+              }
             }
           }
         }
+      } @else if (is-sizing-map($value)) {
+        // Nested sizing map (e.g. font-size in $token-type with sizing map)
+        @include fluid-calc($key, $value, $negative: $negative, $important: $important);
+      } @else {
+        // Simple prop for type or button styles
+        #{$key}: $value;
       }
-    } @else {
-      @include output-props($key, $value);
     }
+  } @else if $prop {
+    @include fluid-calc($prop, $config, $negative: $negative, $important: $important);
   }
 }

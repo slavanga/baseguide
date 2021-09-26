@@ -20,6 +20,27 @@
   @return $name == nth(map-keys($breakpoints), length(map-keys($breakpoints)));
 }
 
+/// Check if a map contains valid breakpoints
+///
+/// @param {Map} $map - Breakpoint map to check
+/// @param {Map} $breakpoints [$mq-breakpoints] - Map of valid breakpoints
+/// @return {Boolean} - True if the passed map is is a breakpoint map
+@function is-breakpoint-map($map, $breakpoints: $mq-breakpoints) {
+  $is-breakpoint-map: false;
+
+  @if (type-of($map) == 'map') {
+    $is-breakpoint-map: true;
+
+    @each $key in map-keys($map) {
+      @if (not map-has-key($breakpoints, $key)) {
+        $is-breakpoint-map: false;
+      }
+    }
+  }
+
+  @return $is-breakpoint-map;
+}
+
 /// Get the next breakpoint from a map
 ///
 /// @param {String} $name - Current breakpoint name
