@@ -7,10 +7,10 @@
 /// @param {String} $name - Map key of `$layers`
 /// @example scss
 /// .component {
-///   z-index: z-index(below);
+///   z-index: get-index(below);
 /// }
 /// @return {Number} z-index value
-@function z-index($name) {
+@function get-index($name) {
   $index: map-get($layers, $name);
 
   @if not $index {

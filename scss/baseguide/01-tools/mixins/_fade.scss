@@ -4,18 +4,18 @@
 
 /// Accessible fade in transition
 ///
-/// @param {Number} $duration [duration()] - Default duration token
-@mixin fade-in($duration: duration()) {
+/// @param {Number} $duration [get-duration()] - Default duration token
+@mixin fade-in($duration: get-duration()) {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s easing(linear) 0s, opacity $duration;
+  transition: visibility 0s get-easing(linear) 0s, opacity $duration;
 }
 
 /// Accessible fade out transition
 ///
-/// @param {Number} $duration [duration()] - Default duration token
-@mixin fade-out($duration: duration()) {
+/// @param {Number} $duration [get-duration()] - Default duration token
+@mixin fade-out($duration: get-duration()) {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s easing(linear) $duration, opacity $duration;
+  transition: visibility 0s get-easing(linear) $duration, opacity $duration;
 }

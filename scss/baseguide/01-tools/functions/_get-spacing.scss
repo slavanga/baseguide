@@ -1,0 +1,25 @@
+////
+/// @group token
+////
+
+/// Get a single spacing value from the map `$token-spacings`
+///
+/// @param {String} $name [$token-spacings-default] - Map key of `$token-spacings`
+/// @param {Bool} $sizing ['min'] - Sizing type 'min' or 'max'
+@function get-spacing($name: $token-spacings-default, $sizing: 'min') {
+  $spacing: map-get($token-spacings, $name);
+
+  @if (not $spacing) {
+    @error "The spacing `#{$name}` wasn't found in map $token-spacings.";
+  }
+
+  @if (is-sizing-map($spacing)) {
+    $spacing: map-get($spacing, $sizing);
+
+    @if (not $spacing) {
+      @error "The sizing `#{$sizing}` wasn't found for the spacing `#{$name}`.";
+    }
+  }
+
+  @return $spacing;
+}

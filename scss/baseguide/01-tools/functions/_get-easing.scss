@@ -7,10 +7,10 @@
 /// @param {String} $name [$token-easings-default] - Map key of `$token-easings`
 /// @example scss
 /// .component {
-///   transition: color duration() easing();
+///   transition: color get-duration() get-easing();
 /// }
 /// @return {String} easing value
-@function easing($name: $token-easings-default) {
+@function get-easing($name: $token-easings-default) {
   $easing: map-get($token-easings, $name);
 
   @if not $easing {

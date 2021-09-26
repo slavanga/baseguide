@@ -52,7 +52,7 @@ $link-active-color: $link-hover-color !default;
 $link-focus-color: $link-hover-color !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
-$link-transition: color duration() easing(linear) !default;
+$link-transition: color get-duration() get-easing(linear) !default;
 
 // List
 $list-indent: to-em(40px) !default;
@@ -78,7 +78,7 @@ $input-focus-box-shadow: 0 0 0 to-em(3px) rgba($color-accent, 0.25) !default;
 $input-disabled-bg: $color-background-muted !default;
 $input-disabled-color: $color-foreground-muted !default;
 $input-disabled-border-color: $color-line !default;
-$input-transition: border-color duration() easing(), box-shadow duration() easing() !default;
+$input-transition: border-color get-duration() get-easing(), box-shadow get-duration() get-easing() !default;
 
 // Select
 $select-icon-color: $color-foreground !default;
@@ -98,7 +98,8 @@ $selection-checked-border-color: $selection-checked-bg !default;
 $selection-disabled-bg: $input-disabled-bg !default;
 $selection-disabled-color: $input-disabled-color !default;
 $selection-disabled-border-color: $input-disabled-border-color !default;
-$selection-transition: opacity duration() easing(linear), transform duration() easing() !default;
+$selection-transition: opacity get-duration() get-easing(linear),
+  transform get-duration() get-easing() !default;
 $checkbox-border-radius: $input-border-radius !default;
 
 // Placeholder
@@ -115,8 +116,8 @@ $button-padding-vertical: to-em(6px) !default;
 $button-padding-horizontal: to-em(16px) !default;
 $button-border-width: 1px !default;
 $button-border-radius: to-em(2px) !default;
-$button-transition: background-color duration() easing(), color duration() easing(),
-  border-color duration() easing(), box-shadow duration() easing() !default;
+$button-transition: background-color get-duration() get-easing(), color get-duration() get-easing(),
+  border-color get-duration() get-easing(), box-shadow get-duration() get-easing() !default;
 
 // Button Variations
 $button-variations: (
