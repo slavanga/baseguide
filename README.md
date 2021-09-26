@@ -53,16 +53,18 @@ This is great for prototyping, but doesn’t allow any customization. To load Ba
 
 Use `npm install` or `yarn install` to install the dev dependencies.
 
-### NPM Scripts
+### NPM Scripts / Gulp
 
-The included NPM scripts take care of compiling, optimizing and minifying.
+The included NPM scripts in combination with Gulp take care of compiling, optimizing and minifying.
 
-| Command         | Description                          |
-| :-------------- | :----------------------------------- |
-| `npm run start` | Build and watch for changes          |
-| `npm run build` | Build once                           |
-| `npm run watch` | Watch and build when a change occurs |
-| `npm run lint`  | Lint and fix the source files        |
+| Command            | Description                                                                      |
+| :----------------- | :------------------------------------------------------------------------------- |
+| `npm run start`    | Build source files, watch for changes and start a local server using Browsersync |
+| `npm run build`    | Build source files once                                                          |
+| `npm run watch`    | Watch source files and build when a change occurs                                |
+| `npm run lint`     | Lint and fix source files                                                        |
+| `npm run prettier` | Format source files using Prettier                                               |
+| `npm run sassdoc`  | Build sassdoc files into the docs folder                                         |
 
 ### Sass
 
