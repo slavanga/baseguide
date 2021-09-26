@@ -1,7 +1,15 @@
 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([class]) {
   color: $link-color;
+  text-decoration: $link-decoration;
+  transition: $link-transition;
 
   &:hover {
+    text-decoration: $link-hover-decoration;
     color: $link-hover-color;
   }
 
@@ -11,14 +19,5 @@ a {
 
   &:focus {
     color: $link-focus-color;
-  }
-}
-
-a:not([class]) {
-  text-decoration: $link-decoration;
-  transition: $link-transition;
-
-  &:hover {
-    text-decoration: $link-hover-decoration;
   }
 }

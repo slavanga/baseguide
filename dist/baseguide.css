@@ -526,24 +526,24 @@ h1, .h1 {
 }
 
 a {
-  color: #0275d8;
-}
-a:hover {
-  color: #025ead;
-}
-a:active {
-  color: #025ead;
-}
-a:focus {
-  color: #025ead;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:not([class]) {
+  color: #0275d8;
   text-decoration: none;
   transition: color 150ms linear;
 }
 a:not([class]):hover {
   text-decoration: underline;
+  color: #025ead;
+}
+a:not([class]):active {
+  color: #025ead;
+}
+a:not([class]):focus {
+  color: #025ead;
 }
 
 ul,
