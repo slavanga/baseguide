@@ -5,7 +5,7 @@
 /// Generate min, max and fluid in-between values for a given CSS property
 ///
 /// @param {String} $prop - Any CSS property that supports calc as a value
-/// @param {Map|Number|List} $sizes - Map of two sizes formatted as `(min: x, max y)`, list of two sizes formatted as `(x, y)` or just a number (min size)
+/// @param {Map|Number|List} $sizes - Map of two sizes formatted as `(min: x, max: y)`, list of two sizes formatted as `(x, y)` or just a number (min size)
 /// @param {Map} $breakpoints [$fluid-breakpoints] - Map of two named breakpoints from `$mq-breakpoints` formatted as `(min: md, max: lg)` or custom px values formatted as `(min: 600px, max: 900px)`
 /// @param {Bool} $negative [false] - Negates the values if true
 /// @param {Bool} $important [false] - Adds important flag if true
