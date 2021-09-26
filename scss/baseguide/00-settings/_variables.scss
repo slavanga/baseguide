@@ -111,6 +111,7 @@ $form-group-spacing: 1rem !default;
 
 // Button Base
 $button-selector: '.#{$meta-prefix-components}btn' !default;
+$button-type-token: null !default;
 $button-cursor-pointer: true !default;
 $button-padding-vertical: to-em(6px) !default;
 $button-padding-horizontal: to-em(16px) !default;
