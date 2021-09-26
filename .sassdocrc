@@ -1,0 +1,18 @@
+{
+  "autofill": "false",
+  "no-update-notifier": "true",
+  "groups": {
+    "breakpoint": "Breakpoint",
+    "button": "Button",
+    "compat": "Compatibility",
+    "global": "Global",
+    "grid": "Grid",
+    "list": "List",
+    "sass-mq": "Sass MQ",
+    "sizing": "Poly Fluid / Sizing",
+    "token": "Token",
+    "typography": "Typography",
+    "utilities": "Utilities",
+    "variation": "Variations"
+  }
+}

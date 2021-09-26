@@ -1,0 +1,1182 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Baseguide - v4.1.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Baseguide - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Baseguide is a flexible, fluid and fun CSS framework.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://basegui.de">Baseguide - v4.1.1</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="breakpoint"><a href="#breakpoint">Breakpoint</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-function"><a href="#breakpoint-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="is-first-breakpoint" data-type="function"><a href="#breakpoint-function-is-first-breakpoint">is-first-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="is-last-breakpoint" data-type="function"><a href="#breakpoint-function-is-last-breakpoint">is-last-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="is-breakpoint-map" data-type="function"><a href="#breakpoint-function-is-breakpoint-map">is-breakpoint-map</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="get-next-breakpoint" data-type="function"><a href="#breakpoint-function-get-next-breakpoint">get-next-breakpoint</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-mixin"><a href="#breakpoint-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="loop-breakpoints" data-type="mixin"><a href="#breakpoint-mixin-loop-breakpoints">loop-breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="skip-first-breakpoint" data-type="mixin"><a href="#breakpoint-mixin-skip-first-breakpoint">skip-first-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="hidpi" data-type="mixin"><a href="#breakpoint-mixin-hidpi">hidpi</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="button"><a href="#button">Button</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="button-mixin"><a href="#button-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="button" data-name="button-unstyled" data-type="mixin"><a href="#button-mixin-button-unstyled">button-unstyled</a></li><li class="sidebar__item sassdoc__item" data-group="button" data-name="button-base" data-type="mixin"><a href="#button-mixin-button-base">button-base</a></li><li class="sidebar__item sassdoc__item" data-group="button" data-name="button" data-type="mixin"><a href="#button-mixin-button">button</a></li><li class="sidebar__item sassdoc__item" data-group="button" data-name="button-variations" data-type="mixin"><a href="#button-mixin-button-variations">button-variations</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="compat"><a href="#compat">Compatibility</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="compat-function"><a href="#compat-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="compat" data-name="divide" data-type="function"><a href="#compat-function-divide">divide</a></li><li class="sidebar__item sassdoc__item" data-group="compat" data-name="pow" data-type="function"><a href="#compat-function-pow">pow</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="global"><a href="#global">Global</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="global-variable"><a href="#global-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="global" data-name="token-type" data-type="variable"><a href="#global-variable-token-type">token-type</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="token-spacings" data-type="variable"><a href="#global-variable-token-spacings">token-spacings</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="grid-gutter" data-type="variable"><a href="#global-variable-grid-gutter">grid-gutter</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="grid-container-gutter" data-type="variable"><a href="#global-variable-grid-container-gutter">grid-container-gutter</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="global-function"><a href="#global-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="global" data-name="get-icon" data-type="function"><a href="#global-function-get-icon">get-icon</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="ratio-to-percentage" data-type="function"><a href="#global-function-ratio-to-percentage">ratio-to-percentage</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="shade-color" data-type="function"><a href="#global-function-shade-color">shade-color</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="str-replace" data-type="function"><a href="#global-function-str-replace">str-replace</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="tint-color" data-type="function"><a href="#global-function-tint-color">tint-color</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="strip-unit" data-type="function"><a href="#global-function-strip-unit">strip-unit</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="to-rem" data-type="function"><a href="#global-function-to-rem">to-rem</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="to-em" data-type="function"><a href="#global-function-to-em">to-em</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="global-mixin"><a href="#global-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="global" data-name="aspect-ratio" data-type="mixin"><a href="#global-mixin-aspect-ratio">aspect-ratio</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="clearfix" data-type="mixin"><a href="#global-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="fade-in" data-type="mixin"><a href="#global-mixin-fade-in">fade-in</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="fade-out" data-type="mixin"><a href="#global-mixin-fade-out">fade-out</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="font-smoothing" data-type="mixin"><a href="#global-mixin-font-smoothing">font-smoothing</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="triangle" data-type="mixin"><a href="#global-mixin-triangle">triangle</a></li><li class="sidebar__item sassdoc__item" data-group="global" data-name="underline" data-type="mixin"><a href="#global-mixin-underline">underline</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="grid"><a href="#grid">Grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-mixin"><a href="#grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name="container" data-type="mixin"><a href="#grid-mixin-container">container</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="column-base" data-type="mixin"><a href="#grid-mixin-column-base">column-base</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="column" data-type="mixin"><a href="#grid-mixin-column">column</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="column-push" data-type="mixin"><a href="#grid-mixin-column-push">column-push</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="column-pull" data-type="mixin"><a href="#grid-mixin-column-pull">column-pull</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="column-offset" data-type="mixin"><a href="#grid-mixin-column-offset">column-offset</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="loop-columns" data-type="mixin"><a href="#grid-mixin-loop-columns">loop-columns</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="row" data-type="mixin"><a href="#grid-mixin-row">row</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid-row-auto" data-type="mixin"><a href="#grid-mixin-grid-row-auto">grid-row-auto</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid-row" data-type="mixin"><a href="#grid-mixin-grid-row">grid-row</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid-column" data-type="mixin"><a href="#grid-mixin-grid-column">grid-column</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid-column-offset" data-type="mixin"><a href="#grid-mixin-grid-column-offset">grid-column-offset</a></li><li class="sidebar__item sassdoc__item" data-group="grid" data-name="gutter" data-type="mixin"><a href="#grid-mixin-gutter">gutter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="list"><a href="#list">List</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="list-mixin"><a href="#list-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="list" data-name="list-inline" data-type="mixin"><a href="#list-mixin-list-inline">list-inline</a></li><li class="sidebar__item sassdoc__item" data-group="list" data-name="list-unstyled" data-type="mixin"><a href="#list-mixin-list-unstyled">list-unstyled</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="sass-mq"><a href="#sass-mq">Sass MQ</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="sass-mq-variable"><a href="#sass-mq-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-base-font-size" data-type="variable"><a href="#sass-mq-variable-mq-base-font-size">mq-base-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-responsive" data-type="variable"><a href="#sass-mq-variable-mq-responsive">mq-responsive</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-breakpoints" data-type="variable"><a href="#sass-mq-variable-mq-breakpoints">mq-breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-static-breakpoint" data-type="variable"><a href="#sass-mq-variable-mq-static-breakpoint">mq-static-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-show-breakpoints" data-type="variable"><a href="#sass-mq-variable-mq-show-breakpoints">mq-show-breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-media-type" data-type="variable"><a href="#sass-mq-variable-mq-media-type">mq-media-type</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="sass-mq-function"><a href="#sass-mq-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-px2em" data-type="function"><a href="#sass-mq-function-mq-px2em">mq-px2em</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-get-breakpoint-width" data-type="function"><a href="#sass-mq-function-mq-get-breakpoint-width">mq-get-breakpoint-width</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="_mq-quick-sort" data-type="function"><a href="#sass-mq-function-_mq-quick-sort">_mq-quick-sort</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="_mq-map-sort-by-value" data-type="function"><a href="#sass-mq-function-_mq-map-sort-by-value">_mq-map-sort-by-value</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="sass-mq-mixin"><a href="#sass-mq-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq" data-type="mixin"><a href="#sass-mq-mixin-mq">mq</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-add-breakpoint" data-type="mixin"><a href="#sass-mq-mixin-mq-add-breakpoint">mq-add-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="sass-mq" data-name="mq-show-breakpoints" data-type="mixin"><a href="#sass-mq-mixin-mq-show-breakpoints">mq-show-breakpoints</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="sizing"><a href="#sizing">Poly Fluid / Sizing</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="sizing-function"><a href="#sizing-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sizing" data-name="is-sizing-map" data-type="function"><a href="#sizing-function-is-sizing-map">is-sizing-map</a></li><li class="sidebar__item sassdoc__item" data-group="sizing" data-name="get-largest-sizing" data-type="function"><a href="#sizing-function-get-largest-sizing">get-largest-sizing</a></li><li class="sidebar__item sassdoc__item" data-group="sizing" data-name="get-half-sizing" data-type="function"><a href="#sizing-function-get-half-sizing">get-half-sizing</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="sizing-mixin"><a href="#sizing-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sizing" data-name="fluid-calc" data-type="mixin"><a href="#sizing-mixin-fluid-calc">fluid-calc</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="token"><a href="#token">Token</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="token-function"><a href="#token-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="token" data-name="get-color" data-type="function"><a href="#token-function-get-color">get-color</a></li><li class="sidebar__item sassdoc__item" data-group="token" data-name="get-duration" data-type="function"><a href="#token-function-get-duration">get-duration</a></li><li class="sidebar__item sassdoc__item" data-group="token" data-name="get-easing" data-type="function"><a href="#token-function-get-easing">get-easing</a></li><li class="sidebar__item sassdoc__item" data-group="token" data-name="get-index" data-type="function"><a href="#token-function-get-index">get-index</a></li><li class="sidebar__item sassdoc__item" data-group="token" data-name="get-spacing" data-type="function"><a href="#token-function-get-spacing">get-spacing</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="token-mixin"><a href="#token-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="token" data-name="spacing" data-type="mixin"><a href="#token-mixin-spacing">spacing</a></li><li class="sidebar__item sassdoc__item" data-group="token" data-name="type" data-type="mixin"><a href="#token-mixin-type">type</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="typography"><a href="#typography">Typography</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-function"><a href="#typography-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="modular-scale" data-type="function"><a href="#typography-function-modular-scale">modular-scale</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-mixin"><a href="#typography-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="scale-headings" data-type="mixin"><a href="#typography-mixin-scale-headings">scale-headings</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="utilities"><a href="#utilities">Utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-mixin"><a href="#utilities-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="sr-only" data-type="mixin"><a href="#utilities-mixin-sr-only">sr-only</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="sr-only-reset" data-type="mixin"><a href="#utilities-mixin-sr-only-reset">sr-only-reset</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="sr-only-focusable" data-type="mixin"><a href="#utilities-mixin-sr-only-focusable">sr-only-focusable</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="text-hide" data-type="mixin"><a href="#utilities-mixin-text-hide">text-hide</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="text-truncate" data-type="mixin"><a href="#utilities-mixin-text-truncate">text-truncate</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="text-hyphenate" data-type="mixin"><a href="#utilities-mixin-text-hyphenate">text-hyphenate</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="variation"><a href="#variation">Variations</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="variation-mixin"><a href="#variation-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="variation" data-name="loop-variation" data-type="mixin"><a href="#variation-mixin-loop-variation">loop-variation</a></li><li class="sidebar__item sassdoc__item" data-group="variation" data-name="use-variation" data-type="mixin"><a href="#variation-mixin-use-variation">use-variation</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="breakpoint"><div class="container">Breakpoint</div></h1><section class="main__sub-section" id="breakpoint-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="breakpoint-function-is-first-breakpoint"><h3 class="item__heading"><a class="item__name" href="#function-is-first-breakpoint">is-first-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-first-breakpoint($name, $breakpoints: $mq-breakpoints) { 
+  @return $name == nth(map-keys($breakpoints), 1);
+ }" data-collapsed="@function is-first-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }"><code>@function is-first-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Check if a breakpoint is the first in the list</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Breakpoint name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of breakpoints</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Boolean</code> &mdash;<p>True if the passed breakpoint is the first in the list</p></div></section><section class="main__item container item" id="breakpoint-function-is-last-breakpoint"><h3 class="item__heading"><a class="item__name" href="#function-is-last-breakpoint">is-last-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-last-breakpoint($name, $breakpoints: $mq-breakpoints) { 
+  @return $name == nth(map-keys($breakpoints), length(map-keys($breakpoints)));
+ }" data-collapsed="@function is-last-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }"><code>@function is-last-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Check if a breakpoint is the last in the list</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Breakpoint name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of breakpoints</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Boolean</code> &mdash;<p>True if the passed breakpoint is the last in the list</p></div></section><section class="main__item container item" id="breakpoint-function-is-breakpoint-map"><h3 class="item__heading"><a class="item__name" href="#function-is-breakpoint-map">is-breakpoint-map</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-breakpoint-map($map, $breakpoints: $mq-breakpoints) { 
+  $is-breakpoint-map: false;
+
+  @if (type-of($map) == &#39;map&#39;) {
+    $is-breakpoint-map: true;
+
+    @each $key in map-keys($map) {
+      @if (not map-has-key($breakpoints, $key)) {
+        $is-breakpoint-map: false;
+      }
+    }
+  }
+
+  @return $is-breakpoint-map;
+ }" data-collapsed="@function is-breakpoint-map($map, $breakpoints: $mq-breakpoints) { ... }"><code>@function is-breakpoint-map($map, $breakpoints: $mq-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Check if a map contains valid breakpoints</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>Breakpoint map to check</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of valid breakpoints</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Boolean</code> &mdash;<p>True if the passed map is is a breakpoint map</p></div></section><section class="main__item container item" id="breakpoint-function-get-next-breakpoint"><h3 class="item__heading"><a class="item__name" href="#function-get-next-breakpoint">get-next-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-next-breakpoint($name, $breakpoints: $mq-breakpoints) { 
+  $breakpoint-keys: map-keys($breakpoints);
+  $breakpoint-index: index($breakpoint-keys, $name);
+  $next: false;
+
+  @if not $breakpoint-index {
+    @error &quot;Breakpoint `#{$name}` not found in $breakpoints&quot;;
+  }
+
+  @if (length($breakpoint-keys) &gt; 1 and $breakpoint-index &lt; length($breakpoint-keys)) {
+    $next: nth($breakpoint-keys, $breakpoint-index + 1);
+  }
+
+  @return $next;
+ }" data-collapsed="@function get-next-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }"><code>@function get-next-breakpoint($name, $breakpoints: $mq-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get the next breakpoint from a map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Current breakpoint name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of breakpoints</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Next breakpoint name</p></div></section></section><section class="main__sub-section" id="breakpoint-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="breakpoint-mixin-loop-breakpoints"><h3 class="item__heading"><a class="item__name" href="#mixin-loop-breakpoints">loop-breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) { 
+  $breakpoint-keys: map-keys($breakpoints);
+
+  @for $i from 1 through length($breakpoint-keys) {
+    $breakpoint: nth($breakpoint-keys, $i) !global;
+    $is-first-breakpoint: is-first-breakpoint($breakpoint);
+    $is-last-breakpoint: is-last-breakpoint($breakpoint);
+
+    @if $mq {
+      @if $inclusive {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @content;
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      } @else {
+        // first breakpoint
+        @if $is-first-breakpoint {
+          @if length($breakpoint-keys) &gt; 1 {
+            @include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+              @content;
+            }
+          } @else {
+            @content;
+          }
+        }
+        // last breakpoint
+        @else if $is-last-breakpoint {
+          @include mq($breakpoint, $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+        // remaining breakpoints
+        @else {
+          @include mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+            @content;
+          }
+        }
+      }
+    } @else {
+      @content;
+    }
+  }
+ }" data-collapsed="@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) { ... }"><code>@mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Loop all breakpoints and output <code>@content</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of breakpoints</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$inclusive</code></th><td data-label="desc"><p>Outputs inclusive media queries (only min-width) if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>true</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$mq</code></th><td data-label="desc"><p>Outputs media queries if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>true</code></td></tr></tbody></table></section><section class="main__item container item" id="breakpoint-mixin-skip-first-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-skip-first-breakpoint">skip-first-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin skip-first-breakpoint($breakpoint) { 
+  @if (is-first-breakpoint($breakpoint)) {
+    @content;
+  } @else {
+    @include mq($breakpoint) {
+      @content;
+    }
+  }
+ }" data-collapsed="@mixin skip-first-breakpoint($breakpoint) { ... }"><code>@mixin skip-first-breakpoint($breakpoint) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output content in a media query excluding the first breakpoint</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc"><p>Named breakpoint key of <code>$mq-breakpoints</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table></section><section class="main__item container item" id="breakpoint-mixin-hidpi"><h3 class="item__heading"><a class="item__name" href="#mixin-hidpi">hidpi</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin hidpi($ratio: 1.5) { 
+  @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
+    @content;
+  }
+ }" data-collapsed="@mixin hidpi($ratio: 1.5) { ... }"><code>@mixin hidpi($ratio: 1.5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Target HiDPI screens</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ratio</code></th><td data-label="desc"><p>Screen resolution ratio</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1.5</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="button"><div class="container">Button</div></h1><section class="main__sub-section" id="button-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="button-mixin-button-unstyled"><h3 class="item__heading"><a class="item__name" href="#mixin-button-unstyled">button-unstyled</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin button-unstyled() { 
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+ }" data-collapsed="@mixin button-unstyled() { ... }"><code>@mixin button-unstyled() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remove browser default styles from <code>&lt;button&gt;</code></p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="button-mixin-button-base"><h3 class="item__heading"><a class="item__name" href="#mixin-button-base">button-base</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin button-base($padding-vertical: $button-padding-vertical, $padding-horizontal: $button-padding-horizontal, $border-width: $button-border-width, $border-radius: $button-border-radius, $transition: $button-transition, $type: $button-type) { 
+  @include button-disabled;
+
+  @if $type-token {
+    @include type($type-token);
+  }
+
+  display: inline-block;
+  vertical-align: middle;
+  padding: $padding-vertical $padding-horizontal;
+  border: $border-width solid transparent;
+  border-radius: $border-radius;
+  transition: $transition;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  user-select: none;
+  touch-action: manipulation;
+
+  &amp;:hover,
+  &amp;:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+ }" data-collapsed="@mixin button-base($padding-vertical: $button-padding-vertical, $padding-horizontal: $button-padding-horizontal, $border-width: $button-border-width, $border-radius: $button-border-radius, $transition: $button-transition, $type: $button-type) { ... }"><code>@mixin button-base($padding-vertical: $button-padding-vertical, $padding-horizontal: $button-padding-horizontal, $border-width: $button-border-width, $border-radius: $button-border-radius, $transition: $button-transition, $type: $button-type) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate button base styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$padding-vertical</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$button-padding-vertical</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$padding-horizontal</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$button-padding-horizontal</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border-width</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$button-border-width</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border-radius</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$button-border-radius</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$transition</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>List</code></td><td data-label="default"><code>$button-transition</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$type</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$button-type</code></td></tr></tbody></table></section><section class="main__item container item" id="button-mixin-button"><h3 class="item__heading"><a class="item__name" href="#mixin-button">button</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin button($variation: &#39;base&#39;) { 
+  @include button-base;
+  @include use-variation($button-variations, $variation);
+ }" data-collapsed="@mixin button($variation: &#39;base&#39;) { ... }"><code>@mixin button($variation: &#39;base&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate styles for a single button variation</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$variation</code></th><td data-label="desc"><p>Map key of <code>$button-variations</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;base&#39;</code></td></tr></tbody></table></section><section class="main__item container item" id="button-mixin-button-variations"><h3 class="item__heading"><a class="item__name" href="#mixin-button-variations">button-variations</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin button-variations($variations: $button-variations) { 
+  @if (type-of($variations) == &#39;map&#39;) {
+    $first-key: nth(map-keys($variations), 1);
+    $variations: map-remove($variations, $first-key);
+
+    #{$button-selector} {
+      @include use-variation($button-variations, $first-key);
+
+      @each $key, $value in $variations {
+        &amp;#{$meta-class-modifier}#{$key} {
+          @include use-variation($button-variations, $key);
+        }
+      }
+    }
+  }
+ }" data-collapsed="@mixin button-variations($variations: $button-variations) { ... }"><code>@mixin button-variations($variations: $button-variations) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate button variation styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$variations</code></th><td data-label="desc"><p>Map of button variations</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$button-variations</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="compat"><div class="container">Compatibility</div></h1><section class="main__sub-section" id="compat-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="compat-function-divide"><h3 class="item__heading"><a class="item__name" href="#function-divide">divide</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function divide($dividend, $divisor, $precision: 10) { 
+  $sign: if($dividend &gt; 0 and $divisor &gt; 0 or $dividend &lt; 0 and $divisor &lt; 0, 1, -1);
+  $dividend: abs($dividend);
+  $divisor: abs($divisor);
+
+  @if $dividend == 0 {
+    @return 0;
+  }
+
+  @if $divisor == 0 {
+    @error &quot;Cannot divide by 0&quot;;
+  }
+
+  $remainder: $dividend;
+  $result: 0;
+  $factor: 10;
+
+  @while ($remainder &gt; 0 and $precision &gt;= 0) {
+    $quotient: 0;
+
+    @while ($remainder &gt;= $divisor) {
+      $remainder: $remainder - $divisor;
+      $quotient: $quotient + 1;
+    }
+
+    $result: $result * 10 + $quotient;
+    $factor: $factor * 0.1;
+    $remainder: $remainder * 10;
+    $precision: $precision - 1;
+
+    @if ($precision &lt; 0 and $remainder &gt;= $divisor * 5) {
+      $result: $result + 1;
+    }
+  }
+
+  @return $result * $factor * $sign;
+ }" data-collapsed="@function divide($dividend, $divisor, $precision: 10) { ... }"><code>@function divide($dividend, $divisor, $precision: 10) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Divide two numbers (adapted from Bootstrap)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$dividend</code></th><td data-label="desc"><p>Dividend</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$divisor</code></th><td data-label="desc"><p>Divisor</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$precision</code></th><td data-label="desc"><p>Precision</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>10</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Result of the division</p></div></section><section class="main__item container item" id="compat-function-pow"><h3 class="item__heading"><a class="item__name" href="#function-pow">pow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function pow($base, $exponent) { 
+  $return: 1;
+
+  @if $exponent &gt; 0 {
+    // If the exponent is positive then multiply it
+    @for $i from 1 through $exponent {
+      $return: $return * $base;
+    }
+  } @else if $exponent &lt; 0 {
+    // If the number is 0 or negative then divide it
+    @for $i from 1 through -$exponent {
+      $return: divide($return, $base);
+    }
+  }
+
+  @return $return;
+ }" data-collapsed="@function pow($base, $exponent) { ... }"><code>@function pow($base, $exponent) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Returns the base to the exponent power, as in base^exponent</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc"><p>Base</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$exponent</code></th><td data-label="desc"><p>Exponent</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>A number representing the given base taken to the power of the given exponent</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="global"><div class="container">Global</div></h1><section class="main__sub-section" id="global-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="global-variable-token-type"><h3 class="item__heading"><a class="item__name" href="#variable-token-type">token-type</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$token-type: (
+  default: (
+    font-family: $font-family-base,
+    font-size: (
+      min: $font-size-base,
+    ),
+    font-weight: $font-weight-base,
+    line-height: $line-height-base,
+    letter-spacing: $letter-spacing-base,
+  ),
+  heading: (
+    font-family: $headings-font-family,
+    font-weight: $headings-font-weight,
+    line-height: $headings-line-height,
+    letter-spacing: $headings-letter-spacing,
+  ),
+  small: (
+    font-size: (
+      min: $font-size-base * 0.8,
+    ),
+  ),
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Type</p></div><h3 class="item__sub-heading">Type</h3><p><code>{map}</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$token-type: (
+  default: (
+    font-family: $font-family-base,
+    font-size: $font-size-base,
+  ),
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$token-type: (
+  default: (
+    font-family: $font-family-base,
+    font-size: (
+      min: $font-size-base,
+      max: $font-size-base * 2,
+    ),
+  ),
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$token-type: (
+  default: (
+    xs: (
+      font-family: $font-family-base,
+      font-size: $font-size-base,
+    ),
+    md: (
+      font-size: (
+        min: $font-size-base,
+        max: $font-size-base * 2,
+      ),
+    ),
+  ),
+);</code></pre></div></section><section class="main__item container item" id="global-variable-token-spacings"><h3 class="item__heading"><a class="item__name" href="#variable-token-spacings">token-spacings</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$token-spacings: (
+  default: 24px,
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Spacings</p></div><h3 class="item__sub-heading">Type</h3><p><code>{map}</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$token-spacings: (
+  default: 24px,
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$token-spacings: (
+  default: (
+    min: 24px,
+    max: 48px,
+  ),
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$token-spacings: (
+  default: (
+    xs: 24px,
+    md: (
+      min: 24px,
+      max: 48px,
+    ),
+  ),
+);</code></pre></div></section><section class="main__item container item" id="global-variable-grid-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-grid-gutter">grid-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-gutter: (
+  min: 30px,
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Grid Gutter</p></div><h3 class="item__sub-heading">Type</h3><p><code>{number&lt;/code&gt; or &lt;code&gt;Map}</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$grid-gutter: 30px;</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$grid-gutter: (
+  min: 30px,
+  max: 60px,
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$grid-gutter: (
+  xs: 30px,
+  md: (
+    min: 30px,
+    max: 60px,
+  )
+);</code></pre></div></section><section class="main__item container item" id="global-variable-grid-container-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-grid-container-gutter">grid-container-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-container-gutter: $grid-gutter !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Grid Container Gutter</p></div><h3 class="item__sub-heading">Type</h3><p><code>{number&lt;/code&gt; or &lt;code&gt;Map}</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$grid-container-gutter: 30px;</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$grid-container-gutter: (
+  min: 30px,
+  max: 60px,
+);</code></pre></div><div class="item__example example"><pre class="example__code language-scss"><code>$grid-container-gutter: (
+  xs: 30px,
+  md: (
+    min: 30px,
+    max: 60px,
+  )
+);</code></pre></div></section></section><section class="main__sub-section" id="global-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="global-function-get-icon"><h3 class="item__heading"><a class="item__name" href="#function-get-icon">get-icon</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-icon($icon, $color: $color-icon) { 
+  $color: inspect($color);
+
+  @if (str-index($color, &#39;#&#39;) != null) {
+    @if map-has-key($icons, $icon) {
+      $icon: &#39;data:image/svg+xml;charset=utf8,&#39; + map-get($icons, $icon);
+      $icon: str-replace($icon, inspect($color-icon), $color);
+
+      @each $char, $encoded in ((&#39;&lt;&#39;, &#39;%3C&#39;), (&#39;&gt;&#39;, &#39;%3E&#39;), (&#39;#&#39;, &#39;%23&#39;), (&#39;&quot;&#39;, &quot;&#39;&quot;)) {
+        $icon: str-replace($icon, $char, $encoded);
+      }
+    } @else {
+      @error &quot;Please make sure `#{$icon}` is defined in the $icons map.&quot;;
+    }
+  } @else {
+    @error &quot;Please make sure `#{$color}` is a HEX value.&quot;;
+  }
+
+  @return $icon;
+ }" data-collapsed="@function get-icon($icon, $color: $color-icon) { ... }"><code>@function get-icon($icon, $color: $color-icon) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get an icon from the <code>$icons</code> map in the specified color</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$icon</code></th><td data-label="desc"><p>Map key of <code>$icons</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Hex color value</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$color-icon</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Encoded SVG icon string</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  background-image: url(get-icon(&#39;radio&#39;, #fff));
+}</code></pre></div></section><section class="main__item container item" id="global-function-ratio-to-percentage"><h3 class="item__heading"><a class="item__name" href="#function-ratio-to-percentage">ratio-to-percentage</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function ratio-to-percentage($ratio) { 
+  $width: nth($ratio, 1);
+  $height: nth($ratio, 3);
+
+  @return percentage(divide($height, $width));
+ }" data-collapsed="@function ratio-to-percentage($ratio) { ... }"><code>@function ratio-to-percentage($ratio) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert an aspect ratio to a percentage value</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ratio</code></th><td data-label="desc"><p>Aspect ratio formatted as <code>x by y</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Percentage value</p></div></section><section class="main__item container item" id="global-function-shade-color"><h3 class="item__heading"><a class="item__name" href="#function-shade-color">shade-color</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function shade-color($color, $percentage) { 
+  @return mix(#000, $color, $percentage);
+ }" data-collapsed="@function shade-color($color, $percentage) { ... }"><code>@function shade-color($color, $percentage) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Slightly darken a color</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>color to shade</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$percentage</code></th><td data-label="desc"><p>percentage of <code>$color</code> in returned color</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code> &mdash;<p>Shaded color</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  color: shade-color(#bada55, 20%);
+}</code></pre></div></section><section class="main__item container item" id="global-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace: &#39;&#39;) { 
+  $index: str-index($string, $search);
+
+  @if $index {
+    $string: str-slice($string, 1, $index - 1) +
+      $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+ }" data-collapsed="@function str-replace($string, $search, $replace: &#39;&#39;) { ... }"><code>@function str-replace($string, $search, $replace: &#39;&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Replace <code>$search</code> with <code>$replace</code> in <code>$string</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>Initial string</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$search</code></th><td data-label="desc"><p>Substring to replace</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$replace</code></th><td data-label="desc"><p>New value</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Replaced string</p></div></section><section class="main__item container item" id="global-function-tint-color"><h3 class="item__heading"><a class="item__name" href="#function-tint-color">tint-color</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function tint-color($color, $percentage) { 
+  @return mix(#fff, $color, $percentage);
+ }" data-collapsed="@function tint-color($color, $percentage) { ... }"><code>@function tint-color($color, $percentage) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Slightly lighten a color</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>color to tint</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$percentage</code></th><td data-label="desc"><p>percentage of <code>$color</code> in returned color</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code> &mdash;<p>Tinted color</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  color: tint-color(#bada55, 20%);
+}</code></pre></div></section><section class="main__item container item" id="global-function-strip-unit"><h3 class="item__heading"><a class="item__name" href="#function-strip-unit">strip-unit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-unit($number) { 
+  @if (type-of($number) == &#39;number&#39; and not unitless($number)) {
+    $number: divide($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+ }" data-collapsed="@function strip-unit($number) { ... }"><code>@function strip-unit($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remove the unit of a length</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>Number to remove unit from</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Unitless number</p></div></section><section class="main__item container item" id="global-function-to-rem"><h3 class="item__heading"><a class="item__name" href="#function-to-rem">to-rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function to-rem($value, $base: 16px) { 
+  @if (unit($value) == &#39;em&#39;) {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  @if (unit($value) != &#39;rem&#39;) {
+    $value: divide(strip-unit($value), strip-unit($base)) * 1rem;
+  }
+
+  @if (strip-unit($value) == 0) {
+    $value: 0;
+  }
+
+  @return $value;
+ }" data-collapsed="@function to-rem($value, $base: 16px) { ... }"><code>@function to-rem($value, $base: 16px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert a value to rem</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Value to be converted</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc"><p>Base font size</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>16px</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Rem value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  font-size: to-rem(20px);
+}</code></pre></div></section><section class="main__item container item" id="global-function-to-em"><h3 class="item__heading"><a class="item__name" href="#function-to-em">to-em</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function to-em($value, $base: 16px) { 
+  @if unit($value) == &#39;px&#39; or unitless($value) {
+    $value: to-rem($value, $base);
+  }
+
+  @return strip-unit($value) * 1em;
+ }" data-collapsed="@function to-em($value, $base: 16px) { ... }"><code>@function to-em($value, $base: 16px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert a value to em</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Value to be converted</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc"><p>Base font size</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>16px</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Em value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  padding-bottom: to-em(20px);
+}</code></pre></div></section></section><section class="main__sub-section" id="global-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="global-mixin-aspect-ratio"><h3 class="item__heading"><a class="item__name" href="#mixin-aspect-ratio">aspect-ratio</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin aspect-ratio($ratio, $grow: false) { 
+  @if (type-of($ratio) == &#39;string&#39; or type-of($ratio) == &#39;list&#39;) {
+    $key: map-get($ratios, $ratio);
+
+    @if $key {
+      $ratio: ratio-to-percentage($key);
+    } @else {
+      $ratio: ratio-to-percentage($ratio);
+    }
+  } @else {
+    $ratio: percentage($ratio);
+  }
+
+  &amp;::before {
+    content: &#39;&#39;;
+    display: block;
+    padding-bottom: $ratio;
+  }
+
+  @if $grow {
+    @include clearfix;
+
+    &amp;::before {
+      float: left;
+    }
+  }
+ }" data-collapsed="@mixin aspect-ratio($ratio, $grow: false) { ... }"><code>@mixin aspect-ratio($ratio, $grow: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Create an aspect ratio box with optional support for dynamic growing content</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ratio</code></th><td data-label="desc"><p>Map key of the <code>$ratios</code> map or a list formatted as <code>x by y</code></p></td><td data-label="type"><code>String</code> or <code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$grow</code></th><td data-label="desc"><p>Enables dynamic growing of the container if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="global-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
+  &amp;::after {
+    content: &#39;&#39;;
+    display: block;
+    clear: both;
+  }
+ }" data-collapsed="@mixin clearfix() { ... }"><code>@mixin clearfix() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Micro clearfix</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="global-mixin-fade-in"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in">fade-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in($duration: get-duration()) { 
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s get-easing(linear) 0s, opacity $duration;
+ }" data-collapsed="@mixin fade-in($duration: get-duration()) { ... }"><code>@mixin fade-in($duration: get-duration()) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Accessible fade in transition</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$duration</code></th><td data-label="desc"><p>Default duration token</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>get-duration()</code></td></tr></tbody></table></section><section class="main__item container item" id="global-mixin-fade-out"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out">fade-out</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out($duration: get-duration()) { 
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s get-easing(linear) $duration, opacity $duration;
+ }" data-collapsed="@mixin fade-out($duration: get-duration()) { ... }"><code>@mixin fade-out($duration: get-duration()) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Accessible fade out transition</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$duration</code></th><td data-label="desc"><p>Default duration token</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>get-duration()</code></td></tr></tbody></table></section><section class="main__item container item" id="global-mixin-font-smoothing"><h3 class="item__heading"><a class="item__name" href="#mixin-font-smoothing">font-smoothing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-smoothing($enabled: &#39;true&#39;) { 
+  @if $enabled {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  } @else {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+ }" data-collapsed="@mixin font-smoothing($enabled: &#39;true&#39;) { ... }"><code>@mixin font-smoothing($enabled: &#39;true&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Enable or disable font smoothing</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$enabled</code></th><td data-label="desc"><p>Activates font smoothing if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>&#39;true&#39;</code></td></tr></tbody></table></section><section class="main__item container item" id="global-mixin-triangle"><h3 class="item__heading"><a class="item__name" href="#mixin-triangle">triangle</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin triangle($direction, $width, $height, $color: currentColor) { 
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  @if $direction == &#39;up&#39; {
+    border-color: transparent transparent $color;
+    border-width: 0 divide($width, 2) $height;
+  } @else if $direction == &#39;up-right&#39; {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $width $width 0;
+  } @else if $direction == &#39;right&#39; {
+    border-color: transparent transparent transparent $color;
+    border-width: divide($height, 2) 0 divide($height, 2) $width;
+  } @else if $direction == &#39;down-right&#39; {
+    border-color: transparent transparent $color;
+    border-width: 0 0 $width $width;
+  } @else if $direction == &#39;down&#39; {
+    border-color: $color transparent transparent;
+    border-width: $height divide($width, 2) 0;
+  } @else if $direction == &#39;down-left&#39; {
+    border-color: transparent transparent transparent $color;
+    border-width: $width 0 0 $width;
+  } @else if $direction == &#39;left&#39; {
+    border-color: transparent $color transparent transparent;
+    border-width: divide($height, 2) $width divide($height, 2) 0;
+  } @else if $direction == &#39;up-left&#39; {
+    border-color: $color transparent transparent;
+    border-width: $width $width 0 0;
+  }
+ }" data-collapsed="@mixin triangle($direction, $width, $height, $color: currentColor) { ... }"><code>@mixin triangle($direction, $width, $height, $color: currentColor) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>CSS only triangle icon (adapted from bourbon)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>One of &#39;up&#39;, &#39;up-right&#39;, &#39;right&#39;, &#39;down-right&#39;, &#39;down&#39;, &#39;down-left&#39;, &#39;left&#39; or &#39;up-left&#39;</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code> or <code>Color</code></td><td data-label="default"><code>currentColor</code></td></tr></tbody></table></section><section class="main__item container item" id="global-mixin-underline"><h3 class="item__heading"><a class="item__name" href="#mixin-underline">underline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) { 
+  padding-bottom: $distance;
+  background-image: linear-gradient($color, $color);
+  background-size: $width $height;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  text-decoration: none;
+ }" data-collapsed="@mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) { ... }"><code>@mixin underline($color: currentColor, $distance: 0, $width: 100%, $height: 1px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Beautiful underline with control over text spacing</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Color of the underline</p></td><td data-label="type"><code>String</code> or <code>Color</code></td><td data-label="default"><code>currentColor</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$distance</code></th><td data-label="desc"><p>Distance from the text</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Width of the underline</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>100%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc"><p>Thickness of the underline</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1px</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">Grid</div></h1><section class="main__sub-section" id="grid-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="grid-mixin-container"><h3 class="item__heading"><a class="item__name" href="#mixin-container">container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin container($gutter: $grid-container-gutter, $width: $grid-container) { 
+  $largest-gutter: to-rem(get-largest-sizing($gutter));
+
+  @if (type-of($width) == &#39;number&#39;) {
+    @if (unit($width) == &#39;%&#39;) {
+      @if $largest-gutter &gt; 0 {
+        $width: calc(#{$width} - #{$largest-gutter});
+      }
+    } @else {
+      $width: to-rem($width) - $largest-gutter;
+    }
+  }
+
+  @include gutter($gutter, &#39;padding&#39;);
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $width;
+ }" data-collapsed="@mixin container($gutter: $grid-container-gutter, $width: $grid-container) { ... }"><code>@mixin container($gutter: $grid-container-gutter, $width: $grid-container) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a centered container with gutters</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as number, breakpoint map <code>(xs: 30px, md: 60px)</code> or sizing map <code>(min: 30px, max: 60px)</code></p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-container-gutter</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Maximum width of the container</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-container</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-column-base"><h3 class="item__heading"><a class="item__name" href="#mixin-column-base">column-base</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) { 
+  @include gutter($gutter, &#39;padding&#39;);
+  @include column($size, $columns);
+
+  position: relative;
+ }" data-collapsed="@mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) { ... }"><code>@mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output flex column base styles with gutter</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as number, breakpoint map <code>(xs: 30px, md: 60px)</code> or sizing map (min: 30px, max: 60px)</p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-gutter</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Width of the column as number</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>100%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-column"><h3 class="item__heading"><a class="item__name" href="#mixin-column">column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin column($size: &#39;expand&#39;, $columns: $grid-columns) { 
+  @if $size {
+    @if (type-of($size) == &#39;number&#39;) {
+      @if (unit($size) == &#39;%&#39;) {
+        width: $size;
+      } @else {
+        @if $size &lt; 1 {
+          width: percentage($size);
+        } @else {
+          width: percentage(divide($size, $columns));
+        }
+      }
+    } @else {
+      width: auto;
+      max-width: 100%;
+
+      @if $size == &#39;shrink&#39; {
+        flex: 0 0 auto;
+      }
+
+      @if $size == &#39;expand&#39; {
+        flex: 1 1 auto;
+      }
+    }
+  }
+ }" data-collapsed="@mixin column($size: &#39;expand&#39;, $columns: $grid-columns) { ... }"><code>@mixin column($size: &#39;expand&#39;, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output flex column width modifier styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Column size as number (e.g. 20% or 0.2) or string (&#39;expand&#39; or &#39;shrink&#39;)</p></td><td data-label="type"><code>Number</code> or <code>String</code></td><td data-label="default"><code>&#39;expand&#39;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-column-push"><h3 class="item__heading"><a class="item__name" href="#mixin-column-push">column-push</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin column-push($size, $columns: $grid-columns) { 
+  @if $size &gt; 0 {
+    left: percentage(divide($size, $columns));
+  } @else {
+    left: auto;
+  }
+ }" data-collapsed="@mixin column-push($size, $columns: $grid-columns) { ... }"><code>@mixin column-push($size, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output flex column push styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Column size as number of columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-column-pull"><h3 class="item__heading"><a class="item__name" href="#mixin-column-pull">column-pull</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin column-pull($size, $columns: $grid-columns) { 
+  @if $size &gt; 0 {
+    right: percentage(divide($size, $columns));
+  } @else {
+    right: auto;
+  }
+ }" data-collapsed="@mixin column-pull($size, $columns: $grid-columns) { ... }"><code>@mixin column-pull($size, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output flex column pull styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Column size as number of columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-column-offset"><h3 class="item__heading"><a class="item__name" href="#mixin-column-offset">column-offset</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin column-offset($size, $columns: $grid-columns) { 
+  @if $size &lt; $columns {
+    margin-left: percentage(divide($size, $columns));
+  }
+ }" data-collapsed="@mixin column-offset($size, $columns: $grid-columns) { ... }"><code>@mixin column-offset($size, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output flex column offset styles</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Column size as number of columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-loop-columns"><h3 class="item__heading"><a class="item__name" href="#mixin-loop-columns">loop-columns</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin loop-columns($breakpoint, $pull: $grid-pull-class, $push: $grid-push-class, $offset: $grid-offset-class) { 
+  @for $i from 0 through $grid-columns {
+    @if $column {
+      @if $i &gt; 0 {
+        .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-#{$i} {
+          @include column($i, $grid-columns);
+        }
+      }
+    }
+
+    @if $pull {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-pull-#{$i} {
+        @include column-pull($i, $grid-columns);
+      }
+    }
+
+    @if $push {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-push-#{$i} {
+        @include column-push($i, $grid-columns);
+      }
+    }
+
+    @if $offset {
+      .#{$meta-prefix-objects}col#{$meta-class-modifier}#{$breakpoint}-offset-#{$i} {
+        @include column-offset($i, $grid-columns);
+      }
+    }
+  }
+ }" data-collapsed="@mixin loop-columns($breakpoint, $pull: $grid-pull-class, $push: $grid-push-class, $offset: $grid-offset-class) { ... }"><code>@mixin loop-columns($breakpoint, $pull: $grid-pull-class, $push: $grid-push-class, $offset: $grid-offset-class) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc"><p>Breakpoint name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$pull</code></th><td data-label="desc"><p>Outputs column pull class if true</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>$grid-pull-class</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$push</code></th><td data-label="desc"><p>Outputs column push class if true</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>$grid-push-class</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$offset</code></th><td data-label="desc"><p>Outputs column offset class if true</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>$grid-offset-class</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-row"><h3 class="item__heading"><a class="item__name" href="#mixin-row">row</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin row($gutter: $grid-gutter) { 
+  @include gutter($gutter, &#39;margin&#39;);
+
+  display: flex;
+  flex-wrap: wrap;
+ }" data-collapsed="@mixin row($gutter: $grid-gutter) { ... }"><code>@mixin row($gutter: $grid-gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a flex grid row with gutters</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as number, breakpoint map <code>(xs: 30px, md: 60px)</code> or sizing map (min: 30px, max: 60px)</p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-gutter</code></td></tr></tbody></table></section><section class="main__item container item" id="grid-mixin-grid-row-auto"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-row-auto">grid-row-auto</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-row-auto($gutter: $grid-gutter, $min-size) { 
+  display: grid;
+  /* stylelint-disable-next-line function-name-case */
+  grid-template-columns: repeat(auto-fit, minmax(Min(100%, var(--min, #{$min-size})), 1fr));
+
+  @include gutter($gutter, &#39;gap&#39;);
+ }" data-collapsed="@mixin grid-row-auto($gutter: $grid-gutter, $min-size) { ... }"><code>@mixin grid-row-auto($gutter: $grid-gutter, $min-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a css grid row with auto fit sizing and gutters</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as number, breakpoint map <code>(xs: 30px, md: 60px)</code> or sizing map (min: 30px, max: 60px)</p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-gutter</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-size</code></th><td data-label="desc"><p>Minimum size of the grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-row-auto {
+  @include grid-row-auto(320px);
+}</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid-row"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-row">grid-row</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-row($gutter: $grid-gutter) { 
+  display: grid;
+  grid-template-rows: repeat(var(--rows, 1), 1fr);
+  grid-template-columns: repeat(var(--columns, #{$grid-columns}), 1fr);
+
+  @include gutter($gutter, &#39;gap&#39;);
+ }" data-collapsed="@mixin grid-row($gutter: $grid-gutter) { ... }"><code>@mixin grid-row($gutter: $grid-gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a css grid row with gutters</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as number, breakpoint map <code>(xs: 30px, md: 60px)</code> or sizing map (min: 30px, max: 60px)</p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-gutter</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-row {
+  @include grid-row();
+}</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid-column"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-column">grid-column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-column($span, $columns: $grid-columns) { 
+  @if (unit($span) == &#39;%&#39;) {
+    $span: strip-unit(divide($span * $columns, 100));
+
+    @if (ceil($span) != $span) {
+      @error &quot;Percentage value is not compatible with #{$columns} columns.&quot;;
+    }
+  }
+
+  @if ($span &gt; 0 and $span &lt;= $columns) {
+    grid-column: auto / span $span;
+  } @else {
+    @error &quot;Use a span value within the range of 1 and #{$grid-columns}.&quot;;
+  }
+ }" data-collapsed="@mixin grid-column($span, $columns: $grid-columns) { ... }"><code>@mixin grid-column($span, $columns: $grid-columns) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a css grid column</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$span</code></th><td data-label="desc"><p>Grid column span</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>Number of grid columns</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$grid-columns</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-column {
+  @include grid-column(6);
+}</code></pre></div></section><section class="main__item container item" id="grid-mixin-grid-column-offset"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-column-offset">grid-column-offset</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-column-offset($span) { 
+  @if ($span &gt; 0 and $span &lt;= $columns) {
+    grid-column-start: $span;
+  } @else {
+    @error &quot;Use a span value within the range of 1 and #{$grid-columns}.&quot;;
+  }
+ }" data-collapsed="@mixin grid-column-offset($span) { ... }"><code>@mixin grid-column-offset($span) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output a grid column start offset</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$span</code></th><td data-label="desc"><p>Grid column start offset</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.grid-column-offset {
+  @include grid-column-offset(2);
+}</code></pre></div></section><section class="main__item container item" id="grid-mixin-gutter"><h3 class="item__heading"><a class="item__name" href="#mixin-gutter">gutter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin gutter($gutter: $grid-gutter, $prop: &#39;gap&#39;) { 
+  $negative: false;
+
+  @if ($prop == &#39;margin&#39;) {
+    $negative: true;
+  }
+
+  @if ($prop != &#39;gap&#39;) {
+    $gutter: get-half-sizing($gutter);
+
+    @include loop-variation($gutter, #{$prop}-left, $negative: $negative);
+    @include loop-variation($gutter, #{$prop}-right, $negative: $negative);
+  } @else {
+    @include loop-variation($gutter, $prop, $negative: $negative);
+  }
+ }" data-collapsed="@mixin gutter($gutter: $grid-gutter, $prop: &#39;gap&#39;) { ... }"><code>@mixin gutter($gutter: $grid-gutter, $prop: &#39;gap&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Output margin or padding gutter depending on the type</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter as a number or sizing map formatted as <code>(min: 30px, max: 60px)</code></p></td><td data-label="type"><code>Number</code> or <code>Map</code></td><td data-label="default"><code>$grid-gutter</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$prop</code></th><td data-label="desc"><p>Property to use for the gutter (&#39;gap&#39;, &#39;margin&#39; or &#39;padding&#39;)</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;gap&#39;</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="list"><div class="container">List</div></h1><section class="main__sub-section" id="list-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="list-mixin-list-inline"><h3 class="item__heading"><a class="item__name" href="#mixin-list-inline">list-inline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin list-inline($spacing: 1rem, $center: false, $child-selector: &#39;li&#39;) { 
+  @include list-unstyled;
+  @include spacing(&#39;margin-left&#39;, $spacing, $negative: true);
+  @include spacing(&#39;margin-bottom&#39;, $spacing, $negative: true);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @if $center {
+    justify-content: center;
+  }
+
+  &gt; #{$child-selector} {
+    @include spacing(&#39;margin-left&#39;, $spacing);
+    @include spacing(&#39;margin-bottom&#39;, $spacing);
+  }
+ }" data-collapsed="@mixin list-inline($spacing: 1rem, $center: false, $child-selector: &#39;li&#39;) { ... }"><code>@mixin list-inline($spacing: 1rem, $center: false, $child-selector: &#39;li&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate styles for an inline list</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$spacing</code></th><td data-label="desc"><p>The amount of space between list items as a number or map key of <code>$token-spacings</code>. Beware that large spacing values can affect the clickability of nearby elements in some cases.</p></td><td data-label="type"><code>Number</code> or <code>String</code></td><td data-label="default"><code>1rem</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$center</code></th><td data-label="desc"><p>Centers the list if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$child-selector</code></th><td data-label="desc"><p>Any valid CSS selector</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;li&#39;</code></td></tr></tbody></table></section><section class="main__item container item" id="list-mixin-list-unstyled"><h3 class="item__heading"><a class="item__name" href="#mixin-list-unstyled">list-unstyled</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin list-unstyled() { 
+  padding-left: 0;
+  list-style: none;
+ }" data-collapsed="@mixin list-unstyled() { ... }"><code>@mixin list-unstyled() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remove default styles from lists (ul, ol)</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="sass-mq"><div class="container">Sass MQ</div></h1><section class="main__sub-section" id="sass-mq-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item item--deprecated" id="sass-mq-variable-mq-base-font-size"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#variable-mq-base-font-size">mq-base-font-size</a></h3><div class="item__deprecated"><strong>Deprecated!</strong><p>This setting will be removed in sass-mq v6.0.0</p></div><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-base-font-size: 16px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Base font size on the <code>&lt;body&gt;</code> element</p><p>Do not override this value, or things will break</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number (unit)</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#sass-mq-function-mq-px2em"><code>mq-px2em</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq/issues/122">https://github.com/sass-mq/sass-mq/issues/122</a></li></ul></section><section class="main__item container item" id="sass-mq-variable-mq-responsive"><h3 class="item__heading"><a class="item__name" href="#variable-mq-responsive">mq-responsive</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-responsive: true !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Responsive mode</p><p>Set to <code>false</code> to enable support for browsers that do not support @media queries, (IE &lt;= 8, Firefox &lt;= 3, Opera &lt;= 9)</p><p>You could create a stylesheet served exclusively to older browsers, where @media queries are rasterized</p></div><h3 class="item__sub-heading">Type</h3><p><code>Boolean</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>// old-ie.scss
+$mq-responsive: false;
+@import &#39;main&#39;; // @media queries in this file will be rasterized up to $mq-static-breakpoint
+                 // larger breakpoints will be ignored</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#responsive-mode-off">Disabled responsive mode documentation</a></li></ul></section><section class="main__item container item" id="sass-mq-variable-mq-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-mq-breakpoints">mq-breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-breakpoints: (
+  mobile: 320px,
+  tablet: 740px,
+  desktop: 980px,
+  wide: 1300px,
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Breakpoint list</p><p>Name your breakpoints in a way that creates a ubiquitous language across team members. It will improve communication between stakeholders, designers, developers, and testers.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#sass-mq-function-mq-get-breakpoint-width"><code>mq-get-breakpoint-width</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq"><code>mq</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq-add-breakpoint"><code>mq-add-breakpoint</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq-show-breakpoints"><code>mq-show-breakpoints</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint">Full documentation and examples</a></li></ul></section><section class="main__item container item" id="sass-mq-variable-mq-static-breakpoint"><h3 class="item__heading"><a class="item__name" href="#variable-mq-static-breakpoint">mq-static-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-static-breakpoint: desktop !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Static breakpoint (for fixed-width layouts)</p><p>Define the breakpoint from $mq-breakpoints that should be used as the target width for the fixed-width layout (i.e. when $mq-responsive is set to &#39;false&#39;) in a old-ie.scss</p></div><h3 class="item__sub-heading">Type</h3><p><code>String</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>// tablet-only.scss
+//
+// Ignore all styles above tablet breakpoint,
+// and fix the styles (such as the layout) at tablet width
+$mq-responsive: false;
+$mq-static-breakpoint: tablet;
+@import &#39;main&#39;; // @media queries in this file will be rasterized up to tablet
+                 // larger breakpoints will be ignored</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq"><code>mq</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#adding-custom-breakpoints">Full documentation and examples</a></li></ul></section><section class="main__item container item" id="sass-mq-variable-mq-show-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-mq-show-breakpoints">mq-show-breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-show-breakpoints: () !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Show breakpoints in the top right corner</p><p>If you want to display the currently active breakpoint in the top right corner of your site during development, add the breakpoints to this list, ordered by width. For example: (mobile, tablet, desktop).</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$mq-show-breakpoints: (mobile, tablet, desktop);
+@import &#39;path/to/mq&#39;;</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq-show-breakpoints"><code>mq-show-breakpoints</code></a></li></ul></section><section class="main__item container item" id="sass-mq-variable-mq-media-type"><h3 class="item__heading"><a class="item__name" href="#variable-mq-media-type">mq-media-type</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$mq-media-type: all !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Customize the media type (for example: <code>@media screen</code> or <code>@media print</code>) By default sass-mq uses an &quot;all&quot; media type (<code>@media all and …</code>)</p></div><h3 class="item__sub-heading">Type</h3><p><code>String</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq"><code>mq</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#changing-media-type">Full documentation and examples</a></li></ul></section></section><section class="main__sub-section" id="sass-mq-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="sass-mq-function-mq-px2em"><h3 class="item__heading"><a class="item__name" href="#function-mq-px2em">mq-px2em</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function mq-px2em($px) { 
+  @if ($mq-base-font-size != 16px) {
+    @warn &quot;Overriding $mq-base-font-size will break things, see https://github.com/sass-mq/sass-mq/issues/122.&quot;;
+  }
+  @if ($base-font-size != 16px) {
+    @warn &quot;The $base-font-size argument will be removed in sass-mq v6.0.0, as overriding it breaks things, see https://github.com/sass-mq/sass-mq/issues/122.&quot;;
+  }
+  @if unitless($px) {
+    @warn &quot;Assuming #{$px} to be in pixels, attempting to convert it into pixels.&quot;;
+    @return mq-px2em($px * 1px, $base-font-size);
+  } @else if unit($px) == em {
+    @return $px;
+  }
+  @return divide($px, $base-font-size) * 1em;
+ }" data-collapsed="@function mq-px2em($px) { ... }"><code>@function mq-px2em($px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert pixels to ems</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>value to convert</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$font-size-in-ems: mq-px2em(16px);
+p { font-size: mq-px2em(16px); }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-base-font-size"><code>mq-base-font-size</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq"><code>mq</code></a></li></ul></section><section class="main__item container item" id="sass-mq-function-mq-get-breakpoint-width"><h3 class="item__heading"><a class="item__name" href="#function-mq-get-breakpoint-width">mq-get-breakpoint-width</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function mq-get-breakpoint-width($name) { 
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  } @else {
+    @warn &quot;Breakpoint `#{$name}` wasn&#39;t found in $breakpoints.&quot;;
+  }
+ }" data-collapsed="@function mq-get-breakpoint-width($name) { ... }"><code>@function mq-get-breakpoint-width($name) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get a breakpoint&#39;s width</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Name of the breakpoint. One of $mq-breakpoints</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Value in pixels</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$tablet-width: mq-get-breakpoint-width(tablet);
+@media (min-width: mq-get-breakpoint-width(desktop)) {}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-breakpoints"><code>mq-breakpoints</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#sass-mq-mixin-mq"><code>mq</code></a></li></ul></section><section class="main__item container item" id="sass-mq-function-_mq-quick-sort"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#function-_mq-quick-sort">_mq-quick-sort</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function _mq-quick-sort($list) { 
+  $less: ();
+  $equal: ();
+  $large: ();
+
+  @if length($list) &gt; 1 {
+    $seed: nth($list, ceil(divide(length($list), 2)));
+
+    @each $item in $list {
+      @if ($item == $seed) {
+        $equal: append($equal, $item);
+      } @else if ($item &lt; $seed) {
+        $less: append($less, $item);
+      } @else if ($item &gt; $seed) {
+        $large: append($large, $item);
+      }
+    }
+
+    @return join(join(_mq-quick-sort($less), $equal), _mq-quick-sort($large));
+  }
+
+  @return $list;
+ }" data-collapsed="@function _mq-quick-sort($list) { ... }"><code>@function _mq-quick-sort($list) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Quick sort</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>List to sort</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>Sorted List</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sam Richards</p></li></ul></section><section class="main__item container item" id="sass-mq-function-_mq-map-sort-by-value"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#function-_mq-map-sort-by-value">_mq-map-sort-by-value</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function _mq-map-sort-by-value($map) { 
+  $map-sorted: ();
+  $map-keys: map-keys($map);
+  $map-values: map-values($map);
+  $map-values-sorted: _mq-quick-sort($map-values);
+
+  // Reorder key/value pairs based on key values
+  @each $value in $map-values-sorted {
+    $index: index($map-values, $value);
+    $key: nth($map-keys, $index);
+    $map-sorted: map-merge(
+      $map-sorted,
+      (
+        $key: $value,
+      )
+    );
+
+    // Unset the value in $map-values to prevent the loop
+    // from finding the same index twice
+    $map-values: set-nth($map-values, $index, 0);
+  }
+
+  @return $map-sorted;
+ }" data-collapsed="@function _mq-map-sort-by-value($map) { ... }"><code>@function _mq-map-sort-by-value($map) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sort a map by values (works with numbers only)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>Map to sort</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code> &mdash;<p>Map sorted by value</p></div></section></section><section class="main__sub-section" id="sass-mq-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="sass-mq-mixin-mq"><h3 class="item__heading"><a class="item__name" href="#mixin-mq">mq</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq($from: false, $until: false, $and: false, $media-type: $mq-media-type) { 
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: &#39;&#39;;
+
+  // From: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: mq-px2em($from);
+    } @else {
+      $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
+    }
+  }
+
+  // Until: that breakpoint (exclusive)
+  @if $until {
+    @if type-of($until) == number {
+      $max-width: mq-px2em($until);
+    } @else {
+      $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - 0.01em;
+    }
+  }
+
+  // Responsive support is disabled, rasterize the output outside @media blocks
+  // The browser will rely on the cascade itself.
+  @if $responsive == false {
+    $static-breakpoint-width: mq-get-breakpoint-width($static-breakpoint, $breakpoints);
+    $target-width: mq-px2em($static-breakpoint-width);
+
+    // Output only rules that start at or span our target width
+    @if (
+      $and ==
+        false and
+        $min-width &lt;=
+        $target-width and
+        ($until == false or $max-width &gt;= $target-width) and
+        $media-type !=
+        &#39;print&#39;
+    ) {
+      @content;
+    }
+  }
+
+  // Responsive support is enabled, output rules inside @media queries
+  @else {
+    @if $min-width != 0 {
+      $media-query: &#39;#{$media-query} and (min-width: #{$min-width})&#39;;
+    }
+    @if $max-width != 0 {
+      $media-query: &#39;#{$media-query} and (max-width: #{$max-width})&#39;;
+    }
+    @if $and {
+      $media-query: &#39;#{$media-query} and #{$and}&#39;;
+    }
+
+    // Remove unnecessary media query prefix &#39;all and &#39;
+    @if ($media-type == &#39;all&#39; and $media-query != &#39;&#39;) {
+      $media-type: &#39;&#39;;
+      $media-query: str-slice(unquote($media-query), 6);
+    }
+
+    @media #{$media-type + $media-query} {
+      @content;
+    }
+  }
+ }" data-collapsed="@mixin mq($from: false, $until: false, $and: false, $media-type: $mq-media-type) { ... }"><code>@mixin mq($from: false, $until: false, $and: false, $media-type: $mq-media-type) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Media Query mixin</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$from</code></th><td data-label="desc"><p>One of $mq-breakpoints</p></td><td data-label="type"><code>String</code> or <code>Boolean</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$until</code></th><td data-label="desc"><p>One of $mq-breakpoints</p></td><td data-label="type"><code>String</code> or <code>Boolean</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$and</code></th><td data-label="desc"><p>Additional media query parameters</p></td><td data-label="type"><code>String</code> or <code>Boolean</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$media-type</code></th><td data-label="desc"><p>Media type: screen, print…</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$mq-media-type</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.element {
+  @include mq($from: mobile) {
+    color: red;
+  }
+  @include mq($until: tablet) {
+    color: blue;
+  }
+  @include mq(mobile, tablet) {
+    color: green;
+  }
+  @include mq($from: tablet, $and: &#39;(orientation: landscape)&#39;) {
+    color: teal;
+  }
+  @include mq(950px) {
+    color: hotpink;
+  }
+  @include mq(tablet, $media-type: screen) {
+    color: hotpink;
+  }
+  // Advanced use:
+  $my-breakpoints: (L: 900px, XL: 1200px);
+  @include mq(L, $breakpoints: $my-breakpoints, $static-breakpoint: L) {
+    color: hotpink;
+  }
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-media-type"><code>mq-media-type</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-breakpoints"><code>mq-breakpoints</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-static-breakpoint"><code>mq-static-breakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#sass-mq-function-mq-px2em"><code>mq-px2em</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#sass-mq-function-mq-get-breakpoint-width"><code>mq-get-breakpoint-width</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#responsive-mode-on-default">Full documentation and examples</a></li></ul></section><section class="main__item container item" id="sass-mq-mixin-mq-add-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-mq-add-breakpoint">mq-add-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq-add-breakpoint($name, $width) { 
+  $new-breakpoint: (
+    $name: $width,
+  );
+  $mq-breakpoints: map-merge($mq-breakpoints, $new-breakpoint) !global;
+  $mq-breakpoints: _mq-map-sort-by-value($mq-breakpoints) !global;
+ }" data-collapsed="@mixin mq-add-breakpoint($name, $width) { ... }"><code>@mixin mq-add-breakpoint($name, $width) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Add a breakpoint</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Name of the breakpoint</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Width of the breakpoint</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include mq-add-breakpoint(tvscreen, 1920px);
+@include mq(tvscreen) {}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-breakpoints"><code>mq-breakpoints</code></a></li></ul></section><section class="main__item container item" id="sass-mq-mixin-mq-show-breakpoints"><h3 class="item__heading"><a class="item__name" href="#mixin-mq-show-breakpoints">mq-show-breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq-show-breakpoints($show-breakpoints: $mq-show-breakpoints, $breakpoints: $mq-breakpoints) { 
+  body::before {
+    background-color: #fcf8e3;
+    border-bottom: 1px solid #fbeed5;
+    border-left: 1px solid #fbeed5;
+    color: #c09853;
+    font: small-caption;
+    padding: 3px 6px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+
+    // Loop through the breakpoints that should be shown
+    @each $show-breakpoint in $show-breakpoints {
+      $width: mq-get-breakpoint-width($show-breakpoint, $breakpoints);
+      @include mq($show-breakpoint, $breakpoints: $breakpoints) {
+        content: &#39;#{$show-breakpoint} ≥ #{$width} (#{mq-px2em($width)})&#39;;
+      }
+    }
+  }
+ }" data-collapsed="@mixin mq-show-breakpoints($show-breakpoints: $mq-show-breakpoints, $breakpoints: $mq-breakpoints) { ... }"><code>@mixin mq-show-breakpoints($show-breakpoints: $mq-show-breakpoints, $breakpoints: $mq-breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Show the active breakpoint in the top right corner of the viewport</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$show-breakpoints</code></th><td data-label="desc"><p>List of breakpoints to show in the top right corner</p></td><td data-label="type"><code>List</code></td><td data-label="default"><code>$mq-show-breakpoints</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Breakpoint names and sizes</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$mq-breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>// Show breakpoints using global settings
+@include mq-show-breakpoints;
+
+// Show breakpoints using custom settings
+@include mq-show-breakpoints((L, XL), (S: 300px, L: 800px, XL: 1200px));</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-breakpoints"><code>mq-breakpoints</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sass-mq-variable-mq-show-breakpoints"><code>mq-show-breakpoints</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint">https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint</a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="sizing"><div class="container">Poly Fluid / Sizing</div></h1><section class="main__sub-section" id="sizing-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="sizing-function-is-sizing-map"><h3 class="item__heading"><a class="item__name" href="#function-is-sizing-map">is-sizing-map</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function is-sizing-map($map) { 
+  @return (type-of($map) == &#39;map&#39; and map-has-key($map, &#39;min&#39;) and length($map) &lt; 3);
+ }" data-collapsed="@function is-sizing-map($map) { ... }"><code>@function is-sizing-map($map) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Validate a sizing map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>Map to test</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Boolean</code> &mdash;<p>True if the parameter is a map with a <code>min</code> key</p></div></section><section class="main__item container item" id="sizing-function-get-largest-sizing"><h3 class="item__heading"><a class="item__name" href="#function-get-largest-sizing">get-largest-sizing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-largest-sizing($sizing) { 
+  @if (type-of($sizing) == &#39;map&#39;) {
+    $sizing: nth(map-values($sizing), length($sizing));
+
+    @if is-sizing-map($sizing) {
+      $sizing: map-get($sizing, &#39;max&#39;);
+
+      @if not $sizing {
+        $sizing: map-get($sizing, &#39;min&#39;);
+      }
+    }
+  }
+
+  @return $sizing;
+ }" data-collapsed="@function get-largest-sizing($sizing) { ... }"><code>@function get-largest-sizing($sizing) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get largest sizing of sizing map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizing</code></th><td data-label="desc"><p>Sizing map or number</p></td><td data-label="type"><code>Map</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Largest sizing in the map</p></div></section><section class="main__item container item" id="sizing-function-get-half-sizing"><h3 class="item__heading"><a class="item__name" href="#function-get-half-sizing">get-half-sizing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-half-sizing($sizing) { 
+  @if (type-of($sizing) == &#39;map&#39;) {
+    @each $key, $value in $sizing {
+      @if (type-of($value) == &#39;map&#39;) {
+        $nested-map: ();
+
+        @each $deep-key, $deep-value in $value {
+          // Divide nested map values and add to new map
+          $nested-map: map-merge(
+            $nested-map,
+            (
+              $deep-key: divide($deep-value, 2),
+            )
+          );
+        }
+
+        // Merge new map into map key of the original map
+        $sizing: map-merge(
+          $sizing,
+          (
+            $key: $nested-map,
+          )
+        );
+      } @else {
+        // Replace map values with divided values
+        $sizing: map-merge(
+          $sizing,
+          (
+            $key: divide($value, 2),
+          )
+        );
+      }
+    }
+  } @else {
+    $sizing: divide($sizing, 2);
+  }
+
+  @return $sizing;
+ }" data-collapsed="@function get-half-sizing($sizing) { ... }"><code>@function get-half-sizing($sizing) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Half values of a sizing map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizing</code></th><td data-label="desc"><p>Sizing map, breakpoint map or number</p></td><td data-label="type"><code>Map</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map&lt;/code&gt; or &lt;code&gt;Number</code> &mdash;<p>Map with halved values or halved number</p></div></section></section><section class="main__sub-section" id="sizing-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="sizing-mixin-fluid-calc"><h3 class="item__heading"><a class="item__name" href="#mixin-fluid-calc">fluid-calc</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false, $current-breakpoint: null, $all-breakpoints: null) { 
+  $min-size: null;
+  $max-size: null;
+  $min-breakpoint: map-get($breakpoints, &#39;min&#39;);
+  $max-breakpoint: map-get($breakpoints, &#39;max&#39;);
+  $min-breakpoint-value: $min-breakpoint;
+  $max-breakpoint-value: $max-breakpoint;
+  $multiplicand: 1;
+
+  @if (type-of($sizes) == &#39;map&#39;) {
+    $min-size: map-get($sizes, &#39;min&#39;);
+    $max-size: map-get($sizes, &#39;max&#39;);
+  } @else if (type-of($sizes) == &#39;list&#39;) {
+    $min-size: nth($sizes, 1);
+    $max-size: nth($sizes, 2);
+  } @else if (type-of($sizes) == &#39;number&#39;) {
+    $min-size: $sizes;
+  }
+
+  @if map-has-key($mq-breakpoints, $min-breakpoint) {
+    $min-breakpoint-value: map-get($mq-breakpoints, $min-breakpoint);
+  }
+
+  @if map-has-key($mq-breakpoints, $max-breakpoint) {
+    $max-breakpoint-value: map-get($mq-breakpoints, $max-breakpoint);
+  }
+
+  @if $negative == true {
+    $multiplicand: -1;
+  }
+
+  @if $important == true {
+    $important: unquote(&#39;!important&#39;);
+  } @else {
+    $important: null;
+  }
+
+  @if $min-size {
+    $min-size: to-rem($min-size);
+
+    @if (
+      not
+        $current-breakpoint or
+        ($current-breakpoint == nth($all-breakpoints, 1)) or
+        ($current-breakpoint == nth($all-breakpoints, length($all-breakpoints))) and not
+        $max-size
+    ) {
+      #{$prop}: $min-size * $multiplicand $important;
+    }
+
+    @if ($max-size and $max-breakpoint-value) {
+      $max-size: to-rem($max-size);
+
+      @if ($fluid-scaling and $min-breakpoint-value) {
+        $value: calc(
+            (
+                #{$min-size} +
+                  #{strip-unit($max-size - $min-size)} *
+                  (100vw - #{to-rem($min-breakpoint-value)}) /
+                  #{strip-unit(to-rem($max-breakpoint-value) - to-rem($min-breakpoint-value))}
+              ) *
+              #{$multiplicand}
+          )
+          $important;
+
+        @if $current-breakpoint {
+          // Breakpoint set already in parent mixin (loop-variation)
+          #{$prop}: $value;
+        } @else {
+          @include mq($min-breakpoint-value) {
+            #{$prop}: $value;
+          }
+        }
+      }
+
+      @if (
+        not
+          $current-breakpoint or
+          ($current-breakpoint == nth($all-breakpoints, length($all-breakpoints)))
+      ) {
+        @include mq($max-breakpoint-value) {
+          #{$prop}: $max-size * $multiplicand $important;
+        }
+      }
+    }
+  }
+ }" data-collapsed="@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false, $current-breakpoint: null, $all-breakpoints: null) { ... }"><code>@mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints, $negative: false, $important: false, $current-breakpoint: null, $all-breakpoints: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate min, max and fluid in-between values for a given CSS property</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$prop</code></th><td data-label="desc"><p>Any CSS property that supports calc as a value</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizes</code></th><td data-label="desc"><p>Map of two sizes formatted as <code>(min: x, max: y)</code>, list of two sizes formatted as <code>(x, y)</code> or just a number (min size)</p></td><td data-label="type"><code>Map</code> or <code>Number</code> or <code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of two named breakpoints from <code>$mq-breakpoints</code> formatted as <code>(min: md, max: lg)</code> or custom px values formatted as <code>(min: 600px, max: 900px)</code></p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$fluid-breakpoints</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$negative</code></th><td data-label="desc"><p>Negates the values if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$important</code></th><td data-label="desc"><p>Adds important flag if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$current-breakpoint</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$all-breakpoints</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>List</code></td><td data-label="default"><code>null</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="token"><div class="container">Token</div></h1><section class="main__sub-section" id="token-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="token-function-get-color"><h3 class="item__heading"><a class="item__name" href="#function-get-color">get-color</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-color($name) { 
+  $color: map-get($token-colors, $name);
+
+  @if not $color {
+    @error &quot;The key `#{$name}` wasn&#39;t found in $token-colors.&quot;;
+  }
+
+  @return $color;
+ }" data-collapsed="@function get-color($name) { ... }"><code>@function get-color($name) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get a color from the <code>$token-colors</code> map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Map key of <code>$token-colors</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code> &mdash;<p>color value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  color: get-color(black);
+}</code></pre></div></section><section class="main__item container item" id="token-function-get-duration"><h3 class="item__heading"><a class="item__name" href="#function-get-duration">get-duration</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-duration($name: $token-durations-default) { 
+  $duration: map-get($token-durations, $name);
+
+  @if not $duration {
+    @error &quot;The key `#{$name}` wasn&#39;t found in $token-durations.&quot;;
+  }
+
+  @return $duration;
+ }" data-collapsed="@function get-duration($name: $token-durations-default) { ... }"><code>@function get-duration($name: $token-durations-default) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get an duration value from the <code>$token-durations</code> map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Map key of <code>$token-durations</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$token-durations-default</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>duration value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  transition: color get-duration() get-easing();
+}</code></pre></div></section><section class="main__item container item" id="token-function-get-easing"><h3 class="item__heading"><a class="item__name" href="#function-get-easing">get-easing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-easing($name: $token-easings-default) { 
+  $easing: map-get($token-easings, $name);
+
+  @if not $easing {
+    @error &quot;The key `#{$name}` wasn&#39;t found in $token-easings.&quot;;
+  }
+
+  @return $easing;
+ }" data-collapsed="@function get-easing($name: $token-easings-default) { ... }"><code>@function get-easing($name: $token-easings-default) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get an easing value from the <code>$token-easings</code> map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Map key of <code>$token-easings</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$token-easings-default</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>easing value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  transition: color get-duration() get-easing();
+}</code></pre></div></section><section class="main__item container item" id="token-function-get-index"><h3 class="item__heading"><a class="item__name" href="#function-get-index">get-index</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-index($name) { 
+  $index: map-get($layers, $name);
+
+  @if not $index {
+    @error &quot;The key `#{$name}` wasn&#39;t found in $layers.&quot;;
+  }
+
+  @return $index;
+ }" data-collapsed="@function get-index($name) { ... }"><code>@function get-index($name) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get a z-index value from the <code>$layers</code> map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Map key of <code>$layers</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>z-index value</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.component {
+  z-index: get-index(below);
+}</code></pre></div></section><section class="main__item container item" id="token-function-get-spacing"><h3 class="item__heading"><a class="item__name" href="#function-get-spacing">get-spacing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-spacing($name: $token-spacings-default, $sizing: &#39;min&#39;) { 
+  $spacing: map-get($token-spacings, $name);
+
+  @if (not $spacing) {
+    @error &quot;The spacing `#{$name}` wasn&#39;t found in map $token-spacings.&quot;;
+  }
+
+  @if (is-sizing-map($spacing)) {
+    $spacing: map-get($spacing, $sizing);
+
+    @if (not $spacing) {
+      @error &quot;The sizing `#{$sizing}` wasn&#39;t found for the spacing `#{$name}`.&quot;;
+    }
+  }
+
+  @return $spacing;
+ }" data-collapsed="@function get-spacing($name: $token-spacings-default, $sizing: &#39;min&#39;) { ... }"><code>@function get-spacing($name: $token-spacings-default, $sizing: &#39;min&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get a single spacing value from the map <code>$token-spacings</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Map key of <code>$token-spacings</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$token-spacings-default</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizing</code></th><td data-label="desc"><p>Sizing type &#39;min&#39; or &#39;max&#39;</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>&#39;min&#39;</code></td></tr></tbody></table></section></section><section class="main__sub-section" id="token-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="token-mixin-spacing"><h3 class="item__heading"><a class="item__name" href="#mixin-spacing">spacing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin spacing($prop, $sizes: $token-spacings-default, $breakpoints, $negative: false, $important: false) { 
+  $spacing-sizes: map-get($token-spacings, $sizes);
+
+  @if $spacing-sizes {
+    $sizes: $spacing-sizes;
+  } @else {
+    @if (type-of($sizes) == &#39;string&#39;) {
+      @error &quot;The spacing `#{$sizes}` wasn&#39;t found in map $token-spacings.&quot;;
+    }
+  }
+
+  @include loop-variation($sizes, $prop, $negative: $negative, $important: $important);
+ }" data-collapsed="@mixin spacing($prop, $sizes: $token-spacings-default, $breakpoints, $negative: false, $important: false) { ... }"><code>@mixin spacing($prop, $sizes: $token-spacings-default, $breakpoints, $negative: false, $important: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Wrapper mixin for fluid-calc that gets spacings from the map <code>$token-spacings</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$prop</code></th><td data-label="desc"><p>Any CSS property that supports calc as a value</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizes</code></th><td data-label="desc"><p>Map key of <code>$token-spacings</code>, map of two sizes formatted as <code>(min: x, max: y)</code>, list of two sizes formatted as <code>(x, y)</code> or just a number (min size)</p></td><td data-label="type"><code>Map</code> or <code>Number</code> or <code>List</code> or <code>String</code></td><td data-label="default"><code>$token-spacings-default</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoints</code></th><td data-label="desc"><p>Map of two named breakpoints from <code>$mq-breakpoints</code> formatted as <code>(md, lg)</code> or custom px values formatted as <code>(min: 600px, max: 900px)</code></p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$negative</code></th><td data-label="desc"><p>Negates the values if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$important</code></th><td data-label="desc"><p>Adds important flag if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="token-mixin-type"><h3 class="item__heading"><a class="item__name" href="#mixin-type">type</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin type($variation: &#39;default&#39;) { 
+  @include use-variation($token-type, $variation);
+ }" data-collapsed="@mixin type($variation: &#39;default&#39;) { ... }"><code>@mixin type($variation: &#39;default&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Wrapper mixin for use-variation that uses the <code>$token-type</code> map as default lookup map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$variation</code></th><td data-label="desc"><p>Map key of <code>$token-type</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;default&#39;</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="typography"><div class="container">Typography</div></h1><section class="main__sub-section" id="typography-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="typography-function-modular-scale"><h3 class="item__heading"><a class="item__name" href="#function-modular-scale">modular-scale</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) { 
+  @return pow($type-scale, $exp) * $size;
+ }" data-collapsed="@function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) { ... }"><code>@function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Scale value according to the passed exponent and type scale</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$exp</code></th><td data-label="desc"><p>Exponent</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Size to scale</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$font-size-base</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$type-scale</code></th><td data-label="desc"><p>Type scale (e.g 1.2)</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$type-scale</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Scaled value</p></div></section></section><section class="main__sub-section" id="typography-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="typography-mixin-scale-headings"><h3 class="item__heading"><a class="item__name" href="#mixin-scale-headings">scale-headings</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin scale-headings($scale: $type-scale-base, $headings: $headings) { 
+  $max-scale: 0;
+
+  @each $heading in $headings {
+    #{$heading} {
+      @if (type-of($scale) == &#39;map&#39;) {
+        $sizes: $scale;
+
+        // Replace map values with modular scaled values
+        @each $key, $value in $scale {
+          $sizes: map-merge(
+            $sizes,
+            (
+              $key: modular-scale($max-scale, $value),
+            )
+          );
+        }
+
+        @include fluid-calc(&#39;font-size&#39;, $sizes);
+      } @else {
+        font-size: modular-scale($max-scale, $scale);
+      }
+    }
+
+    $max-scale: $max-scale + 1;
+  }
+ }" data-collapsed="@mixin scale-headings($scale: $type-scale-base, $headings: $headings) { ... }"><code>@mixin scale-headings($scale: $type-scale-base, $headings: $headings) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Scale headings using modular scale</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$type-scale-base</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$headings</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>List</code></td><td data-label="default"><code>$headings</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="utilities"><div class="container">Utilities</div></h1><section class="main__sub-section" id="utilities-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="utilities-mixin-sr-only"><h3 class="item__heading"><a class="item__name" href="#mixin-sr-only">sr-only</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sr-only() { 
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+ }" data-collapsed="@mixin sr-only() { ... }"><code>@mixin sr-only() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hide content accessibly</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="utilities-mixin-sr-only-reset"><h3 class="item__heading"><a class="item__name" href="#mixin-sr-only-reset">sr-only-reset</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sr-only-reset() { 
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: inherit;
+ }" data-collapsed="@mixin sr-only-reset() { ... }"><code>@mixin sr-only-reset() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Undo styles from sr-only</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="utilities-mixin-sr-only-focusable"><h3 class="item__heading"><a class="item__name" href="#mixin-sr-only-focusable">sr-only-focusable</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sr-only-focusable() { 
+  &amp;:active,
+  &amp;:focus {
+    @include sr-only-reset;
+  }
+ }" data-collapsed="@mixin sr-only-focusable() { ... }"><code>@mixin sr-only-focusable() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Undo styles from sr-only when element is activated or focused</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="utilities-mixin-text-hide"><h3 class="item__heading"><a class="item__name" href="#mixin-text-hide">text-hide</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin text-hide() { 
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  text-shadow: none;
+ }" data-collapsed="@mixin text-hide() { ... }"><code>@mixin text-hide() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Old school way of hiding text. Better use sr-only with an additional <code>&lt;span&gt;</code></p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="utilities-mixin-text-truncate"><h3 class="item__heading"><a class="item__name" href="#mixin-text-truncate">text-truncate</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin text-truncate() { 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ }" data-collapsed="@mixin text-truncate() { ... }"><code>@mixin text-truncate() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Truncate text using ellipsis (single-line)</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="utilities-mixin-text-hyphenate"><h3 class="item__heading"><a class="item__name" href="#mixin-text-hyphenate">text-hyphenate</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin text-hyphenate() { 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+ }" data-collapsed="@mixin text-hyphenate() { ... }"><code>@mixin text-hyphenate() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Activate hyphenation with fallbacks. Make sure to set the lang attribute on the <code>&lt;html&gt;</code> tag.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="variation"><div class="container">Variations</div></h1><section class="main__sub-section" id="variation-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="variation-mixin-loop-variation"><h3 class="item__heading"><a class="item__name" href="#mixin-loop-variation">loop-variation</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin loop-variation($config, $prop: null, $negative: false, $important: false) { 
+  @if (is-sizing-map($config)) {
+    @include fluid-calc($prop, $config, $negative: $negative, $important: $important);
+  } @else if is-breakpoint-map($config) {
+    @each $breakpoint-key, $breakpoint-value in $config {
+      @include skip-first-breakpoint($breakpoint-key) {
+        $all-breakpoints: map-keys($config);
+        $next-breakpoint: get-next-breakpoint($breakpoint-key, $config) or
+          map-get($fluid-breakpoints, &#39;max&#39;);
+        $breakpoint-range: (
+          min: $breakpoint-key,
+          max: $next-breakpoint,
+        );
+
+        @if (is-sizing-map($breakpoint-value)) {
+          // Sizing map in breakpoint
+          @include fluid-calc(
+            $prop,
+            $breakpoint-value,
+            $breakpoint-range,
+            $negative,
+            $important,
+            $current-breakpoint: $breakpoint-key,
+            $all-breakpoints: $all-breakpoints
+          );
+        } @else if (type-of($breakpoint-value) == &#39;map&#39;) {
+          @each $deep-key, $deep-value in $breakpoint-value {
+            // Nested sizing map in breakpoint (e.g. font-size map in type)
+            @if (is-sizing-map($deep-value)) {
+              @include fluid-calc(
+                $deep-key,
+                $deep-value,
+                $breakpoint-range,
+                $negative,
+                $important,
+                $current-breakpoint: $breakpoint-key,
+                $all-breakpoints: $all-breakpoints
+              );
+            } @else {
+              // Nested props in breakpoint
+              #{$deep-key}: $deep-value;
+            }
+          }
+        } @else if $prop {
+          // Single prop for current breakpoint
+          @include fluid-calc(
+            $prop,
+            $breakpoint-value,
+            $breakpoint-range,
+            $negative,
+            $important,
+            $current-breakpoint: $breakpoint-key,
+            $all-breakpoints: $all-breakpoints
+          );
+        }
+      }
+    }
+  } @else if (type-of($config) == &#39;map&#39;) {
+    @each $key, $value in $config {
+      @if ($key == &#39;selectors&#39;) {
+        // Special selectors key for pseudo classes
+        @each $selector-key, $selector-value in $value {
+          #{$selector-key} {
+            @each $deep-key, $deep-value in $selector-value {
+              @if ($deep-key == &#39;selectors&#39;) {
+                @include loop-variation(
+                  (
+                    &#39;selectors&#39;: $deep-value,
+                  ),
+                  $prop,
+                  $negative,
+                  $important
+                );
+              } @else {
+                #{$deep-key}: $deep-value;
+              }
+            }
+          }
+        }
+      } @else if (is-sizing-map($value)) {
+        // Nested sizing map (e.g. font-size in $token-type with sizing map)
+        @include fluid-calc($key, $value, $negative: $negative, $important: $important);
+      } @else {
+        // Simple prop for type or button styles
+        #{$key}: $value;
+      }
+    }
+  } @else if $prop {
+    @include fluid-calc($prop, $config, $negative: $negative, $important: $important);
+  }
+ }" data-collapsed="@mixin loop-variation($config, $prop: null, $negative: false, $important: false) { ... }"><code>@mixin loop-variation($config, $prop: null, $negative: false, $important: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Loop keys of a variation to output normal and fluid props</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$config</code></th><td data-label="desc"><p>Map of Breakpoints, CSS properties and sizing maps</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$prop</code></th><td data-label="desc"><p>Any CSS property</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$negative</code></th><td data-label="desc"><p>Negates the values if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$important</code></th><td data-label="desc"><p>Adds important flag if true</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="variation-mixin-use-variation"><h3 class="item__heading"><a class="item__name" href="#mixin-use-variation">use-variation</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin use-variation($variation-map, $variation) { 
+  $config: map-get($variation-map, $variation);
+
+  @if not $config {
+    @error &quot;The key `#{$variation}` wasn&#39;t found in map $variation-map.&quot;;
+  }
+
+  @include loop-variation($config);
+ }" data-collapsed="@mixin use-variation($variation-map, $variation) { ... }"><code>@mixin use-variation($variation-map, $variation) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate output for a config variation (e.g button or type)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$variation-map</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$variation</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://basegui.de">Baseguide</a><!-- Version --> <span class="project-info__version">- v4.1.1</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
