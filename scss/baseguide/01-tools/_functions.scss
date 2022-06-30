@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 @function pow($number, $exp) {
   $return: 1;
 
@@ -10,7 +14,7 @@
   @else if $exp < 0 {
     // If the number is 0 or negative then divide it
     @for $i from 1 through -$exp {
-      $return: $return / $number;
+      $return: math.div($return, $number);
     }
   }
 
@@ -22,16 +26,16 @@
 }
 
 @function strip-unit($number) {
-  @return $number / ($number * 0 + 1);
+  @return math.div($number, $number * 0 + 1);
 }
 
 @function to-rem($value, $base: 16px) {
-  @if (unit($value) == 'em') {
+  @if (math.unit($value) == 'em') {
     $value: strip-unit($value) * 1rem;
   }
 
-  @if (unit($value) != 'rem') {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  @if (math.unit($value) != 'rem') {
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
   @if (strip-unit($value) == 0) {
@@ -42,10 +46,10 @@
 }
 
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -57,12 +61,12 @@
 //   background-image: url(get-icon('radio', #fff));
 // }
 @function get-icon($icon, $color: $icon-color) {
-  $color: inspect($color);
+  $color: meta.inspect($color);
 
-  @if (str-index($color, '#') != null) {
-    @if map-has-key($icons, $icon) {
-      $icon: 'data:image/svg+xml;charset=utf8,' + map-get($icons, $icon);
-      $icon: str-replace($icon, inspect($icon-color), $color);
+  @if (string.index($color, '#') != null) {
+    @if map.has-key($icons, $icon) {
+      $icon: 'data:image/svg+xml;charset=utf8,' + map.get($icons, $icon);
+      $icon: str-replace($icon, meta.inspect($icon-color), $color);
 
       @each $char, $encoded in ( ('<', '%3C'), ('>', '%3E'), ('#', '%23'), ('"', "'") ) {
         $icon: str-replace($icon, $char, $encoded);

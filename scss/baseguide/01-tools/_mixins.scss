@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
 // button
 @mixin button-unstyled {
   border: 0;
@@ -166,7 +170,7 @@
 
 // target HiDPI screens
 @mixin hidpi($ratio: 1.5) {
-  @media (min-resolution: round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
+  @media (min-resolution: math.round($ratio * 96dpi)), (min-resolution: $ratio * 1dppx) {
     @content;
   }
 }
@@ -174,7 +178,7 @@
 
 // scale headings using modular scale
 @mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
-  @if (type-of($scale) == 'map') {
+  @if (meta.type-of($scale) == 'map') {
     @each $breakpoint, $size in $scale {
       @include mq($breakpoint) {
         @include loop-headings($size);
@@ -209,7 +213,7 @@
 
   @if $direction == 'up' {
     border-color: transparent transparent $color;
-    border-width: 0 ($width / 2) $height;
+    border-width: 0 ($width * 0.5) $height;
   }
   @else if $direction == 'up-right' {
     border-color: transparent $color transparent transparent;
@@ -217,7 +221,7 @@
   }
   @else if $direction == 'right' {
     border-color: transparent transparent transparent $color;
-    border-width: ($height / 2) 0 ($height / 2) $width;
+    border-width: ($height * 0.5) 0 ($height * 0.5) $width;
   }
   @else if $direction == 'down-right' {
     border-color: transparent transparent $color;
@@ -225,7 +229,7 @@
   }
   @else if $direction == 'down' {
     border-color: $color transparent transparent;
-    border-width: $height ($width / 2) 0;
+    border-width: $height ($width * 0.5) 0;
   }
   @else if $direction == 'down-left' {
     border-color: transparent transparent transparent $color;
@@ -233,7 +237,7 @@
   }
   @else if $direction == 'left' {
     border-color: transparent $color transparent transparent;
-    border-width: ($height / 2) $width ($height / 2) 0;
+    border-width: ($height * 0.5) $width ($height * 0.5) 0;
   }
   @else if $direction == 'up-left' {
     border-color: $color transparent transparent;
@@ -244,12 +248,12 @@
 
 // loop all breakpoints and output content
 @mixin loop-breakpoints($breakpoints: $mq-breakpoints, $inclusive: true, $mq: true) {
-  $breakpoint-keys: map-keys($breakpoints);
+  $breakpoint-keys: map.keys($breakpoints);
 
-  @for $i from 1 through length($breakpoint-keys) {
-    $breakpoint: nth($breakpoint-keys, $i) !global;
-    $is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
-    $is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+  @for $i from 1 through list.length($breakpoint-keys) {
+    $breakpoint: list.nth($breakpoint-keys, $i) !global;
+    $is-first-breakpoint: $breakpoint == list.nth($breakpoint-keys, 1) !global;
+    $is-last-breakpoint: $breakpoint == list.nth($breakpoint-keys, list.length($breakpoint-keys)) !global;
 
     @if $mq {
       @if $inclusive {
@@ -267,8 +271,8 @@
       @else {
         // first breakpoint
         @if $is-first-breakpoint {
-          @if length($breakpoint-keys) > 1 {
-            @include mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+          @if list.length($breakpoint-keys) > 1 {
+            @include mq($until: list.nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
               @content;
             }
           }
@@ -284,7 +288,7 @@
         }
         // remaining breakpoints
         @else {
-          @include mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+          @include mq($breakpoint, list.nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
             @content;
           }
         }
@@ -303,12 +307,12 @@
 //  @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px));
 // }
 @mixin fluid-calc($prop, $sizes, $breakpoints: $fluid-breakpoints) {
-  @if ($prop and type-of($sizes) == 'list') {
-    $breakpoints: map-values($breakpoints);
-    $min-breakpoint: nth($breakpoints, 1);
-    $max-breakpoint: nth($breakpoints, length($breakpoints));
-    $min-size: nth($sizes, 1);
-    $max-size: nth($sizes, length($sizes));
+  @if ($prop and meta.type-of($sizes) == 'list') {
+    $breakpoints: map.values($breakpoints);
+    $min-breakpoint: list.nth($breakpoints, 1);
+    $max-breakpoint: list.nth($breakpoints, list.length($breakpoints));
+    $min-size: list.nth($sizes, 1);
+    $max-size: list.nth($sizes, list.length($sizes));
 
     #{$prop}: $min-size;
 

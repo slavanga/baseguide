@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
                   // See https://github.com/sass-mq/sass-mq/pull/10
 
@@ -102,13 +107,13 @@ $mq-media-type: all !default;
     @if ($base-font-size != 16px) {
         @warn "The $base-font-size argument will be removed in sass-mq v6.0.0, as overriding it breaks things, see https://github.com/sass-mq/sass-mq/issues/122.";
     }
-    @if unitless($px) {
+    @if math.is-unitless($px) {
         @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
         @return mq-px2em($px * 1px, $base-font-size);
-    } @else if unit($px) == em {
+    } @else if math.unit($px) == em {
         @return $px;
     }
-    @return ($px / $base-font-size) * 1em;
+    @return math.div($px, $base-font-size) * 1em;
 }
 
 /// Get a breakpoint's width
@@ -123,8 +128,8 @@ $mq-media-type: all !default;
 ///
 /// @returns {Number} Value in pixels
 @function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
-    @if map-has-key($breakpoints, $name) {
-        @return map-get($breakpoints, $name);
+    @if map.has-key($breakpoints, $name) {
+        @return map.get($breakpoints, $name);
     } @else {
         @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
     }
@@ -192,7 +197,7 @@ $mq-media-type: all !default;
 
     // From: this breakpoint (inclusive)
     @if $from {
-        @if type-of($from) == number {
+        @if meta.type-of($from) == number {
             $min-width: mq-px2em($from);
         } @else {
             $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
@@ -201,7 +206,7 @@ $mq-media-type: all !default;
 
     // Until: that breakpoint (exclusive)
     @if $until {
-        @if type-of($until) == number {
+        @if meta.type-of($until) == number {
             $max-width: mq-px2em($until);
         } @else {
             $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - .01em;
@@ -236,7 +241,7 @@ $mq-media-type: all !default;
         // Remove unnecessary media query prefix 'all and '
         @if ($media-type == 'all' and $media-query != '') {
             $media-type: '';
-            $media-query: str-slice(unquote($media-query), 6);
+            $media-query: string.slice(string.unquote($media-query), 6);
         }
 
         @media #{$media-type + $media-query} {
@@ -256,20 +261,20 @@ $mq-media-type: all !default;
     $equal: ();
     $large: ();
 
-    @if length($list) > 1 {
-        $seed: nth($list, ceil(length($list) / 2));
+    @if list.length($list) > 1 {
+        $seed: list.nth($list, math.ceil(list.length($list) * 0.5));
 
         @each $item in $list {
             @if ($item == $seed) {
-                $equal: append($equal, $item);
+                $equal: list.append($equal, $item);
             } @else if ($item < $seed) {
-                $less: append($less, $item);
+                $less: list.append($less, $item);
             } @else if ($item > $seed) {
-                $large: append($large, $item);
+                $large: list.append($large, $item);
             }
         }
 
-        @return join(join(_mq-quick-sort($less), $equal), _mq-quick-sort($large));
+        @return list.join(list.join(_mq-quick-sort($less), $equal), _mq-quick-sort($large));
     }
 
     @return $list;
@@ -282,19 +287,19 @@ $mq-media-type: all !default;
 /// @returns {Map} Map sorted by value
 @function _mq-map-sort-by-value($map) {
     $map-sorted: ();
-    $map-keys: map-keys($map);
-    $map-values: map-values($map);
+    $map-keys: map.keys($map);
+    $map-values: map.values($map);
     $map-values-sorted: _mq-quick-sort($map-values);
 
     // Reorder key/value pairs based on key values
     @each $value in $map-values-sorted {
-        $index: index($map-values, $value);
-        $key: nth($map-keys, $index);
-        $map-sorted: map-merge($map-sorted, ($key: $value));
+        $index: list.index($map-values, $value);
+        $key: list.nth($map-keys, $index);
+        $map-sorted: map.merge($map-sorted, ($key: $value));
 
         // Unset the value in $map-values to prevent the loop
         // from finding the same index twice
-        $map-values: set-nth($map-values, $index, 0);
+        $map-values: list.set-nth($map-values, $index, 0);
     }
 
     @return $map-sorted;
@@ -312,7 +317,7 @@ $mq-media-type: all !default;
 ///  @include mq(tvscreen) {}
 @mixin mq-add-breakpoint($name, $width) {
     $new-breakpoint: ($name: $width);
-    $mq-breakpoints: map-merge($mq-breakpoints, $new-breakpoint) !global;
+    $mq-breakpoints: map.merge($mq-breakpoints, $new-breakpoint) !global;
     $mq-breakpoints: _mq-map-sort-by-value($mq-breakpoints) !global;
 }
 
@@ -355,6 +360,6 @@ $mq-media-type: all !default;
     }
 }
 
-@if length($mq-show-breakpoints) > 0 {
+@if list.length($mq-show-breakpoints) > 0 {
     @include mq-show-breakpoints;
 }

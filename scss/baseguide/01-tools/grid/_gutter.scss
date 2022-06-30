@@ -1,15 +1,18 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
 @function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
-  @if (type-of($gutter) == 'map') {
+  @if (meta.type-of($gutter) == 'map') {
     @if $breakpoint {
-      @if map-has-key($gutter, $breakpoint) {
-        $gutter: map-get($gutter, $breakpoint);
+      @if map.has-key($gutter, $breakpoint) {
+        $gutter: map.get($gutter, $breakpoint);
       }
       @else {
         @error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
       }
     }
     @else {
-      $gutter: nth(map-values($gutter), 1);
+      $gutter: list.nth(map.values($gutter), 1);
     }
   }
 
@@ -17,7 +20,7 @@
 }
 
 @mixin gutter($gutter, $type) {
-  $gutter: to-rem($gutter / 2);
+  $gutter: to-rem($gutter * 0.5);
 
   @if $type == 'inner' {
     padding-left: $gutter;
@@ -32,9 +35,9 @@
 }
 
 @mixin make-gutters($gutter: $grid-gutter, $type: 'inner') {
-  @if (type-of($gutter) == 'map') {
+  @if (meta.type-of($gutter) == 'map') {
     @each $breakpoint, $width in $gutter {
-      @if $breakpoint == nth(map-keys($mq-breakpoints), 1) {
+      @if $breakpoint == list.nth(map.keys($mq-breakpoints), 1) {
         @include gutter($width, $type);
       }
       @else {
