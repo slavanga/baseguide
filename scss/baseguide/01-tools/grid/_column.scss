@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:meta";
+
 @mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
   @include make-gutters($gutter);
   @include column($size, $columns);

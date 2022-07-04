@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+
 @function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
   @if (meta.type-of($gutter) == 'map') {
     @if $breakpoint {

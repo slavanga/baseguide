@@ -1,4 +1,5 @@
 @use "sass:color";
+
 @supports (appearance: none) {
   .select select:not([multiple]) {
     appearance: none;

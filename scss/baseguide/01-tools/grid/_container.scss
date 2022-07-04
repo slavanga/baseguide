@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
+
 @mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
   @if (meta.type-of($gutter) == 'map') {
     $width: to-rem($width) - to-rem(list.nth(map.values($gutter), list.length($gutter)));
