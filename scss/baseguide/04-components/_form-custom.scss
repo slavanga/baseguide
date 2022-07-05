@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @supports (appearance: none) {
   .select select:not([multiple]) {
     appearance: none;
@@ -47,7 +49,7 @@
   }
 
   &:active ~ label::before {
-    background-color: darken($input-bg, 10%);
+    background-color: color.adjust($input-bg, $lightness: -10%);
   }
 
   &:disabled ~ label::before {

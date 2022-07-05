@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+
 // Global
 $font-antialiased: false !default;
 $font-size-base: 1rem !default;
@@ -50,17 +53,17 @@ $mq-breakpoints: (
 ) !default;
 
 $fluid-breakpoints: (
-  min: map-get($mq-breakpoints, sm),
-  max: map-get($mq-breakpoints, xl)
+  min: map.get($mq-breakpoints, sm),
+  max: map.get($mq-breakpoints, xl)
 ) !default;
 
-$mq-static-breakpoint: map-get($mq-breakpoints, xl) !default;
+$mq-static-breakpoint: map.get($mq-breakpoints, xl) !default;
 
 
 // Grid
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
-$grid-container: map-get($mq-breakpoints, xl) !default;
+$grid-container: map.get($mq-breakpoints, xl) !default;
 $grid-container-gutter: $grid-gutter !default;
 
 $grid-pull-classes: true !default;
@@ -88,7 +91,7 @@ $input-bg: #fff !default;
 $input-color: $text-color !default;
 $input-border-width: 1px !default;
 $input-border-color: #b6b6b6 !default;
-$input-focus-border-color: darken($input-border-color, 20%) !default;
+$input-focus-border-color: color.adjust($input-border-color, $lightness: -20%) !default;
 $input-border-radius: 0.125em !default;
 $input-transition: border-color 0.15s ease !default;
 $input-disabled-bg: #eee !default;
@@ -97,7 +100,7 @@ $input-disabled-border-color: #ccc !default;
 
 $checkbox-border-radius: $input-border-radius !default;
 
-$placeholder-color: lighten($input-color, 50%) !default;
+$placeholder-color: color.adjust($input-color, $lightness: 50%) !default;
 
 
 // Icons
@@ -123,7 +126,7 @@ $button-color: #fff !default;
 $button-border-width: 1px !default;
 $button-border-color: transparent !default;
 $button-border-radius: 0.125em !default;
-$button-hover-bg: darken($button-bg, 10%) !default;
+$button-hover-bg: color.adjust($button-bg, $lightness: -10%) !default;
 $button-hover-color: #fff !default;
 $button-hover-border-color: $button-border-color !default;
 $button-active-bg: $button-hover-bg !default;
